@@ -1,9 +1,9 @@
 {
 "version":"900.8.5",
-"md5":"865769a45fef308b8edc1652617b610a",
+"md5":"b284e4149c29970383b960934930e6f8",
 "home_url":"Module_koolproxyR.asp",
 "title":"koolproxyR",
 "description":"听说KP还是自己掌握规则最舒服哟！",
 "changelog":"测试更新2.0",
-"build_date":"2019-03-25_21:26:52"
+"build_date":"2019-03-25_22:42:28"
 }

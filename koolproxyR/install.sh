@@ -35,7 +35,7 @@ else
 	cp -rf /tmp/koolproxyR/* $KSROOT/
 	mv /tmp/user.txt.tmp $KSROOT/koolproxyR/data/rules/user.txt
 fi
-cp -f /tmp/koolproxyR/uninstall.sh $KSROOT/scripts/uninstall_koolproxy.sh
+cp -f /tmp/koolproxyR/uninstall.sh $KSROOT/scripts/uninstall_koolproxyR.sh
 rm -rf $KSROOT/install.sh
 rm -rf $KSROOT/uninstall.sh
 

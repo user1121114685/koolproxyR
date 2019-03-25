@@ -16,7 +16,7 @@ wget https://kprule.com/kp.dat
 wget https://kprule.com/user.txt
 wget https://kprule.com/easylistchina.txt
 wget https://kprule.com/chengfeng.txt
-wget https://fanboy.co.nz/r/fanboy-ultimate.txt
+wget https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt
 
 cd ../../../..
 # Check and include base
