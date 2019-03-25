@@ -1,15 +1,15 @@
 #!/bin/sh
 
-MODULE="koolproxy"
+MODULE=koolproxyR
 VERSION="900.8.5"
-TITLE=koolproxy
+TITLE=koolproxyR
 DESCRIPTION="听说KP还是自己掌握规则最舒服哟！"
-HOME_URL="Module_koolproxy.asp"
+HOME_URL="Module_koolproxyR.asp"
 CHANGELOG="测试更新2.0"
 
 #get latest rules
-cd koolproxy/koolproxy/data/rules
-rm -rf *
+rm -rf ./koolproxyR/koolproxyR/data/rules/*
+cd koolproxyR/koolproxyR/data/rules
 wget https://kprule.com/koolproxy.txt
 wget https://kprule.com/daily.txt
 wget https://kprule.com/kp.dat
