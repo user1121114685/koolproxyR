@@ -1,11 +1,5 @@
-Koolshare Asuswrt-Merlin koolproxy Changelog
-===========================================
-
-插件版本3.7.2
-   - fix	修复防火墙重启卡住
-   - update	更新最新二进制文件：3.7.2
-   - update 同步最新规则
-
-===========================================
-
-binary changelogs can be found at: http://koolshare.cn/thread-64086-1-1.html
+2019年3月25日14:02:50
+第一版本 900.8.5 更新上线，修正fanboy订阅规则并更名为koolproxyR
+---
+2019年3月26日14:04:05
+新增自动更新规则，手动更新，恢复乘风规则（卡饭），修改部分界面说明。

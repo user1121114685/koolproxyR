@@ -14,7 +14,7 @@ easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt  | sed
 easylist_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/easylistchina.txt | wc -l`
 abx_rules_local=`cat $KSROOT/koolproxyR/data/rules/chengfeng.txt  | sed -n '3p'|awk '{print $3,$4}'`
 abx_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/chengfeng.txt | wc -l`
-fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '4p'|awk '{print $3,$4}'`
+fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
 fanboy_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | wc -l`
 video_rules_local=`cat $KSROOT/koolproxyR/data/rules/koolproxy.txt  | sed -n '4p'|awk '{print $3,$4}'`
 

@@ -65,7 +65,7 @@ dbus set softcenter_module_koolproxyR_description="KP自定义规则最舒服！
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=900.8.5
-dbus set koolproxyR_version=900.8.5
+dbus set softcenter_module_koolproxyR_version=900.8.6
+dbus set koolproxyR_version=900.8.6
 
 [ "$koolproxy_enable" == "1" ] && sh $KSROOT/koolproxyR/kp_config.sh restart

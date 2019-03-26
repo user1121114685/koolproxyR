@@ -2,6 +2,6 @@
 0|daily.txt|https://kprule.com/daily.txt|每日规则
 0|kp.dat|https://kprule.com/kp.dat|视频规则
 0|user.txt||自定义规则
-0|easylistchina.txt|https://kprule.com/easylistchina.txt|ABP规则
-0|chengfeng.txt|https://kprule.com/chengfeng.txt|乘风规则
+0|easylistchina.txt|https://easylist-downloads.adblockplus.org/easylistchina.txt|ABP规则
+0|chengfeng.txt|https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt|乘风规则
 0|fanboy-annoyance.txt|https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt|Fanboy规则
