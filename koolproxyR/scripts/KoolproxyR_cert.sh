@@ -2,9 +2,9 @@
 
 export KSROOT=/koolshare
 source $KSROOT/scripts/base.sh
-eval `dbus export koolproxy_`
+eval `dbus export koolproxyR_`
 alias echo_date='echo 【$(date +%Y年%m月%d日\ %X)】:'
-LOG_FILE=/tmp/upload/kp_log.txt
+LOG_FILE=/tmp/upload/kpr_log.txt
 CA_DIR=/tmp/upload/CA/
 echo "" > $LOG_FILE
 
@@ -46,7 +46,7 @@ stop_koolproxy(){
 restart_koolproxy(){
 	
 	echo_date 重启koolproxy主进程！
-	[ "$koolproxy_mode" == "3" ] && EXT_ARG="-e" || EXT_ARG=""
+	[ "$koolproxyR_mode" == "3" ] && EXT_ARG="-e" || EXT_ARG=""
 	cd $KSROOT/koolproxy && koolproxy $EXT_ARG --mark -d
 }
 

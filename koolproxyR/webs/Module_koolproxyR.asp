@@ -68,7 +68,7 @@ No part of this file may be used without permission.
 		}
 		kpacl.fieldValuesToData = function( row ) {
 			var f = fields.getAll( row );
-			//alert(dbus["koolproxy_portctrl_mode"]);
+			//alert(dbus["koolproxyR_portctrl_mode"]);
 			if (f[0].value){
 				return [ f[0].value, f[1].value, f[2].value, f[3].value ];
 			}else{
@@ -137,15 +137,15 @@ No part of this file may be used without permission.
 
 			this.headerSet( [ '主机别名', '主机IP地址', 'MAC地址', '过滤模式控制' ] );
 //			this.footerSet( [ '', '', '', ('')]);
-			if(typeof(dbus["koolproxy_acl_list"]) != "undefined" ){
-				var s = dbus["koolproxy_acl_list"].split( '>' );
+			if(typeof(dbus["koolproxyR_acl_list"]) != "undefined" ){
+				var s = dbus["koolproxyR_acl_list"].split( '>' );
 			}else{
 				var s =""
 				return false;
 			}
-//			dbus.koolproxy_acl_mode = E('_koolproxy_acl_mode').value;
-//			if(typeof(dbus["koolproxy_acl_mode"]) != "undefined" ){
-//			E("_koolproxy_acl_mode").value = dbus["koolproxy_acl_mode"];
+//			dbus.koolproxyR_acl_mode = E('_koolproxyR_acl_mode').value;
+//			if(typeof(dbus["koolproxyR_acl_mode"]) != "undefined" ){
+//			E("_koolproxyR_acl_mode").value = dbus["koolproxyR_acl_mode"];
 //			}
 			for ( var i = 0; i < s.length; ++i ) {
 				var t = s[ i ].split( '<' );
@@ -161,7 +161,7 @@ No part of this file may be used without permission.
 			//kpacl.setup(dbus);
 			set_version();
 			get_user_txt();
-			$("#_koolproxy_log").click(
+			$("#_koolproxyR_log").click(
 				function() {
 					x = -1;
 			});
@@ -170,7 +170,7 @@ No part of this file may be used without permission.
 		}
 		function get_arp_list(){
 			var id = parseInt(Math.random() * 100000000);
-			var postData1 = {"id": id, "method": "KoolProxy_getarp.sh", "params":[], "fields": ""};
+			var postData1 = {"id": id, "method": "KoolProxyR_getarp.sh", "params":[], "fields": ""};
 			$.ajax({
 				type: "POST",
 				url: "/_api/",
@@ -182,14 +182,14 @@ No part of this file may be used without permission.
 					if (response){
 						get_dbus_data();
 						//var s2 = response.result.split( '>' );
-						var s2 = dbus["koolproxy_arp"].split( '>' );
+						var s2 = dbus["koolproxyR_arp"].split( '>' );
 						//console.log("s2", s2);
 						for ( var i = 0; i < s2.length; ++i ) {
 							option_arp_local[i] = [s2[ i ].split( '<' )[0],"【" + s2[ i ].split( '<' )[0] + "】",s2[ i ].split( '<' )[1],s2[ i ].split( '<' )[2]];
 						}
 						
 						//console.log("option_arp_local", option_arp_local);
-						var s3 = dbus["koolproxy_acl_list"].split( '>' );
+						var s3 = dbus["koolproxyR_acl_list"].split( '>' );
 						//console.log("s3", s3);
 						for ( var i = 0; i < s3.length -1; ++i ) {
 							option_arp_web[i] = [s3[ i ].split( '<' )[0],"【" + s3[ i ].split( '<' )[0] + "】",s3[ i ].split( '<' )[1],s3[ i ].split( '<' )[2]];
@@ -221,7 +221,7 @@ No part of this file may be used without permission.
 		function get_dbus_data(){
 			$.ajax({
 			  	type: "GET",
-			 	url: "/_api/koolproxy_",
+			 	url: "/_api/koolproxyR_",
 			  	dataType: "json",
 			  	async:false,
 			 	success: function(data){
@@ -231,8 +231,8 @@ No part of this file may be used without permission.
 			});
 		}
 		function get_run_status(){
-			var id1 = parseInt(Math.random() * 100000000);
-			var postData1 = {"id": id1, "method": "KoolProxy_status.sh", "params":[2], "fields": ""};
+			var id5 = parseInt(Math.random() * 100000000);
+			var postData1 = {"id": id5, "method": "KoolProxyR_status.sh", "params":[2], "fields": ""};
 			$.ajax({
 				type: "POST",
 				cache:false,
@@ -243,24 +243,24 @@ No part of this file may be used without permission.
 					if(softcenter == 1){
 						return false;
 					}
-					document.getElementById("_koolproxy_status").innerHTML = response.result.split("@@")[0];
-					document.getElementById("_koolproxy_rule_status").innerHTML = response.result.split("@@")[1];
+					document.getElementById("_koolproxyR_status").innerHTML = response.result.split("@@")[0];
+					document.getElementById("_koolproxyR_rule_status").innerHTML = response.result.split("@@")[1];
 					setTimeout("get_run_status();", 1000);
 				},
 				error: function(){
 					if(softcenter == 1){
 						return false;
 					}
-					document.getElementById("_koolproxy_status").innerHTML = "获取运行状态失败！";
-					document.getElementById("_koolproxy_rule_status").innerHTML = "获取规则状态失败！";
+					document.getElementById("_koolproxyR_status").innerHTML = "获取运行状态失败！";
+					document.getElementById("_koolproxyR_rule_status").innerHTML = "获取规则状态失败！";
 					setTimeout("get_run_status();", 500);
 				}
 			});
 		}
 		
 		function get_rules_status(){
-			var id2 = parseInt(Math.random() * 100000000);
-			var postData2 = {"id": id2, "method": "KoolProxy_rules_status.sh", "params":[2], "fields": ""};
+			var id6 = parseInt(Math.random() * 100000000);
+			var postData2 = {"id": id6, "method": "KoolProxyR_rules_status.sh", "params":[2], "fields": ""};
 			$.ajax({
 				type: "POST",
 				cache:false,
@@ -271,14 +271,14 @@ No part of this file may be used without permission.
 					if(softcenter == 1){
 						return false;
 					}
-					document.getElementById("_koolproxy_third_rule_status").innerHTML = response.result.split("@@");
+					document.getElementById("_koolproxyR_third_rule_status").innerHTML = response.result.split("@@");
 					setTimeout("get_rules_status();", 20000);
 				},
 				error: function(){
 					if(softcenter == 1){
 						return false;
 					}
-					document.getElementById("_koolproxy_third_rule_status").innerHTML = "获取规则状态失败！";
+					document.getElementById("_koolproxyR_third_rule_status").innerHTML = "获取规则状态失败！";
 					setTimeout("get_rules_status();", 10000);
 				}
 			});
@@ -293,47 +293,90 @@ No part of this file may be used without permission.
 		function find_github(){
 			window.open("https://github.com/user1121114685/koolproxyR.git");
 		}
-		function join_KP(){
-			window.open("https://koolproxy.io");
+		function update_KPR(){
+			// let data_version = '';
+			// $.ajax({
+			// 	url: "https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version",
+			// 	method: 'GET',
+			// 	async: true,
+			// 	cache: false,
+			// 	success: (resp) => {
+			// 		let data_version = resp.split('\n');
+			// 		var kpr_installing_md5 = data_version[0];
+			// 		var kpr_installing_version = data_version[1];
+			// 		var postData = {"id":2, "method":"ks_app_install.sh", "params":[], "fields":{"softcenter_home_url":"https://raw.githubusercontent.com/user1121114685/koolproxyR/master","softcenter_installing_todo":"koolproxyR","softcenter_installing_tar_url":"koolproxyR.tar.gz","softcenter_installing_md5": kpr_installing_md5,"softcenter_installing_version": kpr_installing_version,"koolss_title":"koolproxyR"}};
+			// 		$.ajax({
+			// 			type: "POST",
+			// 			url: "/_api/",
+			// 			async: true,
+			// 			cache:false,
+			// 			data: JSON.stringify(postData),
+			// 			dataType: "json",
+			// 			success: function(response){
+			// 				if(response){
+			// 					setTimeout("window.location.reload()", 500);
+			// 					return true;
+			// 				}
+			// 			}
+			// 		});
+
+			// 	}
+			// });
+			var id2 = parseInt(Math.random() * 100000000);
+			var postData2 = {"id": id2, "method": "KoolProxyR_update_now.sh", "params":[], "fields": ""};
+			showMsg("msg_warring","正在提交数据！","<b>等待后台运行完毕，请不要刷新本页面！</b>");
+			$.ajax({
+				url: "/_api/",
+				cache:false,
+				type: "POST",
+				dataType: "json",
+				data: JSON.stringify(postData2),
+				error: function(){
+					showMsg("msg_error","失败","<b>当前系统存在异常查看系统日志！</b>");
+				}
+			});
+			reload = 1;
+			tabSelect("app7");
+
 		}
 		function issues_KP(){
-			window.open("https://uyzeda.fanqier.cn/f/v5mhk3");
+			window.open("https://github.com/user1121114685/koolproxyR/issues/new");
 		}
 		function verifyFields(){
-			var a = E('_koolproxy_enable').checked;
-//			var f = (E('_koolproxy_reboot').value == '1');
-//			var g = (E('_koolproxy_reboot').value == '2');
-//			var h = (E('_koolproxy_mode').value == '2');
-			var h = (E('_koolproxy_mode_enable').value == '0');
-			var s = (E('_koolproxy_mode_enable').value == '1');
-			var x = (E('_koolproxy_port').value == '1');
-//			var o = (E('_koolproxy_mode').value == '5');
-			var p = (E('_koolproxy_bp_port').value);
-			E('_koolproxy_mode_enable').disabled = !a;
-			E('_koolproxy_port').disabled = !a;			
-			E('_koolproxy_mode').disabled = !a;
-			E('_koolproxy_base_mode').disabled = !a;		
-//			E('_koolproxy_bp_port').disabled = !a;
-//			E('_koolproxy_reboot').disabled = !a;
+			var a = E('_koolproxyR_enable').checked;
+//			var f = (E('_koolproxyR_reboot').value == '1');
+//			var g = (E('_koolproxyR_reboot').value == '2');
+//			var h = (E('_koolproxyR_mode').value == '2');
+			var h = (E('_koolproxyR_mode_enable').value == '0');
+			var s = (E('_koolproxyR_mode_enable').value == '1');
+			var x = (E('_koolproxyR_port').value == '1');
+//			var o = (E('_koolproxyR_mode').value == '5');
+			var p = (E('_koolproxyR_bp_port').value);
+			E('_koolproxyR_mode_enable').disabled = !a;
+			E('_koolproxyR_port').disabled = !a;			
+			E('_koolproxyR_mode').disabled = !a;
+			E('_koolproxyR_base_mode').disabled = !a;		
+//			E('_koolproxyR_bp_port').disabled = !a;
+//			E('_koolproxyR_reboot').disabled = !a;
 			E('_download_cert').disabled = !a;
-			elem.display(PR('_koolproxy_mode'), s);
-			elem.display(PR('_koolproxy_base_mode'), h);
-//			elem.display('_koolproxy_reboot_hour', a && f);
-//			elem.display('koolproxy_reboot_hour_suf', a && f);
-//			elem.display('koolproxy_reboot_hour_pre', a && f);
-//			elem.display('_koolproxy_reboot_inter_hour', a && g);
-//			elem.display('koolproxy_reboot_inter_hour_suf', a && g);
-//			elem.display('koolproxy_reboot_inter_hour_pre', a && g);
+			elem.display(PR('_koolproxyR_mode'), s);
+			elem.display(PR('_koolproxyR_base_mode'), h);
+//			elem.display('_koolproxyR_reboot_hour', a && f);
+//			elem.display('koolproxyR_reboot_hour_suf', a && f);
+//			elem.display('koolproxyR_reboot_hour_pre', a && f);
+//			elem.display('_koolproxyR_reboot_inter_hour', a && g);
+//			elem.display('koolproxyR_reboot_inter_hour_suf', a && g);
+//			elem.display('koolproxyR_reboot_inter_hour_pre', a && g);
 			elem.display('readme_port', x);
-//			elem.display(PR('_koolproxy_host'), h);
-			if (dbus["koolproxy_portctrl_mode"]=="1"){
+//			elem.display(PR('_koolproxyR_host'), h);
+			if (dbus["koolproxyR_portctrl_mode"]=="1"){
 				var z = true;
 			}else{
 				var z = false;
 				x = false;
 			}
-			elem.display(PR('_koolproxy_port'), z);
-			elem.display(PR('_koolproxy_bp_port'), x);
+			elem.display(PR('_koolproxyR_port'), z);
+			elem.display(PR('_koolproxyR_bp_port'), x);
 		}
 
 		function tabSelect(obj){
@@ -374,12 +417,12 @@ No part of this file may be used without permission.
 		}
 
 		function save(){
-			var KP = document.getElementById('_koolproxy_enable').checked==false;			
-			var R1 = document.getElementById('_koolproxy_oline_rules').checked==false;
-			var R2 = document.getElementById('_koolproxy_easylist_rules').checked==false;
-			var R3 = document.getElementById('_koolproxy_abx_rules').checked==false;
-			var R4 = document.getElementById('_koolproxy_fanboy_rules').checked==false;
-			var R5 = document.getElementById('_koolproxy_video_rules').checked==false;
+			var KP = document.getElementById('_koolproxyR_enable').checked==false;			
+			var R1 = document.getElementById('_koolproxyR_oline_rules').checked==false;
+			var R2 = document.getElementById('_koolproxyR_easylist_rules').checked==false;
+			var R3 = document.getElementById('_koolproxyR_abx_rules').checked==false;
+			var R4 = document.getElementById('_koolproxyR_fanboy_rules').checked==false;
+			var R5 = document.getElementById('_koolproxyR_video_rules').checked==false;
 
 			if (KP){
 				
@@ -389,47 +432,47 @@ No part of this file may be used without permission.
 			}
 			verifyFields();
 			// collect basic data
-			dbus.koolproxy_enable = E('_koolproxy_enable').checked ? '1':'0';
-			dbus.koolproxy_mode_enable = E('_koolproxy_mode_enable').value;			
-//			dbus.koolproxy_host = E('_koolproxy_host').checked ? '1':'0';
-			dbus.koolproxy_base_mode = E('_koolproxy_base_mode').value;			
-			dbus.koolproxy_mode = E('_koolproxy_mode').value;
-			dbus.koolproxy_port = E('_koolproxy_port').value;
-			dbus.koolproxy_bp_port = E('_koolproxy_bp_port').value;
-//			dbus.koolproxy_reboot = E('_koolproxy_reboot').value;
-//			dbus.koolproxy_reboot_hour = E('_koolproxy_reboot_hour').value;
-//			dbus.koolproxy_reboot_inter_hour = E('_koolproxy_reboot_inter_hour').value;
-			dbus.koolproxy_oline_rules = E("_koolproxy_oline_rules").checked ? "1" : "0";
-			dbus.koolproxy_video_rules = E("_koolproxy_video_rules").checked ? "1" : "0";
-			dbus.koolproxy_easylist_rules = E("_koolproxy_easylist_rules").checked ? "1" : "0";
-			dbus.koolproxy_abx_rules = E("_koolproxy_abx_rules").checked ? "1" : "0";
-			dbus.koolproxy_fanboy_rules = E("_koolproxy_fanboy_rules").checked ? "1" : "0";
-			dbus["koolproxy_custom_rule"] = Base64.encode(document.getElementById("_koolproxy_custom_rule").value);
+			dbus.koolproxyR_enable = E('_koolproxyR_enable').checked ? '1':'0';
+			dbus.koolproxyR_mode_enable = E('_koolproxyR_mode_enable').value;			
+//			dbus.koolproxyR_host = E('_koolproxyR_host').checked ? '1':'0';
+			dbus.koolproxyR_base_mode = E('_koolproxyR_base_mode').value;			
+			dbus.koolproxyR_mode = E('_koolproxyR_mode').value;
+			dbus.koolproxyR_port = E('_koolproxyR_port').value;
+			dbus.koolproxyR_bp_port = E('_koolproxyR_bp_port').value;
+//			dbus.koolproxyR_reboot = E('_koolproxyR_reboot').value;
+//			dbus.koolproxyR_reboot_hour = E('_koolproxyR_reboot_hour').value;
+//			dbus.koolproxyR_reboot_inter_hour = E('_koolproxyR_reboot_inter_hour').value;
+			dbus.koolproxyR_oline_rules = E("_koolproxyR_oline_rules").checked ? "1" : "0";
+			dbus.koolproxyR_video_rules = E("_koolproxyR_video_rules").checked ? "1" : "0";
+			dbus.koolproxyR_easylist_rules = E("_koolproxyR_easylist_rules").checked ? "1" : "0";
+			dbus.koolproxyR_abx_rules = E("_koolproxyR_abx_rules").checked ? "1" : "0";
+			dbus.koolproxyR_fanboy_rules = E("_koolproxyR_fanboy_rules").checked ? "1" : "0";
+			dbus["koolproxyR_custom_rule"] = Base64.encode(document.getElementById("_koolproxyR_custom_rule").value);
 			// collect data from acl pannel
 			var data2 = kpacl.getAllData();
 			if(data2.length > 0){
-				dbus["koolproxy_acl_node_max"] = data2.length;
+				dbus["koolproxyR_acl_node_max"] = data2.length;
 			}else{
-				dbus["koolproxy_acl_node_max"] = "";
+				dbus["koolproxyR_acl_node_max"] = "";
 			}
 			var acllist = '';
 			if(data2.length > 0){
 				for ( var i = 0; i < data2.length; ++i ) {
 					acllist += data2[ i ].join( '<' ) + '>';
 				}
-				dbus["koolproxy_acl_list"] = acllist;
+				dbus["koolproxyR_acl_list"] = acllist;
 			}else{
-				dbus["koolproxy_acl_list"] = " ";
+				dbus["koolproxyR_acl_list"] = " ";
 			}
-			if(dbus["koolproxy_acl_list"].indexOf('<5')!=-1){
-				dbus.koolproxy_portctrl_mode = '1';
+			if(dbus["koolproxyR_acl_list"].indexOf('<5')!=-1){
+				dbus.koolproxyR_portctrl_mode = '1';
 			}else{
-				dbus.koolproxy_portctrl_mode = '0';
+				dbus.koolproxyR_portctrl_mode = '0';
 			}
 
 			// post data
 			var id3 = parseInt(Math.random() * 100000000);
-			var postData3 = {"id": id3, "method": "KoolProxy_config.sh", "params":["restart"], "fields": dbus};
+			var postData3 = {"id": id3, "method": "KoolProxyR_config.sh", "params":["restart"], "fields": dbus};
 			showMsg("msg_warring","正在提交数据！","<b>等待后台运行完毕，请不要刷新本页面！</b>");
 			$.ajax({
 				url: "/_api/",
@@ -437,22 +480,24 @@ No part of this file may be used without permission.
 				type: "POST",
 				dataType: "json",
 				data: JSON.stringify(postData3),
-				error: function(){
-					showMsg("msg_error","失败","<b>当前系统存在异常查看系统日志！</b>");
+				success: function(response){
+					if(response){
+						setTimeout("window.location.reload()", 500);
+						return true;
+					}
 				}
 			});
-			reload = 1;
 			tabSelect("app7");
 		}
 		
 		function get_log(){
 			$.ajax({
-				url: '/_temp/kp_log.txt',
+				url: '/_temp/kpr_log.txt',
 				type: 'GET',
 				cache:false,
 				dataType: 'text',
 				success: function(response) {
-					var retArea = E("_koolproxy_log");
+					var retArea = E("_koolproxyR_log");
 					if (response.search("XU6J03M6") != -1) {
 						retArea.value = response.replace("XU6J03M6", " ");
 						retArea.scrollTop = retArea.scrollHeight;
@@ -487,7 +532,7 @@ No part of this file may be used without permission.
 				cache:false,
 				dataType: 'text',
 				success: function(res) {
-					$('#_koolproxy_custom_rule').val(res);
+					$('#_koolproxyR_custom_rule').val(res);
 				}
 			});
 		}
@@ -545,7 +590,7 @@ No part of this file may be used without permission.
 				contentType: false,
 				complete:function(res){
 					if(res.status==200){
-						kp_cert('Koolproxy_cert.sh', 2);
+						kp_cert('KoolproxyR_cert.sh', 2);
 					}
 				}
 			});
@@ -555,14 +600,14 @@ No part of this file may be used without permission.
 			if (arg == 5){
 				shellscript = 'KoolProxyR_rule_update.sh';
 			}
-			var id6 = parseInt(Math.random() * 100000000);
-			var postData = {"id": id6, "method": shellscript, "params":[], "fields": ""};
+			var id1 = parseInt(Math.random() * 100000000);
+			var postData1 = {"id": id1, "method": shellscript, "params":[], "fields": ""};
 			$.ajax({
 				type: "POST",
 				url: "/_api/",
 				async: true,
 				cache:false,
-				data: JSON.stringify(postData),
+				data: JSON.stringify(postData1),
 				dataType: "json",
 				success: function(response){
 					if(response){
@@ -576,35 +621,36 @@ No part of this file may be used without permission.
 
 
 		function set_version() {
-			$('#_koolproxy_version').html('<font color="#1bbf35">KoolProxyR</font>');
+			$('#_koolproxyR_version').html('<font color="#1bbf35">KoolProxyR</font>');
 		}
 
 	</script>
 
 	<div class="box">
 		<div class="heading">
-		<span id="_koolproxy_version"></span>
+		<span id="_koolproxyR_version"></span>
 		<a href="#/soft-center.asp" class="btn" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">返回</a>
 		</div>
 		<div class="content">
-			<span id="msg" class="col-sm-9" style="margin-top:10px;width:700px">koolproxyR具有全部的koolproxy功能，并且不断增加新的功能。是koolproxy的重制版本，请和KP二选一。</span>
+			<span id="msg" class="col-sm-6" style="margin-top:10px;width:700px">koolproxyR具有全部的koolproxy功能，并且不断增加新的功能。是koolproxy的重制版本，请和KP二选一。</span>
+			<span id="msg1" class="col-sm-12" style="margin-top:10px;width:700px">责任申明：koolproxy二进制文件及koolproxy官方规则归koolproxy官方所有。</span>
 		</div>	
 	</div>
 	<div class="box" style="margin-top: 0px;">
 		<div class="heading">
 		</div>
 		<div class="content">
-			<div id="koolproxy_switch_pannel" class="section" style="margin-top: -20px;"></div>
+			<div id="koolproxyR_switch_pannel" class="section" style="margin-top: -20px;"></div>
 			<script type="text/javascript">
-				$('#koolproxy_switch_pannel').forms([
-					{ title: '开启KoolProxyR', name:'koolproxy_enable',type:'checkbox',value: dbus.koolproxy_enable == 1 }
+				$('#koolproxyR_switch_pannel').forms([
+					{ title: '开启KoolProxyR', name:'koolproxyR_enable',type:'checkbox',value: dbus.koolproxyR_enable == 1 }
 				]);
 			</script>
 			<hr />
-			<fieldset id="koolproxy_status_pannel">
+			<fieldset id="koolproxyR_status_pannel">
 				<label class="col-sm-3 control-left-label" for="_undefined">KoolProxyR运行状态</label>
 				<div class="col-sm-9" style="margin-top:2px">
-					<font id="_koolproxy_status" name="_koolproxy_status" color="#1bbf35">正在检查运行状态...</font>
+					<font id="_koolproxyR_status" name="_koolproxyR_status" color="#1bbf35">正在检查运行状态...</font>
 				</div>
 			</fieldset>
 		</div>
@@ -623,37 +669,38 @@ No part of this file may be used without permission.
 			<div id="identification" class="section"></div>
 			<script type="text/javascript">
 				$('#identification').forms([
-//					{ title: '开启Koolproxy', name:'koolproxy_enable',type:'checkbox',value: dbus.koolproxy_enable == 1 },
-//					{ title: 'Koolproxy运行状态', text: '<font id="_koolproxy_status" name=_koolproxy_status color="#1bbf35">正在获取运行状态...</font>' },
-//					{ title: 'Koolproxy规则状态', text: '<font id="_koolproxy_rule_status" name=_koolproxy_status color="#1bbf35">正在获取规则状态...</font>' },
-					{ title: '开启进阶模式', name:'koolproxy_mode_enable',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxy_mode_enable || "0" },
-					{ title: '过滤模式', name:'koolproxy_base_mode',type:'select',options:[['0','不过滤'],['1','全局模式'],['2','黑名单模式']],value: dbus.koolproxy_base_mode || "1" },
-					{ title: '过滤模式', name:'koolproxy_mode',type:'select',options:[['0','不过滤'],['1','全局模式'],['2','带HTTPS的全局模式'],['3','黑名单模式'],['4','带HTTPS的黑名单模式']],value: dbus.koolproxy_mode || "1" },
-					{ title: '端口控制', name:'koolproxy_port',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxy_port || "0",suffix: '<lable id="readme_port"><font color="#FF0000">【端口控制】&nbsp;&nbsp;只有全端口模式下才生效</font></lable>'},
-					{ title: '例外端口', name:'koolproxy_bp_port',type:'text',style:'input_style', maxlen:50, value:dbus.koolproxy_bp_port ,suffix: '<font color="#FF0000">例：</font><font color="#FF0000">【单端口】：80【多端口】：80,443</font>'},
-//					{ title: '开启Adblock Plus Host', name:'koolproxy_host',type:'checkbox',value: dbus.koolproxy_host == 1, suffix: '<lable id="_koolproxy_host_nu"></lable>' },
+//					{ title: '开启Koolproxy', name:'koolproxyR_enable',type:'checkbox',value: dbus.koolproxyR_enable == 1 },
+//					{ title: 'Koolproxy运行状态', text: '<font id="_koolproxyR_status" name=_koolproxyR_status color="#1bbf35">正在获取运行状态...</font>' },
+//					{ title: 'Koolproxy规则状态', text: '<font id="_koolproxyR_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },
+					{ title: '开启进阶模式', name:'koolproxyR_mode_enable',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_mode_enable || "0" },
+					{ title: '过滤模式', name:'koolproxyR_base_mode',type:'select',options:[['0','不过滤'],['1','全局模式'],['2','黑名单模式']],value: dbus.koolproxyR_base_mode || "1" },
+					{ title: '过滤模式', name:'koolproxyR_mode',type:'select',options:[['0','不过滤'],['1','全局模式'],['2','带HTTPS的全局模式'],['3','黑名单模式'],['4','带HTTPS的黑名单模式']],value: dbus.koolproxyR_mode || "1" },
+					{ title: '端口控制', name:'koolproxyR_port',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_port || "0",suffix: '<lable id="readme_port"><font color="#FF0000">【端口控制】&nbsp;&nbsp;只有全端口模式下才生效</font></lable>'},
+					{ title: '例外端口', name:'koolproxyR_bp_port',type:'text',style:'input_style', maxlen:50, value:dbus.koolproxyR_bp_port ,suffix: '<font color="#FF0000">例：</font><font color="#FF0000">【单端口】：80【多端口】：80,443</font>'},
+//					{ title: '开启Adblock Plus Host', name:'koolproxyR_host',type:'checkbox',value: dbus.koolproxyR_host == 1, suffix: '<lable id="_koolproxyR_host_nu"></lable>' },
 //					{ title: '插件自动重启', multi: [
-//						{ name:'koolproxy_reboot',type:'select',options:[['1','定时'],['2','间隔'],['0','关闭']],value: dbus.koolproxy_reboot || "0", suffix: ' &nbsp;&nbsp;' },
-//						{ name: 'koolproxy_reboot_hour', type: 'select', options: option_reboot_hour, value: dbus.koolproxy_reboot_hour || "", suffix: '<lable id="koolproxy_reboot_hour_suf">重启</lable>', prefix: '<span id="koolproxy_reboot_hour_pre" class="help-block"><lable>每天</lable></span>' },
-//						{ name: 'koolproxy_reboot_inter_hour', type: 'select', options: option_reboot_inter, value: dbus.koolproxy_reboot_inter_hour || "", suffix: '<lable id="koolproxy_reboot_inter_hour_suf">重启</lable>', prefix: '<span id="koolproxy_reboot_inter_hour_pre" class="help-block"><lable>每隔</lable></span>' }
+//						{ name:'koolproxyR_reboot',type:'select',options:[['1','定时'],['2','间隔'],['0','关闭']],value: dbus.koolproxyR_reboot || "0", suffix: ' &nbsp;&nbsp;' },
+//						{ name: 'koolproxyR_reboot_hour', type: 'select', options: option_reboot_hour, value: dbus.koolproxyR_reboot_hour || "", suffix: '<lable id="koolproxyR_reboot_hour_suf">重启</lable>', prefix: '<span id="koolproxyR_reboot_hour_pre" class="help-block"><lable>每天</lable></span>' },
+//						{ name: 'koolproxyR_reboot_inter_hour', type: 'select', options: option_reboot_inter, value: dbus.koolproxyR_reboot_inter_hour || "", suffix: '<lable id="koolproxyR_reboot_inter_hour_suf">重启</lable>', prefix: '<span id="koolproxyR_reboot_inter_hour_pre" class="help-block"><lable>每隔</lable></span>' }
 //					] },
 					{ title: '证书下载', suffix: ' <button id="_download_cert" onclick="download_cert();" class="btn btn-danger">证书下载 <i class="icon-download"></i></button>&nbsp;&nbsp;<button onclick="https_KP();" class="btn btn-success">HTTPS过滤教程</button>' },
-					{ title: 'KoolProxyR交流', suffix: ' <button id="_find_github" onclick="find_github();" class="btn">访问项目开源库</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="join_KP();" class="btn">访问官网</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="issues_KP();" class="btn btn-danger">广告反馈</button>' }
+					{ title: 'KoolProxyR交流', suffix: ' <button id="_find_github" onclick="find_github();" class="btn">开源地址</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR();" class="btn">更新插件</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="issues_KP();" class="btn btn-danger">建议及反馈</button>' },
+//					{ title: 'KoolProxy官方链接', suffix: ' <button id="_findkp_github" onclick="findkp_github();" class="btn">KoolProxy</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="KP_KP();" class="btn">KoolProxy官网</button>' }
+
 				]);
 			</script>
 		</div>
 	</div>
 	<div id="kp_mode_readme" class="box boxr1" style="margin-top: 15px;">
-	<div class="heading">过滤模式说明： <a class="pull-right" data-toggle="tooltip" title="Hide/Show Notes" href="javascript:toggleVisibility('notes');"><span id="sesdivnotesshowhide"><i class="icon-chevron-up"></i></span></a></div>
+	<div class="heading">贡献者列表（排名不分先后）： <a class="pull-right" data-toggle="tooltip" title="Hide/Show Notes" href="javascript:toggleVisibility('notes');"><span id="sesdivnotesshowhide"><i class="icon-chevron-up"></i></span></a></div>
 	<div class="section content" id="sesdivnotes">
-			<li>【进阶模式】不推荐新手或者第一次使用KoolProxy的用户使用。</li>		
-			<li>【不过滤】不过滤任何设备，除非你在访问控制里另外设置过滤模式。</li>
-			<li>【全局模式】只过滤80端口的流量并且是所有网站的流量都过滤。</li>
-			<li>【带HTTPS的全局模式】只过滤80和443端口的流量并且是所有网站的流量都过滤。</li>
-			<li>【黑名单模式】只过滤80端口流量并且是在黑名单内的网站流量。</li>
-			<li>【带HTTPS的黑名单模式】只过滤80和443端口流量并且是在黑名单内的网站流量。</li>
-			<li>【全端口模式】过滤包含80和443端口以外的所有端口流量并且是所有网站的流量都过滤。</li>
-			<li>【全端口模式】需要更强大的性能作为过滤的保障。</li>
+			<li>【本插件修改自】https://github.com/koolshare/ledesoft/tree/master/koolproxy</li>	
+			<li>【KoolProxy官网】https://koolproxy.io</li>	
+			<li>--------------------------------------------------------------------------</li>	
+			<li>【HouZi】来自koolproxy的开发者，感谢猴子对koolproxy及koolproxy规则所做的贡献。</li>		
+			<li>【XiaoBao】来自koolproxy的开发者，感谢小宝对koolproxy二进制文件所做的贡献。</li>
+			<li>【Fw867】来自koolshare的开发者，感谢Fw867对Openwrt X64软件中心所做的贡献。</li>
+			<li>--------------------------------------------------------------------------</li>	
 	</div>
 	</div>	
 	<div class="box boxr3">
@@ -685,7 +732,7 @@ No part of this file may be used without permission.
 			<script type="text/javascript">
 				y = Math.floor(docu.getViewSize().height * 0.75);
 				s = 'height:' + ((y > 300) ? y : 300) + 'px;display:block';
-				$('.section.user_rule').append('<textarea class="as-script" name="koolproxy_custom_rule" id="_koolproxy_custom_rule" wrap="off" style="max-width:100%; min-width: 100%; margin: 0; ' + s + '" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>');
+				$('.section.user_rule').append('<textarea class="as-script" name="koolproxyR_custom_rule" id="_koolproxyR_custom_rule" wrap="off" style="max-width:100%; min-width: 100%; margin: 0; ' + s + '" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>');
 			</script>
 		</div>
 			</div>
@@ -697,7 +744,7 @@ No part of this file may be used without permission.
 			<div id="kp_certificate_management" class="section"></div>
 			<script type="text/javascript">
 				$('#kp_certificate_management').forms([
-					{ title: '证书备份', suffix: '<button onclick="kp_cert(\'Koolproxy_cert.sh\', 1);" class="btn btn-success">证书备份 <i class="icon-download"></i></button>' },
+					{ title: '证书备份', suffix: '<button onclick="kp_cert(\'KoolproxyR_cert.sh\', 1);" class="btn btn-success">证书备份 <i class="icon-download"></i></button>' },
 					{ title: '证书恢复', suffix: '<input type="file" id="file" size="50">&nbsp;&nbsp;<button id="upload1" type="button"  onclick="restore_cert();" class="btn btn-danger">上传并恢复 <i class="icon-cloud"></i></button>' }
 				]);
 			</script>
@@ -709,26 +756,26 @@ No part of this file may be used without permission.
 			<div id="kp_rules_pannel" class="section"></div>
 			<script type="text/javascript">
 				$('#kp_rules_pannel').forms([
-					{ title: '绿坝规则状态', text: '<font id="_koolproxy_rule_status" name=_koolproxy_status color="#1bbf35">正在获取规则状态...</font>' },
-					{ title: '第三方规则状态', text: '<font id="_koolproxy_third_rule_status" name=_koolproxy_status color="#1bbf35">正在获取规则状态...</font>' },	
+					{ title: '绿坝规则状态', text: '<font id="_koolproxyR_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },
+					{ title: '第三方规则状态', text: '<font id="_koolproxyR_third_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },	
 					{ title: '默认规则订阅', multi: [
-					{ name: 'koolproxy_oline_rules',type:'checkbox',value: dbus.koolproxy_oline_rules == '1', suffix: '<lable id="_kp_oline_rules">绿坝规则（KP官方规则）</lable>&nbsp;&nbsp;' }
+					{ name: 'koolproxyR_oline_rules',type:'checkbox',value: dbus.koolproxyR_oline_rules == '1', suffix: '<lable id="_kp_oline_rules">绿坝规则（KP官方规则）</lable>&nbsp;&nbsp;' }
 					]},
 					{ title: '规则不是越多越好', multi: [
-						{ name: 'koolproxy_video_rules',type:'checkbox',value: dbus.koolproxy_video_rules == '1', suffix: '<lable id="_kp_video_rules">视频规则(KP官方规则)</lable>&nbsp;&nbsp;' },						
-						{ name: 'koolproxy_easylist_rules',type:'checkbox',value: dbus.koolproxy_easylist_rules == '1', suffix: '<lable id="_kp_easylist">ABP规则(中国简易规则)</lable>&nbsp;&nbsp;' },
-						{ name: 'koolproxy_abx_rules',type:'checkbox',value: dbus.koolproxy_abx_rules == '1', suffix: '<lable id="_kp_abx">乘风规则（等待有缘规则上架）</lable>&nbsp;&nbsp;' },
-						{ name: 'koolproxy_fanboy_rules',type:'checkbox',value: dbus.koolproxy_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">Fanboy规则（主打国外）</lable>&nbsp;&nbsp;' }
+						{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_video_rules">视频规则(KP官方规则)</lable>&nbsp;&nbsp;' },						
+						{ name: 'koolproxyR_easylist_rules',type:'checkbox',value: dbus.koolproxyR_easylist_rules == '1', suffix: '<lable id="_kp_easylist">ABP规则(等待有缘规则上架)</lable>&nbsp;&nbsp;' },
+						{ name: 'koolproxyR_abx_rules',type:'checkbox',value: dbus.koolproxyR_abx_rules == '1', suffix: '<lable id="_kp_abx">乘风规则（等待有缘规则上架）</lable>&nbsp;&nbsp;' },
+						{ name: 'koolproxyR_fanboy_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">Fanboy规则（主打国外）</lable>&nbsp;&nbsp;' }
 					]},	
 					{ title: '订阅规则更新', multi: [
 //						{ name: 'koolproxyR_basic_rule_update',type: 'select', options:[['0', '禁用'], ['1', '开启']], value: dbus.koolproxyR_basic_rule_update || "1", suffix: ' &nbsp;&nbsp;' },
 //						{ name: 'koolproxyR_basic_rule_update_day', type: 'select', options:option_day_time, value: dbus.koolproxyR_basic_rule_update_day || "7",suffix: ' &nbsp;&nbsp;' },
 //						{ name: 'koolproxyR_basic_rule_update_hr', type: 'select', options:option_hour_time, value: dbus.koolproxyR_basic_rule_update_hr || "3",suffix: ' &nbsp;&nbsp;' },
-						{ name:'koolproxyR_basic_koolproxy_update',type:'checkbox',value: dbus.koolproxyR_basic_koolproxy_update != 0, suffix: '<lable id="_koolproxyR_basic_koolproxy_update_txt">绿坝规则</lable>&nbsp;&nbsp;' },
+						{ name:'koolproxyR_basic_koolproxyR_update',type:'checkbox',value: dbus.koolproxyR_basic_koolproxyR_update != 0, suffix: '<lable id="_koolproxyR_basic_koolproxyR_update_txt">KP官方规则</lable>&nbsp;&nbsp;' },
 						{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update != 0, suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">ABP规则</lable>&nbsp;&nbsp;' },
 						{ name:'koolproxyR_basic_abx_update',type:'checkbox',value: dbus.koolproxyR_basic_abx_update != 0, suffix: '<lable id="_koolproxyR_basic_abx_update_txt">乘风规则</lable>&nbsp;&nbsp;' },
 						{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update != 0, suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
-						{ suffix: '<button id="_update_rules_now" style="margin-top:15px;" onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' }
+						{ suffix: '<button id="_update_rules_now" style="margin-top:5px;" onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' }
 					]}	
 				]);
 			</script>
@@ -753,7 +800,7 @@ No part of this file may be used without permission.
 				<script type="text/javascript">
 					y = Math.floor(docu.getViewSize().height * 0.55);
 					s = 'height:' + ((y > 300) ? y : 300) + 'px;display:block';
-					$('.section.kp_log').append('<textarea class="as-script" name="koolproxy_log" id="_koolproxy_log" wrap="off" style="max-width:100%; min-width: 100%; margin: 0; ' + s + '" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>');
+					$('.section.kp_log').append('<textarea class="as-script" name="koolproxyR_log" id="_koolproxyR_log" wrap="off" style="max-width:100%; min-width: 100%; margin: 0; ' + s + '" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>');
 				</script>
 			</div>
 		</div>

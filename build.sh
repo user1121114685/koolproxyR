@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.6"
+VERSION="900.8.7"
 TITLE=koolproxyR
 DESCRIPTION="听说KP还是自己掌握规则最舒服哟！"
 HOME_URL="Module_koolproxyR.asp"
@@ -14,7 +14,7 @@ wget https://kprule.com/koolproxy.txt
 wget https://kprule.com/daily.txt
 wget https://kprule.com/kp.dat
 wget https://kprule.com/user.txt
-wget https://easylist-downloads.adblockplus.org/easylistchina.txt
+# wget https://easylist-downloads.adblockplus.org/easylistchina.txt
 # wget -O chengfeng.txt https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt
 wget https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt
 

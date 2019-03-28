@@ -1,23 +1,54 @@
 #!/bin/sh
 export KSROOT=/koolshare
 source $KSROOT/scripts/base.sh
-eval `dbus export koolproxy_`
+eval `dbus export koolproxyR_`
 # mkdir -p /tmp/upload
 
+# 判断路由架构和平台
+case $(uname -m) in
+	armv7l)
+		logger "本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，arm平台不能安装！！！"
+		logger "退出KoolProxyR安装！"
+		exit 1
+	;;
+	mips)
+		logger "本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，mips平台不能安装！！！"
+		logger "退出KoolProxyR安装！"！
+		exit 1
+	;;
+	x86_64)
+		fw867=`cat /etc/banner|grep fw867`
+		if [ -d "/koolshare" ] && [ -n "$fw867" ];then
+			logger "固件平台【koolshare OpenWRT/LEDE x86_64】符合安装要求，开始安装插件！"
+		else
+			logger "本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，其它x86_64固件平台不能安装！！！"
+			logger "退出KoolProxyR安装！"
+			exit 1
+		fi
+	;;
+  *)
+		logger 本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，其它平台不能安装！！！
+  		logger "退出KoolProxyR安装！"
+		exit 1
+	;;
+esac
+
 # stop first
-[ "$koolproxy_enable" == "1" ] && sh $KSROOT/koolproxyR/kp_config.sh stop
+KP_ENBALE=`dbus get koolproxy_enable`
+[ "$KP_ENBALE" == "1" ] && sh $KSROOT/koolproxy/kp_config.sh stop
+[ "$koolproxyR_enable" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh stop
 
 # remove old files
 rm -rf $KSROOT/bin/koolproxy >/dev/null 2>&1
-rm -rf $KSROOT/res/icon-koolproxy.png >/dev/null 2>&1
 rm -rf $KSROOT/scripts/KoolproxyR_* >/dev/null 2>&1
-rm -rf $KSROOT/webs/module_Koolproxy.asp >/dev/null 2>&1
+rm -rf $KSROOT/webs/module_KoolproxyR.asp >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/koolproxy >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/*.sh >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/data/gen_ca.sh >/dev/null 2>&1
-rm -rf $KSROOT/koolproxyR/data/koolproxy_ipset.conf >/dev/null 2>&1
+rm -rf $KSROOT/koolproxyR/data/koolproxyR_ipset.conf >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/data/openssl.cnf >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/data/version >/dev/null 2>&1
+mv $KSROOT/koolproxyR/data/rules/user.txt /tmp/user.txt.tmp
 rm -rf $KSROOT/koolproxyR/data/rules/* >/dev/null 2>&1
 
 # copy new files
@@ -52,20 +83,20 @@ ln -sf  $KSROOT/koolproxyR/koolproxy  $KSROOT/bin/koolproxy
 rm -rf /tmp/koolproxy* >/dev/null 2>&1
 
 # remove old files if exist
-find /etc/rc.d/ -name *koolproxy.sh* | xargs rm -rf
-[ ! -L "/etc/rc.d/S93koolproxy.sh" ] && ln -sf $KSROOT/init.d/S93koolproxy.sh /etc/rc.d/S93koolproxy.sh
+find /etc/rc.d/ -name *koolproxyR.sh* | xargs rm -rf
+[ ! -L "/etc/rc.d/S93koolproxyR.sh" ] && ln -sf $KSROOT/init.d/S93koolproxyR.sh /etc/rc.d/S93koolproxyR.sh
 
-[ -z "$koolproxy_mode" ] && dbus set koolproxy_mode="1"
-[ -z "$koolproxy_acl_default" ] && dbus set koolproxy_acl_default="1"
-[ -z "$koolproxy_acl_list" ] && dbus set koolproxy_acl_list=" "
-[ -z "$koolproxy_arp" ] && dbus set koolproxy_arp=" "
+[ -z "$koolproxyR_mode" ] && dbus set koolproxyR_mode="1"
+[ -z "$koolproxyR_acl_default" ] && dbus set koolproxyR_acl_default="1"
+[ -z "$koolproxyR_acl_list" ] && dbus set koolproxyR_acl_list=" "
+[ -z "$koolproxyR_arp" ] && dbus set koolproxyR_arp=" "
 
 # add icon into softerware center
 dbus set softcenter_module_koolproxyR_description="KP自定义规则最舒服！"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=900.8.6
-dbus set koolproxyR_version=900.8.6
+dbus set softcenter_module_koolproxyR_version=900.8.7
+dbus set koolproxyR_version=900.8.7
 
-[ "$koolproxy_enable" == "1" ] && sh $KSROOT/koolproxyR/kp_config.sh restart
+[ "$koolproxyR_enable" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh restart

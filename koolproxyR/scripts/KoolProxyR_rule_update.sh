@@ -1,11 +1,13 @@
 #!/bin/sh
 export KSROOT=/koolshare
 source $KSROOT/scripts/base.sh
-eval `dbus export koolproxy_`
+eval `dbus export koolproxyR_`
 alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 
+url_daily="https://kprule.com/daily.txt"
+url_kp="https://kprule.com/kp.dat"
 url_koolproxy="https://kprule.com/koolproxy.txt"
-url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
+url_easylist=""
 url_abx=""
 url_fanboy="https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt"
 
@@ -14,7 +16,7 @@ update_rule(){
 	echo_date 开始更新koolproxyR规则，请等待...
 	
 	# update KP官方规则
-	if [ "$koolproxyR_basic_koolproxy_update" == "1" ] || [ -n "$1" ];then
+	if [ "$koolproxyR_basic_koolproxyR_update" == "1" ] || [ -n "$1" ];then
 		echo_date " ---------------------------------------------------------------------------------------"
 		wget --no-check-certificate --timeout=8 -qO - $url_koolproxy > /tmp/koolproxy.txt
 		rules_date_local=`cat $KSROOT/koolproxyR/data/rules/koolproxy.txt  | sed -n '3p'|awk '{print $3,$4}'`
@@ -24,6 +26,8 @@ update_rule(){
 				echo_date 检测到新版本 koolproxy规则，开始更新...
 				echo_date 将临时文件覆盖到原始koolproxy规则文件
 				mv /tmp/koolproxy.txt $KSROOT/koolproxyR/data/rules/koolproxy.txt
+				wget --no-check-certificate --timeout=8 -qO - $url_daily > $KSROOT/koolproxyR/data/rules/daily.txt
+				wget --no-check-certificate --timeout=8 -qO - $url_kp > $KSROOT/koolproxyR/data/rules/kp.dat
 			else
 				echo_date 检测到koolproxy规则本地版本号和在线版本号相同，那还更新个毛啊!
 			fi
@@ -99,14 +103,14 @@ update_rule(){
 	# reboot koolproxyR
 
 	echo_date 自动重启koolproxyR，以应用新的规则文件！请稍后！
-	sh $KSROOT/koolproxyR/kp_config.sh restart
+	sh $KSROOT/koolproxyR/kpr_config.sh restart
 	echo =======================================================================================================
 }
 if [ -n "$1" ];then
-	update_rule "$1" > /tmp/upload/kp_log.txt
-	echo XU6J03M6 >> /tmp/upload/kp_log.txt
+	update_rule "$1" > /tmp/upload/kpr_log.txt
+	echo XU6J03M6 >> /tmp/upload/kpr_log.txt
 	http_response "$1"
 else
-	update_rule > /tmp/upload/kp_log.txt
-	echo XU6J03M6 >> /tmp/upload/kp_log.txt
+	update_rule > /tmp/upload/kpr_log.txt
+	echo XU6J03M6 >> /tmp/upload/kpr_log.txt
 fi

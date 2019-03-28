@@ -11,7 +11,7 @@ export KSROOT=/koolshare
 source $KSROOT/scripts/base.sh
 source $KSROOT/bin/helper.sh
 
-KP_ENABLE=`dbus get koolproxy_enable`
+KP_ENABLE=`dbus get koolproxyR_enable`
 SS_ENABLE=`dbus get ss_basic_enable`
 V2_ENABLE=`dbus get v2ray_basic_enable`
 KG_ENABLE=`dbus get koolgame_basic_enable`
