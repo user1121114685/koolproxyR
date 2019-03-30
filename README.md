@@ -1,10 +1,10 @@
 # koolproxyR 项目
 你可以自由提交、修改、让这个项目越来越好！
 ---
-1.项目缺少规则，目前就比官方多一个fanboy规则。
-规则要求：要求兼容KP规则，或者ABP规则，能在路由器上使用的规则，一般是ABP简单规则。
-2.项目缺少大佬，各种能为此项目贡献一点点的大佬。
-大佬，可怜可怜项目吧，给项目加点瓦？我会在插件首页写上你的名字的！
+1.项目缺少规则，目前就比官方多一个fanboy规则。  
+规则要求：要求兼容KP规则，正则数量不能超过999
+2.项目缺少大佬，各种能为此项目贡献一点点的大佬。  
+大佬，可怜可怜项目吧，给项目加点瓦？我会在插件首页写上你的名字的！  
 
 ## 为什么有这个项目！
 
@@ -12,7 +12,7 @@
 
 ## 怎么使用这个插件！
 ### 最佳方法 
-在**SSH**中执行如下代码实现在线安装。
+在**SSH**中执行如下代码实现在线安装。  
 `wget -O /tmp/KoolProxyR_install.sh https://raw.githubusercontent.com/user1121114685/koolproxyR/master/KoolProxyR_install.sh && chmod 777 /tmp/KoolProxyR_install.sh && bash /tmp/KoolProxyR_install.sh`
 
 ### 稳定方法

@@ -7,7 +7,7 @@ eval `dbus export koolproxyR_`
 SOFT_DIR=/koolshare
 KP_DIR=$SOFT_DIR/koolproxyR
 LOCK_FILE=/var/lock/koolproxy.lock
-# 一定要按照source.list的排列顺序
+# 一定要按照source.list的排列顺序/我就不按照顺序。。。啦啦啦啦啦啦
 SOURCE_LIST=$KP_DIR/data/source.list
 
 write_user_txt(){
@@ -17,31 +17,33 @@ write_user_txt(){
 }
 
 load_rules(){
-	sed -i '1,7s/1/0/g' $SOURCE_LIST
+	sed -i "s/1|/0|/g" $SOURCE_LIST
 
 	if [ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_abx_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ]; then
 		echo_date 加载【视频规则】
-		sed -i '3,4s/0/1/g' $SOURCE_LIST
+		sed -i "s/0|kp/1|kp/g" $SOURCE_LIST
 	else
 		if [ "$koolproxyR_oline_rules" == "1" ]; then
-			echo_date 加载【绿坝规则】
-			sed -i '1,2s/0/1/g;4s/0/1/g' $SOURCE_LIST
+			echo_date 加载【绿坝规则】【每日规则】【自定义规则】
+			sed -i "s/0|koolproxy/1|koolproxy/g" $SOURCE_LIST
+			sed -i "s/0|daily/1|daily/g" $SOURCE_LIST
+			sed -i "s/0|user/1|user/g" $SOURCE_LIST
 		fi
 		if [ "$koolproxyR_video_rules" == "1" ]; then
 			echo_date 加载【视频规则】
-			sed -i '3,4s/0/1/g' $SOURCE_LIST
+			sed -i "s/0|kp/1|kp/g" $SOURCE_LIST
 		fi		
 		if [ "$koolproxyR_easylist_rules" == "1" ]; then
 			echo_date 加载【ABP规则】
-			sed -i '5s/0/1/g' $SOURCE_LIST		
+			sed -i "s/0|easylistchina/1|easylistchina/g" $SOURCE_LIST
 		fi
 		if [ "$koolproxyR_abx_rules" == "1" ]; then
 			echo_date 加载【乘风规则】
-			sed -i '6s/0/1/g' $SOURCE_LIST		
+			sed -i "s/0|chengfeng/1|chengfeng/g" $SOURCE_LIST
 		fi
 		if [ "$koolproxyR_fanboy_rules" == "1" ]; then
 			echo_date 加载【Fanboy规则】
-			sed -i '7s/0/1/g' $SOURCE_LIST		
+			sed -i "s/0|fanboy/1|fanboy/g" $SOURCE_LIST	
 		fi				
 	fi
 }
@@ -50,7 +52,7 @@ start_koolproxy(){
 	write_user_txt
 	kp_version=`koolproxy -h | head -n1 | awk '{print $6}'`
 	dbus set koolproxyR_binary_version="koolproxy $kp_version "
-	echo_date 开启koolproxy主进程！
+	echo_date 开启koolproxyR主进程！
 	load_rules
 	[ -f "$KSROOT/bin/koolproxy" ] && rm -rf $KSROOT/bin/koolproxy
 	[ ! -L "$KSROOT/bin/koolproxy" ] && ln -sf $KSROOT/koolproxyR/koolproxy $KSROOT/bin/koolproxy
@@ -73,7 +75,7 @@ start_koolproxy(){
 }
 
 stop_koolproxy(){
-	echo_date 关闭koolproxy主进程...
+	echo_date 关闭koolproxyR主进程...
 	kill -9 `pidof koolproxy` >/dev/null 2>&1
 	killall koolproxy >/dev/null 2>&1
 }
@@ -156,7 +158,7 @@ write_reboot_job(){
 	[ ! -f  "/etc/crontabs/root" ] && touch /etc/crontabs/root
 	CRONTAB=`cat /etc/crontabs/root|grep KoolProxyR_check_chain.sh`
 
-	[ -z "$CRONTAB" ] && echo_date 写入KP过滤代理链守护... && echo  "*/30 * * * * $SOFT_DIR/scripts/KoolProxyR_check_chain.sh" >> /etc/crontabs/root
+	[ -z "$CRONTAB" ] && echo_date 写入KPR过滤代理链守护... && echo  "*/30 * * * * $SOFT_DIR/scripts/KoolProxyR_check_chain.sh" >> /etc/crontabs/root
 #	if [ "1" == "$koolproxyR_reboot" ]; then
 #		[ -z "$CRONTAB" ] && echo_date 开启插件定时重启，每天"$koolproxyR_reboot_hour"时，自动重启插件... && echo  "0 $koolproxyR_reboot_hour * * * $KP_DIR/kpr_config.sh restart" >> /etc/crontabs/root 
 #	elif [ "2" == "$koolproxyR_reboot" ]; then
@@ -172,7 +174,7 @@ remove_reboot_job(){
 	# kill crontab job
 	if [ ! "$KP_ENBALE" == "1" ];then
 		if [ ! -z "$jobexist" ];then
-			echo_date 删除KP过滤代理链守护...
+			echo_date 删除KPR过滤代理链守护...
 			sed -i '/koolproxyR_check_chain/d' /etc/crontabs/root >/dev/null 2>&1
 		fi
 	fi
@@ -484,7 +486,7 @@ dns_takeover(){
 
 detect_cert(){
 	if [ ! -f $KP_DIR/data/private/ca.key.pem -o ! -f $KP_DIR/data/certs/ca.crt ]; then
-		echo_date 开始生成koolproxy证书，用于https过滤！
+		echo_date 开始生成koolproxyR证书，用于https过滤！
 		cd $KP_DIR/data && sh gen_ca.sh
 	fi
 }
@@ -502,7 +504,7 @@ unset_lock(){
 case $1 in
 start)
 	set_lock
-	echo_date ================== koolproxy启用 =================
+	echo_date ================== koolproxyR启用 =================
 	rm -rf /tmp/upload/user.txt && ln -sf $KSROOT/koolproxyR/data/rules/user.txt /tmp/upload/user.txt
 	detect_cert
 	start_koolproxy
@@ -528,7 +530,7 @@ restart)
 	flush_nat
 	stop_koolproxy
 	# now start
-	echo_date ================== koolproxy启用 =================
+	echo_date ================== koolproxyR启用 =================
 	detect_cert
 	start_koolproxy
 	add_ipset_conf && restart_dnsmasq
@@ -539,7 +541,7 @@ restart)
 	creat_start_up
 	write_nat_start
 	write_reboot_job
-	echo_date koolproxy启用成功，请等待日志窗口自动关闭，页面会自动刷新...
+	echo_date koolproxyR启用成功，请等待日志窗口自动关闭，页面会自动刷新...
 	echo_date =================================================
 	unset_lock
 	;;

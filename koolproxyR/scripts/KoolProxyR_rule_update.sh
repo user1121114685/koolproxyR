@@ -7,8 +7,8 @@ alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 url_daily="https://kprule.com/daily.txt"
 url_kp="https://kprule.com/kp.dat"
 url_koolproxy="https://kprule.com/koolproxy.txt"
-url_easylist=""
-url_abx=""
+url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
+url_abx="https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt"
 url_fanboy="https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt"
 
 update_rule(){
@@ -98,6 +98,36 @@ update_rule(){
 	rm -rf /tmp/chengfeng.txt
 	rm -rf /tmp/easylistchina.txt
 	rm -rf /tmp/koolproxy.txt
+
+	echo_date 剔除KP不支持的规则！
+
+	# 删除导致KP崩溃的规则
+	# 听说高手?都打的很多、这样才能体现技术
+	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+	sed -i '/*\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+	# sed -i '/??\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+	# sed -i '/???\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+	# sed -i '/????\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+	# sed -i '/?????\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+	sed -i '/*\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+	# sed -i '/??\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+	# sed -i '/???\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+	# sed -i '/????\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+	# sed -i '/?????\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	sed -i '/*\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# sed -i '/??\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# sed -i '/???\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# sed -i '/????\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# sed -i '/?????\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+
+	find $KSROOT/koolproxyR/data/rules -name *.txt |sed 's#.*/##' > $KSROOT/koolproxyR/data/source.list
+	sed -i 's/^/0|/' $KSROOT/koolproxyR/data/source.list
+	sed -i 's/$/|0|0/' $KSROOT/koolproxyR/data/source.list
+	echo "0|kp.dat|0|0" >> source.list
+
+
 	
 	echo_date 所有规则更新完毕！
 	# reboot koolproxyR

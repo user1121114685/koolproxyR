@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: d5lVSY86Niv+3KrjS3Ko+Q
-! Version: 201903281532
+! Checksum: wVmhEOH/TdW4YYGU7+2Gxw
+! Version: 201903301542
 ! Title: Fanboy's Annoyance List
-! Last modified: 28 Mar 2019 15:32 UTC
+! Last modified: 30 Mar 2019 15:42 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -26,8 +26,6 @@
 /alerte_tracking.
 /altClickToSearch.
 /antirightclick.$script
-/app-banner/*$xmlhttprequest
-/arscode-ninja-popups/*$~stylesheet
 /block_topbg.
 /bloglines.gif
 /bmg_tbar.
@@ -47,7 +45,6 @@
 /disable-right-click/*
 /disable-selection-
 /disablerightclick.
-/dreamgrow-scroll-triggered-box/*$script
 /dsv_video_bar.
 /e-digital-survey.
 /ed_Related_init.
@@ -75,7 +72,6 @@
 /let-it-snow_$script
 /logo_eskup.
 /mailchimp-iframe/*
-/mobile-welcome-overlay/*$script
 /mobile_top_icon.
 /modulo/taboola/*
 /navicon_ap.gif
@@ -84,7 +80,6 @@
 /no-right-click-$script
 /no-right-click.$script
 /norightclick.
-/nrelate-flyout/*$script
 /onlineopinionV5/*
 /Opinion8.min.js
 /opinionlab/*
@@ -93,16 +88,10 @@
 /outbrain?
 /pixel_transparent.
 /pixel_trasp.gif?
-/plugins/advanced-browser-check/*$~stylesheet
-/plugins/nrelate-related-content/*$~stylesheet
-/plugins/popup-maker/*$script,domain=~tracktion.com
 /plugins/rightclick/*
 /plugins/scroll-triggered-boxes/*
-/plugins/wordpress-popup/*$~stylesheet
 /plugins/wp-emailfeedburnerpop/*
-/plugins/wp-greet-box/*$~stylesheet
 /popup_do_
-/popupally-pro-scripts/*$script
 /pubExchange.min.js
 /recommend.php$subdocument,~third-party
 /recommendations-widget/*
@@ -140,10 +129,8 @@
 /upprev_js.
 /urban-airship-
 /w/index.php?title=*:bannercontroller
-/wp-content/plugins/popover/*$script
 /wp-content/plugins/rating-widget/*
 /wp-content/plugins/tab-slide/*
-/wp-content/plugins/thrive-leads/*$script
 /wp-content/plugins/vto_plus/*
 /wp-snow-effect/*
 /yammer_16.
@@ -337,7 +324,6 @@ _push_sw.
 /plugins/newsletter-
 /plugins/newsletter/*
 /plugins/NKS-subscription/*
-/plugins/optin-monster/*$script
 /plugins/wp-subscribe-pro/*
 /pmd-newsletter/*
 /popinNewsletter/*
@@ -627,7 +613,6 @@ _xmlrss.
 _backToTop.
 ! Test filters for embeded/in-article video ads
 /banner/videos/player.htm?$subdocument
-/plugin/banner/videos/*$subdocument
 ! Particles dynamic background
 /jquery.particleground.
 /particles.js
@@ -935,7 +920,6 @@ _backToTop.
 /addtoany.
 /addtogoogle.
 /addtomyyahoo4.
-/advanced-social-widget/*$~stylesheet
 /aFNSNS_
 /aI_sns.
 /amp-social-
@@ -955,7 +939,6 @@ _backToTop.
 /assets/facebook_
 /assets/fb.
 /assets/social-$image
-/assets/social/*$image
 /assets/social_$image
 /assets/tumblr_
 /assets/twitter-$image
@@ -969,7 +952,6 @@ _backToTop.
 /big-facebook.
 /big-twitter.
 /bnr-sns.
-/body/share/*$image
 /bookmark/fbk.
 /bookmarksite_google.
 /bottom-facebook.
@@ -1090,7 +1072,6 @@ _backToTop.
 /crowdbooster_
 /css/social-$~stylesheet
 /custom-share.
-/customSocialBar/*$~stylesheet
 /data/twitter/*
 /dc-facebook-
 /default/*/Facebook.png
@@ -1169,7 +1150,6 @@ _backToTop.
 /facebook-logo.
 /facebook-logo2-
 /facebook-over.
-/facebook-page-popup-cadence/*$~stylesheet
 /facebook-pagelike-widget/*
 /facebook-popup-
 /facebook-send-button.
@@ -1468,11 +1448,9 @@ _backToTop.
 /g-plus16x16.
 /g-share.
 /gadgets/Social/*
-/gallery/social/*$image
 /GetPocketButton_
 /gfx/socials/*
 /gg-share.
-/gigya-socialize-for-wordpress/*$~script,~stylesheet
 /github_icon.
 /givememydigg.
 /global/share-
@@ -1586,7 +1564,6 @@ _backToTop.
 /home/facebook.
 /home/twitter.
 /houzz-button.
-/html/share/*$image
 /i/odnokl.
 /i/twitter.
 /i/vk.
@@ -2008,7 +1985,6 @@ _backToTop.
 /img/share/*
 /img/share_
 /img/social-
-/img/social/*$image
 /img/social_
 /img/tumblr-
 /img/tw.
@@ -2254,15 +2230,9 @@ _backToTop.
 /plugins/*facebook.png
 /plugins/*google.png
 /plugins/*twitter.png
-/plugins/2-click-socialmedia-buttons/*$~stylesheet
-/plugins/add-to-any-subscribe/*$image
-/plugins/add-to-any/*$~stylesheet
 /plugins/anmiated-twitter-bird/*
 /plugins/bookmarkify/*
 /plugins/delicious-bookmark-button/*
-/plugins/digg-digg/*$~stylesheet
-/plugins/diggclick/*$~stylesheet
-/plugins/dpSocialShare/*$~stylesheet
 /plugins/easy-facebook-likebox/*
 /plugins/easy-twitter-
 /plugins/facebook-button-plugin/*
@@ -2270,37 +2240,23 @@ _backToTop.
 /plugins/facebook-like-content-locker/*
 /plugins/facebook-page-promoter-$~stylesheet
 /plugins/facebookpopuppro/*
-/plugins/flare/*$~stylesheet
 /plugins/flare/js/flare.js
-/plugins/fv-sharing/*$~stylesheet
 /plugins/getsocial/*
 /plugins/knxdt-bookmarks-wordpress-plugin/*
-/plugins/light-social/*$~stylesheet
 /plugins/like-box-pro/*
 /plugins/like-fb/*
-/plugins/mashsharer/*$~stylesheet
 /plugins/osd-social-media-sharing/*
 /plugins/pinterest-$~stylesheet
-/plugins/rt-social/*$~stylesheet
-/plugins/sexybookmarks/*$~stylesheet
-/plugins/share-social/*$~stylesheet
-/plugins/sharebar/*$~script,~stylesheet
 /plugins/simple-share-buttons-adder/*
-/plugins/simple-social-sharing-widgets-icons/*$~stylesheet
-/plugins/slide-in/*$script
 /plugins/sociable-$~stylesheet
-/plugins/sociable/*$~stylesheet
 /plugins/social-$~stylesheet
 /plugins/socialbox/*
 /plugins/socialfans-counter/*
-/plugins/socialgrid/*$~stylesheet
 /plugins/StickySocialBar/*
-/plugins/subscribe-connect-follow-widget/*$~stylesheet
 /plugins/super-socializer/*
 /plugins/tweet-this/icons/*
 /plugins/tweetmeme/*
 /plugins/ultimate-follow-me/*
-/plugins/ultimate-social-deux/*$~stylesheet
 /plugins/viperbar/*
 /plugins/wordpress-social-ring/*
 /plugins/wp-plus-one/*
@@ -2357,7 +2313,6 @@ _backToTop.
 /share-actions.
 /share-actions/*
 /share-addtoany.
-/share-and-follow/*$~stylesheet
 /share-b-
 /share-bar/*
 /share-bebo.
@@ -2451,7 +2406,6 @@ _backToTop.
 /share001btn.
 /share2-
 /share2.png
-/share2/*$~stylesheet
 /share24.
 /share2_
 /share4.
@@ -2537,7 +2491,6 @@ _backToTop.
 /shared/btn_
 /shared/social/*
 /sharedaddy.js
-/sharedaddy/*$image,script
 /sharedcount.
 /shareFacebook.
 /Sharefb.
@@ -2560,8 +2513,6 @@ _backToTop.
 /shareThisIcons.
 /sharetool.php?
 /shareTools.js
-/sharetools/*$image
-/sharetools/*$script
 /sharetoolsnew.
 /shareTT.
 /Sharetw.
@@ -2600,7 +2551,6 @@ _backToTop.
 /sidenav_tumblr_
 /sideShare_
 /simple-share-$~stylesheet
-/simple-social-sharing/*$~stylesheet
 /simpleshare.js
 /simplified-social-
 /site/share/*
@@ -2699,7 +2649,6 @@ _backToTop.
 /social-icon/*
 /social-icons-
 /social-icons.
-/social-icons/*$~stylesheet
 /social-icons_
 /social-impulse/*
 /social-inst.
@@ -2711,7 +2660,6 @@ _backToTop.
 /social-likes_$~stylesheet
 /social-links-
 /social-links.
-/social-locker/*$script
 /social-logos.
 /social-logos/*
 /social-manager/*
@@ -2721,7 +2669,6 @@ _backToTop.
 /social-media-icons.
 /social-media-icons/*
 /social-media-sprite.
-/social-media-widget/*$~stylesheet
 /social-media.$image
 /social-media2.
 /social-myspace-
@@ -2735,7 +2682,6 @@ _backToTop.
 /social-pinterest-
 /social-plugin/*
 /social-popup/*
-/social-profiles-widget/*$~stylesheet
 /social-proof-
 /social-search-
 /social-share-
@@ -2811,7 +2757,6 @@ _backToTop.
 /social/su_
 /Social/telegram_
 /social/telergram_
-/social/top/*$~stylesheet
 /social/tumblr.
 /social/tw.
 /social/tw_
@@ -2843,7 +2788,6 @@ _backToTop.
 /social_black/*
 /social_bookmark_icons/*
 /social_bookmarking.
-/social_bookmarking/*$image
 /social_bookmarks/*
 /social_box/*
 /social_btns.
@@ -2885,7 +2829,6 @@ _backToTop.
 /social_logo_
 /social_logos.
 /social_mb.
-/social_media/*$image
 /social_media_
 /social_n_
 /social_network_
@@ -2934,7 +2877,6 @@ _backToTop.
 /socialcore-
 /socialcount.
 /socialcounters/*
-/socialcounts/*$script
 /socialfacebookdark.
 /socialFooterSprite.
 /socialgoogledark.
@@ -2947,7 +2889,6 @@ _backToTop.
 /socialinstagram.
 /socialite.js
 /socialite.min.js
-/socialize/*$image
 /socialize/sharing/*
 /sociallink-
 /sociallinks.
@@ -2955,7 +2896,6 @@ _backToTop.
 /sociallocker-
 /socialMedia-
 /socialMedia.
-/socialmedia/*$image,script
 /socialmedia_
 /socialmediabar_
 /socialmediabuttons.
@@ -2993,7 +2933,6 @@ _backToTop.
 /socialshare_
 /socialShareCount.
 /SocialSharePlugin.
-/socialshareprivacy/*$~script,~stylesheet
 /socialshares.
 /SocialShareSprite.
 /socialsharing.
@@ -3010,7 +2949,6 @@ _backToTop.
 /socialview-
 /socialwd/*
 /socila-media-
-/sociofluid/*$~script,~stylesheet
 /socjal/facebook.
 /socjal/twitter.
 /socmed-share.
@@ -3048,7 +2986,6 @@ _backToTop.
 /st_digg_
 /st_facebook_
 /st_twitter_
-/static/social/*$image
 /stocktwits_share.
 /storage/social/*
 /story-fb.
@@ -3139,7 +3076,6 @@ _backToTop.
 /tw_share_
 /tw_small.
 /tw_top.
-/tweet-blender/*$~stylesheet
 /tweet-button.
 /tweet-ico.
 /tweet-this.
@@ -3347,13 +3283,11 @@ _backToTop.
 /whatsappblogger.js
 /whtapp-mob.
 /whtapp-web.
-/widget/digg/*$~stylesheet
 /widget_add_this_
 /Widgets/*/Tweets?
 /widgets/sharing-
 /widgets/socials/*
 /widgets/twitter/*
-/wordpress-popup/*$domain=ahchealthenews.com
 /wp-content/*/google.png
 /wp-content/*/social_$~stylesheet
 /wp-content/*facebook.jpg
@@ -3667,7 +3601,6 @@ _youtube_social_
 ! jquery bpopup
 /jquery.bpopup.$script,domain=telechargerunevideo.com
 ! https://www.wpvideolock.com/
-/wp-content/plugins/videolock/*$script
 ! *** easylist:fanboy-addon/fanboy_cookie_general_block.txt ***
 &accept_cookies=
 -agree-cookies/
@@ -3770,8 +3703,6 @@ _youtube_social_
 /bauer.cookies.
 /bCookiesMessage.
 /bgon-cookies-
-/borlabs-cookie/*$~script
-/borlabs_cookie/*$~script
 /bt.cookies.
 /bundle-gdpr.min.js
 /cc-cookie-consent/*
@@ -3806,7 +3737,6 @@ _youtube_social_
 /cnil_top.
 /coCookiesDisclaimer.
 /consent.min.js?
-/consent/manager/*$script
 /consentUI/*
 /cookie-accept.js
 /cookie-alert.
@@ -3843,7 +3773,6 @@ _youtube_social_
 /cookie-module/*
 /cookie-notice-
 /cookie-notice.
-/cookie-notice/*$~stylesheet
 /cookie-notif.
 /cookie-notification
 /cookie-overlay-
@@ -3937,7 +3866,6 @@ _youtube_social_
 /cookiechoices.
 /cookiechoicesfic.
 /cookiecompliance.
-/cookiecompliance/*$script
 /cookiecompliancy.
 /cookieConsent-
 /cookieconsent.$~stylesheet
@@ -3961,7 +3889,6 @@ _youtube_social_
 /CookieGDPR.
 /cookiehint.
 /CookieInfo.
-/CookieInfo/*$~script
 /cookieInformerBooklet_
 /cookiejar/*
 /cookiejs/*
@@ -3983,7 +3910,6 @@ _youtube_social_
 /cookiemsg.
 /cookienotice-
 /cookienotice.
-/cookienotice/*$script
 /cookienotif.
 /cookieNotification.
 /CookieNotification/*
@@ -4021,7 +3947,6 @@ _youtube_social_
 /cookies-manager.
 /cookies-message.
 /cookies-monster.js
-/cookies-monster/*$script
 /cookies-note-
 /cookies-notice.
 /cookies-notice/*
@@ -4123,7 +4048,6 @@ _youtube_social_
 /eucookienotice_
 /eucookies.
 /eucookiesk.
-/eucookieslaw/*$script
 /EUCookieUtility.
 /eurocookie.
 /evidon-banner.
@@ -4218,10 +4142,8 @@ _youtube_social_
 /meta/cookie-
 /miocookie_
 /mod_cookie/*
-/mod_cookiesaccept/*$~stylesheet
 /mod_jbcookies/*
 /mpc_cookie_
-/mweb.cookie/*$script
 /newprivacypolicy.
 /newprivacypolicytest.
 /nibirumail.cookie.min.js
@@ -4233,7 +4155,6 @@ _youtube_social_
 /plugin_cookie/*
 /plugins/cookie-$~script
 /plugins/gdpr/*
-/pm_assets/privacy/*$script
 /policy_cookie.
 /policyaccept.
 /PopupCookie.
@@ -4315,7 +4236,6 @@ _youtube_social_
 /wkp_cookies.js
 /wp-content/plugins/cookiemedia/*
 /wp-content/plugins/zigcookie/*
-/wp-cookie-allow/*$script,stylesheet
 /wp-gdpr-
 /wpmaster-cookie/*
 /wx-cookie-
@@ -17291,6 +17211,7 @@ _site_cookie_
 ##.social-options
 ##.social-overlay
 ##.social-page-btns
+##.social-pages
 ##.social-pane
 ##.social-panel
 ##.social-pin
@@ -40936,8 +40857,9 @@ onbeing.org#@#.addthisbuttons
 beautifulplanet4u.com#@#.advanced-social-widget
 kino-vorschau.com#@#.arqam-widget-counter
 banki.ru,neowin.net#@#.article-share
-adme.ru#@#.article-social
+adme.ru,pomponik.pl#@#.article-social
 niedziela.pl#@#.article-social-btn
+pomponik.pl#@#.article-social-buttons
 drive.ru#@#.article-social-container
 nbcnews.com#@#.article_share
 thetoc.gr#@#.authorSocial
@@ -41138,7 +41060,7 @@ iherb.com,vimeo.com#@#.share-icon
 golem.de,tumblr.com#@#.share-item
 vimeo.com#@#.share-label
 recite.com#@#.share-left
-askubuntu.com,baidu.com,broadcast.app.net,imgur.com,kuechenstud.io,logbuch-netzpolitik.de,mammothhq.com,mathoverflow.net,minkorrekt.de,openstreetmap.org,serverfault.com,stackapps.com,stackexchange.com,stackoverflow.com,superuser.com,yandex.com,yandex.com.tr,yandex.ru,yandex.ua#@#.share-link
+askubuntu.com,baidu.com,broadcast.app.net,imgur.com,kuechenstud.io,logbuch-netzpolitik.de,mammothhq.com,mathoverflow.net,minkorrekt.de,openstreetmap.org,pomponik.pl,serverfault.com,stackapps.com,stackexchange.com,stackoverflow.com,superuser.com,yandex.com,yandex.com.tr,yandex.ru,yandex.ua#@#.share-link
 pornhub.com#@#.share-link-container
 autokult.pl,channelnewsasia.com,fotoblogia.pl,imgur.com,komorkomania.pl#@#.share-links
 channelnewsasia.com,recite.com#@#.share-list
@@ -41530,7 +41452,6 @@ birramenabrea.com#@#div[data-cookie]
 timeout.com#@#div[data-module="cookie_banner"]
 ! *** easylist:fanboy-addon/fanboy_annoyance_whitelist.txt ***
 @@/nk-sub.min.js$script,~third-party
-@@/rutorrent/plugins/rss/*$image,~third-party
 @@||adfoc.us/*/interstitial.js$~third-party
 @@||amazonaws.com^*/feedback-v2.js?$domain=avgthreatlabs.com
 @@||bestof.s3.amazonaws.com/twitter.png$domain=makeuseof.com
@@ -41694,17 +41615,12 @@ timeout.com#@#div[data-module="cookie_banner"]
 @@/followbutton.js$domain=instagram.com
 @@/share-sprite-$domain=askubuntu.com|mathoverflow.net|serverfault.com|stackapps.com|stackexchange.com|stackoverflow.com|superuser.com
 @@/socialmedia_$domain=defacto.expert
-@@/static/themes/*/img/icons/*$image,~third-party
 @@/wp-content/js/googleplus-sign-in.js$script
 @@/wp-content/plugins/2-click-socialmedia-buttons/js/social_bookmarks-min.js?$~third-party
 @@/wp-content/plugins/facebook-page-promoter-lightbox/includes/featherlight/close.png$image,~third-party
-@@/wp-content/plugins/share-this-image/*$~third-party
-@@/wp-content/plugins/socialauth-wp/*$~third-party
 @@/wp-content/plugins/super-socializer/css/front.css$~third-party
 @@/wp-content/plugins/super-socializer/js/front/facebook/commenting.js$~third-party
 @@/wp-content/plugins/super-socializer/js/front/facebook/sdk.js$~third-party
-@@/wp-content/plugins/super-socializer/js/front/social_login/*$~third-party
-@@/wp-content/plugins/wordpress-social-login/*$~third-party
 @@/wp-content/plugins/wp-minify/min/?*,wp-content$stylesheet
 @@/wp-content/plugins/wp-rocket/$image,~third-party
 @@||126.net/share/js/$script,domain=163.com
@@ -42219,6 +42135,7 @@ timeout.com#@#div[data-module="cookie_banner"]
 @@||teslarati.com/wp-content/themes/teslarati-mag/images/facebook_circle.png
 @@||teslarati.com/wp-content/themes/teslarati-mag/images/twitter_circle.png
 @@||tgcom24.mediaset.it/assets/js/amd/socialcount.js
+@@||tgstat.ru/js/share2/share.js$script,~third-party
 @@||thebluealliance.com/images/icons/$image,domain=thebluealliance.com
 @@||theinterview-movie.com/images/btn_youtube.png
 @@||themobileplaybook.com/assets-v2/images/google-mobile-playbook*.png
@@ -42311,7 +42228,7 @@ timeout.com#@#div[data-module="cookie_banner"]
 @@||y2mate.com/themes/images/tip-download-youtube.jpg$image
 @@||yandex.st/share/share.js$domain=66.ru
 @@||yarobleirc.ru/bitrix/templates/yarobleirc/js/twitterFetcher_min.js
-@@||yastatic.net/share2/share.js
+@@||yastatic.net/share2/share.js$script
 @@||yimg.com^*/combo?*/followus.$domain=yahoo.com
 @@||yimg.com^*/combo?*/share-buttons-$script,domain=yahoo.com
 @@||yimg.com^*/react-share-buttons.$script,domain=yahoo.com

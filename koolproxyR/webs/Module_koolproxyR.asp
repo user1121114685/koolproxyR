@@ -245,7 +245,7 @@ No part of this file may be used without permission.
 					}
 					document.getElementById("_koolproxyR_status").innerHTML = response.result.split("@@")[0];
 					document.getElementById("_koolproxyR_rule_status").innerHTML = response.result.split("@@")[1];
-					setTimeout("get_run_status();", 1000);
+					setTimeout("get_run_status();", 2000);
 				},
 				error: function(){
 					if(softcenter == 1){
@@ -253,7 +253,7 @@ No part of this file may be used without permission.
 					}
 					document.getElementById("_koolproxyR_status").innerHTML = "获取运行状态失败！";
 					document.getElementById("_koolproxyR_rule_status").innerHTML = "获取规则状态失败！";
-					setTimeout("get_run_status();", 500);
+					setTimeout("get_run_status();", 2000);
 				}
 			});
 		}
@@ -632,7 +632,9 @@ No part of this file may be used without permission.
 		<a href="#/soft-center.asp" class="btn" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">返回</a>
 		</div>
 		<div class="content">
-			<span id="msg" class="col-sm-6" style="margin-top:10px;width:700px">koolproxyR具有全部的koolproxy功能，并且不断增加新的功能。是koolproxy的重制版本，请和KP二选一。</span>
+			<span id="msg" class="col-sm-12" style="margin-top:10px;width:700px">koolproxyR具有全部的koolproxy功能，并且不断增加新的功能。是koolproxy的重制版本，请和KP二选一。</span>
+		</div>	
+		<div class="content">
 			<span id="msg1" class="col-sm-12" style="margin-top:10px;width:700px">责任申明：koolproxy二进制文件及koolproxy官方规则归koolproxy官方所有。</span>
 		</div>	
 	</div>
@@ -763,8 +765,8 @@ No part of this file may be used without permission.
 					]},
 					{ title: '规则不是越多越好', multi: [
 						{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_video_rules">视频规则(KP官方规则)</lable>&nbsp;&nbsp;' },						
-						{ name: 'koolproxyR_easylist_rules',type:'checkbox',value: dbus.koolproxyR_easylist_rules == '1', suffix: '<lable id="_kp_easylist">ABP规则(等待有缘规则上架)</lable>&nbsp;&nbsp;' },
-						{ name: 'koolproxyR_abx_rules',type:'checkbox',value: dbus.koolproxyR_abx_rules == '1', suffix: '<lable id="_kp_abx">乘风规则（等待有缘规则上架）</lable>&nbsp;&nbsp;' },
+						{ name: 'koolproxyR_easylist_rules',type:'checkbox',value: dbus.koolproxyR_easylist_rules == '1', suffix: '<lable id="_kp_easylist">ABP规则(与绿坝规则重复)</lable>&nbsp;&nbsp;' },
+						{ name: 'koolproxyR_abx_rules',type:'checkbox',value: dbus.koolproxyR_abx_rules == '1', suffix: '<lable id="_kp_abx">乘风规则（卡饭规则）</lable>&nbsp;&nbsp;' },
 						{ name: 'koolproxyR_fanboy_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">Fanboy规则（主打国外）</lable>&nbsp;&nbsp;' }
 					]},	
 					{ title: '订阅规则更新', multi: [
