@@ -47,7 +47,7 @@ restart_koolproxy(){
 	
 	echo_date 重启koolproxy主进程！
 	[ "$koolproxyR_mode" == "3" ] && EXT_ARG="-e" || EXT_ARG=""
-	cd $KSROOT/koolproxy && koolproxy $EXT_ARG --mark -d
+	cd $KSROOT/koolproxyR && koolproxyR $EXT_ARG --mark -d
 }
 
 restore() {
@@ -88,7 +88,7 @@ case $2 in
 2)
 	#恢复证书
 	restore >> $LOG_FILE
-	/etc/rc.d/S93koolproxy restart
+	/etc/rc.d/S93koolproxyR.sh restart
 	http_response "$1"
 	echo XU6J03M6 >> $LOG_FILE
 	;;

@@ -1,9 +1,9 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.8"
+VERSION="900.8.9"
 TITLE=koolproxyR
-DESCRIPTION="听说KP还是自己掌握规则最舒服哟！"
+DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
 CHANGELOG="正式版本上线"
 

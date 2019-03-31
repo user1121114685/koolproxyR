@@ -6,10 +6,11 @@ eval `dbus export koolproxyR_`
 
 version=`dbus get koolproxyR_version`
 status=`ps | grep koolproxy | grep -v grep | wc -l`
-url_version="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version"
-wget --no-check-certificate --timeout=8 -qO - $url_version > /tmp/version
-koolproxyR_installing_version=`cat /tmp/version  | sed -n '1p'`
-rm -rf /tmp/version
+# url_version="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version"
+# wget --no-check-certificate --timeout=8 -qO - $url_version > /tmp/version
+# koolproxyR_installing_version=`cat /tmp/version  | sed -n '1p'`
+# rm -rf /tmp/version
+koolproxyR_installing_version=`dbus get koolproxyR_new_install_version`
 rules_date_local=`cat $KSROOT/koolproxyR/data/rules/koolproxy.txt  | sed -n '3p'|awk '{print $3,$4}'`
 rules_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/koolproxy.txt | wc -l`
 

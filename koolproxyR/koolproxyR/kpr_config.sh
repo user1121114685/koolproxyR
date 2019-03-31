@@ -325,9 +325,9 @@ factor(){
 flush_nat(){
 	echo_date 移除nat规则...
 	cd /tmp
-	iptables -t nat -S | grep -E "KOOLPROXY|koolproxyR_ACT|KP_HTTP|KP_HTTPS|KP_BLOCK_HTTP|KP_BLOCK_HTTPS|KP_ALL_PORT" | sed 's/-A/iptables -t nat -D/g'|sed 1,7d > clean.sh && chmod 777 clean.sh && ./clean.sh
+	iptables -t nat -S | grep -E "KOOLPROXY|KOOLPROXY_ACT|KP_HTTP|KP_HTTPS|KP_BLOCK_HTTP|KP_BLOCK_HTTPS|KP_ALL_PORT" | sed 's/-A/iptables -t nat -D/g'|sed 1,7d > clean.sh && chmod 777 clean.sh && ./clean.sh
 	iptables -t nat -X KOOLPROXY > /dev/null 2>&1
-	iptables -t nat -X koolproxyR_ACT > /dev/null 2>&1	
+	iptables -t nat -X KOOLPROXY_ACT > /dev/null 2>&1	
 	iptables -t nat -X KP_HTTP > /dev/null 2>&1
 	iptables -t nat -X KP_HTTPS > /dev/null 2>&1
 	iptables -t nat -X KP_BLOCK_HTTP > /dev/null 2>&1
@@ -384,31 +384,31 @@ load_nat(){
 	echo_date 写入iptables规则到nat表中...
 	# 创建KOOLPROXY nat rule
 	iptables -t nat -N KOOLPROXY
-	# 创建koolproxyR_ACT nat rule
-	iptables -t nat -N koolproxyR_ACT
+	# 创建KOOLPROXY_ACT nat rule
+	iptables -t nat -N KOOLPROXY_ACT
 	# 匹配TTL走TTL Port
-	iptables -t nat -A koolproxyR_ACT -p tcp -m ttl --ttl-eq 188 -j REDIRECT --to 3001
+	iptables -t nat -A KOOLPROXY_ACT -p tcp -m ttl --ttl-eq 188 -j REDIRECT --to 3001
 	# 不匹配TTL走正常Port
-	iptables -t nat -A koolproxyR_ACT -p tcp -j REDIRECT --to 3000
+	iptables -t nat -A KOOLPROXY_ACT -p tcp -j REDIRECT --to 3000
 	# 局域网地址不走KP
 	iptables -t nat -A KOOLPROXY -m set --match-set white_kp_list dst -j RETURN
 	# 生成对应CHAIN
 	iptables -t nat -N KP_HTTP
-	iptables -t nat -A KP_HTTP -p tcp -m multiport --dport 80 -j koolproxyR_ACT
+	iptables -t nat -A KP_HTTP -p tcp -m multiport --dport 80 -j KOOLPROXY_ACT
 	iptables -t nat -N KP_HTTPS
-	iptables -t nat -A KP_HTTPS -p tcp -m multiport --dport 80,443 -j koolproxyR_ACT
+	iptables -t nat -A KP_HTTPS -p tcp -m multiport --dport 80,443 -j KOOLPROXY_ACT
 	iptables -t nat -N KP_BLOCK_HTTP
-	iptables -t nat -A KP_BLOCK_HTTP -p tcp -m multiport --dport 80 -m set --match-set black_koolproxy dst -j koolproxyR_ACT
+	iptables -t nat -A KP_BLOCK_HTTP -p tcp -m multiport --dport 80 -m set --match-set black_koolproxy dst -j KOOLPROXY_ACT
 	iptables -t nat -N KP_BLOCK_HTTPS
-	iptables -t nat -A KP_BLOCK_HTTPS -p tcp -m multiport --dport 80,443 -m set --match-set black_koolproxy dst -j koolproxyR_ACT	
+	iptables -t nat -A KP_BLOCK_HTTPS -p tcp -m multiport --dport 80,443 -m set --match-set black_koolproxy dst -j KOOLPROXY_ACT	
 	iptables -t nat -N KP_ALL_PORT
-	#iptables -t nat -A KP_ALL_PORT -p tcp -j koolproxyR_ACT
+	#iptables -t nat -A KP_ALL_PORT -p tcp -j KOOLPROXY_ACT
 	# 端口控制 
 	if [ "$koolproxyR_port" == "1" ]; then
 		echo_date 开启端口控制：【$koolproxyR_bp_port】
-		iptables -t nat -A KP_ALL_PORT -p tcp -m multiport ! --dport $koolproxyR_bp_port -m set --match-set kp_full_port dst -j koolproxyR_ACT		
+		iptables -t nat -A KP_ALL_PORT -p tcp -m multiport ! --dport $koolproxyR_bp_port -m set --match-set kp_full_port dst -j KOOLPROXY_ACT		
 	else
-		iptables -t nat -A KP_ALL_PORT -p tcp -m set --match-set kp_full_port dst -j koolproxyR_ACT
+		iptables -t nat -A KP_ALL_PORT -p tcp -m set --match-set kp_full_port dst -j KOOLPROXY_ACT
 	fi
 	# 局域网控制
 	lan_acess_control
@@ -501,6 +501,16 @@ unset_lock(){
 	rm -rf "$LOCK_FILE"
 }
 
+new_kpr_version(){
+	url_version="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version"
+	wget --no-check-certificate --timeout=8 -qO - $url_version > /tmp/version
+	koolproxyR_installing_version=`cat /tmp/version  | sed -n '1p'`
+	echo_date 获取到最新在线版本为：$koolproxyR_installing_version！
+	dbus set koolproxyR_new_install_version=$koolproxyR_installing_version
+	rm -rf /tmp/version
+	echo_date 请和koolproxy二选一，因为我会打开koolproxy开关来，骗过V2RAY
+}
+
 case $1 in
 start)
 	set_lock
@@ -517,6 +527,9 @@ start)
 	write_reboot_job
 	echo_date =================================================
 	unset_lock
+	new_kpr_version
+	# 伪装KP的开启，骗过V2RAY
+	dbus set koolproxy_enable=1
 	;;
 restart)
 	set_lock
@@ -529,6 +542,9 @@ restart)
 	remove_nat_start
 	flush_nat
 	stop_koolproxy
+	# 伪装KP的关闭，骗过V2RAY
+	dbus set koolproxy_enable=0
+
 	# now start
 	echo_date ================== koolproxyR启用 =================
 	detect_cert
@@ -544,6 +560,9 @@ restart)
 	echo_date koolproxyR启用成功，请等待日志窗口自动关闭，页面会自动刷新...
 	echo_date =================================================
 	unset_lock
+	new_kpr_version
+	# 伪装KP的开启，骗过V2RAY
+	dbus set koolproxy_enable=1
 	;;
 stop)
 	set_lock
@@ -554,6 +573,9 @@ stop)
 	flush_nat
 	stop_koolproxy
 	unset_lock
+	new_kpr_version
+	# 伪装KP的关闭，骗过V2RAY
+	dbus set koolproxy_enable=0
 	;;
 *)
 	set_lock
@@ -563,5 +585,8 @@ stop)
 	load_nat
 	dns_takeover
 	unset_lock
+	new_kpr_version
+	# 伪装KP的开启，骗过V2RAY
+	dbus set koolproxy_enable=1
 	;;
 esac
