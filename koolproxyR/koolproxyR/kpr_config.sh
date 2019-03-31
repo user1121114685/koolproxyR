@@ -515,16 +515,18 @@ ss_v2ray_game_restrt(){
 	SS_ENABLE=`dbus get ss_basic_enable`
 	V2_ENABLE=`dbus get v2ray_basic_enable`
 	KG_ENABLE=`dbus get koolgame_basic_enable`
-	if [ $SS_ENABLE=1];then
+	if [ "$SS_ENABLE" == "1" ]; then
 		/koolshare/init.d/S99koolss.sh restart
 		echo_date 检测到SS开启，重启了你的SS插件以适应KPR的开启与关闭！
 	fi
-	if [ $V2_ENABLE=1];then
-		/koolshare/init.d/S99v2ray.sh restart
+	if [ "$V2_ENABLE" == "1" ]; then
+		# 顺带检查到，自启服务脚本写错了，干脆我写成控制文件
+		/koolshare/scripts/v2ray_config.sh restart
 		echo_date 检测到V2RAY开启，重启了你的V2RAY插件以适应KPR的开启与关闭！
 	fi
-	if [ $KG_ENABLE=1];then
-		/koolshare/init.d/S98koolgame.sh restart
+	if [ "$KG_ENABLE" == "1" ]; then
+		# 顺带检查到，自启服务脚本写错了，干脆我写成控制文件
+		/koolshare/scripts/koolgame_config.sh restart
 		echo_date 检测到koolgame开启，重启了你的koolgame插件以适应KPR的开启与关闭！
 	fi
 }
