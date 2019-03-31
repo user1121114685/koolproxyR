@@ -511,6 +511,24 @@ new_kpr_version(){
 	echo_date 请和koolproxy二选一，因为我会打开koolproxy开关来，骗过V2RAY
 }
 
+ss_v2ray_game_restrt(){
+	SS_ENABLE=`dbus get ss_basic_enable`
+	V2_ENABLE=`dbus get v2ray_basic_enable`
+	KG_ENABLE=`dbus get koolgame_basic_enable`
+	if [ $SS_ENABLE=1];then
+		/koolshare/init.d/S99koolss.sh restart
+		echo_date 检测到SS开启，重启了你的SS插件以适应KPR的开启与关闭！
+	fi
+	if [ $V2_ENABLE=1];then
+		/koolshare/init.d/S99v2ray.sh restart
+		echo_date 检测到V2RAY开启，重启了你的V2RAY插件以适应KPR的开启与关闭！
+	fi
+	if [ $KG_ENABLE=1];then
+		/koolshare/init.d/S98koolgame.sh restart
+		echo_date 检测到koolgame开启，重启了你的koolgame插件以适应KPR的开启与关闭！
+	fi
+}
+
 case $1 in
 start)
 	set_lock
@@ -530,6 +548,7 @@ start)
 	new_kpr_version
 	# 伪装KP的开启，骗过V2RAY
 	dbus set koolproxy_enable=1
+	ss_v2ray_game_restrt
 	;;
 restart)
 	set_lock
@@ -542,9 +561,6 @@ restart)
 	remove_nat_start
 	flush_nat
 	stop_koolproxy
-	# 伪装KP的关闭，骗过V2RAY
-	dbus set koolproxy_enable=0
-
 	# now start
 	echo_date ================== koolproxyR启用 =================
 	detect_cert
@@ -563,6 +579,7 @@ restart)
 	new_kpr_version
 	# 伪装KP的开启，骗过V2RAY
 	dbus set koolproxy_enable=1
+	ss_v2ray_game_restrt
 	;;
 stop)
 	set_lock
@@ -576,6 +593,7 @@ stop)
 	new_kpr_version
 	# 伪装KP的关闭，骗过V2RAY
 	dbus set koolproxy_enable=0
+	ss_v2ray_game_restrt
 	;;
 *)
 	set_lock
@@ -586,7 +604,6 @@ stop)
 	dns_takeover
 	unset_lock
 	new_kpr_version
-	# 伪装KP的开启，骗过V2RAY
-	dbus set koolproxy_enable=1
+	ss_v2ray_game_restrt
 	;;
 esac
