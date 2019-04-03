@@ -11,7 +11,8 @@
 ## 怎么使用这个插件！ （请和koolproxy二选一）
 ### 最佳方法 
 在**SSH**中执行如下代码实现在线安装。  
-`wget -O /tmp/KoolProxyR_install.sh https://raw.githubusercontent.com/user1121114685/koolproxyR/master/KoolProxyR_install.sh && chmod 777 /tmp/KoolProxyR_install.sh && bash /tmp/KoolProxyR_install.sh`
+`wget -O /tmp/KoolProxyR_install.sh https://raw.githubusercontent.com/user1121114685/koolproxyR/master/KoolProxyR_install.sh && chmod 777 /tmp/KoolProxyR_install.sh && sh /tmp/KoolProxyR_install.sh`
+
 
 ### 稳定方法
 到F大没修复软件中心之前，或者我上架软件中心（其实根本没这个可能），你可以通过如下步骤进行使用本软件！

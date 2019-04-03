@@ -10,3 +10,6 @@ rm -rf $KSROOT/webs/module_KoolproxyR.asp >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR >/dev/null 2>&1
 rm -rf $KSROOT/init.d/S93koolproxyR.sh >/dev/null 2>&1
 rm -rf /etc/rc.d/S93koolproxyR.sh >/dev/null 2>&1
+# 取消dbus注册
+dbus remove koolproxyR_enable
+dbus remove koolproxy_enable

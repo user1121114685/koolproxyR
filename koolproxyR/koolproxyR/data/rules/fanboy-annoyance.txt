@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: 0+h4GvmlYjgruqLVoqMjjQ
-! Version: 201903312012
+! Checksum: NFoqevj8Zs8ByP0sepDH/w
+! Version: 201904031532
 ! Title: Fanboy's Annoyance List
-! Last modified: 31 Mar 2019 20:12 UTC
+! Last modified: 03 Apr 2019 15:32 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -3986,10 +3986,12 @@ _youtube_social_
 /cookiesbanner/*
 /cookiesConsent.
 /cookiescontrol-
+/cookiesCSS.
 /cookiesdirective.
 /cookiesdisclaimer.
 /cookieser.
 /CookieSettingsManager?
+/cookiesJS.
 /cookieslegal.
 /cookiesLegales.
 /CookiesManager.
@@ -4115,6 +4117,7 @@ _youtube_social_
 /informativa_cookie.
 /InformativaCookies/*
 /intser_cookies.js
+/iubenda/iubenda.
 /iubenda_cs.
 /jbcookies.
 /jcookie.js
@@ -11150,6 +11153,7 @@ _site_cookie_
 ##.box_social
 ##.box_social_ticker_fixed
 ##.boxed-sharing-icons
+##.boxsocial
 ##.boxsociale
 ##.boxzilla-like-us-facebook
 ##.bpro-social
@@ -13168,6 +13172,9 @@ _site_cookie_
 ##.h-c-social
 ##.h-do-share
 ##.h-share
+##.h-social-fb
+##.h-social-nl
+##.h-social-yt
 ##.h5ToggleShare
 ##.h5ab-print-button-container
 ##.haber-sosyal
@@ -14056,6 +14063,7 @@ _site_cookie_
 ##.js-share-more
 ##.js-share-pinterest
 ##.js-share-popup
+##.js-share-property
 ##.js-share-stumble
 ##.js-share-this
 ##.js-share-to-facebook
@@ -15217,6 +15225,7 @@ _site_cookie_
 ##.prodShareBlock
 ##.product-details__share
 ##.product-info-social
+##.product-share
 ##.product-share-v3
 ##.product-social-area
 ##.product-social-icon-wrapper
@@ -16530,6 +16539,8 @@ _site_cookie_
 ##.single-post-sharing-button-list
 ##.single-post-socials
 ##.single-share
+##.single-share-logo
+##.single-share-pinterest
 ##.single-sharing-btns
 ##.single-social
 ##.single-social-wrap
@@ -19602,6 +19613,7 @@ _site_cookie_
 ##a[title="Condividi su Facebook"]
 ##a[title="Condividi su Google+"]
 ##a[title="Condividi su LinkedIn"]
+##a[title="Condividi su Pinterest"]
 ##a[title="Condividi su Twitter"]
 ##a[title="Condividi su whatsapp"]
 ##a[title="Condividi"]
@@ -28979,6 +28991,7 @@ _site_cookie_
 ##.nbn-cookie-info
 ##.nbsCookieNotice
 ##.ncgWeAreUsingCookies
+##.nd-cookieBar
 ##.neCookiesMessage
 ##.neo-footer__cookieBar
 ##.new-cookie-rules
@@ -30558,6 +30571,7 @@ _site_cookie_
 ||aimtell.com^$third-party
 ||alertme.news^$third-party
 ||basepush.com^$third-party
+||browserpusher.com^$third-party
 ||centrnotify.com^$third-party
 ||centrpush.com^$third-party
 ||cleverpush.com^$third-party
@@ -30936,6 +30950,7 @@ _site_cookie_
 ||global.mgr.consensu.org^$third-party
 ||intermarkets.net^$third-party
 ||iubenda.com^$third-party
+||jimstatic.com/ckies.js
 ||marfeel.mgr.consensu.org^$third-party
 ||microsoft.com/mscc/
 ||mycookies.it^$third-party
@@ -30944,6 +30959,7 @@ _site_cookie_
 ||onetrust.com^$third-party
 ||privacy-center.org^$third-party
 ||privacy.purch.com^
+||publy.net^$third-party
 ||sharethis.mgr.consensu.org^$third-party
 ||signatu.com^$third-party
 ||smartadserver.mgr.consensu.org^$third-party
@@ -34760,6 +34776,7 @@ autointhenews.com###subscriptions
 yourtango.com###tango-newsletter-form
 techonomy.com###tcnmy-newsletter-modal
 greece-is.com###teaser-newsletter
+theplaylist.net###text-10
 powerlineblog.com###text-12
 christiannews.net###text-15
 worldreligionnews.com###text-18
@@ -34770,7 +34787,7 @@ franklincounty-news.com###text-3
 chicagoreporter.com,mauritiustimes.com###text-4
 aranews.net,infrastructurene.ws,powerlineblog.com###text-6
 beverlyhillsmagazine.com###text-8
-beverlyhillsmagazine.com###text-9
+beverlyhillsmagazine.com,theplaylist.net###text-9
 azcapitoltimes.com###text-html-widget-17
 thefiscaltimes.com###tft-subscription-inline-block
 filmaffinity.com###top-anch
@@ -35462,6 +35479,7 @@ gamestop.com##.bttbtn
 diplo.de##.c-top-link--default
 alarabiya.net,aurecongroup.com,caltex.co.za,drivesouth.co.nz,gasoline-station.com,millenniumpost.in,pastebin.com,rti.org.tw,sammobile.com,secondnexus.com,shine.cn,suninternational.com,wifi.id##.cd-top
 tricri.org##.chevron
+publy.com##.cmsmasters_theme_icon_slide_top
 gogoanime.in,gogoanimes.co##.croll
 parsintl.com##.eut-back-top
 easeus.com##.float_totop
@@ -36261,7 +36279,7 @@ revntv.com##.hsoc
 sciencetimes.com##.i-btngroup
 pastebin.com##.i_tf
 techtimes.com##.ic_g
-etonline.com,utne.com##.icon-bar
+essence.com,etonline.com,utne.com##.icon-bar
 ted.com##.icon-center
 cookieandkate.com##.icon-font
 nextbigfuture.com##.icon-g
@@ -37883,6 +37901,7 @@ drwindows.de##.arrowNav
 suedtirol-it.com##.btn-top
 comparis.ch##.button-go-up
 phoenix.de##.c-toplink
+motorsportpics.de##.cc-FloatingButtonBarContainer-button-scroll
 blm.de##.clickTop
 zentrum-der-gesundheit.de##.component-recommended-products
 stuttgarter-nachrichten.de##.container-stn-popup
@@ -38463,6 +38482,7 @@ clarin.com##a[href^="/newsletters/"]
 !
 ! ---------- Italian Site Specific Hiding Rules ----------
 !
+lantidiplomatico.it###BoxGri
 focusjunior.it###FJToTop
 chcflorence.it,hiexpressbolognafiera.it,higenova.it,himilangaribaldi.com,hiturin.it,hizara.it,hotelcontinentalvenice.com###GOZERO
 dailybest.it###G_info
@@ -38504,7 +38524,7 @@ ilsole24ore.com###ias-footer
 ilquotidianodellazio.it###imgtop
 citywire.it###jsRegisterAlertBanner
 italiaoggi.it###lig_movingup2it_smartbox
-agenziaimpress.it,davidemaggio.it,ilfarosulmondo.it,moked.it,tvsvizzera.it###mc_embed_signup
+agenziaimpress.it,davidemaggio.it,ilfarosulmondo.it,moked.it,money.it,tvsvizzera.it###mc_embed_signup
 decathlon.it###messagetop
 milanofinanza.it###milanofinanza_web_smartbox_article
 automoto.it,moto.it###mit-bottombar
@@ -38522,6 +38542,7 @@ greenme.it###related-newsletter
 rockit.it###relatedpop
 corrierediragusa.it###rss
 monclick.it###scroll-top-container
+dottori.it###scroll_top
 vloungebeach.tv###scroll_up
 chiesi.com###scrolltab
 tuttoandroid.net###sh_local
@@ -38560,7 +38581,7 @@ infobuildenergia.it##.box_dem
 wuerth.it##.btn-scroll-top
 liquiriziacalabrese.it##.btn-top
 lastampa.it##.call-iscrizione
-calendario-365.it,cdt.ch,consumer.bz.it,dmail.it,epochtimes.it,maximitalia.it,mondoconv.it,ridble.com,vinusta.com,vog.it##.cd-top
+calendario-365.it,cdt.ch,consumer.bz.it,dmail.it,epochtimes.it,maximitalia.it,mondoconv.it,paginesi.it,ridble.com,vinusta.com,vog.it##.cd-top
 primaonline.it##.col-nl
 lastampa.it##.conferma_reg_nl
 tomshw.it##.content-autopromo
@@ -39283,6 +39304,7 @@ casertanews.it###script-bannOverLayer
 repubblica.it###segno-fb
 termometropolitico.it###seguici
 gazzetta.it###share
+goodmorningnews.it###short-url
 deejay.it###slider
 autobelle.it,bancadipiacenza.it,canavesenews.it,creditocooperativo.it,fotografidigitali.it,gianlucadimarzio.com,ilsecoloxix.it,lavoro.gov.it,meteogiornale.it,meteovista.it,optimagazine.com,optimaitalia.com,radioitalia.it,rasom.it,superwheels.net,unibo.it,virginactive.it###social
 radioetv.it###social_presence
@@ -39360,6 +39382,7 @@ showprice.it##.link_invia_amico
 liujo.com##.liujo-footer-social-container
 gruppoeditorialesanpaolo.it##.menu-icons-list
 rockol.it##.menu__facebook
+ansa.it##.new-toolbar-menu
 corriere.it##.player-email-ctn
 mediaset.it##.s_box
 nationalgeographic.it##.segui-ng

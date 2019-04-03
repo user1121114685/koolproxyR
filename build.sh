@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.11"
+VERSION="900.8.12"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -46,10 +46,10 @@ wget https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt
 
 # 同步kp官方规则
 
-wget https://kprule.com/koolproxy.txt
-wget https://kprule.com/daily.txt
-wget https://kprule.com/kp.dat
-wget https://kprule.com/user.txt
+wget https://kprules.b0.upaiyun.com/koolproxy.txt
+wget https://kprules.b0.upaiyun.com/daily.txt
+wget https://kprules.b0.upaiyun.com/kp.dat
+wget https://kprules.b0.upaiyun.com/user.txt
 
 ## 删除导致KP崩溃的规则
 sed -i '/^\$/d' fanboy-annoyance.txt

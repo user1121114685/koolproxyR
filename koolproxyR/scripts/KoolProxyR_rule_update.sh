@@ -4,9 +4,10 @@ source $KSROOT/scripts/base.sh
 eval `dbus export koolproxyR_`
 alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 
-url_daily="https://kprule.com/daily.txt"
-url_kp="https://kprule.com/kp.dat"
-url_koolproxy="https://kprule.com/koolproxy.txt"
+url_daily="https://kprules.b0.upaiyun.com/daily.txt"
+url_kp="https://kprules.b0.upaiyun.com/kp.dat"
+url_koolproxy="https://kprules.b0.upaiyun.com/koolproxy.txt"
+# 原网址跳转到https://kprule.com/koolproxy.txt跳转到又拍云，为了节省时间，还是直接去又拍云下载吧！避免某些时候跳转不过去
 url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
 url_abx="https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt"
 url_fanboy="https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt"

@@ -299,6 +299,9 @@
 |http://dm.dm530.net/$s@</head>@<script src=http://kprules.b0.upaiyun.com/js/hide_w.js></script><script src=http://kprules.b0.upaiyun.com/js/hide.js charset=UTF-8></script></head>@
 |http://dm.dm530.net/$s@</head>@<script>fuckcss('FuckXHR')</script></head>@
 |http://m.biqu*.*/$s@</head>@<script src=http://kprules.b0.upaiyun.com/js/hide_w.js></script><script src=http://kprules.b0.upaiyun.com/js/hide.js charset=UTF-8></script></head>@
+|http://www.chnmoney.com/$s@</head>@<script src=http://kprules.b0.upaiyun.com/js/hide_w.js></script><script src=http://kprules.b0.upaiyun.com/js/hide.js charset=UTF-8></script></head>@
+|http://www.zimuzu.io/$s@</head>@<script src=http://kprules.b0.upaiyun.com/js/hide_w.js></script><script src=http://kprules.b0.upaiyun.com/js/hide.js charset=UTF-8></script></head>@
+|http://*btbtdy.*/$s@</head>@<script src=http://kprules.b0.upaiyun.com/js/hide_w.js></script><script src=http://kprules.b0.upaiyun.com/js/hide.js charset=UTF-8></script></head>@
 |http://m.biqu*.*/$s@</head>@<script>fuckcss('FuckXHR')</script></head>@
 |http://www.meijumi.vip/$s@</head>@<script src=http://kprules.b0.upaiyun.com/js/hide_w.js></script><script src=http://kprules.b0.upaiyun.com/js/hide.js charset=UTF-8></script></head>@
 |http://www.meijumi.vip/$s@</body>@<script>fuckcss('.dgd_stb_box.none')</script></body>@

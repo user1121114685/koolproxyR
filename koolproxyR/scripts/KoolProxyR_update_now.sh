@@ -5,14 +5,14 @@ alias echo_date1='echo $(date +%Y年%m月%d日\ %X)'
 
 update_kpr(){
     echo_date1 ====================== 开始检查更新 ===========================
-    # url_version="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version"
-    # wget --no-check-certificate --timeout=8 -qO - $url_version > /tmp/version
-    # koolproxyR_installing_md5=`cat /tmp/version  | sed -n '2p'`
-    # koolproxyR_installing_version=`cat /tmp/version  | sed -n '1p'`
-    koolproxyR_installing_version=`dbus get koolproxyR_new_install_version`
+    url_version="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version"
+    wget --no-check-certificate --timeout=8 -qO - $url_version > /tmp/koolproxyR_version
+    koolproxyR_installing_md5=`cat /tmp/koolproxyR_version  | sed -n '2p'`
+    koolproxyR_installing_version=`cat /tmp/koolproxyR_version  | sed -n '1p'`
+    # koolproxyR_installing_version=`dbus get koolproxyR_new_install_version`
     koolproxyR_version_now=`dbus get koolproxyR_version`
     echo_date1 当前本地版本：$koolproxyR_version_now  ,当前最新版本为: $koolproxyR_installing_version
-    # rm -rf /tmp/version
+    rm -rf /tmp/version
     echo_date1 ====================== 判断更新 ===========================
     if [ "$koolproxyR_installing_version" != "$koolproxyR_version_now" ]; then
         echo_date1 检查到与线上版本不一致，开始更新.....

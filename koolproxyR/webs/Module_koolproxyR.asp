@@ -6,6 +6,14 @@ For use with Tomato Firmware only.
 No part of this file may be used without permission.
 -->
 <title>KoolProxyR</title>
+<!-- <style>
+	ul.nav-tabs{
+	overflow :hidden ;
+	}
+	ul.nav-tabs li{
+	width:12％;
+	}
+</style> -->
 <content>
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/tomato.js"></script>
@@ -23,11 +31,11 @@ No part of this file may be used without permission.
 		var _responseLen;
 		var noChange = 0;
 		var reload = 0;
-//		var option_day_time = [["7", "每天"], ["1", "周一"], ["2", "周二"], ["3", "周三"], ["4", "周四"], ["5", "周五"], ["6", "周六"], ["0", "周日"]];
-//		var option_hour_time = [];
-//		for(var i = 0; i < 24; i++){
-//			option_hour_time[i] = [i, i + "点"];
-//		}
+		var option_day_time = [["7", "每天"], ["1", "周一"], ["2", "周二"], ["3", "周三"], ["4", "周四"], ["5", "周五"], ["6", "周六"], ["0", "周日"]];
+		var option_time_hour = [];
+		for(var i = 0; i < 24; i++){
+			option_time_hour[i] = [i, i + "点"];
+		}
 		var option_reboot_hour = [];
 		var option_reboot_inter = [];
 		for(var i = 0; i < 24; i++){
@@ -288,10 +296,13 @@ No part of this file may be used without permission.
 			location.href = "http://110.110.110.110";
 		}
 		function https_KP(){
-			window.open("http://koolshare.cn/thread-79889-1-1.html");			
+			window.open("https://shaoxia.xyz/post/koolproxyr%E6%8C%87%E5%8D%97/");			
 		}	
 		function find_github(){
 			window.open("https://github.com/user1121114685/koolproxyR.git");
+		}
+		function find_telegram(){
+			window.open("https://t.me/koolproxyR");
 		}
 		function update_KPR(){
 			// let data_version = '';
@@ -380,9 +391,9 @@ No part of this file may be used without permission.
 		}
 
 		function tabSelect(obj){
-			var tableX = ['app1-server1-jb-tab','app3-server1-kz-tab','app4-server1-zdy-tab','app5-server1-zsgl-tab','app6-server1-gzgl-tab','app7-server1-rz-tab'];
-			var boxX = ['boxr1','boxr3','boxr4','boxr5','boxr6','boxr7'];
-			var appX = ['app1','app3','app4','app5','app6','app7'];
+			var tableX = ['app1-server1-jb-tab','app2-server1-fwlb-tab','app3-server1-kz-tab','app4-server1-zdy-tab','app5-server1-zsgl-tab','app6-server1-gzgl-tab','app7-server1-rz-tab'];
+			var boxX = ['boxr1','boxr2','boxr3','boxr4','boxr5','boxr6','boxr7'];
+			var appX = ['app1','app2','app3','app4','app5','app6','app7'];
 			for (var i = 0; i < tableX.length; i++){
 				if(obj == appX[i]){
 					$('#'+tableX[i]).addClass('active');
@@ -658,14 +669,16 @@ No part of this file may be used without permission.
 		</div>
 	</div>	
 	<!-- ------------------ 标签页 --------------------- -->	
-	<ul class="nav nav-tabs">
+	<ul class="nav nav-tabs" style="margin-bottom: 20px;">
 		<li><a href="javascript:void(0);" onclick="tabSelect('app1');" id="app1-server1-jb-tab" class="active"><i class="icon-system"></i> 基本设置</a></li>
+		<!-- <li><a href="javascript:void(0);" onclick="tabSelect('app2');" id="app2-server1-fwlb-tab"><i class="icon-cloud"></i>订阅规则</a></li>		 -->
 		<li><a href="javascript:void(0);" onclick="tabSelect('app3');" id="app3-server1-kz-tab"><i class="icon-tools"></i> 访问控制</a></li>		
 		<li><a href="javascript:void(0);" onclick="tabSelect('app4');" id="app4-server1-zdy-tab"><i class="icon-hammer"></i> 自定义规则</a></li>
 		<li><a href="javascript:void(0);" onclick="tabSelect('app5');" id="app5-server1-zsgl-tab"><i class="icon-lock"></i> 证书管理</a></li>
-		<li><a href="javascript:void(0);" onclick="tabSelect('app6');" id="app6-server1-gzgl-tab"><i class="icon-cmd"></i> 规则管理</a></li>
+		<li><a href="javascript:void(0);" onclick="tabSelect('app6');" id="app6-server1-gzgl-tab"><i class="icon-cmd"></i> 规则状态</a></li>
 		<li><a href="javascript:void(0);" onclick="tabSelect('app7');" id="app7-server1-rz-tab"><i class="icon-info"></i> 日志信息</a></li>
 	</ul>
+	<br/>
 	<div class="box boxr1" style="margin-top: 0px;">
 		<div class="content">
 			<div id="identification" class="section"></div>
@@ -674,7 +687,7 @@ No part of this file may be used without permission.
 //					{ title: '开启Koolproxy', name:'koolproxyR_enable',type:'checkbox',value: dbus.koolproxyR_enable == 1 },
 //					{ title: 'Koolproxy运行状态', text: '<font id="_koolproxyR_status" name=_koolproxyR_status color="#1bbf35">正在获取运行状态...</font>' },
 //					{ title: 'Koolproxy规则状态', text: '<font id="_koolproxyR_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },
-					{ title: '开启进阶模式', name:'koolproxyR_mode_enable',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_mode_enable || "0" },
+					{ title: '开启进阶模式', name:'koolproxyR_mode_enable',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_mode_enable || "0",suffix: '<font color="#FF0000">【进阶模式】&nbsp;&nbsp;提供更多设置选项</font></lable>' },
 					{ title: '过滤模式', name:'koolproxyR_base_mode',type:'select',options:[['0','不过滤'],['1','全局模式'],['2','黑名单模式']],value: dbus.koolproxyR_base_mode || "1" },
 					{ title: '过滤模式', name:'koolproxyR_mode',type:'select',options:[['0','不过滤'],['1','全局模式'],['2','带HTTPS的全局模式'],['3','黑名单模式'],['4','带HTTPS的黑名单模式']],value: dbus.koolproxyR_mode || "1" },
 					{ title: '端口控制', name:'koolproxyR_port',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_port || "0",suffix: '<lable id="readme_port"><font color="#FF0000">【端口控制】&nbsp;&nbsp;只有全端口模式下才生效</font></lable>'},
@@ -685,8 +698,9 @@ No part of this file may be used without permission.
 //						{ name: 'koolproxyR_reboot_hour', type: 'select', options: option_reboot_hour, value: dbus.koolproxyR_reboot_hour || "", suffix: '<lable id="koolproxyR_reboot_hour_suf">重启</lable>', prefix: '<span id="koolproxyR_reboot_hour_pre" class="help-block"><lable>每天</lable></span>' },
 //						{ name: 'koolproxyR_reboot_inter_hour', type: 'select', options: option_reboot_inter, value: dbus.koolproxyR_reboot_inter_hour || "", suffix: '<lable id="koolproxyR_reboot_inter_hour_suf">重启</lable>', prefix: '<span id="koolproxyR_reboot_inter_hour_pre" class="help-block"><lable>每隔</lable></span>' }
 //					] },
-					{ title: '证书下载', suffix: ' <button id="_download_cert" onclick="download_cert();" class="btn btn-danger">证书下载 <i class="icon-download"></i></button>&nbsp;&nbsp;<button onclick="https_KP();" class="btn btn-success">HTTPS过滤教程</button>' },
-					{ title: 'KoolProxyR交流', suffix: ' <button id="_find_github" onclick="find_github();" class="btn">开源地址</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR();" class="btn">更新插件</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="issues_KP();" class="btn btn-danger">建议及反馈</button>' },
+					{ title: '证书下载', suffix: ' <button id="_download_cert" onclick="download_cert();" class="btn btn-danger">证书下载</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="https_KP();" class="btn btn-success">教程</button>' },
+					{ title: '项目信息', suffix: ' <button id="_find_github" onclick="find_github();" class="btn">开源地址</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR();" class="btn">更新插件</button>' },
+					{ title: '交流渠道', suffix: ' <button onclick="issues_KP();" class="btn btn-danger">建议及反馈</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="find_telegram();" class="btn btn-danger">TG群</button>' },
 //					{ title: 'KoolProxy官方链接', suffix: ' <button id="_findkp_github" onclick="findkp_github();" class="btn">KoolProxy</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="KP_KP();" class="btn">KoolProxy官网</button>' }
 
 				]);
@@ -699,12 +713,55 @@ No part of this file may be used without permission.
 			<li>【本插件修改自】https://github.com/koolshare/ledesoft/tree/master/koolproxy</li>	
 			<li>【KoolProxy官网】https://koolproxy.io</li>	
 			<li>--------------------------------------------------------------------------</li>	
-			<li>【HouZi】来自koolproxy的开发者，感谢猴子对koolproxy及koolproxy规则所做的贡献。</li>		
-			<li>【XiaoBao】来自koolproxy的开发者，感谢小宝对koolproxy二进制文件所做的贡献。</li>
-			<li>【Fw867】来自koolshare的开发者，感谢Fw867对Openwrt X64软件中心所做的贡献。</li>
+			<li>【HouZi】感谢猴子对koolproxy及koolproxy规则所做的贡献。</li>		
+			<li>【XiaoBao】感谢小宝对koolproxy二进制文件所做的贡献。</li>
+			<li>【Fw867】感谢Fw867对Openwrt X64软件中心所做的贡献。</li>
 			<li>--------------------------------------------------------------------------</li>	
 	</div>
-	</div>	
+	</div>
+	<!-- <div class="box boxr2" id="v2ray_server_tab" style="margin-top: 0px;">
+	<div class="heading">自建服务器列表</div>
+		<div class="content">
+			<div class="tabContent">
+				<table class="line-table" cellspacing=1 id="v2ray_server_pannel"></table>
+			</div>
+			<br><hr>
+			<button type="button" value="Save" id="save-server-node" onclick="manipulate_conf('v2ray_config.sh', 9)" class="btn btn-primary">保存服务器列表 <i class="icon-check"></i></button>
+		</div>
+	</div>
+	<div class="box boxr2" id="v2ray_node_urladd" style="margin-top: 0px;">
+		<div class="heading"></div>
+		<div class="content">
+			<div id="v2ray_node_urladd_pannel" class="section"></div>
+			<script type="text/javascript">
+				$('#v2ray_node_urladd_pannel').forms([
+					{ title: '通过vmess链接添加节点</br></br><font color="#B2B2B2"># 可一次添加多个vmess://链接<br /># 每个链接以空格分隔</font>', name: 'v2ray_base64_links',type:'textarea', value: dbus.v2ray_base64_links, style: 'width: 100%; height:100px;' }
+				]);
+			</script>
+			<button type="button" value="Save" id="update-addurl-node" onclick="node_sub('v2ray_sub.sh', 4)" class="btn btn-primary" style="float:right;margin-right:20px;">添加节点 <i class="icon-check"></i></button>
+		</div>
+	</div>
+	<div class="box boxr2" id="v2ray_node_subscribe" style="margin-top: 0px;">
+		<div class="heading">节点订阅</div>
+		<div class="content">
+			<div id="v2ray_node_subscribe_pannel" class="section"></div>
+			<script type="text/javascript">
+				$('#v2ray_node_subscribe_pannel').forms([
+					{ title: '订阅配置', multi: [
+						{ suffix: ' 开启定时更新' },
+						{ name: 'v2ray_basic_node_update',type: 'checkbox',value: dbus.v2ray_basic_node_update == 1 ,suffix: ' &nbsp;&nbsp;' },
+						{ name: 'v2ray_basic_node_update_day',type: 'select', options:option_day_time, value: dbus.v2ray_basic_node_update_day || '7' ,suffix: ' &nbsp;' },
+						{ name: 'v2ray_basic_node_update_hr',type: 'select', options:option_time_hour, value: dbus.v2ray_basic_node_update_hr || '3' ,suffix: ' &nbsp;&nbsp;通过V2ray代理更新节点信息' },
+						{ name: 'v2ray_basic_suburl_socks',type: 'checkbox',value: dbus.v2ray_basic_suburl_socks == 1 },
+						{ suffix: '<button id="_remove_sub_node" onclick="node_sub(\'v2ray_sub.sh\', 2 ,\'订阅节点\');" class="btn btn-success">删除订阅节点 <i class="icon-cancel"></i></button>' },
+						{ suffix: '<button id="_remove_all_node" onclick="node_sub(\'v2ray_sub.sh\', 1 ,\'所有节点\');" class="btn btn-success">清空所有节点 <i class="icon-disable"></i></button>' },
+					]},
+					{ title: '订阅地址', name: 'v2ray_basic_suburl',type:'text',size: 100, value: Base64.decode(dbus.v2ray_basic_suburl) }
+				]);
+			</script>
+			<button type="button" value="Save" id="update-subscribe-node" onclick="node_sub('v2ray_sub.sh', 3)" class="btn btn-primary" style="float:right;margin-right:20px;">保存设置并更新订阅 <i class="icon-check"></i></button>
+		</div>
+	</div>	 -->
 	<div class="box boxr3">
 		<div class="heading">访问控制</div>
 		<div class="content">
