@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.12"
+VERSION="900.8.13"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -92,7 +92,7 @@ echo "0|kp.dat|0|0" >> source.list
 # @@*$stylesheet
 
 cd ..
-wget https://github.com/koolshare/ledesoft/raw/master/koolproxy/koolproxy/koolproxy/koolproxy
+wget https://raw.githubusercontent.com/koolshare/ledesoft/master/koolproxy/koolproxy/koolproxy/koolproxy
 cd ../..
 # Check and include base
 DIR="$( cd "$( dirname "$BASH_SOURCE[0]" )" && pwd )"

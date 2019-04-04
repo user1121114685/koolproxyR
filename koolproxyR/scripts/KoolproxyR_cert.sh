@@ -37,6 +37,30 @@ backup() {
 	echo_date "证书备份完毕"
 }
 
+backup_0() {
+	echo_date "开始备份证书！"
+	mkdir -p $KSROOT/webs/files
+
+	if [ ! -f $KSROOT/koolproxyR/data/certs/ca.crt ]; then
+		echo_date "$KSROOT/koolproxyR/data/certs/ca.crt 不存在！"
+		file_found=0
+	fi
+
+	if [ "$file_found" == "0" ];then
+		echo_date "退出备份！"
+		echo XU6J03M6
+		exit 1
+	fi
+	# 生成证书的hash名字
+	ca_0_hash=$(openssl x509 -subject_hash_old -in $KSROOT/koolproxyR/data/certs/ca.crt|head -1).0
+	cp $KSROOT/koolproxyR/data/certs/ca.crt $KSROOT/webs/files/$ca_0_hash
+	#  生成.0根证书
+	openssl x509 -text -in cp $KSROOT/koolproxyR/data/certs/ca.crt -out /dev/null >> $KSROOT/webs/files/$ca_0_hash
+	cd $KSROOT/webs/files
+	zip ca_0.zip $ca_0_hash >/dev/null
+	echo_date ".0根证书生成成功，名字为  $ca_0_hash"
+}
+
 stop_koolproxy(){
 	echo_date 关闭koolproxy主进程...
 	kill -9 `pidof koolproxy` >/dev/null 2>&1
@@ -91,6 +115,15 @@ case $2 in
 	/etc/rc.d/S93koolproxyR.sh restart
 	http_response "$1"
 	echo XU6J03M6 >> $LOG_FILE
+	;;
+3)
+	#生成.0根证书
+	backup_0 >> $LOG_FILE
+	http_response "$1"
+	echo XU6J03M6 >> $LOG_FILE
+	sleep 10
+	rm -rf $KSROOT/webs/files/$ca_0_hash
+	rm -rf $KSROOT/webs/files/ca_0.zip
 	;;
 esac
 

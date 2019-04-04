@@ -63,13 +63,13 @@ No part of this file may be used without permission.
 		}
 		kpacl.dataToView = function( data ) {
 			if (data[0]){
-				return [ "【" + data[0] + "】", data[1], data[2], ['不过滤', '全局模式', '带HTTPS的全局模式', '黑名单模式', '带HTTPS的黑名单模式', '全端口模式'][data[3]] ];
+				return [ "【" + data[0] + "】", data[1], data[2], ['不过滤', 'HTTP全局模式', '带HTTPS的全局模式', '黑名单模式', '带HTTPS的黑名单模式', 'HTTP全端口模式'][data[3]] ];
 			}else{
 				if (data[1]){
-					return [ "【" + data[1] + "】", data[1], data[2], ['不过滤', '全局模式', '带HTTPS的全局模式', '黑名单模式', '带HTTPS的黑名单模式', '全端口模式'][data[3]] ];
+					return [ "【" + data[1] + "】", data[1], data[2], ['不过滤', 'HTTP全局模式', '带HTTPS的全局模式', '黑名单模式', '带HTTPS的黑名单模式', 'HTTP全端口模式'][data[3]] ];
 				}else{
 					if (data[2]){
-						return [ "【" + data[2] + "】", data[1], data[2], ['不过滤', '全局模式', '带HTTPS的全局模式', '黑名单模式', '带HTTPS的黑名单模式', '全端口模式'][data[3]] ];
+						return [ "【" + data[2] + "】", data[1], data[2], ['不过滤', 'HTTP全局模式', '带HTTPS的全局模式', '黑名单模式', '带HTTPS的黑名单模式', 'HTTP全端口模式'][data[3]] ];
 					}
 				}
 			}
@@ -140,7 +140,7 @@ No part of this file may be used without permission.
 			{ type: 'select',maxlen:50,options:option_arp_list },
 			{ type: 'text', maxlen: 50 },
 			{ type: 'text', maxlen: 50 },
-			{ type: 'select',maxlen:20,options:[['0', '不过滤'], ['1', '全局模式'], ['2', '带HTTPS的全局模式'], ['3', '黑名单模式'], ['4', '带HTTPS的黑名单模式'], ['5', '全端口模式']], value: '1' }
+			{ type: 'select',maxlen:20,options:[['0', '不过滤'], ['1', 'HTTP全局模式'], ['2', '带HTTPS的全局模式'], ['3', '黑名单模式'], ['4', '带HTTPS的黑名单模式'], ['5', 'HTTP全端口模式']], value: '1' }
 			] );
 
 			this.headerSet( [ '主机别名', '主机IP地址', 'MAC地址', '过滤模式控制' ] );
@@ -547,6 +547,36 @@ No part of this file may be used without permission.
 				}
 			});
 		}
+		function kp_cert_0(script, arg){
+			tabSelect("app7");
+			var id = parseInt(Math.random() * 100000000);
+			var postData = {"id": id, "method": script, "params":[arg], "fields": ""};
+			$.ajax({
+				type: "POST",
+				url: "/_api/",
+				async: true,
+				cache:false,
+				data: JSON.stringify(postData),
+				dataType: "json",
+				success: function(response){
+					console.log("id", id);
+					console.log("response", response);
+					if (response.result == id){
+						if (arg == 3){
+							console.log("333");
+							var a = document.createElement('A');
+							a.href = "/files/ca_0.zip";
+							a.download = 'ca_0.zip';
+							document.body.appendChild(a);
+							a.click();
+							document.body.removeChild(a);
+						}else if (arg == 2){
+							setTimeout("window.location.reload()", 1000);
+						}
+					}
+				}
+			});
+		}
 		function kp_cert(script, arg){
 			tabSelect("app7");
 			var id = parseInt(Math.random() * 100000000);
@@ -688,8 +718,8 @@ No part of this file may be used without permission.
 //					{ title: 'Koolproxy运行状态', text: '<font id="_koolproxyR_status" name=_koolproxyR_status color="#1bbf35">正在获取运行状态...</font>' },
 //					{ title: 'Koolproxy规则状态', text: '<font id="_koolproxyR_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },
 					{ title: '开启进阶模式', name:'koolproxyR_mode_enable',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_mode_enable || "0",suffix: '<font color="#FF0000">【进阶模式】&nbsp;&nbsp;提供更多设置选项</font></lable>' },
-					{ title: '过滤模式', name:'koolproxyR_base_mode',type:'select',options:[['0','不过滤'],['1','全局模式'],['2','黑名单模式']],value: dbus.koolproxyR_base_mode || "1" },
-					{ title: '过滤模式', name:'koolproxyR_mode',type:'select',options:[['0','不过滤'],['1','全局模式'],['2','带HTTPS的全局模式'],['3','黑名单模式'],['4','带HTTPS的黑名单模式']],value: dbus.koolproxyR_mode || "1" },
+					{ title: '过滤模式', name:'koolproxyR_base_mode',type:'select',options:[['0','不过滤'],['1','HTTP全局模式'],['2','黑名单模式']],value: dbus.koolproxyR_base_mode || "1",suffix: '<font color="#FF0000">【开启进阶模式】&nbsp;&nbsp;获得更多选项！</font></lable>' },
+					{ title: '过滤模式', name:'koolproxyR_mode',type:'select',options:[['0','不过滤'],['1','HTTP全局模式'],['2','带HTTPS的全局模式'],['3','黑名单模式'],['4','带HTTPS的黑名单模式']],value: dbus.koolproxyR_mode || "1",suffix: '<font color="#FF0000">全端口模式是HTTP的，去视频广告请在&nbsp;&nbsp;访问控制中给设备指定【HTTPS全局模式】</font></lable>' },
 					{ title: '端口控制', name:'koolproxyR_port',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_port || "0",suffix: '<lable id="readme_port"><font color="#FF0000">【端口控制】&nbsp;&nbsp;只有全端口模式下才生效</font></lable>'},
 					{ title: '例外端口', name:'koolproxyR_bp_port',type:'text',style:'input_style', maxlen:50, value:dbus.koolproxyR_bp_port ,suffix: '<font color="#FF0000">例：</font><font color="#FF0000">【单端口】：80【多端口】：80,443</font>'},
 //					{ title: '开启Adblock Plus Host', name:'koolproxyR_host',type:'checkbox',value: dbus.koolproxyR_host == 1, suffix: '<lable id="_koolproxyR_host_nu"></lable>' },
@@ -698,9 +728,9 @@ No part of this file may be used without permission.
 //						{ name: 'koolproxyR_reboot_hour', type: 'select', options: option_reboot_hour, value: dbus.koolproxyR_reboot_hour || "", suffix: '<lable id="koolproxyR_reboot_hour_suf">重启</lable>', prefix: '<span id="koolproxyR_reboot_hour_pre" class="help-block"><lable>每天</lable></span>' },
 //						{ name: 'koolproxyR_reboot_inter_hour', type: 'select', options: option_reboot_inter, value: dbus.koolproxyR_reboot_inter_hour || "", suffix: '<lable id="koolproxyR_reboot_inter_hour_suf">重启</lable>', prefix: '<span id="koolproxyR_reboot_inter_hour_pre" class="help-block"><lable>每隔</lable></span>' }
 //					] },
-					{ title: '证书下载', suffix: ' <button id="_download_cert" onclick="download_cert();" class="btn btn-danger">证书下载</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="https_KP();" class="btn btn-success">教程</button>' },
+					{ title: '证书下载', suffix: ' <button id="_download_cert" onclick="download_cert();" class="btn btn-danger">证书下载</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="https_KP();" class="btn btn-success">相关教程</button>' },
 					{ title: '项目信息', suffix: ' <button id="_find_github" onclick="find_github();" class="btn">开源地址</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR();" class="btn">更新插件</button>' },
-					{ title: '交流渠道', suffix: ' <button onclick="issues_KP();" class="btn btn-danger">建议及反馈</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="find_telegram();" class="btn btn-danger">TG群</button>' },
+					{ title: '交流渠道', suffix: ' <button onclick="issues_KP();" class="btn btn-danger">建议及反馈</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="find_telegram();" class="btn btn-danger">加入TG群</button>' },
 //					{ title: 'KoolProxy官方链接', suffix: ' <button id="_findkp_github" onclick="findkp_github();" class="btn">KoolProxy</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="KP_KP();" class="btn">KoolProxy官网</button>' }
 
 				]);
@@ -803,7 +833,7 @@ No part of this file may be used without permission.
 			<div id="kp_certificate_management" class="section"></div>
 			<script type="text/javascript">
 				$('#kp_certificate_management').forms([
-					{ title: '证书备份', suffix: '<button onclick="kp_cert(\'KoolproxyR_cert.sh\', 1);" class="btn btn-success">证书备份 <i class="icon-download"></i></button>' },
+					{ title: '证书备份', suffix: '<button onclick="kp_cert(\'KoolproxyR_cert.sh\', 1);" class="btn btn-success">证书备份 <i class="icon-download"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kp_cert_0(\'KoolproxyR_cert.sh\', 3);" class="btn btn-success">生成.0根证书 <i class="icon-download"></i></button><font color="#FF0000">【.0根证书】&nbsp;&nbsp;用于安卓7.0以上的设备安装HTTPS证书，详见教程。</font></lable>' },
 					{ title: '证书恢复', suffix: '<input type="file" id="file" size="50">&nbsp;&nbsp;<button id="upload1" type="button"  onclick="restore_cert();" class="btn btn-danger">上传并恢复 <i class="icon-cloud"></i></button>' }
 				]);
 			</script>

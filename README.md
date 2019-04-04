@@ -8,7 +8,7 @@
 
 官方其实是有项目的，但是我喜欢fanboy规则，在多方反馈无果的情况下，我当然自己动手丰衣足食了。这个项目允许大家提供好的规则。我们要以去广告为先。去掉所有的广告。谢谢！
 
-## 怎么使用这个插件！ （请和koolproxy二选一）
+## 怎么使用这个插件！ （请先卸载koolproxy，这是一个软件，互不兼容。）
 ### 最佳方法 
 在**SSH**中执行如下代码实现在线安装。  
 `wget -O /tmp/KoolProxyR_install.sh https://raw.githubusercontent.com/user1121114685/koolproxyR/master/KoolProxyR_install.sh && chmod 777 /tmp/KoolProxyR_install.sh && sh /tmp/KoolProxyR_install.sh`
