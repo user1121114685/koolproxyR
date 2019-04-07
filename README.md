@@ -4,11 +4,13 @@
 项目缺少大佬，各种能为此项目贡献一点点的大佬。  
 大佬，可怜可怜项目吧，给项目加点瓦？我会在插件首页写上你的名字的！  
 
+**欢迎大佬随时提交更新和问题**
+
 ## 为什么有这个项目！
 
 官方其实是有项目的，但是我喜欢fanboy规则，在多方反馈无果的情况下，我当然自己动手丰衣足食了。这个项目允许大家提供好的规则。我们要以去广告为先。去掉所有的广告。谢谢！
 
-## 怎么使用这个插件！ （请先卸载koolproxy，这是一个软件，互不兼容。）
+## 怎么使用这个插件！ （请先卸载koolproxy，互不兼容。）
 ### 最佳方法 
 在**SSH**中执行如下代码实现在线安装。  
 `wget -O /tmp/KoolProxyR_install.sh https://raw.githubusercontent.com/user1121114685/koolproxyR/master/KoolProxyR_install.sh && chmod 777 /tmp/KoolProxyR_install.sh && sh /tmp/KoolProxyR_install.sh`
@@ -35,3 +37,4 @@
 
 ![目前版本截图](https://github.com/user1121114685/koolproxyR/blob/master/20190328233937.jpg?raw=true "后续更新可能还会有更新！")
 ![目前版本截图](https://github.com/user1121114685/koolproxyR/blob/master/20190328233849.jpg?raw=true "后续更新可能还会有更新！")
+![目前版本截图](https://github.com/user1121114685/koolproxyR/blob/master/20190407215443.jpg?raw=true "后续更新可能还会有更新！")

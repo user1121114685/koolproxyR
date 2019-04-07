@@ -105,19 +105,19 @@ update_rule(){
 	# 删除导致KP崩溃的规则
 	# 听说高手?都打的很多、这样才能体现技术
 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
-	sed -i '/*\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 	# sed -i '/??\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 	# sed -i '/???\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 	# sed -i '/????\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 	# sed -i '/?????\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-	sed -i '/*\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 	# sed -i '/??\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 	# sed -i '/???\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 	# sed -i '/????\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 	# sed -i '/?????\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	sed -i '/*\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
 	# sed -i '/??\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
 	# sed -i '/???\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
 	# sed -i '/????\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt

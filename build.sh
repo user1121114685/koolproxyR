@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.13"
+VERSION="900.8.14"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -53,19 +53,19 @@ wget https://kprules.b0.upaiyun.com/user.txt
 
 ## 删除导致KP崩溃的规则
 sed -i '/^\$/d' fanboy-annoyance.txt
-sed -i '/*\$/d' fanboy-annoyance.txt
+sed -i '/\*\$/d' fanboy-annoyance.txt
 # sed -i '/??\$/d' fanboy-annoyance.txt
 # sed -i '/???\$/d' fanboy-annoyance.txt
 # sed -i '/????\$/d' fanboy-annoyance.txt
 # sed -i '/?????\$/d' fanboy-annoyance.txt
 sed -i '/^\$/d' easylistchina.txt
-sed -i '/*\$/d' easylistchina.txt
+sed -i '/\*\$/d' easylistchina.txt
 # sed -i '/??\$/d' easylistchina.txt
 # sed -i '/???\$/d' easylistchina.txt
 # sed -i '/????\$/d' easylistchina.txt
 # sed -i '/?????\$/d' easylistchina.txt
 sed -i '/^\$/d' chengfeng.txt
-sed -i '/*\$/d' chengfeng.txt
+sed -i '/\*\$/d' chengfeng.txt
 # sed -i '/??\$/d' chengfeng.txt
 # sed -i '/???\$/d' chengfeng.txt
 # sed -i '/????\$/d' chengfeng.txt
