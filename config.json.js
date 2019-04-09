@@ -1,9 +1,9 @@
 {
-"version":"900.8.14",
-"md5":"b4ee8663caeaf6050d872848f4cc0c17",
+"version":"900.8.15",
+"md5":"4a769f669f7592084b42053969f6f372",
 "home_url":"Module_koolproxyR.asp",
 "title":"koolproxyR",
 "description":"KPR更多规则更舒服！",
 "changelog":"正式版本上线",
-"build_date":"2019-04-07_22:09:02"
+"build_date":"2019-04-10_00:39:22"
 }

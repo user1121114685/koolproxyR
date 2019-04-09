@@ -10,61 +10,61 @@ status=`ps|grep -w koolproxy | grep -cv grep`
 date=`echo_date1`
 pid=`pidof koolproxy`
 
-easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
-easylist_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/easylistchina.txt | wc -l`
+easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt  | sed -n '3p'|awk '{print $3,$4}'`
+easylist_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | wc -l`
 abx_rules_local=`cat $KSROOT/koolproxyR/data/rules/chengfeng.txt  | sed -n '3p'|awk '{print $3,$4}'`
 abx_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/chengfeng.txt | wc -l`
 fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
 fanboy_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | wc -l`
-video_rules_local=`cat $KSROOT/koolproxyR/data/rules/koolproxy.txt  | sed -n '4p'|awk '{print $3,$4}'`
-
-if [ "$koolproxyR_video_rules" == "1" -o "$koolproxyR_easylist_rules" == "1" -o "$koolproxyR_abx_rules" == "1" -o "$koolproxyR_fanboy_rules" == "1" ]; then
-	if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_abx_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
-		http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;ABP规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
-		return 0
-	fi
-	if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_abx_rules" == "1" ]; then
-		http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;ABP规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条"
-		return 0		
-	fi
-	if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
-		http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;ABP规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
-		return 0		
-	fi
-	if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_abx_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
-		http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
-		return 0		
-	fi	
-	if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_abx_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
-		http_response "ABP规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
-		return 0		
-	fi
-	if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_easylist_rules" == "1" ]; then
-		http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;ABP规则：$easylist_rules_local / $easylist_nu_local条"
-		return 0		
-	fi
-	if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_abx_rules" == "1" ]; then
-		http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条"
-		return 0
-	fi
-	if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
-		http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
-		return 0
-	fi
+# video_rules_local=`cat $KSROOT/koolproxyR/data/rules/koolproxy.txt  | sed -n '4p'|awk '{print $3,$4}'`
+# 这点我当初都有疑问，今天终于揭开了。
+if [ "$koolproxyR_easylist_rules" == "1" -o "$koolproxyR_abx_rules" == "1" -o "$koolproxyR_fanboy_rules" == "1" ]; then
+	# if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_abx_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
+	# 	http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;中国规则V2.0：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+	# 	return 0
+	# fi
+	# if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_abx_rules" == "1" ]; then
+	# 	http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;中国规则V2.0：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条"
+	# 	return 0		
+	# fi
+	# if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
+	# 	http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;中国规则V2.0：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+	# 	return 0		
+	# fi
+	# if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_abx_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
+	# 	http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+	# 	return 0		
+	# fi	
+	# if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_abx_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
+	# 	http_response "中国规则V2.0：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+	# 	return 0		
+	# fi
+	# if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_easylist_rules" == "1" ]; then
+	# 	http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;中国规则V2.0：$easylist_rules_local / $easylist_nu_local条"
+	# 	return 0		
+	# fi
+	# if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_abx_rules" == "1" ]; then
+	# 	http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条"
+	# 	return 0
+	# fi
+	# if [ "$koolproxyR_video_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
+	# 	http_response "视频规则：$video_rules_local&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+	# 	return 0
+	# fi
 	if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_abx_rules" == "1" ]; then
-		http_response "ABP规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条"
+		http_response "中国规则V2.0：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;乘风规则：$abx_rules_local / $abx_nu_local条"
 		return 0		
 	fi
 	if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
-		http_response "ABP规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+		http_response "中国规则V2.0：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
 		return 0		
 	fi
 	if [ "$koolproxyR_abx_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
 		http_response "乘风规则：$abx_rules_local / $abx_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
 		return 0		
 	fi	
-	[ "$koolproxyR_video_rules" == "1" ] && http_response "视频规则：$video_rules_local"
-	[ "$koolproxyR_easylist_rules" == "1" ] && http_response "ABP规则：$easylist_rules_local / $easylist_nu_local条"
+	# [ "$koolproxyR_video_rules" == "1" ] && http_response "视频规则：$video_rules_local"
+	[ "$koolproxyR_easylist_rules" == "1" ] && http_response "中国规则V2.0：$easylist_rules_local / $easylist_nu_local条"
 	[ "$koolproxyR_abx_rules" == "1" ] && http_response "乘风规则：$abx_rules_local / $abx_nu_local条"
 	[ "$koolproxyR_fanboy_rules" == "1" ] && http_response "Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
 else

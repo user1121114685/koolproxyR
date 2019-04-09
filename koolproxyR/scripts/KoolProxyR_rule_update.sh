@@ -4,11 +4,11 @@ source $KSROOT/scripts/base.sh
 eval `dbus export koolproxyR_`
 alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 
-url_daily="https://kprules.b0.upaiyun.com/daily.txt"
-url_kp="https://kprules.b0.upaiyun.com/kp.dat"
-url_koolproxy="https://kprules.b0.upaiyun.com/koolproxy.txt"
+# url_daily="https://kprules.b0.upaiyun.com/daily.txt"
+# url_kp="https://kprules.b0.upaiyun.com/kp.dat"
+# url_koolproxy="https://kprules.b0.upaiyun.com/koolproxy.txt"
 # 原网址跳转到https://kprule.com/koolproxy.txt跳转到又拍云，为了节省时间，还是直接去又拍云下载吧！避免某些时候跳转不过去
-url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
+url_easylist="http://tools.yiclear.com/ChinaList2.0.txt"
 url_abx="https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt"
 url_fanboy="https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt"
 
@@ -16,44 +16,44 @@ update_rule(){
 	echo =======================================================================================================
 	echo_date 开始更新koolproxyR规则，请等待...
 	
-	# update KP官方规则
-	if [ "$koolproxyR_basic_koolproxyR_update" == "1" ] || [ -n "$1" ];then
-		echo_date " ---------------------------------------------------------------------------------------"
-		wget --no-check-certificate --timeout=8 -qO - $url_koolproxy > /tmp/koolproxy.txt
-		rules_date_local=`cat $KSROOT/koolproxyR/data/rules/koolproxy.txt  | sed -n '3p'|awk '{print $3,$4}'`
-		rules_date_local1=`cat /tmp/koolproxy.txt  | sed -n '3p'|awk '{print $3,$4}'`
-		if [ ! -z "$rules_date_local1" ];then
-			if [ "$rules_date_local" != "$rules_date_local1" ];then
-				echo_date 检测到新版本 koolproxy规则，开始更新...
-				echo_date 将临时文件覆盖到原始koolproxy规则文件
-				mv /tmp/koolproxy.txt $KSROOT/koolproxyR/data/rules/koolproxy.txt
-				wget --no-check-certificate --timeout=8 -qO - $url_daily > $KSROOT/koolproxyR/data/rules/daily.txt
-				wget --no-check-certificate --timeout=8 -qO - $url_kp > $KSROOT/koolproxyR/data/rules/kp.dat
-			else
-				echo_date 检测到koolproxy规则本地版本号和在线版本号相同，那还更新个毛啊!
-			fi
-		else
-			echo_date koolproxy规则文件下载失败！
-		fi
-	fi
+	# update KP官方规则 以后此规则都不需要更新了
+	# if [ "$koolproxyR_basic_koolproxyR_update" == "1" ] || [ -n "$1" ];then
+	# 	echo_date " ---------------------------------------------------------------------------------------"
+	# 	wget --no-check-certificate --timeout=8 -qO - $url_koolproxy > /tmp/koolproxy.txt
+	# 	rules_date_local=`cat $KSROOT/koolproxyR/data/rules/koolproxy.txt  | sed -n '3p'|awk '{print $3,$4}'`
+	# 	rules_date_local1=`cat /tmp/koolproxy.txt  | sed -n '3p'|awk '{print $3,$4}'`
+	# 	if [ ! -z "$rules_date_local1" ];then
+	# 		if [ "$rules_date_local" != "$rules_date_local1" ];then
+	# 			echo_date 检测到新版本 koolproxy规则，开始更新...
+	# 			echo_date 将临时文件覆盖到原始koolproxy规则文件
+	# 			mv /tmp/koolproxy.txt $KSROOT/koolproxyR/data/rules/koolproxy.txt
+	# 			wget --no-check-certificate --timeout=8 -qO - $url_daily > $KSROOT/koolproxyR/data/rules/daily.txt
+	# 			wget --no-check-certificate --timeout=8 -qO - $url_kp > $KSROOT/koolproxyR/data/rules/kp.dat
+	# 		else
+	# 			echo_date 检测到koolproxy规则本地版本号和在线版本号相同，那还更新个毛啊!
+	# 		fi
+	# 	else
+	# 		echo_date koolproxy规则文件下载失败！
+	# 	fi
+	# fi
 	
 	
-	# update 中国简易列表
+	# update 中国简易列表 2.0
 	if [ "$koolproxyR_basic_easylist_update" == "1" ] || [ -n "$1" ];then
 		echo_date " ---------------------------------------------------------------------------------------"
-		wget --no-check-certificate --timeout=8 -qO - $url_easylist > /tmp/easylistchina.txt
-		easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
-		easylist_rules_local1=`cat /tmp/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
+		wget --no-check-certificate --timeout=8 -qO - $url_easylist > /tmp/ChinaList2.0.txt
+		easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt  | sed -n '3p'|awk '{print $3,$4}'`
+		easylist_rules_local1=`cat /tmp/ChinaList2.0.txt  | sed -n '3p'|awk '{print $3,$4}'`
 		if [ ! -z "$easylist_rules_local1" ];then
 			if [ "$easylist_rules_local" != "$easylist_rules_local1" ];then
-				echo_date 检测到新版本 中国简易规则，开始更新...
-				echo_date 将临时文件覆盖到原始 中国简易规则文件
-				mv /tmp/easylistchina.txt $KSROOT/koolproxyR/data/rules/easylistchina.txt
+				echo_date 检测到新版本 中国规则 2.0 ，开始更新...
+				echo_date 将临时文件覆盖到原始 中国规则2.0文件
+				mv /tmp/ChinaList2.0.txt $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
 			else
-				echo_date 检测到 中国简易规则本地版本号和在线版本号相同，那还更新个毛啊!
+				echo_date 检测到 中国规则2.0本地版本号和在线版本号相同，那还更新个毛啊!
 			fi
 		else
-			echo_date 中国简易规则文件下载失败！
+			echo_date 中国规则2.0文件下载失败！
 		fi
 	fi
 	
@@ -97,7 +97,7 @@ update_rule(){
 
 	rm -rf /fanboy-annoyance.txt
 	rm -rf /tmp/chengfeng.txt
-	rm -rf /tmp/easylistchina.txt
+	rm -rf /tmp/ChinaList2.0.txt
 	rm -rf /tmp/koolproxy.txt
 
 	echo_date 剔除KP不支持的规则！
@@ -106,27 +106,17 @@ update_rule(){
 	# 听说高手?都打的很多、这样才能体现技术
 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
-	# sed -i '/??\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
-	# sed -i '/???\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
-	# sed -i '/????\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
-	# sed -i '/?????\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
-	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-	# sed -i '/??\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-	# sed -i '/???\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-	# sed -i '/????\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-	# sed -i '/?????\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+
+	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+
 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
 	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# sed -i '/??\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# sed -i '/???\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# sed -i '/????\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# sed -i '/?????\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
 
 	find $KSROOT/koolproxyR/data/rules -name *.txt |sed 's#.*/##' > $KSROOT/koolproxyR/data/source.list
 	sed -i 's/^/0|/' $KSROOT/koolproxyR/data/source.list
 	sed -i 's/$/|0|0/' $KSROOT/koolproxyR/data/source.list
-	echo "0|kp.dat|0|0" >> source.list
+	echo "1|kp.dat|0|0" >> $KSROOT/koolproxyR/data/source.list
 
 
 	

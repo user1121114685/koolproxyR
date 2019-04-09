@@ -302,7 +302,7 @@ function get_run_status(){
 				return false;
 			}
 			document.getElementById("_koolproxyR_status").innerHTML = response.result.split("@@")[0];
-			document.getElementById("_koolproxyR_rule_status").innerHTML = response.result.split("@@")[1];
+			// document.getElementById("_koolproxyR_rule_status").innerHTML = response.result.split("@@")[1];
 			setTimeout("get_run_status();", 2000);
 		},
 		error: function(){
@@ -310,7 +310,7 @@ function get_run_status(){
 				return false;
 			}
 			document.getElementById("_koolproxyR_status").innerHTML = "获取运行状态失败！";
-			document.getElementById("_koolproxyR_rule_status").innerHTML = "获取规则状态失败！";
+			// document.getElementById("_koolproxyR_rule_status").innerHTML = "获取规则状态失败！";
 			setTimeout("get_run_status();", 2000);
 		}
 	});
@@ -479,15 +479,17 @@ function toggleVisibility(whichone) {
 
 function save(){
 	var KP = document.getElementById('_koolproxyR_enable').checked==false;			
-	var R1 = document.getElementById('_koolproxyR_oline_rules').checked==false;
+	// var R1 = document.getElementById('_koolproxyR_oline_rules').checked==false;
 	var R2 = document.getElementById('_koolproxyR_easylist_rules').checked==false;
 	var R3 = document.getElementById('_koolproxyR_abx_rules').checked==false;
 	var R4 = document.getElementById('_koolproxyR_fanboy_rules').checked==false;
-	var R5 = document.getElementById('_koolproxyR_video_rules').checked==false;
+	// var R5 = document.getElementById('_koolproxyR_video_rules').checked==false;
 
 	if (KP){
 		
-	}else if(R1 && R2 && R3 && R4 && R5){
+	// }else if(R1 && R2 && R3 && R4 && R5){
+	}else if(R2 && R3 && R4){
+
 		alert("请到【规则管理】勾选规则！");
 		return false;
 	}
@@ -503,8 +505,8 @@ function save(){
 //			dbus.koolproxyR_reboot = E('_koolproxyR_reboot').value;
 //			dbus.koolproxyR_reboot_hour = E('_koolproxyR_reboot_hour').value;
 //			dbus.koolproxyR_reboot_inter_hour = E('_koolproxyR_reboot_inter_hour').value;
-	dbus.koolproxyR_oline_rules = E("_koolproxyR_oline_rules").checked ? "1" : "0";
-	dbus.koolproxyR_video_rules = E("_koolproxyR_video_rules").checked ? "1" : "0";
+	// dbus.koolproxyR_oline_rules = E("_koolproxyR_oline_rules").checked ? "1" : "0";
+	// dbus.koolproxyR_video_rules = E("_koolproxyR_video_rules").checked ? "1" : "0";
 	dbus.koolproxyR_easylist_rules = E("_koolproxyR_easylist_rules").checked ? "1" : "0";
 	dbus.koolproxyR_abx_rules = E("_koolproxyR_abx_rules").checked ? "1" : "0";
 	dbus.koolproxyR_fanboy_rules = E("_koolproxyR_fanboy_rules").checked ? "1" : "0";
@@ -726,7 +728,7 @@ function set_version() {
 	<span id="msg" class="col-sm-12" style="margin-top:10px;width:700px">koolproxyR具有全部的koolproxy功能，并且不断增加新的功能。是koolproxy的重制版本，请和KP二选一。</span>
 </div>	
 <div class="content">
-	<span id="msg1" class="col-sm-12" style="margin-top:10px;width:700px">责任申明：koolproxy二进制文件及koolproxy官方规则归koolproxy官方所有。</span>
+	<span id="msg1" class="col-sm-12" style="margin-top:10px;width:700px">责任申明：koolproxy二进制文件及kp.dat归koolproxy官方所有,由此产生的问题本项目概不承担责任。</span>
 </div>	
 </div>
 <div class="box" style="margin-top: 0px;">
@@ -895,16 +897,16 @@ function set_version() {
 	<div id="kp_rules_pannel" class="section"></div>
 	<script type="text/javascript">
 		$('#kp_rules_pannel').forms([
-			{ title: '绿坝规则状态', text: '<font id="_koolproxyR_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },
+			// { title: '绿坝规则状态', text: '<font id="_koolproxyR_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },
 			{ title: '规则状态', text: '<font id="_koolproxyR_third_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },	
-			{ title: '绿坝规则（KP官方规则）', multi: [
-			{ name: 'koolproxyR_oline_rules',type:'checkbox',value: dbus.koolproxyR_oline_rules == '1', suffix: '<lable id="_kp_oline_rules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由KoolProxy官方人员编写，是中国简易规则的优化版！</lable>&nbsp;&nbsp;' }
-			]},
-			{ title: '视频规则(KP官方规则)', multi: [
-				{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_video_rules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由KoolProxy官方人员编写的加密规则，可使用 ctrl+↑ 唤出VIP解析。</lable>&nbsp;&nbsp;' },						
-			]},	
-			{ title: 'ABP中国简易规则', multi: [
-				{ name: 'koolproxyR_easylist_rules',type:'checkbox',value: dbus.koolproxyR_easylist_rules == '1', suffix: '<lable id="_kp_easylist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由adblock plus官方维护的easy list china规则，大多数浏览器去广告插件内置，但与绿坝规则大量重复。</lable>&nbsp;&nbsp;' },
+			// { title: '绿坝规则（KP官方规则）', multi: [
+			// { name: 'koolproxyR_oline_rules',type:'checkbox',value: dbus.koolproxyR_oline_rules == '1', suffix: '<lable id="_kp_oline_rules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由KoolProxy官方人员编写，是中国简易规则的优化版！</lable>&nbsp;&nbsp;' }
+			// ]},
+			// { title: '视频规则(KP官方规则)', multi: [
+			// 	{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_video_rules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由KoolProxy官方人员编写的加密规则，可使用 ctrl+↑ 唤出VIP解析。</lable>&nbsp;&nbsp;' },						
+			// ]},	
+			{ title: '中国规则 V2.0', multi: [
+				{ name: 'koolproxyR_easylist_rules',type:'checkbox',value: dbus.koolproxyR_easylist_rules == '1', suffix: '<lable id="_kp_easylist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由yiclear官方维护的ChinaList V2.0规则，大多数浏览器去广告插件内置。</lable>&nbsp;&nbsp;' },
 			]},	
 			{ title: '乘风规则', multi: [
 				{ name: 'koolproxyR_abx_rules',type:'checkbox',value: dbus.koolproxyR_abx_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则是由卡饭论坛人员维护，据说有神奇效果。</lable>&nbsp;&nbsp;' },
@@ -917,8 +919,8 @@ function set_version() {
 //						{ name: 'koolproxyR_basic_rule_update',type: 'select', options:[['0', '禁用'], ['1', '开启']], value: dbus.koolproxyR_basic_rule_update || "1", suffix: ' &nbsp;&nbsp;' },
 //						{ name: 'koolproxyR_basic_rule_update_day', type: 'select', options:option_day_time, value: dbus.koolproxyR_basic_rule_update_day || "7",suffix: ' &nbsp;&nbsp;' },
 //						{ name: 'koolproxyR_basic_rule_update_hr', type: 'select', options:option_hour_time, value: dbus.koolproxyR_basic_rule_update_hr || "3",suffix: ' &nbsp;&nbsp;' },
-				{ name:'koolproxyR_basic_koolproxyR_update',type:'checkbox',value: dbus.koolproxyR_basic_koolproxyR_update != 0, suffix: '<lable id="_koolproxyR_basic_koolproxyR_update_txt">KP官方规则</lable>&nbsp;&nbsp;' },
-				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update != 0, suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">ABP规则</lable>&nbsp;&nbsp;' },
+				// { name:'koolproxyR_basic_koolproxyR_update',type:'checkbox',value: dbus.koolproxyR_basic_koolproxyR_update != 0, suffix: '<lable id="_koolproxyR_basic_koolproxyR_update_txt">KP官方规则</lable>&nbsp;&nbsp;' },
+				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update != 0, suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">ChinaList2.0</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_abx_update',type:'checkbox',value: dbus.koolproxyR_basic_abx_update != 0, suffix: '<lable id="_koolproxyR_basic_abx_update_txt">乘风规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update != 0, suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
 				{ suffix: '<button id="_update_rules_now" style="margin-top:5px;" onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' }

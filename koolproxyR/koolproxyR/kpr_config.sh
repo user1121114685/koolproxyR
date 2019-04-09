@@ -185,7 +185,7 @@ creat_ipset(){
 	# Load ipset netfilter kernel modules and kernel modules
 	ipset -! create white_kp_list nethash
 	ipset -! create black_koolproxy iphash
-	cat $KP_DIR/data/rules/koolproxy.txt $KP_DIR/data/rules/daily.txt $KP_DIR/data/rules/user.txt | grep -Eo "(.\w+\:[1-9][0-9]{1,4})/" | grep -Eo "([0-9]{1,5})" | sort -un | sed -e '$a\80' -e '$a\443' | sed -e "s/^/-A kp_full_port &/g" -e "1 i\-N kp_full_port bitmap:port range 0-65535 " | ipset -R -!
+	cat $KP_DIR/data/rules/user.txt | grep -Eo "(.\w+\:[1-9][0-9]{1,4})/" | grep -Eo "([0-9]{1,5})" | sort -un | sed -e '$a\80' -e '$a\443' | sed -e "s/^/-A kp_full_port &/g" -e "1 i\-N kp_full_port bitmap:port range 0-65535 " | ipset -R -!
 }
 
 gen_special_ip() {
@@ -387,6 +387,7 @@ load_nat(){
 	# 创建KOOLPROXY_ACT nat rule
 	iptables -t nat -N KOOLPROXY_ACT
 	# 匹配TTL走TTL Port
+	# -t nat：显示所有的关卡的信息,-A：追加，在当前链的最后新增一个规则,-p tcp :TCP协议的扩展。一般有三种扩展  显式扩展（-m） 
 	iptables -t nat -A KOOLPROXY_ACT -p tcp -m ttl --ttl-eq 188 -j REDIRECT --to 3001
 	# 不匹配TTL走正常Port
 	iptables -t nat -A KOOLPROXY_ACT -p tcp -j REDIRECT --to 3000
