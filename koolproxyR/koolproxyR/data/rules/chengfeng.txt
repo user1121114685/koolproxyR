@@ -66,7 +66,6 @@ tieba.baidu.com###j_p_postlist>div.l_post_bright:has(a.j_click_stats.img_wrap)
 !----------------------通用、广告联盟站点-----------------------
 ||ad.
 */ad.
-*/ad/$domain=~www.xingk.cc|~iqiyi.com
 */ad_
 */ad-
 */ad0$script
@@ -450,10 +449,8 @@ zol.com.cn##.down-h4,span.down-alink,div[class^=ad_],div[class*=-ad],div[class|=
 ||icon.zol-img.com.cn/public/js/web_foot$script
 ||p.zol-img.com.cn/$script
 !-------------------QQ--------------------
-v.qq.com##div.mod_ad,div.mod_ads,div.pop_ads_wide,#QQlive_SP_RM,div.mod_float_pc,a[href*=".tmall.com/"],div.player_bg_ad
 ||adss.video.qq.com/
 @@||union.video.qq.com/fcgi-bin/data?$script
-||l.qq.com/proxyhttp^$~script,domain=v.qq.com
 @@||streamoc.music.tc.qq.com/
 @@*/omts.tc.qq.com/
 @@*/sports.tc.qq.com/
@@ -775,23 +772,10 @@ tv.sohu.com##.x-dl-shake.x-download-panel, #playerBar > div.area ~a
 ||aliyuncs.com^$domain=1905.com
 @@||tb.mgtv.com/sdk/*/ad-sdk.js$script
 ||da.mgtv.com/
-iqiyi.com##div.vip_rec_main,div.box_right.rightAdv,div[data-widget-3rdads],div.crossAd,#widget-indexad,div.ad-wrapper,#addiv,div.s_main.liveTop_adv,div.leftAd,#sina_anywhere_iframe,#adflash,div[id^="100000000"],#widget-jingdongAd,div[data-widget-adparam]
-*/videos/other/201$xmlhttprequest,object-subrequest,domain=pps.tv|iqiyi.com
-||a.ckm.iqiyi.com/
-||am.cupid.iqiyi.com/am
-||t7z.cupid.iqiyi.com/$domain=~iqiyi.com|~pps.tv
-||ssports.iqiyi.com/app/$object-subrequest
 ||msg.qy.net^$script
 ||qiyipic.com/common/201$object-subrequest
 www.soku.com##li.sb_ad,div.sk-banner,div.sk_banner
 ||tip.soku.com/searches/soku/kubox/v4/sideads.json?
-@@||mmstat.com/$domain=v.youku.com|tudou.com
-*/ikuAdapterNew.js^$script,domain=youku.com|tudou.com
-*/youku/*.mp4?$media,object-subrequest,domain=youku.com|tudou.com
-||atm.youku.com/
-||l.youku.com/
-||module.youku.com/
-youku.com##.right-sidepopup,div[id^=ab_v_],li.js-draw,#yk-player-curtain
 
 bilibili.com##div.ad-f,span[data-ad-type=banner],.gg-floor-module,.slide-gg
 @@||acgvideo.com/*/ad/$xmlhttprequest,object-subrequest,domain=bilibili.com
@@ -1505,7 +1489,6 @@ yinyuetai.com##video~div,.shopMoney,div[class^=ad_],a.pic[href^="http://shop.yin
 |http://a.xigua110.com/a/xigua/$script
 |http://aagw.sdo.
 |http://abc.hkepc.com/www/d/
-||acs.$domain=~youku.com|~tudou.com
 ||adf.dahe.cn
 ||adpic.
 ||adsame.

@@ -10,7 +10,7 @@ status=`ps|grep -w koolproxy | grep -cv grep`
 date=`echo_date1`
 pid=`pidof koolproxy`
 
-easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt  | sed -n '3p'|awk '{print $3,$4}'`
+easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt  | sed -n '2p'|awk '{print $3,$4}'`
 easylist_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | wc -l`
 abx_rules_local=`cat $KSROOT/koolproxyR/data/rules/chengfeng.txt  | sed -n '3p'|awk '{print $3,$4}'`
 abx_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/chengfeng.txt | wc -l`

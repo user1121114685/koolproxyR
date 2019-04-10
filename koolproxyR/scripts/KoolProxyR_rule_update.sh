@@ -106,17 +106,44 @@ update_rule(){
 	# 听说高手?都打的很多、这样才能体现技术
 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+	sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+	sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+	sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+
+	# 将白名单转化成https
+	cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@||https://#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+	# 将规则转化成kp能识别的https
+	cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+
 
 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
 	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
 
+	# 将白名单转化成https
+	cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep "^@@||" | sed 's#^@@||#@@||https://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+	# 将规则转化成kp能识别的https
+	cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+	# 给优酷放行，解决一直加载的问题
+	echo "@@mp4.ts" >> ChinaList2.0.txt
+
+
+
 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
 	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+
+	# 将白名单转化成https
+	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@||https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 将规则转化成kp能识别的https
+	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+
 
 	find $KSROOT/koolproxyR/data/rules -name *.txt |sed 's#.*/##' > $KSROOT/koolproxyR/data/source.list
 	sed -i 's/^/0|/' $KSROOT/koolproxyR/data/source.list
 	sed -i 's/$/|0|0/' $KSROOT/koolproxyR/data/source.list
-	echo "1|kp.dat|0|0" >> $KSROOT/koolproxyR/data/source.list
+	# echo "1|kp.dat|0|0" >> $KSROOT/koolproxyR/data/source.list
 
 
 	

@@ -12670,7 +12670,6 @@ ck101.com,datehub.co,gamer.com.tw,pili.com.tw#@#.text_ads
 ||dzais.com^
 ||e.qiaoyuwang.com^
 ||ent1.12584.cn^
-||f*.baidu.com/it/u=*,*&fm=$third-party
 ||f.520tingshu.com^
 ||f1.06ps.com^
 ||f1.meishichina.com^
@@ -13584,3 +13583,6 @@ dj92cc.com,tingqq.com#@#.share_list
 ||webp2p.letv.com
 ||letvimg.com/$object-subrequest
 ||letvimg.com/gugwl/201*.jpg
+@@mp4.ts
+||https://valipl.cp31.ott.cibntv.net
+||https://bsv.atm.youku.com

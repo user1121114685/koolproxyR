@@ -19,23 +19,23 @@ write_user_txt(){
 load_rules(){
 	sed -i "s/1|/0|/g" $SOURCE_LIST
 
-	if [ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_abx_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ]; then
-		echo_date 加载【视频规则】
-		sed -i "s/0|kp/1|kp/g" $SOURCE_LIST
-	else
-		if [ "$koolproxyR_oline_rules" == "1" ]; then
-			echo_date 加载【绿坝规则】【每日规则】【自定义规则】
-			sed -i "s/0|koolproxy/1|koolproxy/g" $SOURCE_LIST
-			sed -i "s/0|daily/1|daily/g" $SOURCE_LIST
-			sed -i "s/0|user/1|user/g" $SOURCE_LIST
-		fi
-		if [ "$koolproxyR_video_rules" == "1" ]; then
-			echo_date 加载【视频规则】
-			sed -i "s/0|kp/1|kp/g" $SOURCE_LIST
-		fi		
+	# if [ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_abx_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ]; then
+		# echo_date 加载【kp.dat组件】
+		# sed -i "s/0|kp/1|kp/g" $SOURCE_LIST
+	# else
+		# if [ "$koolproxyR_oline_rules" == "1" ]; then
+		# 	echo_date 加载【绿坝规则】【每日规则】【自定义规则】
+		# 	sed -i "s/0|koolproxy/1|koolproxy/g" $SOURCE_LIST
+		# 	sed -i "s/0|daily/1|daily/g" $SOURCE_LIST
+		# 	sed -i "s/0|user/1|user/g" $SOURCE_LIST
+		# fi
+		# if [ "$koolproxyR_video_rules" == "1" ]; then
+		# 	echo_date 加载【视频规则】
+		# 	sed -i "s/0|kp/1|kp/g" $SOURCE_LIST
+		# fi		
 		if [ "$koolproxyR_easylist_rules" == "1" ]; then
-			echo_date 加载【ABP规则】
-			sed -i "s/0|easylistchina/1|easylistchina/g" $SOURCE_LIST
+			echo_date 加载【中国规则2.0】
+			sed -i "s/0|ChinaList/1|ChinaList/g" $SOURCE_LIST
 		fi
 		if [ "$koolproxyR_abx_rules" == "1" ]; then
 			echo_date 加载【乘风规则】
@@ -45,7 +45,7 @@ load_rules(){
 			echo_date 加载【Fanboy规则】
 			sed -i "s/0|fanboy/1|fanboy/g" $SOURCE_LIST	
 		fi				
-	fi
+	# fi
 }
 
 start_koolproxy(){

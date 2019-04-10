@@ -11,7 +11,7 @@ if [ ! -f ./history/version ];then
 fi
 
 version_old=`cat history/version | awk '{print $1}' | sort -rn |sed -n 1p`
-version_new=`cat config.json.js |grep "version"|cut -d"\"" -f 4`
+version_new=`cat config.json.js | grep "version"|cut -d"\"" -f 4`
 md5_old=`cat history/version | sort -nk1 | awk '{print $1}' |sed -n 1p`
 md5_new=` md5sum $tar_name | awk '{print $1}'`
 
