@@ -1,11 +1,11 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.16"
+VERSION="900.8.17"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
-CHANGELOG="正式版本上线"
+CHANGELOG="正式移除了KP绿坝规则，和KP加密规则。现在所有规则都是未加密的了。"
 
 #get latest rules
 rm -rf ./koolproxyR/koolproxyR/data/rules/*
@@ -37,7 +37,7 @@ wget https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt
 # wget https://kprules.b0.upaiyun.com/koolproxy.txt
 # wget https://kprules.b0.upaiyun.com/daily.txt
 # wget https://kprules.b0.upaiyun.com/kp.dat
-# wget https://kprules.b0.upaiyun.com/user.txt
+wget https://kprules.b0.upaiyun.com/user.txt
 
 ## 删除导致KP崩溃的规则
 sed -i '/^\$/d' fanboy-annoyance.txt
@@ -52,6 +52,8 @@ cat fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@||https://#g' >> fanboy
 # 将规则转化成kp能识别的https
 cat fanboy-annoyance.txt | grep "^||" | sed 's#^||#||https://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| sed 's#^#https://#g' >> fanboy-annoyance_https.txt
+# 给github的https放行
+sed -i '/github/d' fanboy-annoyance_https.txt
 
 sed -i '/^\$/d' ChinaList2.0.txt
 sed -i '/\*\$/d' ChinaList2.0.txt
@@ -97,7 +99,7 @@ find -name *.txt |sed 's#.*/##' > source.list
 # find -name fanboy_* |sed 's#.*/##' >> source.list
 sed -i 's/^/0|/' source.list
 sed -i 's/$/|0|0/' source.list
-# echo "1|kp.dat|0|0" >> source.list
+echo "1|user.txt|0|0" >> source.list
 
 # 不支持规则
 

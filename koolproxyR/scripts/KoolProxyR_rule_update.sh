@@ -114,7 +114,9 @@ update_rule(){
 	cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@||https://#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 	# 将规则转化成kp能识别的https
 	cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
-
+	cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep -i '^[0-9a-z]'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+	# 给github放行
+	sed -i '/github/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 
 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
 	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
@@ -123,8 +125,19 @@ update_rule(){
 	cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep "^@@||" | sed 's#^@@||#@@||https://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
 	# 将规则转化成kp能识别的https
 	cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+	cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep -i '^[0-9a-z]'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+
 	# 给优酷放行，解决一直加载的问题
 	echo "@@mp4.ts" >> ChinaList2.0.txt
+
+	echo "||https://valipl.cp31.ott.cibntv.net" >> $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+	echo "||https://bsv.atm.youku.com" >> $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+	# 给手机百度图片放行
+	sed -i '/baidu.com\/it\/u/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+	sed -i '/baidu.com\/it\/u/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+	# echo "@@https://f*.baidu.com/it/u=*,*&fm=$third-party" >> ChinaList2.0.txt
+	# echo "@@http://f*.baidu.com/it/u=*,*&fm=$third-party" >> ChinaList2.0.txt
+
 
 
 
@@ -138,12 +151,13 @@ update_rule(){
 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@||https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
 	# 将规则转化成kp能识别的https
 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^[0-9a-z]'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
 
 
 	find $KSROOT/koolproxyR/data/rules -name *.txt |sed 's#.*/##' > $KSROOT/koolproxyR/data/source.list
 	sed -i 's/^/0|/' $KSROOT/koolproxyR/data/source.list
 	sed -i 's/$/|0|0/' $KSROOT/koolproxyR/data/source.list
-	# echo "1|kp.dat|0|0" >> $KSROOT/koolproxyR/data/source.list
+	echo "1|user.txt|0|0" >> $KSROOT/koolproxyR/data/source.list
 
 
 	
