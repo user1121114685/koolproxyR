@@ -145,6 +145,10 @@ update_rule(){
 		sed -i '/twitter.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		# 给facebook.com的https放行
 		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		# 给 instagram.com 放行
+		sed -i '/instagram.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+
 
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 		sed -i '15,$d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
@@ -176,6 +180,9 @@ update_rule(){
 		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
 		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
 		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+		# 给facebook.com的https放行
+		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
 
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 		sed -i '6,$d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt

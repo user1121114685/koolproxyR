@@ -5422,7 +5422,6 @@
 ||https://ezprice.com.tw/ezysm/
 ||https://ezprice.com.tw/js/*_ysm_
 ||https://f1.com.tw/BANNER/$~collapse,domain=520cc.me
-||https://facebook.com/v2.6/plugins/video.$domain=storm.mg
 ||https://faidns.com/image/site/faiscoAd/
 ||https://faloo.com/ou/site/
 ||https://familydoctor.com.cn/aiframe/
@@ -12515,7 +12514,6 @@
 ||http://ezprice.com.tw/ezysm/
 ||http://ezprice.com.tw/js/*_ysm_
 ||http://f1.com.tw/BANNER/$~collapse,domain=520cc.me
-||http://facebook.com/v2.6/plugins/video.$domain=storm.mg
 ||http://faidns.com/image/site/faiscoAd/
 ||http://faloo.com/ou/site/
 ||http://familydoctor.com.cn/aiframe/

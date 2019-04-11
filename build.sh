@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.18"
+VERSION="900.8.19"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -68,8 +68,9 @@ sed -i '/apple.com/d' fanboy-annoyance_https.txt
 sed -i '/twitter.com/d' fanboy-annoyance_https.txt
 # 给facebook.com的https放行
 sed -i '/facebook.com/d' fanboy-annoyance_https.txt
-
-
+sed -i '/fbcdn.net/d' fanboy-annoyance_https.txt
+# 给 instagram.com 放行
+sed -i '/instagram.com/d' fanboy-annoyance_https.txt
 
 # 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 sed -i '15,$d' fanboy-annoyance.txt
@@ -103,6 +104,10 @@ cat ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g'
 cat ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> ChinaList2.0_https.txt
 cat ChinaList2.0.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> ChinaList2.0_https.txt
 cat ChinaList2.0.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> ChinaList2.0_https.txt
+# 给facebook.com的https放行
+sed -i '/facebook.com/d' ChinaList2.0_https.txt
+sed -i '/fbcdn.net/d' ChinaList2.0_https.txt
+
 
 # 腾讯视频真的没办法了。找大佬帮我把
 # 删除不必要信息重新打包 15 表示从第15行开始 $表示结束

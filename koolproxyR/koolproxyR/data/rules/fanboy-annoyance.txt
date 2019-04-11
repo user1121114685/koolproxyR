@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: DE3IDGtLME9BnEkYyuZdrg
-! Version: 201904111442
+! Checksum: Oq7lKcweP7DlbECOKm7wNw
+! Version: 201904111642
 ! Title: Fanboy's Annoyance List
-! Last modified: 11 Apr 2019 14:42 UTC
+! Last modified: 11 Apr 2019 16:42 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -189,7 +189,6 @@
 @@@||https://akamai.net^*/social/$domain=ign.com
 @@@||https://akamaihd.net/r/tedcdnpf-a.akamaihd.net/images/playlists/social_$image,domain=ted.com
 @@@||https://akamaihd.net^$xmlhttprequest,domain=history.com
-@@@||https://akamaihd.net^*/instagram_$domain=instagram.com
 @@@||https://alienwarearena.com/bundles/spoutlet/js/SocialShare.min.js
 @@@||https://aliunicorn.com/js/*/show-facebook.js$domain=aliexpress.com
 @@@||https://aliunicorn.com/wimg/buyer/single/facebook.gif$domain=login.aliexpress.com
@@ -335,7 +334,6 @@
 @@@||https://eyeo.com/wp-content/plugins/pp-team-social-icons/$~third-party
 @@@||https://factorio.com/images/Steam.png$image
 @@@||https://fark.net/images/*/links/
-@@@||https://fbcdn.net/connect.php/js/FB.Share$domain=jamendo.com
 @@@||https://fdcdn.co.uk/img/icons/
 @@@||https://feedburner.google.com^$image,domain=feeds.feedburner.com
 @@@||https://feedly.com/feedburner/feedly.png$domain=feeds.feedburner.com
@@ -965,7 +963,6 @@
 @@||http://akamai.net^*/social/$domain=ign.com
 @@||http://akamaihd.net/r/tedcdnpf-a.akamaihd.net/images/playlists/social_$image,domain=ted.com
 @@||http://akamaihd.net^$xmlhttprequest,domain=history.com
-@@||http://akamaihd.net^*/instagram_$domain=instagram.com
 @@||http://alienwarearena.com/bundles/spoutlet/js/SocialShare.min.js
 @@||http://aliunicorn.com/js/*/show-facebook.js$domain=aliexpress.com
 @@||http://aliunicorn.com/wimg/buyer/single/facebook.gif$domain=login.aliexpress.com
@@ -1111,7 +1108,6 @@
 @@||http://eyeo.com/wp-content/plugins/pp-team-social-icons/$~third-party
 @@||http://factorio.com/images/Steam.png$image
 @@||http://fark.net/images/*/links/
-@@||http://fbcdn.net/connect.php/js/FB.Share$domain=jamendo.com
 @@||http://fdcdn.co.uk/img/icons/
 @@||http://feedburner.google.com^$image,domain=feeds.feedburner.com
 @@||http://feedly.com/feedburner/feedly.png$domain=feeds.feedburner.com
@@ -2056,7 +2052,6 @@
 ||https://assets.tumblr.com/assets/html/iframe/teaser.html?$third-party
 ||https://b2c-wsinsight.crowdfactory.com^$third-party
 ||https://badges.del.icio.us/feeds/$third-party
-||https://badges.instagram.com^$third-party
 ||https://bit.ly/TweetAndTrack.js
 ||https://bizsugar.com^*/button-b.php$third-party
 ||https://bloglovin.com/widget/$third-party
@@ -2103,7 +2098,6 @@
 ||https://houzz.com/buttonWidget?$third-party
 ||https://iconosquare.com/widget.php$third-party
 ||https://insidesoci.al^$third-party
-||https://instagram.com^*/users/$third-party
 ||https://instagramfollowbutton.com^$third-party
 ||https://instawidget.net^$third-party
 ||https://intagme.com/in/?u=$third-party
@@ -3264,7 +3258,6 @@
 ||http://assets.tumblr.com/assets/html/iframe/teaser.html?$third-party
 ||http://b2c-wsinsight.crowdfactory.com^$third-party
 ||http://badges.del.icio.us/feeds/$third-party
-||http://badges.instagram.com^$third-party
 ||http://bit.ly/TweetAndTrack.js
 ||http://bizsugar.com^*/button-b.php$third-party
 ||http://bloglovin.com/widget/$third-party
@@ -3311,7 +3304,6 @@
 ||http://houzz.com/buttonWidget?$third-party
 ||http://iconosquare.com/widget.php$third-party
 ||http://insidesoci.al^$third-party
-||http://instagram.com^*/users/$third-party
 ||http://instagramfollowbutton.com^$third-party
 ||http://instawidget.net^$third-party
 ||http://intagme.com/in/?u=$third-party
@@ -7208,7 +7200,6 @@ https://itwire.com##div[style^="position:fixed;left:50%;top:380px;"]
 https://huffingtonpost.com##div[style^="z-index: 1; border: 7px"]
 https://cellular-news.com##fieldset[style="width:294px"]
 https://celebified.com,sulia.com##footer
-https://instagram.com##footer[class] + [class]:last-child
 https://wheninmanila.com##form[action^="https://lb.benchmarkemail.com/"]
 https://urgrove.com##form[style="border:1px solid #ccc;padding:3px;text-align:center;"]
 https://deadline.com##iframe[style="width:100%;height:121px;"]
@@ -7228,7 +7219,6 @@ https://firecold.com##table[style="margin: 30px 0 0 0"]
 https://briefing.com##table[style="vertical-align: top; text-align: left;\a \9             background-color: White; width: 100%; padding: 10px;"]
 https://osnews.com##table[width="285"]
 https://finestdaily.com##table[width="642"]
-https://instagram.com##.HoverCard
 https://e-day.ro,mtlblog.com###CoverPop-cover
 https://news.yahoo.com###Daily-Ticket-newsletter-promo-8U
 https://nextshark.com###FbridgeSGWidget
@@ -8087,7 +8077,6 @@ https://breakingnews.ie##form[name="mc-embedded-subscribe-form"]
 https://newyorker.com##iframe[src^="/wp-content/assets/static/dfp/"]
 https://medicinenet.com##iframe[width="170"]
 https://rightwingwatch.org#.footer-sidebar__widgets
-https://instagram.com##section > footer[class] + div[class]
 https://abovetopsecret.com###RSS
 https://thetech.com###rss
 https://newswars.com##.btn-warning
@@ -8206,6 +8195,7 @@ https://airliquide.com##.js-scroll-down
 https://buyee.jp##.jump
 https://marketwatch.com##.link--top
 https://kakaocorp.com##.link_top
+https://bbc.com##.lx-commentary__top-link
 https://sony.net##.ly_pagetop-main
 https://rwe.com##.navToTop
 https://cricketcountry.com##.next-top
@@ -9442,6 +9432,7 @@ https://newyorker.com##[class*="ArticleSocial"]
 https://newyorker.com##[class*="socialShare"]
 https://msnbc.com##[class^="share__"]
 https://thewirecutter.com##[class^="share_buttons"]
+https://cnn.com##[class^="social-sharestyles"]
 https://scientificamerican.com##[data-mobile-context-nav-tab="share"]
 https://shazam.com##[data-shz-cmd="share"]
 https://myfreecams.com##[onclick^="share"]
@@ -10028,7 +10019,6 @@ https://hotcleaner.com##.Sm
 https://cnn.com##.TermsOfService__component
 https://mtn.co.za##.Toast
 https://cnn.com##._2dc7d020
-https://instagram.com##._he402
 https://sunweb.co.uk##.absolute-dialog
 https://greenfields.eu##.accept-alert
 https://akeebabackup.com,imunify360.com,luxos.com,v-tac.eu##.activebar-container
@@ -10184,7 +10174,6 @@ https://itv.com##.js-site-alert-content
 https://archdaily.com##.kth-toast
 https://lexus.co.uk,lexus.eu##.l-disclaimer
 https://wiley.com##.l-notification
-https://instagram.com##.lOPC8
 https://inoreader.com##.landing_promo_banner_top
 https://evs.com##.language-switcher
 https://airlinecheckins.com##.layout-row
@@ -12916,7 +12905,6 @@ https://vk.com,vkontakte.ru#@##vk_right
 https://xing.com#@##xing-share
 https://disqus.com#@#.-facebook
 https://disqus.com#@#.-twitter
-https://instagram.com,pinterest.com#@#.FollowButton
 https://tomshardware.com#@#.SocialButton
 https://yachtingjournal.com#@#.addthis:not(body)
 https://onbeing.org#@#.addthis_32x32_style
@@ -13043,7 +13031,6 @@ https://ndtv.com#@#.icon_gplus
 https://community.imgur.com#@#.icons
 https://upworthy.com#@#.image-share
 https://24h.com.vn,dailymail.co.uk,eva.vn,thisismoney.co.uk#@#.img-share
-https://instagram.com#@#.instagram-follow
 https://thenewamerican.com#@#.itemSocialSharing
 https://sap.com#@#.j-social-actions
 https://sap.com#@#.j-social-button
@@ -13350,7 +13337,7 @@ https://franziskaner-weissbier.de#@#.accept-cookies
 https://bing.com,czuczu.pl#@#.cc-container
 https://morningstar.ca#@#.cc_container
 https://onet.pl#@#.cmp-app_gdpr
-https://oath.com#@#.consent-container
+https://consent.yahoo.com,oath.com#@#.consent-container
 https://boursorama.com#@#.cookie-banner
 https://janrain.com,moemax.de,xxxlshop.de#@#.cookie-bar
 https://rituals.com#@#.cookie-bar-wrapper
@@ -16666,7 +16653,6 @@ http://itwire.com##div[style^="position:fixed;left:50%;top:380px;"]
 http://huffingtonpost.com##div[style^="z-index: 1; border: 7px"]
 http://cellular-news.com##fieldset[style="width:294px"]
 http://celebified.com,sulia.com##footer
-http://instagram.com##footer[class] + [class]:last-child
 http://wheninmanila.com##form[action^="https://lb.benchmarkemail.com/"]
 http://urgrove.com##form[style="border:1px solid #ccc;padding:3px;text-align:center;"]
 http://deadline.com##iframe[style="width:100%;height:121px;"]
@@ -16686,7 +16672,6 @@ http://firecold.com##table[style="margin: 30px 0 0 0"]
 http://briefing.com##table[style="vertical-align: top; text-align: left;\a \9             background-color: White; width: 100%; padding: 10px;"]
 http://osnews.com##table[width="285"]
 http://finestdaily.com##table[width="642"]
-http://instagram.com##.HoverCard
 http://e-day.ro,mtlblog.com###CoverPop-cover
 http://news.yahoo.com###Daily-Ticket-newsletter-promo-8U
 http://nextshark.com###FbridgeSGWidget
@@ -17545,7 +17530,6 @@ http://breakingnews.ie##form[name="mc-embedded-subscribe-form"]
 http://newyorker.com##iframe[src^="/wp-content/assets/static/dfp/"]
 http://medicinenet.com##iframe[width="170"]
 http://rightwingwatch.org#.footer-sidebar__widgets
-http://instagram.com##section > footer[class] + div[class]
 http://abovetopsecret.com###RSS
 http://thetech.com###rss
 http://newswars.com##.btn-warning
@@ -17664,6 +17648,7 @@ http://airliquide.com##.js-scroll-down
 http://buyee.jp##.jump
 http://marketwatch.com##.link--top
 http://kakaocorp.com##.link_top
+http://bbc.com##.lx-commentary__top-link
 http://sony.net##.ly_pagetop-main
 http://rwe.com##.navToTop
 http://cricketcountry.com##.next-top
@@ -18900,6 +18885,7 @@ http://newyorker.com##[class*="ArticleSocial"]
 http://newyorker.com##[class*="socialShare"]
 http://msnbc.com##[class^="share__"]
 http://thewirecutter.com##[class^="share_buttons"]
+http://cnn.com##[class^="social-sharestyles"]
 http://scientificamerican.com##[data-mobile-context-nav-tab="share"]
 http://shazam.com##[data-shz-cmd="share"]
 http://myfreecams.com##[onclick^="share"]
@@ -19486,7 +19472,6 @@ http://hotcleaner.com##.Sm
 http://cnn.com##.TermsOfService__component
 http://mtn.co.za##.Toast
 http://cnn.com##._2dc7d020
-http://instagram.com##._he402
 http://sunweb.co.uk##.absolute-dialog
 http://greenfields.eu##.accept-alert
 http://akeebabackup.com,imunify360.com,luxos.com,v-tac.eu##.activebar-container
@@ -19642,7 +19627,6 @@ http://itv.com##.js-site-alert-content
 http://archdaily.com##.kth-toast
 http://lexus.co.uk,lexus.eu##.l-disclaimer
 http://wiley.com##.l-notification
-http://instagram.com##.lOPC8
 http://inoreader.com##.landing_promo_banner_top
 http://evs.com##.language-switcher
 http://airlinecheckins.com##.layout-row
@@ -22374,7 +22358,6 @@ http://vk.com,vkontakte.ru#@##vk_right
 http://xing.com#@##xing-share
 http://disqus.com#@#.-facebook
 http://disqus.com#@#.-twitter
-http://instagram.com,pinterest.com#@#.FollowButton
 http://tomshardware.com#@#.SocialButton
 http://yachtingjournal.com#@#.addthis:not(body)
 http://onbeing.org#@#.addthis_32x32_style
@@ -22501,7 +22484,6 @@ http://ndtv.com#@#.icon_gplus
 http://community.imgur.com#@#.icons
 http://upworthy.com#@#.image-share
 http://24h.com.vn,dailymail.co.uk,eva.vn,thisismoney.co.uk#@#.img-share
-http://instagram.com#@#.instagram-follow
 http://thenewamerican.com#@#.itemSocialSharing
 http://sap.com#@#.j-social-actions
 http://sap.com#@#.j-social-button
@@ -22808,7 +22790,7 @@ http://franziskaner-weissbier.de#@#.accept-cookies
 http://bing.com,czuczu.pl#@#.cc-container
 http://morningstar.ca#@#.cc_container
 http://onet.pl#@#.cmp-app_gdpr
-http://oath.com#@#.consent-container
+http://consent.yahoo.com,oath.com#@#.consent-container
 http://boursorama.com#@#.cookie-banner
 http://janrain.com,moemax.de,xxxlshop.de#@#.cookie-bar
 http://rituals.com#@#.cookie-bar-wrapper
@@ -22903,7 +22885,6 @@ http://timeout.com#@#div[data-module="cookie_banner"]
 @@@https://*/wp-content/plugins/wp-minify/min/?*,wp-content$stylesheet
 @@@https://*.php?f=js/*.js,js$script,domain=undicom.pl
 @@@https://*/angular-facebook.js
-@@@https://*/followbutton.js$domain=instagram.com
 @@@https://*/share-sprite-$domain=askubuntu.com|mathoverflow.net|serverfault.com|stackapps.com|stackexchange.com|stackoverflow.com|superuser.com
 @@@https://*/socialmedia_$domain=defacto.expert
 @@@https://*/wp-content/js/googleplus-sign-in.js$script
@@ -22920,7 +22901,6 @@ http://timeout.com#@#div[data-module="cookie_banner"]
 @@http://*/wp-content/plugins/wp-minify/min/?*,wp-content$stylesheet
 @@http://*.php?f=js/*.js,js$script,domain=undicom.pl
 @@http://*/angular-facebook.js
-@@http://*/followbutton.js$domain=instagram.com
 @@http://*/share-sprite-$domain=askubuntu.com|mathoverflow.net|serverfault.com|stackapps.com|stackexchange.com|stackoverflow.com|superuser.com
 @@http://*/socialmedia_$domain=defacto.expert
 @@http://*/wp-content/js/googleplus-sign-in.js$script
