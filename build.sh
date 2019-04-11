@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.17"
+VERSION="900.8.18"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -24,7 +24,7 @@ wget http://tools.yiclear.com/ChinaList2.0.txt
 
 # wget https://easylist-downloads.adblockplus.org/easylistchina.txt
 wget -O chengfeng.txt https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt
-wget https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt
+wget https://secure.fanboy.co.nz/fanboy-annoyance.txt
 # 分割三方规则
 
 # # split -l 1 easylistchina.txt ./../easylistchina_
@@ -47,31 +47,71 @@ sed -i '/youku.com/d' fanboy-annoyance.txt
 sed -i '/iqiyi.com/d' fanboy-annoyance.txt
 sed -i '/v.qq.com/d' fanboy-annoyance.txt
 
-# 将白名单转化成https
-cat fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@||https://#g' >> fanboy-annoyance_https.txt
+# 将白名单转化成https https放行用三个@ http 用2个@
+cat fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> fanboy-annoyance_https.txt
+cat fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> fanboy-annoyance_https.txt
 # 将规则转化成kp能识别的https
 cat fanboy-annoyance.txt | grep "^||" | sed 's#^||#||https://#g' >> fanboy-annoyance_https.txt
-cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| sed 's#^#https://#g' >> fanboy-annoyance_https.txt
+cat fanboy-annoyance.txt | grep "^||" | sed 's#^||#||http://#g' >> fanboy-annoyance_https.txt
+cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> fanboy-annoyance_https.txt
+cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> fanboy-annoyance_https.txt
+cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> fanboy-annoyance_https.txt
+cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> fanboy-annoyance_https.txt
+cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> fanboy-annoyance_https.txt
+
+
 # 给github的https放行
 sed -i '/github/d' fanboy-annoyance_https.txt
+# 给apple的https放行
+sed -i '/apple.com/d' fanboy-annoyance_https.txt
+# 给api.twitter.com的https放行
+sed -i '/twitter.com/d' fanboy-annoyance_https.txt
+# 给facebook.com的https放行
+sed -i '/facebook.com/d' fanboy-annoyance_https.txt
+
+
+
+# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
+sed -i '15,$d' fanboy-annoyance.txt
+# 合二归一
+cat fanboy-annoyance_https.txt >> fanboy-annoyance.txt
 
 sed -i '/^\$/d' ChinaList2.0.txt
 sed -i '/\*\$/d' ChinaList2.0.txt
-
-# 将白名单转化成https
-cat ChinaList2.0.txt | grep "^@@||" | sed 's#^@@||#@@||https://#g' >> ChinaList2.0_https.txt
-# 将规则转化成kp能识别的https
-cat ChinaList2.0.txt | grep "^||" | sed 's#^||#||https://#g' >> ChinaList2.0_https.txt
-# 给优酷放行，解决一直加载的问题
-echo "@@mp4.ts" >> ChinaList2.0.txt
-echo "||https://valipl.cp31.ott.cibntv.net" >> ChinaList2.0.txt
-echo "||https://bsv.atm.youku.com" >> ChinaList2.0.txt
+# 给btbtt.替换过滤规则。
+sed -i 's#btbtt.\*#\*btbtt.\*#g' ChinaList2.0.txt
 # 给手机百度图片放行
 sed -i '/baidu.com\/it\/u/d' ChinaList2.0.txt
-sed -i '/baidu.com\/it\/u/d' ChinaList2.0_https.txt
+
+
+# 将白名单转化成https
+cat ChinaList2.0.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> ChinaList2.0_https.txt
+cat ChinaList2.0.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> ChinaList2.0_https.txt
+# 将规则转化成kp能识别的https
+cat ChinaList2.0.txt | grep "^||" | sed 's#^||#||https://#g' >> ChinaList2.0_https.txt
+cat ChinaList2.0.txt | grep "^||" | sed 's#^||#||http://#g' >> ChinaList2.0_https.txt
+# 给优酷放行，解决一直加载的问题
+# echo "@@mp4.ts" >> ChinaList2.0.txt
+# echo "||https://valipl.cp31.ott.cibntv.net" >> ChinaList2.0.txt
+# echo "||https://bsv.atm.youku.com" >> ChinaList2.0.txt
+
 # echo "@@https://f*.baidu.com/it/u=*,*&fm=$third-party" >> ChinaList2.0.txt
 # echo "@@http://f*.baidu.com/it/u=*,*&fm=$third-party" >> ChinaList2.0.txt
-cat ChinaList2.0.txt | grep -i '^[0-9a-z]'| sed 's#^#https://#g' >> ChinaList2.0_https.txt
+cat ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> ChinaList2.0_https.txt
+# 源文件替换成http
+cat ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> ChinaList2.0_https.txt
+cat ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> ChinaList2.0_https.txt
+cat ChinaList2.0.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> ChinaList2.0_https.txt
+cat ChinaList2.0.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> ChinaList2.0_https.txt
+
+# 腾讯视频真的没办法了。找大佬帮我把
+# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
+sed -i '6,$d' ChinaList2.0.txt
+# 合二归一
+wget https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kpr_our_rule.txt
+cat kpr_our_rule.txt >> ChinaList2.0.txt
+cat ChinaList2.0_https.txt >> ChinaList2.0.txt
+
 
 
 sed -i '/^\$/d' chengfeng.txt
@@ -83,10 +123,29 @@ sed -i '/iqiyi.com/d' chengfeng.txt
 sed -i '/v.qq.com/d' chengfeng.txt
 
 # 将白名单转化成https
-cat chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@||https://#g' >> chengfeng_https.txt
+cat chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> chengfeng_https.txt
+cat chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> chengfeng_https.txt
 # 将规则转化成kp能识别的https
 cat chengfeng.txt | grep "^||" | sed 's#^||#||https://#g' >> chengfeng_https.txt
-cat chengfeng.txt | grep -i '^[0-9a-z]'| sed 's#^#https://#g' >> chengfeng_https.txt
+cat chengfeng.txt | grep "^||" | sed 's#^||#||http://#g' >> chengfeng_https.txt
+cat chengfeng.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> chengfeng_https.txt
+cat chengfeng.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> chengfeng_https.txt
+cat chengfeng.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> chengfeng_https.txt
+cat chengfeng.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> chengfeng_https.txt
+cat chengfeng.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> chengfeng_https.txt
+
+
+# 给bilibili.com的https放行
+sed -i '/bilibili.com/d' chengfeng_https.txt
+
+# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
+sed -i '5,$d' chengfeng.txt
+# 合二归一
+cat chengfeng_https.txt >> chengfeng.txt
+
+## 删除临时文件
+rm *https.txt
+rm kpr_our_rule.txt
 
 # 测试专用
 # split -l 1 chengfeng.txt chengfeng_
@@ -99,6 +158,7 @@ find -name *.txt |sed 's#.*/##' > source.list
 # find -name fanboy_* |sed 's#.*/##' >> source.list
 sed -i 's/^/0|/' source.list
 sed -i 's/$/|0|0/' source.list
+sed -i '/user.txt/d' source.list
 echo "1|user.txt|0|0" >> source.list
 
 # 不支持规则

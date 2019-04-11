@@ -403,6 +403,10 @@ function update_KPR(){
 function issues_KP(){
 	window.open("https://github.com/user1121114685/koolproxyR/issues/new");
 }
+
+function update_KPR_rule(){
+	window.open("https://github.com/user1121114685/koolproxyR_rule_list/edit/master/kpr_our_rule.txt");
+}
 function verifyFields(){
 	var a = E('_koolproxyR_enable').checked;
 //			var f = (E('_koolproxyR_reboot').value == '1');
@@ -704,7 +708,7 @@ function update_rules_now(arg){
 		dataType: "json",
 		success: function(response){
 			if(response){
-				setTimeout("window.location.reload()", 500);
+				setTimeout("window.location.reload()", 3500);
 				return true;
 			}
 		}
@@ -769,10 +773,10 @@ function set_version() {
 //					{ title: '开启Koolproxy', name:'koolproxyR_enable',type:'checkbox',value: dbus.koolproxyR_enable == 1 },
 //					{ title: 'Koolproxy运行状态', text: '<font id="_koolproxyR_status" name=_koolproxyR_status color="#1bbf35">正在获取运行状态...</font>' },
 //					{ title: 'Koolproxy规则状态', text: '<font id="_koolproxyR_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },
-			{ title: '开启进阶模式', name:'koolproxyR_mode_enable',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_mode_enable || "0",suffix: '<font color="#FF0000">【进阶模式】&nbsp;&nbsp;提供更多设置选项</font></lable>' },
-			{ title: '过滤模式', name:'koolproxyR_base_mode',type:'select',options:[['0','不过滤'],['1','HTTP全局模式'],['2','黑名单模式']],value: dbus.koolproxyR_base_mode || "1",suffix: '<font color="#FF0000">【开启进阶模式】&nbsp;&nbsp;获得更多选项！</font></lable>' },
-			{ title: '过滤模式', name:'koolproxyR_mode',type:'select',options:[['0','不过滤'],['1','HTTP全局模式'],['2','带HTTPS的全局模式'],['3','黑名单模式'],['4','带HTTPS的黑名单模式']],value: dbus.koolproxyR_mode || "1",suffix: '<font color="#FF0000">一般开启HTTP全局模式即可，去视频广告请在&nbsp;&nbsp;访问控制中给设备指定【带HTTPS全局模式】</font></lable>' },
-			{ title: '端口控制', name:'koolproxyR_port',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_port || "0",suffix: '<lable id="readme_port"><font color="#FF0000">【端口控制】&nbsp;&nbsp;只有全端口模式下才生效</font></lable>'},
+			{ title: '开启进阶模式', name:'koolproxyR_mode_enable',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_mode_enable || "0",suffix: '<font color="#FF0000">【进阶模式】&nbsp;&nbsp;提供更多设置选项</font>' },
+			{ title: '过滤模式', name:'koolproxyR_base_mode',type:'select',options:[['0','不过滤'],['1','HTTP全局模式'],['2','黑名单模式']],value: dbus.koolproxyR_base_mode || "1",suffix: '<font color="#FF0000">【开启进阶模式】&nbsp;&nbsp;获得更多选项！</font>' },
+			{ title: '过滤模式', name:'koolproxyR_mode',type:'select',options:[['0','不过滤'],['1','HTTP全局模式'],['2','带HTTPS的全局模式'],['3','黑名单模式'],['4','带HTTPS的黑名单模式']],value: dbus.koolproxyR_mode || "1",suffix: '<font color="#FF0000">一般开启HTTP全局模式即可，去视频广告请在&nbsp;&nbsp;访问控制中给设备指定【带HTTPS全局模式】</font>' },
+			{ title: '端口控制', name:'koolproxyR_port',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_port || "0",suffix: '<lable id="readme_port"><font color="#FF0000">【端口控制】&nbsp;&nbsp;只有全端口模式下才生效</font>'},
 			{ title: '例外端口', name:'koolproxyR_bp_port',type:'text',style:'input_style', maxlen:50, value:dbus.koolproxyR_bp_port ,suffix: '<font color="#FF0000">例：</font><font color="#FF0000">【单端口】：80【多端口】：80,443</font>'},
 //					{ title: '开启Adblock Plus Host', name:'koolproxyR_host',type:'checkbox',value: dbus.koolproxyR_host == 1, suffix: '<lable id="_koolproxyR_host_nu"></lable>' },
 //					{ title: '插件自动重启', multi: [
@@ -923,8 +927,9 @@ function set_version() {
 				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update != 0, suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">ChinaList2.0</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_abx_update',type:'checkbox',value: dbus.koolproxyR_basic_abx_update != 0, suffix: '<lable id="_koolproxyR_basic_abx_update_txt">乘风规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update != 0, suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
-				{ suffix: '<button id="_update_rules_now" style="margin-top:5px;" onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' }
-			]}	
+				{ suffix: '<button id="_update_rules_now" style="margin-top:5px;" onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' },
+			]},	
+			{ title: '为KoolProxyR贡献规则', suffix: '<font color="#FF0000">通过此链接贡献的规则，将服务更多的KPR用户。方便更多人</font>&nbsp;&nbsp;&nbsp;<button onclick="update_KPR_rule();" class="btn">提交规则</button>' }
 		]);
 	</script>
 	<br><hr>
