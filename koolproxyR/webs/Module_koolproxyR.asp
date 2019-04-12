@@ -912,8 +912,8 @@ function set_version() {
 			{ title: '中国规则 V2.0', multi: [
 				{ name: 'koolproxyR_easylist_rules',type:'checkbox',value: dbus.koolproxyR_easylist_rules == '1', suffix: '<lable id="_kp_easylist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由yiclear官方维护的ChinaList V2.0规则，大多数浏览器去广告插件内置。</lable>&nbsp;&nbsp;' },
 			]},	
-			{ title: '乘风规则', multi: [
-				{ name: 'koolproxyR_abx_rules',type:'checkbox',value: dbus.koolproxyR_abx_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则是由卡饭论坛人员维护，据说有神奇效果。</lable>&nbsp;&nbsp;' },
+			{ title: '视频规则 kp.dat', multi: [
+				{ name: 'koolproxyR_abx_rules',type:'checkbox',value: dbus.koolproxyR_abx_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由KoolProxy官方人员编写的加密规则，可使用 ctrl+↑ 唤出VIP解析。</lable>&nbsp;&nbsp;' },
 			]},	
 			{ title: 'Fanboy规则（主打国外）', multi: [
 				{ name: 'koolproxyR_fanboy_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由Fanboy发起，针对国外主流令人厌烦的广告过滤。（PS：还有一个全功能版本13万规则。。。）</lable>&nbsp;&nbsp;' }
@@ -925,7 +925,7 @@ function set_version() {
 //						{ name: 'koolproxyR_basic_rule_update_hr', type: 'select', options:option_hour_time, value: dbus.koolproxyR_basic_rule_update_hr || "3",suffix: ' &nbsp;&nbsp;' },
 				// { name:'koolproxyR_basic_koolproxyR_update',type:'checkbox',value: dbus.koolproxyR_basic_koolproxyR_update != 0, suffix: '<lable id="_koolproxyR_basic_koolproxyR_update_txt">KP官方规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update != 0, suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">ChinaList2.0</lable>&nbsp;&nbsp;' },
-				{ name:'koolproxyR_basic_abx_update',type:'checkbox',value: dbus.koolproxyR_basic_abx_update != 0, suffix: '<lable id="_koolproxyR_basic_abx_update_txt">乘风规则</lable>&nbsp;&nbsp;' },
+				{ name:'koolproxyR_basic_abx_update',type:'checkbox',value: dbus.koolproxyR_basic_abx_update != 0, suffix: '<lable id="_koolproxyR_basic_abx_update_txt">视频规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update != 0, suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
 				{ suffix: '<button id="_update_rules_now" style="margin-top:5px;" onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' },
 			]},	

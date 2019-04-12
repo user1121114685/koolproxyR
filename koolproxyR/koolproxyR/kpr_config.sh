@@ -27,7 +27,7 @@ load_rules(){
 		# 	echo_date 加载【绿坝规则】【每日规则】【自定义规则】
 		# 	sed -i "s/0|koolproxy/1|koolproxy/g" $SOURCE_LIST
 		# 	sed -i "s/0|daily/1|daily/g" $SOURCE_LIST
-		# 	sed -i "s/0|user/1|user/g" $SOURCE_LIST
+			sed -i "s/0|user/1|user/g" $SOURCE_LIST
 		# fi
 		# if [ "$koolproxyR_video_rules" == "1" ]; then
 		# 	echo_date 加载【视频规则】
@@ -38,8 +38,8 @@ load_rules(){
 			sed -i "s/0|ChinaList/1|ChinaList/g" $SOURCE_LIST
 		fi
 		if [ "$koolproxyR_abx_rules" == "1" ]; then
-			echo_date 加载【乘风规则】
-			sed -i "s/0|chengfeng/1|chengfeng/g" $SOURCE_LIST
+			echo_date 加载【视频规则】
+			sed -i "s/0|kp.dat/1|kp.dat/g" $SOURCE_LIST
 		fi
 		if [ "$koolproxyR_fanboy_rules" == "1" ]; then
 			echo_date 加载【Fanboy规则】

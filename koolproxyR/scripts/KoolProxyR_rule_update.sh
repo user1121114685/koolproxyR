@@ -9,7 +9,7 @@ alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 # url_koolproxy="https://kprules.b0.upaiyun.com/koolproxy.txt"
 # 原网址跳转到https://kprule.com/koolproxy.txt跳转到又拍云，为了节省时间，还是直接去又拍云下载吧！避免某些时候跳转不过去
 url_easylist="http://tools.yiclear.com/ChinaList2.0.txt"
-url_abx="https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt"
+url_abx="https://kprules.b0.upaiyun.com/kp.dat"
 url_fanboy="https://secure.fanboy.co.nz/fanboy-annoyance.txt"
 
 update_rule(){
@@ -42,7 +42,7 @@ update_rule(){
 	if [ "$koolproxyR_basic_easylist_update" == "1" ] || [ -n "$1" ];then
 		echo_date " ---------------------------------------------------------------------------------------"
 		# wget --no-check-certificate --timeout=8 -qO - $url_easylist > /tmp/ChinaList2.0.txt
-		wget -O /tmp/ChinaList2.0.txt $url_easylist
+		wget -a /tmp/upload/kpr_log.txt -O /tmp/ChinaList2.0.txt $url_easylist
 		easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt  | sed -n '2p'|awk '{print $3,$4}'`
 		easylist_rules_local1=`cat /tmp/ChinaList2.0.txt  | sed -n '2p'|awk '{print $3,$4}'`
 
@@ -62,33 +62,42 @@ update_rule(){
 		fi
 	fi
 	
-	# update 乘风规则
+	# 	# update 乘风规则
+	# if [ "$koolproxyR_basic_abx_update" == "1" ] || [ -n "$1" ];then
+	# 	echo_date " ---------------------------------------------------------------------------------------"
+	# 	wget -a /tmp/upload/kpr_log.txt -O /tmp/chengfeng.txt $url_abx
+	# 	# wget --no-check-certificate --timeout=8 -qO - $url_abx > /tmp/chengfeng.txt
+	# 	abx_rules_local=`cat $KSROOT/koolproxyR/data/rules/chengfeng.txt  | sed -n '3p'|awk '{print $3,$4}'`
+	# 	abx_rules_local1=`cat /tmp/chengfeng.txt | sed -n '3p'|awk '{print $3,$4}'`
+	# 	echo_date 乘风规则本地版本号： $abx_rules_local
+	# 	echo_date 乘风规则在线版本号： $abx_rules_local1
+	# 	if [ ! -z "$abx_rules_local1" ];then
+	# 		if [ "$abx_rules_local" != "$abx_rules_local1" ];then
+	# 			echo_date 检测到新版本 乘风规则，开始更新...
+	# 			echo_date 将临时文件覆盖到原始 乘风规则 文件
+	# 			mv /tmp/chengfeng.txt $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# 			koolproxyR_https_chengfeng=1
+	# 		else
+	# 			echo_date 检测到 乘风规则 本地版本号和在线版本号相同，那还更新个毛啊!
+	# 		fi
+	# 	else
+	# 		echo_date 乘风规则文件下载失败！
+	# 	fi
+	# fi
+
+	# update 视频规则
 	if [ "$koolproxyR_basic_abx_update" == "1" ] || [ -n "$1" ];then
 		echo_date " ---------------------------------------------------------------------------------------"
-		wget -O /tmp/chengfeng.txt $url_abx
-		# wget --no-check-certificate --timeout=8 -qO - $url_abx > /tmp/chengfeng.txt
-		abx_rules_local=`cat $KSROOT/koolproxyR/data/rules/chengfeng.txt  | sed -n '3p'|awk '{print $3,$4}'`
-		abx_rules_local1=`cat /tmp/chengfeng.txt | sed -n '3p'|awk '{print $3,$4}'`
-		echo_date 乘风规则本地版本号： $abx_rules_local
-		echo_date 乘风规则在线版本号： $abx_rules_local1
-		if [ ! -z "$abx_rules_local1" ];then
-			if [ "$abx_rules_local" != "$abx_rules_local1" ];then
-				echo_date 检测到新版本 乘风规则，开始更新...
-				echo_date 将临时文件覆盖到原始 乘风规则 文件
-				mv /tmp/chengfeng.txt $KSROOT/koolproxyR/data/rules/chengfeng.txt
-				koolproxyR_https_chengfeng=1
-			else
-				echo_date 检测到 乘风规则 本地版本号和在线版本号相同，那还更新个毛啊!
-			fi
-		else
-			echo_date 乘风规则文件下载失败！
-		fi
+		echo_date 我  加密视频规则kp.dat 你是看不到版本号的。强制更新。！
+		wget -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kp.dat $url_abx
+		echo_date  视频规则已经更新。
+
 	fi
 
 	# update fanboy规则
 	if [ "$koolproxyR_basic_fanboy_update" == "1" ] || [ -n "$1" ];then
 		echo_date " ---------------------------------------------------------------------------------------"
-		wget -O /tmp/fanboy-annoyance.txt $url_fanboy
+		wget -a /tmp/upload/kpr_log.txt -O /tmp/fanboy-annoyance.txt $url_fanboy
 		# wget --no-check-certificate --timeout=8 -qO - $url_fanboy > /tmp/fanboy-annoyance.txt
 		fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
 		fanboy_rules_local1=`cat /tmp/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
@@ -109,7 +118,7 @@ update_rule(){
 	fi
 
 	rm -rf /fanboy-annoyance.txt
-	rm -rf /tmp/chengfeng.txt
+	# rm -rf /tmp/chengfeng.txt
 	rm -rf /tmp/ChinaList2.0.txt
 	rm -rf /tmp/koolproxy.txt
 
@@ -119,9 +128,15 @@ update_rule(){
 		# 听说高手?都打的很多、这样才能体现技术
 		sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		# 给三大视频网站放行 由kp.dat负责
 		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		sed -i '/g.alicdn.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+
 
 		# 将白名单转化成https
 		cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
@@ -165,6 +180,16 @@ update_rule(){
 		sed -i 's#btbtt.\*#\*btbtt.\*#g' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
 		# 给手机百度图片放行
 		sed -i '/baidu.com\/it\/u/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		# 给三大视频网站放行 由kp.dat负责
+		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		sed -i '/g.alicdn.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+
+
 
 
 		# 将白名单转化成https
@@ -193,44 +218,49 @@ update_rule(){
 	fi
 
 
-	if [ "$koolproxyR_https_chengfeng" == "1" ];then
-		sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-		sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-		sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# if [ "$koolproxyR_https_chengfeng" == "1" ];then
+	# 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# 	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# 	sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# 	sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# 	sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
 
-		# 将白名单转化成https
-		cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-		cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 	# 将白名单转化成https
+	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
 
-		# 将规则转化成kp能识别的https
-		cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-		cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^||" | sed 's#^||#||http://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 	# 将规则转化成kp能识别的https
+	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^||" | sed 's#^||#||http://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
 
-		cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-		cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-		cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-		cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-		cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-		# 给bilibili.com的https放行
-		sed -i '/bilibili.com/d' $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+	# 	# 给bilibili.com的https放行
+	# 	sed -i '/bilibili.com/d' $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
 
-		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
-		sed -i '5,$d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-		# 合二归一
-		cat  $KSROOT/koolproxyR/data/rules/chengfeng_https.txt >> $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	fi
+	# 	# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
+	# 	sed -i '5,$d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# 	# 合二归一
+	# 	cat  $KSROOT/koolproxyR/data/rules/chengfeng_https.txt >> $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	# fi
 	## 删除临时文件
-	rm $KSROOT/koolproxyR/data/rules/*https.txt
+	rm $KSROOT/koolproxyR/data/rules/*_https.txt
 	rm $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt
 
 
-	find $KSROOT/koolproxyR/data/rules -name *.txt |sed 's#.*/##' > $KSROOT/koolproxyR/data/source.list
-	sed -i 's/^/0|/' $KSROOT/koolproxyR/data/source.list
-	sed -i 's/$/|0|0/' $KSROOT/koolproxyR/data/source.list
-	sed -i '/user.txt/d' $KSROOT/koolproxyR/data/source.list
-	echo "1|user.txt|0|0" >> $KSROOT/koolproxyR/data/source.list
+
+	# 我不知道为什么会失误，但是我知道，我可以不替换了。没必要
+	# echo "0|chengfeng.txt|0|0" >> $KSROOT/koolproxyR/data/source.list
+	# echo "0|fanboy-annoyance.txt|0|0" >> $KSROOT/koolproxyR/data/source.list
+	# echo "0|ChinaList2.0.txt|0|0" >> $KSROOT/koolproxyR/data/source.list
+	# # find $KSROOT/koolproxyR/data/rules -name *.txt |sed 's#.*/##' > $KSROOT/koolproxyR/data/source.list
+	# # sed -i 's/^/0|/' $KSROOT/koolproxyR/data/source.list
+	# # sed -i 's/$/|0|0/' $KSROOT/koolproxyR/data/source.list
+	# # sed -i '/user.txt/d' $KSROOT/koolproxyR/data/source.list
+	# echo "1|user.txt|0|0" >> $KSROOT/koolproxyR/data/source.list
 
 
 	
@@ -241,10 +271,12 @@ update_rule(){
 	sh $KSROOT/koolproxyR/kpr_config.sh restart
 	echo =======================================================================================================
 }
+
 if [ -n "$1" ];then
 	update_rule "$1" > /tmp/upload/kpr_log.txt
 	echo XU6J03M6 >> /tmp/upload/kpr_log.txt
 	http_response "$1"
+
 else
 	update_rule > /tmp/upload/kpr_log.txt
 	echo XU6J03M6 >> /tmp/upload/kpr_log.txt
