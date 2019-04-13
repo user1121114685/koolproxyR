@@ -4,12 +4,12 @@ source $KSROOT/scripts/base.sh
 eval `dbus export koolproxyR_`
 alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 
-# url_daily="https://kprules.b0.upaiyun.com/daily.txt"
-# url_kp="https://kprules.b0.upaiyun.com/kp.dat"
+url_cjx="https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
+url_kp="https://kprules.b0.upaiyun.com/kp.dat"
 # url_koolproxy="https://kprules.b0.upaiyun.com/koolproxy.txt"
 # 原网址跳转到https://kprule.com/koolproxy.txt跳转到又拍云，为了节省时间，还是直接去又拍云下载吧！避免某些时候跳转不过去
-url_easylist="http://tools.yiclear.com/ChinaList2.0.txt"
-url_abx="https://kprules.b0.upaiyun.com/kp.dat"
+url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
+url_mobile="https://filters.adtidy.org/extension/chromium/filters/11.txt"
 url_fanboy="https://secure.fanboy.co.nz/fanboy-annoyance.txt"
 
 update_rule(){
@@ -41,55 +41,57 @@ update_rule(){
 	# update 中国简易列表 2.0
 	if [ "$koolproxyR_basic_easylist_update" == "1" ] || [ -n "$1" ];then
 		echo_date " ---------------------------------------------------------------------------------------"
-		# wget --no-check-certificate --timeout=8 -qO - $url_easylist > /tmp/ChinaList2.0.txt
-		wget -a /tmp/upload/kpr_log.txt -O /tmp/ChinaList2.0.txt $url_easylist
-		easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt  | sed -n '2p'|awk '{print $3,$4}'`
-		easylist_rules_local1=`cat /tmp/ChinaList2.0.txt  | sed -n '2p'|awk '{print $3,$4}'`
+		# wget --no-check-certificate --timeout=8 -qO - $url_easylist > /tmp/easylistchina.txt
+		wget -a /tmp/upload/kpr_log.txt -O /tmp/easylistchina.txt $url_easylist
+		wegt -a /tmp/upload/kpr_log.txt -O /tmp/cjx-annoyance.txt $url_cjx
+		cat /tmp/cjx-annoyance.txt >> /tmp/easylistchina.txt
+		rm /tmp/cjx-annoyance.txt
+		easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
+		easylist_rules_local1=`cat /tmp/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
 
-		echo_date 中国规则 2.0 本地版本号： $easylist_rules_local
-		echo_date 中国规则 2.0 在线版本号： $easylist_rules_local1
+		echo_date KPR主规则 本地版本号： $easylist_rules_local
+		echo_date KPR主规则 在线版本号： $easylist_rules_local1
 		if [ ! -z "$easylist_rules_local1" ];then
 			if [ "$easylist_rules_local" != "$easylist_rules_local1" ];then
-				echo_date 检测到新版本 中国规则 2.0 ，开始更新...
-				echo_date 将临时文件覆盖到原始 中国规则2.0文件
-				mv /tmp/ChinaList2.0.txt $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+				echo_date 检测到新版本 KPR主规则 ，开始更新...
+				echo_date 将临时文件覆盖到原始 KPR主规则文件
+				mv /tmp/easylistchina.txt $KSROOT/koolproxyR/data/rules/easylistchina.txt
 				koolproxyR_https_ChinaList=1
 			else
-				echo_date 检测到 中国规则2.0本地版本号和在线版本号相同，那还更新个毛啊!
+				echo_date 检测到 KPR主规则本地版本号和在线版本号相同，那还更新个毛啊!
 			fi
 		else
-			echo_date 中国规则2.0文件下载失败！
+			echo_date KPR主规则文件下载失败！
 		fi
 	fi
 	
-	# 	# update 乘风规则
-	# if [ "$koolproxyR_basic_abx_update" == "1" ] || [ -n "$1" ];then
-	# 	echo_date " ---------------------------------------------------------------------------------------"
-	# 	wget -a /tmp/upload/kpr_log.txt -O /tmp/chengfeng.txt $url_abx
-	# 	# wget --no-check-certificate --timeout=8 -qO - $url_abx > /tmp/chengfeng.txt
-	# 	abx_rules_local=`cat $KSROOT/koolproxyR/data/rules/chengfeng.txt  | sed -n '3p'|awk '{print $3,$4}'`
-	# 	abx_rules_local1=`cat /tmp/chengfeng.txt | sed -n '3p'|awk '{print $3,$4}'`
-	# 	echo_date 乘风规则本地版本号： $abx_rules_local
-	# 	echo_date 乘风规则在线版本号： $abx_rules_local1
-	# 	if [ ! -z "$abx_rules_local1" ];then
-	# 		if [ "$abx_rules_local" != "$abx_rules_local1" ];then
-	# 			echo_date 检测到新版本 乘风规则，开始更新...
-	# 			echo_date 将临时文件覆盖到原始 乘风规则 文件
-	# 			mv /tmp/chengfeng.txt $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# 			koolproxyR_https_chengfeng=1
-	# 		else
-	# 			echo_date 检测到 乘风规则 本地版本号和在线版本号相同，那还更新个毛啊!
-	# 		fi
-	# 	else
-	# 		echo_date 乘风规则文件下载失败！
-	# 	fi
-	# fi
+		# update 移动设备规则
+	if [ "$koolproxyR_basic_video_update" == "1" ] || [ -n "$1" ];then
+		echo_date " ---------------------------------------------------------------------------------------"
+		wget -a /tmp/upload/kpr_log.txt -O /tmp/mobile.txt $url_mobile
+		mobile_rules_local=`cat $KSROOT/koolproxyR/data/rules/mobile.txt  | sed -n '4p'|awk '{print $3,$4}'`
+		mobile_rules_local1=`cat /tmp/mobile.txt | sed -n '4p'|awk '{print $3,$4}'`
+		echo_date 移动设备规则本地版本号： $mobile_rules_local
+		echo_date 移动设备规则在线版本号： $mobile_rules_local1
+		if [ ! -z "$mobile_rules_local1" ];then
+			if [ "$mobile_rules_local" != "$mobile_rules_local1" ];then
+				echo_date 检测到新版本 移动设备规则，开始更新...
+				echo_date 将临时文件覆盖到原始 移动设备规则 文件
+				mv /tmp/mobile.txt $KSROOT/koolproxyR/data/rules/mobile.txt
+				koolproxyR_https_mobile=1
+			else
+				echo_date 检测到 移动设备规则 本地版本号和在线版本号相同，那还更新个毛啊!
+			fi
+		else
+			echo_date 移动设备规则文件下载失败！
+		fi
+	fi
 
 	# update 视频规则
-	if [ "$koolproxyR_basic_abx_update" == "1" ] || [ -n "$1" ];then
+	if [ "$koolproxyR_basic_video_update" == "1" ] || [ -n "$1" ];then
 		echo_date " ---------------------------------------------------------------------------------------"
-		echo_date 我  加密视频规则kp.dat 你是看不到版本号的。强制更新。！
-		wget -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kp.dat $url_abx
+		echo_date 加密视频规则kp.dat 看不到版本号。所以强制更新。！
+		wget -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kp.dat $url_kp
 		echo_date  视频规则已经更新。
 
 	fi
@@ -118,9 +120,8 @@ update_rule(){
 	fi
 
 	rm -rf /fanboy-annoyance.txt
-	# rm -rf /tmp/chengfeng.txt
-	rm -rf /tmp/ChinaList2.0.txt
-	rm -rf /tmp/koolproxy.txt
+	rm -rf /tmp/mobile.txt
+	rm -rf /tmp/easylistchina.txt
 
 	echo_date 正在优化kpr规则。。。。。
 	if [ "$koolproxyR_https_fanboy" == "1" ];then
@@ -174,98 +175,104 @@ update_rule(){
 
 
 	if [ "$koolproxyR_https_ChinaList" == "1" ];then
-		sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
-		sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给btbtt.替换过滤规则。
-		sed -i 's#btbtt.\*#\*btbtt.\*#g' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		sed -i 's#btbtt.\*#\*btbtt.\*#g' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给手机百度图片放行
-		sed -i '/baidu.com\/it\/u/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
-		# 给三大视频网站放行 由kp.dat负责
-		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
-		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
-		sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
-		sed -i '/g.alicdn.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
-		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
-		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
-		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
-
+		sed -i '/baidu.com\/it\/u/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 
 
 
 		# 将白名单转化成https
-		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
-		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 
 		# 将规则转化成kp能识别的https
-		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
-		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep "^||" | sed 's#^||#||http://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep "^||" | sed 's#^||#||http://#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 
-		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
-		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
-		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
-		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
-		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 		# 给facebook.com的https放行
-		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
-		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt
+		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
-		sed -i '6,$d' $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		sed -i '6,$d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 合二归一
-		wget -O $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kpr_our_rule.txt
-		cat $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt >> $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
-		cat $KSROOT/koolproxyR/data/rules/ChinaList2.0_https.txt >> $KSROOT/koolproxyR/data/rules/ChinaList2.0.txt
+		wget -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kpr_our_rule.txt
+		cat $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt >> $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina_https.txt >> $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		# 把三大视频网站给剔除来，作为单独文件。
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'youku.com' > $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'iqiyi.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'v.qq.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'g.alicdn.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'tudou.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'gtimg.cn' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
+		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'l.qq.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
+		# 给三大视频网站放行 由kp.dat负责
+		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/g.alicdn.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 	fi
 
 
-	# if [ "$koolproxyR_https_chengfeng" == "1" ];then
-	# 	sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# 	sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# 	sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# 	sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# 	sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
+	if [ "$koolproxyR_https_mobile" == "1" ];then
+		sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 
-	# 	# 将白名单转化成https
-	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+		# 将白名单转化成https
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
 
-	# 	# 将规则转化成kp能识别的https
-	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep "^||" | sed 's#^||#||http://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+		# 将规则转化成kp能识别的https
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep "^||" | sed 's#^||#||http://#g' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
 
-	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-	# 	cat $KSROOT/koolproxyR/data/rules/chengfeng.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
-	# 	# 给bilibili.com的https放行
-	# 	sed -i '/bilibili.com/d' $KSROOT/koolproxyR/data/rules/chengfeng_https.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
 
-	# 	# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
-	# 	sed -i '5,$d' $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# 	# 合二归一
-	# 	cat  $KSROOT/koolproxyR/data/rules/chengfeng_https.txt >> $KSROOT/koolproxyR/data/rules/chengfeng.txt
-	# fi
-	## 删除临时文件
+		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
+		sed -i '8,$d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 合二归一
+		cat  $KSROOT/koolproxyR/data/rules/mobile_https.txt >> $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 把三大视频网站给剔除来，作为单独文件。
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i 'youku.com' > $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i 'iqiyi.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i 'v.qq.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i 'g.alicdn.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i 'tudou.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i 'gtimg.cn' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
+		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i 'l.qq.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
+		# 给三大视频网站放行 由kp.dat负责
+		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/g.alicdn.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+
+	fi
+	# 删除临时文件
 	rm $KSROOT/koolproxyR/data/rules/*_https.txt
 	rm $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt
 
 
 
-	# 我不知道为什么会失误，但是我知道，我可以不替换了。没必要
-	# echo "0|chengfeng.txt|0|0" >> $KSROOT/koolproxyR/data/source.list
-	# echo "0|fanboy-annoyance.txt|0|0" >> $KSROOT/koolproxyR/data/source.list
-	# echo "0|ChinaList2.0.txt|0|0" >> $KSROOT/koolproxyR/data/source.list
-	# # find $KSROOT/koolproxyR/data/rules -name *.txt |sed 's#.*/##' > $KSROOT/koolproxyR/data/source.list
-	# # sed -i 's/^/0|/' $KSROOT/koolproxyR/data/source.list
-	# # sed -i 's/$/|0|0/' $KSROOT/koolproxyR/data/source.list
-	# # sed -i '/user.txt/d' $KSROOT/koolproxyR/data/source.list
-	# echo "1|user.txt|0|0" >> $KSROOT/koolproxyR/data/source.list
-
-
-	
 	echo_date 所有规则更新完毕！
-	# reboot koolproxyR
 
 	echo_date 自动重启koolproxyR，以应用新的规则文件！请稍后！
 	sh $KSROOT/koolproxyR/kpr_config.sh restart

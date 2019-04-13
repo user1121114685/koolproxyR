@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.20"
+VERSION="900.8.21"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -15,20 +15,23 @@ cd koolproxyR/koolproxyR/data/rules
 # mkdir oridata
 # cd oridata
 # 下载三方规则
-wget http://tools.yiclear.com/ChinaList2.0.txt
 
-#  http://tools.yiclear.com/ChinaList2.0.txt  取代abp
-#  https://easylist.to/easylist/easylist.txt  取代fanboy
-#  https://fanboy.co.nz/r/fanboy-ultimate.txt fanboy 旗舰版
-#  https://easylist-downloads.adblockplus.org/malwaredomains_full.txt  恶意软件规则
+wget https://easylist-downloads.adblockplus.org/easylistchina.txt
+wegt https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
 
-# wget https://easylist-downloads.adblockplus.org/easylistchina.txt
-# wget -O chengfeng.txt https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt
 wget https://secure.fanboy.co.nz/fanboy-annoyance.txt
+# 移动广告过滤规则
+wget -O mobile.txt https://filters.adtidy.org/extension/chromium/filters/11.txt
+
+# ad.txt：合并EasylistChina、EasylistLite、CJX'sAnnoyance，以及补充的一些规则；
+# ad2.txt：仅合并EasylistChina、EasylistLite、CJX'sAnnoyance；
+# ad3.txt：合并EasylistChina、EasylistLite、CJX'sAnnoyance、EasyPrivacy；
+# wget https://gitee.com/halflife/list/raw/master/ad.txt
+
 # 分割三方规则
 
 # # split -l 1 easylistchina.txt ./../easylistchina_
-# split -l 1 chengfeng.txt ./../chengfeng_
+# split -l 1 mobile.txt ./../chengfeng_
 # # split -l 999 fanboy-annoyance.txt ./../fanboy_
 # cd ..
 
@@ -38,7 +41,7 @@ wget https://secure.fanboy.co.nz/fanboy-annoyance.txt
 # wget https://kprules.b0.upaiyun.com/daily.txt
 wget https://kprules.b0.upaiyun.com/kp.dat
 wget https://kprules.b0.upaiyun.com/user.txt
-
+## ---------------------------------------------------fanboy处理开始------------------------------------------------------
 ## 删除导致KP崩溃的规则
 sed -i '/^\$/d' fanboy-annoyance.txt
 sed -i '/\*\$/d' fanboy-annoyance.txt
@@ -82,93 +85,119 @@ sed -i '/instagram.com/d' fanboy-annoyance_https.txt
 sed -i '15,$d' fanboy-annoyance.txt
 # 合二归一
 cat fanboy-annoyance_https.txt >> fanboy-annoyance.txt
+## -------------------------------------------------------fanboy处理结束------------------------------------------------------
 
-sed -i '/^\$/d' ChinaList2.0.txt
-sed -i '/\*\$/d' ChinaList2.0.txt
+
+## ---------------------------------------------------------KPR 中国简易规则处理开始 -------------------------------------------------------
+cat cjx-annoyance.txt >> easylistchina.txt
+sed -i '/^\$/d' easylistchina.txt
+sed -i '/\*\$/d' easylistchina.txt
 # 给btbtt.替换过滤规则。
-sed -i 's#btbtt.\*#\*btbtt.\*#g' ChinaList2.0.txt
+sed -i 's#btbtt.\*#\*btbtt.\*#g' easylistchina.txt
 # 给手机百度图片放行
-sed -i '/baidu.com\/it\/u/d' ChinaList2.0.txt
+sed -i '/baidu.com\/it\/u/d' easylistchina.txt
 
-# 给三大视频网站放行 由kp.dat负责
-sed -i '/youku.com/d' ChinaList2.0.txt
-sed -i '/g.alicdn.com/d' ChinaList2.0.txt
-sed -i '/tudou.com/d' ChinaList2.0.txt
-sed -i '/iqiyi.com/d' ChinaList2.0.txt
-sed -i '/v.qq.com/d' ChinaList2.0.txt
-sed -i '/gtimg.cn/d' ChinaList2.0.txt
-sed -i '/l.qq.com/d' ChinaList2.0.txt
 
 # 将白名单转化成https
-cat ChinaList2.0.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> ChinaList2.0_https.txt
-cat ChinaList2.0.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> ChinaList2.0_https.txt
+cat easylistchina.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> easylistchina_https.txt
+cat easylistchina.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> easylistchina_https.txt
 # 将规则转化成kp能识别的https
-cat ChinaList2.0.txt | grep "^||" | sed 's#^||#||https://#g' >> ChinaList2.0_https.txt
-cat ChinaList2.0.txt | grep "^||" | sed 's#^||#||http://#g' >> ChinaList2.0_https.txt
-# 给优酷放行，解决一直加载的问题
-# echo "@@mp4.ts" >> ChinaList2.0.txt
-# echo "||https://valipl.cp31.ott.cibntv.net" >> ChinaList2.0.txt
-# echo "||https://bsv.atm.youku.com" >> ChinaList2.0.txt
-
-# echo "@@https://f*.baidu.com/it/u=*,*&fm=$third-party" >> ChinaList2.0.txt
-# echo "@@http://f*.baidu.com/it/u=*,*&fm=$third-party" >> ChinaList2.0.txt
-cat ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> ChinaList2.0_https.txt
+cat easylistchina.txt | grep "^||" | sed 's#^||#||https://#g' >> easylistchina_https.txt
+cat easylistchina.txt | grep "^||" | sed 's#^||#||http://#g' >> easylistchina_https.txt
+cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> easylistchina_https.txt
 # 源文件替换成http
-cat ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> ChinaList2.0_https.txt
-cat ChinaList2.0.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> ChinaList2.0_https.txt
-cat ChinaList2.0.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> ChinaList2.0_https.txt
-cat ChinaList2.0.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> ChinaList2.0_https.txt
+cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> easylistchina_https.txt
+cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> easylistchina_https.txt
+cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -i '^|http' >> easylistchina_https.txt
+
+cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> easylistchina_https.txt
+cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> easylistchina_https.txt
 # 给facebook.com的https放行
-sed -i '/facebook.com/d' ChinaList2.0_https.txt
-sed -i '/fbcdn.net/d' ChinaList2.0_https.txt
+sed -i '/facebook.com/d' easylistchina_https.txt
+sed -i '/fbcdn.net/d' easylistchina_https.txt
 
 
 
 # 腾讯视频真的没办法了。找大佬帮我把
 # 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
-sed -i '6,$d' ChinaList2.0.txt
+sed -i '6,$d' easylistchina.txt
 # 合二归一
 wget https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kpr_our_rule.txt
-cat kpr_our_rule.txt >> ChinaList2.0.txt
-cat ChinaList2.0_https.txt >> ChinaList2.0.txt
+cat kpr_our_rule.txt >> easylistchina.txt
+cat easylistchina_https.txt >> easylistchina.txt
+
+# 把三大视频网站给剔除来，作为单独文件。
+cat easylistchina.txt | grep -i 'youku.com' > kpr_video_list.txt
+cat easylistchina.txt | grep -i 'iqiyi.com' >> kpr_video_list.txt
+cat easylistchina.txt | grep -i 'v.qq.com' >> kpr_video_list.txt
+cat easylistchina.txt | grep -i 'g.alicdn.com' >> kpr_video_list.txt
+cat easylistchina.txt | grep -i 'tudou.com' >> kpr_video_list.txt
+cat easylistchina.txt | grep -i 'gtimg.cn' >> kpr_video_list.txt
+cat easylistchina.txt | grep -i 'l.qq.com' >> kpr_video_list.txt
+# 给三大视频网站放行 由kp.dat负责
+sed -i '/youku.com/d' easylistchina.txt
+sed -i '/iqiyi.com/d' easylistchina.txt
+sed -i '/v.qq.com/d' easylistchina.txt
+sed -i '/g.alicdn.com/d' easylistchina.txt
+sed -i '/tudou.com/d' easylistchina.txt
+sed -i '/gtimg.cn/d' easylistchina.txt
+sed -i '/l.qq.com/d' easylistchina.txt
 
 
-
-# sed -i '/^\$/d' chengfeng.txt
-# sed -i '/\*\$/d' chengfeng.txt
-
-# # 给三大视频网站放行 由kp.dat负责
-# sed -i '/youku.com/d' chengfeng.txt
-# sed -i '/iqiyi.com/d' chengfeng.txt
-# sed -i '/v.qq.com/d' chengfeng.txt
-
-# # 将白名单转化成https
-# cat chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> chengfeng_https.txt
-# cat chengfeng.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> chengfeng_https.txt
-# # 将规则转化成kp能识别的https
-# cat chengfeng.txt | grep "^||" | sed 's#^||#||https://#g' >> chengfeng_https.txt
-# cat chengfeng.txt | grep "^||" | sed 's#^||#||http://#g' >> chengfeng_https.txt
-# cat chengfeng.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> chengfeng_https.txt
-# cat chengfeng.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> chengfeng_https.txt
-# cat chengfeng.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> chengfeng_https.txt
-# cat chengfeng.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> chengfeng_https.txt
-# cat chengfeng.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> chengfeng_https.txt
+# -----------------------------------------KPR 中国简易规则处理结束------------------------------------------------
 
 
-# # 给bilibili.com的https放行
-# sed -i '/bilibili.com/d' chengfeng_https.txt
+# -------------------------------------- 移动设备规则处理开始----------------------------------------------------------
 
-# # 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
-# sed -i '5,$d' chengfeng.txt
-# # 合二归一
-# cat chengfeng_https.txt >> chengfeng.txt
+sed -i '/^\$/d' mobile.txt
+sed -i '/\*\$/d' mobile.txt
+
+
+# 将白名单转化成https
+cat mobile.txt | grep "^@@||" | sed 's#^@@||#@@@||https://#g' >> mobile_https.txt
+cat mobile.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> mobile_https.txt
+# 将规则转化成kp能识别的https
+cat mobile.txt | grep "^||" | sed 's#^||#||https://#g' >> mobile_https.txt
+cat mobile.txt | grep "^||" | sed 's#^||#||http://#g' >> mobile_https.txt
+cat mobile.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> mobile_https.txt
+cat mobile.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> mobile_https.txt
+cat mobile.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> mobile_https.txt
+cat mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> mobile_https.txt
+cat mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> mobile_https.txt
+
+
+# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
+sed -i '8,$d' mobile.txt
+# 合二归一
+cat mobile_https.txt >> mobile.txt
+
+# 把三大视频网站给剔除来，作为单独文件。
+cat mobile.txt | grep -i 'youku.com' > kpr_video_list_1.txt
+cat mobile.txt | grep -i 'iqiyi.com' >> kpr_video_list_1.txt
+cat mobile.txt | grep -i 'v.qq.com' >> kpr_video_list_1.txt
+cat mobile.txt | grep -i 'g.alicdn.com' >> kpr_video_list_1.txt
+cat mobile.txt | grep -i 'tudou.com' >> kpr_video_list_1.txt
+cat mobile.txt | grep -i 'gtimg.cn' >> kpr_video_list_1.txt
+cat mobile.txt | grep -i 'l.qq.com' >> kpr_video_list_1.txt
+# 给三大视频网站放行 由kp.dat负责
+sed -i '/youku.com/d' mobile.txt
+sed -i '/iqiyi.com/d' mobile.txt
+sed -i '/v.qq.com/d' mobile.txt
+sed -i '/g.alicdn.com/d' mobile.txt
+sed -i '/tudou.com/d' mobile.txt
+sed -i '/gtimg.cn/d' mobile.txt
+sed -i '/l.qq.com/d' mobile.txt
+
+
+# ---------------------------------------------移动设备规则处理结束----------------------------------------------
 
 ## 删除临时文件
 rm *https.txt
 rm kpr_our_rule.txt
+rm cjx-annoyance.txt
 
 # 测试专用
-# split -l 1 chengfeng.txt chengfeng_
+# split -l 1 mobile.txt chengfeng_
 # ls|grep chengfeng_|xargs -n1 -i{} mv {} {}.txt
 
 cd ..

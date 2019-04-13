@@ -1,9 +1,9 @@
 {
-"version":"900.8.20",
-"md5":"16c6fa79da14590e2b58a13319422449",
+"version":"900.8.21",
+"md5":"8391d63f42d67432d6f60fc8729e9491",
 "home_url":"Module_koolproxyR.asp",
 "title":"koolproxyR",
 "description":"KPR更多规则更舒服！",
 "changelog":"正式移除了KP绿坝规则，和KP加密规则。现在所有规则都是未加密的了。",
-"build_date":"2019-04-13_03:01:00"
+"build_date":"2019-04-14_01:17:26"
 }

@@ -19,7 +19,7 @@ write_user_txt(){
 load_rules(){
 	sed -i "s/1|/0|/g" $SOURCE_LIST
 
-	# if [ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_abx_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ]; then
+	# if [ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_video_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ]; then
 		# echo_date 加载【kp.dat组件】
 		# sed -i "s/0|kp/1|kp/g" $SOURCE_LIST
 	# else
@@ -34,11 +34,20 @@ load_rules(){
 		# 	sed -i "s/0|kp/1|kp/g" $SOURCE_LIST
 		# fi		
 		if [ "$koolproxyR_easylist_rules" == "1" ]; then
-			echo_date 加载【中国规则2.0】
-			sed -i "s/0|ChinaList/1|ChinaList/g" $SOURCE_LIST
+			echo_date 加载【KPR主规则】
+			sed -i "s/0|easylistchina/1|easylistchina/g" $SOURCE_LIST
 		fi
-		if [ "$koolproxyR_abx_rules" == "1" ]; then
-			echo_date 加载【视频规则】
+		if [ "$koolproxyR_easylist_rules" == "1" ]; then
+			echo_date 加载【移动设备规则】
+			sed -i "s/0|mobile.txt/1|mobile.txt/g" $SOURCE_LIST
+		fi
+		if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_video_rules" == "0" ]; then
+			echo_date 加载【KPR视频规则】
+			sed -i "s/0|kpr_video_list/1|kpr_video_list/g" $SOURCE_LIST
+		fi
+
+		if [ "$koolproxyR_video_rules" == "1" ]; then
+			echo_date 加载【KP视频规则】
 			sed -i "s/0|kp.dat/1|kp.dat/g" $SOURCE_LIST
 		fi
 		if [ "$koolproxyR_fanboy_rules" == "1" ]; then
@@ -64,12 +73,12 @@ start_koolproxy(){
 		[ "$koolproxyR_mode" == "3" ] && echo_date 选择【黑名单模式】
 		[ "$koolproxyR_mode" == "4" ] && echo_date 选择【带HTTPS的黑名单模式】
 #		[ "$koolproxyR_mode" == "5" ] && echo_date 选择【全端口模式】
-		[ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_abx_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ] && echo_date 选择【视频模式】
+		[ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_video_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ] && echo_date 选择【视频模式】
 	else
 		[ "$koolproxyR_base_mode" == "0" ] && echo_date 选择【不过滤】	
 		[ "$koolproxyR_base_mode" == "1" ] && echo_date 选择【全局模式】
 		[ "$koolproxyR_base_mode" == "2" ] && echo_date 选择【黑名单模式】
-		[ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_abx_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ] && echo_date 选择【视频模式】
+		[ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_video_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ] && echo_date 选择【视频模式】
 	fi
 	cd $KP_DIR && koolproxy -d --ttl 188 --ttlport 3001 --ipv6
 }

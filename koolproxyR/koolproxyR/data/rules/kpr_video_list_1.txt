@@ -1,0 +1,4 @@
+||https://t7z.cupid.iqiyi.com^
+||http://t7z.cupid.iqiyi.com^
+https://iqiyi.com#%#document.cookie = "i18nGuideApp=true";
+http://iqiyi.com#%#document.cookie = "i18nGuideApp=true";
