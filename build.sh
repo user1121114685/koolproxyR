@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.23"
+VERSION="900.8.24"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -17,7 +17,7 @@ cd koolproxyR/koolproxyR/data/rules
 # 下载三方规则
 
 wget https://easylist-downloads.adblockplus.org/easylistchina.txt
-wegt https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
+wget https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
 
 wget https://secure.fanboy.co.nz/fanboy-annoyance.txt
 # 移动广告过滤规则
@@ -147,8 +147,8 @@ sed -i '/g.alicdn.com/d' easylistchina.txt
 sed -i '/tudou.com/d' easylistchina.txt
 sed -i '/gtimg.cn/d' easylistchina.txt
 sed -i '/l.qq.com/d' easylistchina.txt
-# 给知乎放行
-sed -i '/zhihu.com/d' mobile.txt
+# 给https://qq.com的html规则放行
+sed -i '/https:\/\/qq.com#/d' easylistchina.txt
 
 
 
@@ -195,6 +195,12 @@ sed -i '/g.alicdn.com/d' mobile.txt
 sed -i '/tudou.com/d' mobile.txt
 sed -i '/gtimg.cn/d' mobile.txt
 sed -i '/l.qq.com/d' mobile.txt
+# 给知乎放行
+sed -i '/zhihu.com/d' mobile.txt
+
+# 给https://qq.com的html规则放行
+sed -i '/https:\/\/qq.com#/d' mobile.txt
+
 
 
 # ---------------------------------------------移动设备规则处理结束----------------------------------------------

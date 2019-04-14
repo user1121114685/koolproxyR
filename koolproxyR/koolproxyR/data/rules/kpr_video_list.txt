@@ -29,6 +29,9 @@
 ||https://youku.com/cms/tool/pub/get_putdata.
 ||https://youku.com/dress/
 ||https://youku.com/QVideo/~ajax/getDefaultItem?
+||https://hz.youku.com/red/
+||https://static.youku.com/*/index/js/iresearch.js
+||https://static.youku.com/*/js/cps.js
 ||http://atm.youku.com^
 ||http://hudong.alicdn.com/api/data/$domain=player.youku.com
 ||http://hudong.pl.youku.com/interact/player/get/plugins?
@@ -41,6 +44,9 @@
 ||http://youku.com/cms/tool/pub/get_putdata.
 ||http://youku.com/dress/
 ||http://youku.com/QVideo/~ajax/getDefaultItem?
+||http://hz.youku.com/red/
+||http://static.youku.com/*/index/js/iresearch.js
+||http://static.youku.com/*/js/cps.js
 https://youku.com###lotteryToolbar
 https://youku.com###lotteryToolbarBig
 https://youku.com###playlistIkuAD
@@ -51,6 +57,16 @@ https://youku.com##.yk-AD-tong
 https://52movieba.com,acg18.life,acgbuster.net,ainuody.com,awaker.cn,cangku.in,ccav1.com,cdsoso.me,cgown.com,cn163.net,cosersuki.org,dm1080p.com,epinv.com,eroacg.com,galacg.me,gaoqingkong.com,gmgard.com,halihali.tv,haochi123.com,hcomic.in,hexieshe.com,hexieshe.xyz,hggard.com,hmghmg.com,hmog.me,htcui.com,huan.moe,idanmu.at,jiecao123.com,jitapu.com,jobbole.com,kisssub.org,languang.co,liuli.pw,moe-acg.cc,moe-acg.us,mydrivers.com,nxing.cn,oyksoft.com,rijutv.com,souxue8.com,speedtest.cn,toutiao.com,tucao.one,uraban.me,vpansou.com,xxshe.info,xxshe.xyz,youku.com,zimuzu.tv##a[href*=".taobao.com"]
 https://acgdoge.net,douyu.com,gmgard.com,hggard.com,iqiyi.com,youku.com##a[href*=".tmall.com"]
 https://youku.com##div[style="position:relative;"]:first-child > a[style*="z-index:5; display:block;"]
+https://youku.com###bt-banner
+https://m.youku.com###banner
+https://youku.com###ykBottomBanner
+https://m.youku.com##.cmt-more
+https://m.youku.com##.cmt-more-cont
+https://m.youku.com##.download
+https://m.youku.com##.hdwrap
+https://v.youku.com##.laifeng
+https://youku.com##.pop-prompt-box
+https://m.youku.com##.recommend
 http://youku.com###lotteryToolbar
 http://youku.com###lotteryToolbarBig
 http://youku.com###playlistIkuAD
@@ -61,8 +77,19 @@ http://youku.com##.yk-AD-tong
 http://52movieba.com,acg18.life,acgbuster.net,ainuody.com,awaker.cn,cangku.in,ccav1.com,cdsoso.me,cgown.com,cn163.net,cosersuki.org,dm1080p.com,epinv.com,eroacg.com,galacg.me,gaoqingkong.com,gmgard.com,halihali.tv,haochi123.com,hcomic.in,hexieshe.com,hexieshe.xyz,hggard.com,hmghmg.com,hmog.me,htcui.com,huan.moe,idanmu.at,jiecao123.com,jitapu.com,jobbole.com,kisssub.org,languang.co,liuli.pw,moe-acg.cc,moe-acg.us,mydrivers.com,nxing.cn,oyksoft.com,rijutv.com,souxue8.com,speedtest.cn,toutiao.com,tucao.one,uraban.me,vpansou.com,xxshe.info,xxshe.xyz,youku.com,zimuzu.tv##a[href*=".taobao.com"]
 http://acgdoge.net,douyu.com,gmgard.com,hggard.com,iqiyi.com,youku.com##a[href*=".tmall.com"]
 http://youku.com##div[style="position:relative;"]:first-child > a[style*="z-index:5; display:block;"]
+http://youku.com###bt-banner
+http://m.youku.com###banner
+http://youku.com###ykBottomBanner
+http://m.youku.com##.cmt-more
+http://m.youku.com##.cmt-more-cont
+http://m.youku.com##.download
+http://m.youku.com##.hdwrap
+http://v.youku.com##.laifeng
+http://youku.com##.pop-prompt-box
+http://m.youku.com##.recommend
 @@@https://*u-ads.adap.tv*youku.$domain=youku.com
 @@http://*u-ads.adap.tv*youku.$domain=youku.com
+@@@||https://cupid.iqiyi.com^
 ||https://iqiyi.com/track$popup
 ||https://kfc.com.cn^$popup,domain=iqiyi.com
 ||https://miaozhen.com^$popup,domain=iqiyi.com
@@ -87,6 +114,10 @@ http://youku.com##div[style="position:relative;"]:first-child > a[style*="z-inde
 ||https://iqiyi.com/show2?e=
 ||https://mixer.video.iqiyi.com/jp/mixin/resources/
 ||https://ssports.iqiyi.com/crossdomain.xml
+||https://iqiyi.com/etx?
+||https://iqiyi.com/js/pingback/
+||https://iqiyi.com/track
+||https://msg.iqiyi.com^
 ||http://iqiyi.com/track$popup
 ||http://kfc.com.cn^$popup,domain=iqiyi.com
 ||http://miaozhen.com^$popup,domain=iqiyi.com
@@ -111,6 +142,10 @@ http://youku.com##div[style="position:relative;"]:first-child > a[style*="z-inde
 ||http://iqiyi.com/show2?e=
 ||http://mixer.video.iqiyi.com/jp/mixin/resources/
 ||http://ssports.iqiyi.com/crossdomain.xml
+||http://iqiyi.com/etx?
+||http://iqiyi.com/js/pingback/
+||http://iqiyi.com/track
+||http://msg.iqiyi.com^
 https://61.hz.letv.com,61.iqiyi.com,v.61.com###J_videoBox > .view
 https://iqiyi.com###adflash
 https://iqiyi.com###jingdongArea
@@ -168,6 +203,9 @@ https://yule.iqiyi.com##div[style="width:180px;padding:25px 0 20px 20px;float:ri
 https://yule.iqiyi.com##div[style="width:970px;margin:0 auto;padding:10px 0;text-align:center;"]
 https://iqiyi.com##li[data-flag="shop"]
 https://iqiyi.com##li[id^="100000"]
+https://iqiyi.com##.m-downApp
+https://iqiyi.com##div[style^="z-index: 4200; position: absolute; left:"]
+https://iqiyi.com##iframe[style^="z-index:"]:last-child
 http://61.hz.letv.com,61.iqiyi.com,v.61.com###J_videoBox > .view
 http://iqiyi.com###adflash
 http://iqiyi.com###jingdongArea
@@ -225,6 +263,9 @@ http://yule.iqiyi.com##div[style="width:180px;padding:25px 0 20px 20px;float:rig
 http://yule.iqiyi.com##div[style="width:970px;margin:0 auto;padding:10px 0;text-align:center;"]
 http://iqiyi.com##li[data-flag="shop"]
 http://iqiyi.com##li[id^="100000"]
+http://iqiyi.com##.m-downApp
+http://iqiyi.com##div[style^="z-index: 4200; position: absolute; left:"]
+http://iqiyi.com##iframe[style^="z-index:"]:last-child
 @@@||https://livew.l.qq.com/livemsg?pf=H5&ad$domain=m.v.qq.com
 @@||http://livew.l.qq.com/livemsg?pf=H5&ad$domain=m.v.qq.com
 https://v.qq.com##.module-image[style*="width:1100px;"]

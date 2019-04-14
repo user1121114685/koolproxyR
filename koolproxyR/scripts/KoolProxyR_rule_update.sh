@@ -43,7 +43,7 @@ update_rule(){
 		echo_date " ---------------------------------------------------------------------------------------"
 		# wget --no-check-certificate --timeout=8 -qO - $url_easylist > /tmp/easylistchina.txt
 		wget -a /tmp/upload/kpr_log.txt -O /tmp/easylistchina.txt $url_easylist
-		wegt -a /tmp/upload/kpr_log.txt -O /tmp/cjx-annoyance.txt $url_cjx
+		wget -a /tmp/upload/kpr_log.txt -O /tmp/cjx-annoyance.txt $url_cjx
 		cat /tmp/cjx-annoyance.txt >> /tmp/easylistchina.txt
 		rm /tmp/cjx-annoyance.txt
 		easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
@@ -205,6 +205,7 @@ update_rule(){
 		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 
+
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 		sed -i '6,$d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 合二归一
@@ -227,6 +228,9 @@ update_rule(){
 		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		# 给https://qq.com的html规则放行
+		sed -i '/https:\/\/qq.com#/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+
 	fi
 
 
@@ -270,6 +274,9 @@ update_rule(){
 		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		# 给知乎放行
 		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 给https://qq.com的html规则放行
+		sed -i '/https:\/\/qq.com#/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+
 
 
 	fi
