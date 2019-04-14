@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: qGaL0Z4pvmjroprjW04bkQ
-! Version: 201904131742
+! Checksum: dBh/ZHD0rSVTiS+LpIpsiA
+! Version: 201904141142
 ! Title: Fanboy's Annoyance List
-! Last modified: 13 Apr 2019 17:42 UTC
+! Last modified: 14 Apr 2019 11:42 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -1697,6 +1697,7 @@
 ||https://getscoutapp.com^$third-party
 ||https://getsitecontrol.com^$third-party
 ||https://getsmily.com^$third-party
+||https://givealittle.co.nz/widget/$subdocument,third-party
 ||https://go.pardot.com^$subdocument,third-party
 ||https://goemotify.com^$third-party
 ||https://google.com/uds/?file=orkut&
@@ -2908,6 +2909,7 @@
 ||http://getscoutapp.com^$third-party
 ||http://getsitecontrol.com^$third-party
 ||http://getsmily.com^$third-party
+||http://givealittle.co.nz/widget/$subdocument,third-party
 ||http://go.pardot.com^$subdocument,third-party
 ||http://goemotify.com^$third-party
 ||http://google.com/uds/?file=orkut&

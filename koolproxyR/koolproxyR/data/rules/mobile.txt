@@ -3429,7 +3429,6 @@ https://arseblog.com#@#.header-ad
 https://deviantart.com#@#.mobile-ad
 https://m.youtube.com##a[href^="/watch?v="][onclick^="return koya.onEvent(arguments[0]||window.event,'"]:not([role]):not([class]):not([id])
 https://m.youtube.com##a[href^="/watch?v="][onclick^="return koya.onEvent(arguments[0]||window.event,'"]:not([role]):not([class]):not([id]) + div
-https://zhihu.com##.RelatedReadings-adItem
 https://mbd.baidu.com###content_wrapper + div + .default-container
 https://m.news.de##.articleTeaser + div[style="height: 250px"]
 https://m.news.de##.aside > div[style="height: 600px;"]
@@ -4412,7 +4411,6 @@ http://arseblog.com#@#.header-ad
 http://deviantart.com#@#.mobile-ad
 http://m.youtube.com##a[href^="/watch?v="][onclick^="return koya.onEvent(arguments[0]||window.event,'"]:not([role]):not([class]):not([id])
 http://m.youtube.com##a[href^="/watch?v="][onclick^="return koya.onEvent(arguments[0]||window.event,'"]:not([role]):not([class]):not([id]) + div
-http://zhihu.com##.RelatedReadings-adItem
 http://mbd.baidu.com###content_wrapper + div + .default-container
 http://m.news.de##.articleTeaser + div[style="height: 250px"]
 http://m.news.de##.aside > div[style="height: 600px;"]

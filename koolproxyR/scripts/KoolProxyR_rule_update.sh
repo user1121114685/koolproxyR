@@ -137,6 +137,8 @@ update_rule(){
 		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		# 给知乎放行
+		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 
 
 		# 将白名单转化成https
@@ -181,6 +183,8 @@ update_rule(){
 		sed -i 's#btbtt.\*#\*btbtt.\*#g' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给手机百度图片放行
 		sed -i '/baidu.com\/it\/u/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		# 给知乎放行
+		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 
 
 
@@ -264,6 +268,9 @@ update_rule(){
 		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 给知乎放行
+		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+
 
 	fi
 	# 删除临时文件

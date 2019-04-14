@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.22"
+VERSION="900.8.23"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -54,6 +54,8 @@ sed -i '/iqiyi.com/d' fanboy-annoyance.txt
 sed -i '/v.qq.com/d' fanboy-annoyance.txt
 sed -i '/gtimg.cn/d' fanboy-annoyance.txt
 sed -i '/l.qq.com/d' fanboy-annoyance.txt
+# 给知乎放行
+sed -i '/zhihu.com/d' fanboy-annoyance.txt
 
 
 # 将白名单转化成https https放行用三个@ http 用2个@
@@ -96,6 +98,9 @@ sed -i '/\*\$/d' easylistchina.txt
 sed -i 's#btbtt.\*#\*btbtt.\*#g' easylistchina.txt
 # 给手机百度图片放行
 sed -i '/baidu.com\/it\/u/d' easylistchina.txt
+# 给知乎放行
+sed -i '/zhihu.com/d' easylistchina.txt
+
 
 
 # 将白名单转化成https
@@ -142,6 +147,9 @@ sed -i '/g.alicdn.com/d' easylistchina.txt
 sed -i '/tudou.com/d' easylistchina.txt
 sed -i '/gtimg.cn/d' easylistchina.txt
 sed -i '/l.qq.com/d' easylistchina.txt
+# 给知乎放行
+sed -i '/zhihu.com/d' mobile.txt
+
 
 
 # -----------------------------------------KPR 中国简易规则处理结束------------------------------------------------
