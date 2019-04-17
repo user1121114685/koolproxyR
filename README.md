@@ -1,4 +1,4 @@
-# koolproxyR 项目
+# LEDE koolproxyR 项目
 你可以自由提交、修改、让这个项目越来越好！
 ---
 项目缺少大佬，各种能为此项目贡献一点点的大佬。  
@@ -12,7 +12,7 @@
 
 ## 怎么使用这个插件！ （请先卸载koolproxy，互不兼容。）
 ### 最佳方法 
-在**SSH**中执行如下代码实现在线安装。  
+在**SSH**中执行如下代码实现在线安装。（**请全部复制**）  
 `wget -O /tmp/KoolProxyR_install.sh https://raw.githubusercontent.com/user1121114685/koolproxyR/master/KoolProxyR_install.sh && chmod 777 /tmp/KoolProxyR_install.sh && sh /tmp/KoolProxyR_install.sh`
 
 
@@ -22,7 +22,7 @@
 [点我下载](https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR.tar.gz)，通过软件中心的离线安装进行安装！**PS 请勿修改名字保持koolproxyR.tar.gz才能安装**，并且你可能需要执行下面的ssh.
 
 ---
-如果你遇到** `离线安装` ** 无法安装，你还需要在SSH中执行如下步骤。  
+如果你遇到** `离线安装` ** 无法安装，你还需要在SSH中执行如下步骤。（**请全部复制**）    
 
 ---
 

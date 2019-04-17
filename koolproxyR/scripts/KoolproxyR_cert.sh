@@ -57,8 +57,9 @@ backup_0() {
 	#  生成.0根证书
 	openssl x509 -text -in cp $KSROOT/koolproxyR/data/certs/ca.crt -out /dev/null >> $KSROOT/webs/files/$ca_0_hash
 	cd $KSROOT/webs/files
-	zip ca_0.zip $ca_0_hash >/dev/null
-	echo_date ".0根证书生成成功，名字为  $ca_0_hash"
+	tar czf ca_0.tar.gz $ca_0_hash
+	# zip ca_0.zip $ca_0_hash >/dev/null
+	echo_date " .0根证书生成成功，名字为  $ca_0_hash"
 }
 
 stop_koolproxy(){
@@ -123,7 +124,7 @@ case $2 in
 	echo XU6J03M6 >> $LOG_FILE
 	sleep 10
 	rm -rf $KSROOT/webs/files/$ca_0_hash
-	rm -rf $KSROOT/webs/files/ca_0.zip
+	rm -rf $KSROOT/webs/files/ca_0.tar.gz
 	;;
 esac
 

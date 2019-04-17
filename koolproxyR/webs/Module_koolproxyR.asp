@@ -586,8 +586,8 @@ function kp_cert_0(script, arg){
 				if (arg == 3){
 					console.log("333");
 					var a = document.createElement('A');
-					a.href = "/files/ca_0.zip";
-					a.download = 'ca_0.zip';
+					a.href = "/files/ca_0.tar.gz";
+					a.download = 'ca_0.tar.gz';
 					document.body.appendChild(a);
 					a.click();
 					document.body.removeChild(a);

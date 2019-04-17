@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: URtNXMQi0PF+roQkezFYWw
-! Version: 201904171012
+! Checksum: aVNRaaP7Pvlzo+6VJ/J5WQ
+! Version: 201904171352
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 !  ******************************* koolproxy 语法*******************************
@@ -1004,6 +1004,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 |http://*_pop.js|$script,domain=~10086.cn|~granbluefantasy.jp
 |http://*_right_ad.$domain=~dzwww.com
 !-----------------------------------搬运完毕----------------------------------------------
+@@@||https://show.g.mediav.com/s?type=$domain=v.360kan.com
 @@@||https://012.tw^$script,domain=apk.tw
 @@@||https://060s.com/images_ad/*.png
 @@@||https://073img.com/*,*,
@@ -1633,6 +1634,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 @@@||https://doub.io^$generichide
 @@@||https://fm.ipinyou.$domain=ipinyou.com.cn
 @@@||https://fm.p0y.cn^$domain=ipinyou.com.cn
+@@||http://show.g.mediav.com/s?type=$domain=v.360kan.com
 @@||http://012.tw^$script,domain=apk.tw
 @@||http://060s.com/images_ad/*.png
 @@||http://073img.com/*,*,
@@ -2262,6 +2264,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 @@||http://doub.io^$generichide
 @@||http://fm.ipinyou.$domain=ipinyou.com.cn
 @@||http://fm.p0y.cn^$domain=ipinyou.com.cn
+||https://51sxzz.com^
 ||https://0082tv.net^$third-party
 ||https://00880808.com^
 ||https://012.tw^$third-party
@@ -8820,6 +8823,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||https://sinaimg.cn^$domain=172.86.179.138|208.94.244.100|208.94.244.98|a88.us|ac168.info|ac88.info|aisex.com|cnnice.biz|go543.com
 ||https://tinypic.com^$domain=172.86.179.138|208.94.244.100|208.94.244.98|a88.us|ac168.info|ac88.info|aisex.com|cnnice.biz|go543.com
 ||https://adxxx.info^$domain=avgle.com
+||https://shicao.icantv.cn^
 ||https://003store.com^
 ||https://0512s.com^$third-party
 ||https://06362.com^
@@ -9738,6 +9742,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||https://ifengimg.com^*679.js
 ||https://cryptaloot.pro^
 ||https://yuyyio.com^
+||https://4a3zf.cn^
 ||https://iauqwe.com^
 ||https://hyxca.top^
 ||https://0234408.cn^
@@ -11402,6 +11407,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||https://sinajs.cn/open/analytics/
 ||https://stadig.ifeng.com^
 ||https://wrating.com^$third-party
+||http://51sxzz.com^
 ||http://0082tv.net^$third-party
 ||http://00880808.com^
 ||http://012.tw^$third-party
@@ -17960,6 +17966,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||http://sinaimg.cn^$domain=172.86.179.138|208.94.244.100|208.94.244.98|a88.us|ac168.info|ac88.info|aisex.com|cnnice.biz|go543.com
 ||http://tinypic.com^$domain=172.86.179.138|208.94.244.100|208.94.244.98|a88.us|ac168.info|ac88.info|aisex.com|cnnice.biz|go543.com
 ||http://adxxx.info^$domain=avgle.com
+||http://shicao.icantv.cn^
 ||http://003store.com^
 ||http://0512s.com^$third-party
 ||http://06362.com^
@@ -18878,6 +18885,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||http://ifengimg.com^*679.js
 ||http://cryptaloot.pro^
 ||http://yuyyio.com^
+||http://4a3zf.cn^
 ||http://iauqwe.com^
 ||http://hyxca.top^
 ||http://0234408.cn^
