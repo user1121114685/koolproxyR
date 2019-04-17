@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.24"
+VERSION="900.8.25"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -98,6 +98,8 @@ sed -i '/\*\$/d' easylistchina.txt
 sed -i 's#btbtt.\*#\*btbtt.\*#g' easylistchina.txt
 # 给手机百度图片放行
 sed -i '/baidu.com\/it\/u/d' easylistchina.txt
+# # 给手机百度放行
+# sed -i '/mbd.baidu.com/d' easylistchina.txt
 # 给知乎放行
 sed -i '/zhihu.com/d' easylistchina.txt
 
@@ -142,13 +144,11 @@ cat easylistchina.txt | grep -i 'l.qq.com' >> kpr_video_list.txt
 # 给三大视频网站放行 由kp.dat负责
 sed -i '/youku.com/d' easylistchina.txt
 sed -i '/iqiyi.com/d' easylistchina.txt
-sed -i '/v.qq.com/d' easylistchina.txt
 sed -i '/g.alicdn.com/d' easylistchina.txt
 sed -i '/tudou.com/d' easylistchina.txt
 sed -i '/gtimg.cn/d' easylistchina.txt
-sed -i '/l.qq.com/d' easylistchina.txt
 # 给https://qq.com的html规则放行
-sed -i '/https:\/\/qq.com#/d' easylistchina.txt
+sed -i '/qq.com/d' easylistchina.txt
 
 
 
@@ -190,16 +190,14 @@ cat mobile.txt | grep -i 'l.qq.com' >> kpr_video_list_1.txt
 # 给三大视频网站放行 由kp.dat负责
 sed -i '/youku.com/d' mobile.txt
 sed -i '/iqiyi.com/d' mobile.txt
-sed -i '/v.qq.com/d' mobile.txt
 sed -i '/g.alicdn.com/d' mobile.txt
 sed -i '/tudou.com/d' mobile.txt
 sed -i '/gtimg.cn/d' mobile.txt
-sed -i '/l.qq.com/d' mobile.txt
 # 给知乎放行
 sed -i '/zhihu.com/d' mobile.txt
 
 # 给https://qq.com的html规则放行
-sed -i '/https:\/\/qq.com#/d' mobile.txt
+sed -i '/qq.com/d' mobile.txt
 
 
 

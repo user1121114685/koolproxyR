@@ -1,8 +1,8 @@
-! Checksum: MriK5t6KI0SLUkq+kZcfYg
+! Checksum: f09CWCA2bbSLeR0a7rfpGA
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.5.72
-! TimeUpdated: 2019-04-12T16:30:10+03:00
+! Version: 2.0.5.73
+! TimeUpdated: 2019-04-15T21:02:07+03:00
 ! Expires: 2 days (update frequency)
 ! Homepage: http://adguard.com/filters.html#mobile
 @@@||https://m.beautypageants.in^$elemhide
@@ -833,7 +833,6 @@
 ||https://dumedia.ru^
 ||https://e-planning.net^
 ||https://e.apsalar.com^
-||https://e.qq.com^
 ||https://ebz.io^
 ||https://ecpmrocks.com^
 ||https://effectivemeasure.net^
@@ -961,7 +960,6 @@
 ||https://metamx.com^
 ||https://metavertising.com^
 ||https://mgage.com^
-||https://mi.gdt.qq.com^
 ||https://microad.net^
 ||https://millennialmedia.com^
 ||https://mixadvert.com
@@ -1531,9 +1529,6 @@
 ||https://event.allnews.uodoo.com^
 ||https://tktracker.aotter.net^
 ||https://tkrecorder.aotter.net^
-||https://android.bugly.qq.com^
-||https://astat.bugly.qq.com^
-||https://ios.bugly.qq.com^
 ||https://fdplttrk.com^
 ||https://tracking.trnox.com^
 ||https://rts.mobula.sdk.duapps.com^
@@ -1665,7 +1660,6 @@
 ||https://appmetrica.yandex.com^
 ||https://ar.umeng.com^
 ||https://beacon.carfax.com^
-||https://beacon.qq.com^
 ||https://beacon.shazam.com^
 ||https://beha.ksmobile.com^
 ||https://bidder.mdspinc.com^
@@ -1737,8 +1731,6 @@
 ||https://openstat.net^
 ||https://ping.taplytics.com^
 ||https://ping.xlmc.sandai.net^
-||https://pingma.qq.com/mstat/
-||https://pingma.qq.com^
 ||https://pipe.aria.microsoft.com/Collector/
 ||https://play.googleapis.com/log|
 ||https://play.googleapis.com/play/log^
@@ -1791,9 +1783,6 @@
 ||https://localytics.com^
 ||https://upoll.umengcloud.com^
 ||https://utop.umengcloud.com^
-||https://analy.qq.com^
-||https://appsupport.qq.com/cgi-bin/appstage/mstats_batch_report
-||https://monitor.uu.qq.com/analytics/
 ||https://mangaapi.manhuaren.com/*/public/getRecommendedGame^
 ||https://ads.adfox.ru/*/getCode?p1=$domain=auth.wi-fi.ru,replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ||http://banners-slb.mobile.yandex.net^
@@ -2330,7 +2319,6 @@
 ||http://dumedia.ru^
 ||http://e-planning.net^
 ||http://e.apsalar.com^
-||http://e.qq.com^
 ||http://ebz.io^
 ||http://ecpmrocks.com^
 ||http://effectivemeasure.net^
@@ -2458,7 +2446,6 @@
 ||http://metamx.com^
 ||http://metavertising.com^
 ||http://mgage.com^
-||http://mi.gdt.qq.com^
 ||http://microad.net^
 ||http://millennialmedia.com^
 ||http://mixadvert.com
@@ -3028,9 +3015,6 @@
 ||http://event.allnews.uodoo.com^
 ||http://tktracker.aotter.net^
 ||http://tkrecorder.aotter.net^
-||http://android.bugly.qq.com^
-||http://astat.bugly.qq.com^
-||http://ios.bugly.qq.com^
 ||http://fdplttrk.com^
 ||http://tracking.trnox.com^
 ||http://rts.mobula.sdk.duapps.com^
@@ -3162,7 +3146,6 @@
 ||http://appmetrica.yandex.com^
 ||http://ar.umeng.com^
 ||http://beacon.carfax.com^
-||http://beacon.qq.com^
 ||http://beacon.shazam.com^
 ||http://beha.ksmobile.com^
 ||http://bidder.mdspinc.com^
@@ -3234,8 +3217,6 @@
 ||http://openstat.net^
 ||http://ping.taplytics.com^
 ||http://ping.xlmc.sandai.net^
-||http://pingma.qq.com/mstat/
-||http://pingma.qq.com^
 ||http://pipe.aria.microsoft.com/Collector/
 ||http://play.googleapis.com/log|
 ||http://play.googleapis.com/play/log^
@@ -3288,9 +3269,6 @@
 ||http://localytics.com^
 ||http://upoll.umengcloud.com^
 ||http://utop.umengcloud.com^
-||http://analy.qq.com^
-||http://appsupport.qq.com/cgi-bin/appstage/mstats_batch_report
-||http://monitor.uu.qq.com/analytics/
 ||http://mangaapi.manhuaren.com/*/public/getRecommendedGame^
 ||http://ads.adfox.ru/*/getCode?p1=$domain=auth.wi-fi.ru,replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 https://m.postimees.ee#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links {display:block!important;}

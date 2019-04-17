@@ -6,14 +6,6 @@ For use with Tomato Firmware only.
 No part of this file may be used without permission.
 -->
 <title>KoolProxyR</title>
-<!-- <style>
-	ul.nav-tabs{
-	overflow :hidden ;
-	}
-	ul.nav-tabs li{
-	width:12％;
-	}
-</style> -->
 <content>
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/tomato.js"></script>
@@ -113,13 +105,13 @@ kpacl.exist = function( f, v ) {
 }
 kpacl.dataToView = function( data ) {
 	if (data[0]){
-		return [ "【" + data[0] + "】", data[1], data[2], ['不过滤', 'HTTP全局模式', '带HTTPS的全局模式', '黑名单模式', '带HTTPS的黑名单模式', '全端口模式'][data[3]] ];
+		return [ "【" + data[0] + "】", data[1], data[2], ['不过滤', 'HTTP过滤模式', 'HTTP/HTTPS双过滤模式', '黑名单模式', 'HTTP/HTTPS双黑名单模式', '全端口模式'][data[3]] ];
 	}else{
 		if (data[1]){
-			return [ "【" + data[1] + "】", data[1], data[2], ['不过滤', 'HTTP全局模式', '带HTTPS的全局模式', '黑名单模式', '带HTTPS的黑名单模式', '全端口模式'][data[3]] ];
+			return [ "【" + data[1] + "】", data[1], data[2], ['不过滤', 'HTTP过滤模式', 'HTTP/HTTPS双过滤模式', '黑名单模式', 'HTTP/HTTPS双黑名单模式', '全端口模式'][data[3]] ];
 		}else{
 			if (data[2]){
-				return [ "【" + data[2] + "】", data[1], data[2], ['不过滤', 'HTTP全局模式', '带HTTPS的全局模式', '黑名单模式', '带HTTPS的黑名单模式', '全端口模式'][data[3]] ];
+				return [ "【" + data[2] + "】", data[1], data[2], ['不过滤', 'HTTP过滤模式', 'HTTP/HTTPS双过滤模式', '黑名单模式', 'HTTP/HTTPS双黑名单模式', '全端口模式'][data[3]] ];
 			}
 		}
 	}
@@ -190,7 +182,7 @@ kpacl.setup = function() {
 	{ type: 'select',maxlen:50,options:option_arp_list },
 	{ type: 'text', maxlen: 50 },
 	{ type: 'text', maxlen: 50 },
-	{ type: 'select',maxlen:20,options:[['0', '不过滤'], ['1', 'HTTP全局模式'], ['2', '带HTTPS的全局模式'], ['3', '黑名单模式'], ['4', '带HTTPS的黑名单模式'], ['5', '全端口模式']], value: '1' }
+	{ type: 'select',maxlen:20,options:[['0', '不过滤'], ['1', 'HTTP过滤模式'], ['2', 'HTTP/HTTPS双过滤模式'], ['3', '黑名单模式'], ['4', 'HTTP/HTTPS双黑名单模式'], ['5', '全端口模式']], value: '1' }
 	] );
 
 	this.headerSet( [ '主机别名', '主机IP地址', 'MAC地址', '过滤模式控制' ] );
@@ -224,8 +216,9 @@ function init_kp(){
 			x = -1;
 	});
 	setTimeout("get_run_status();", 1000);
-	setTimeout("get_rules_status();", 1000);			
+	setTimeout("get_rules_status();", 1000);	
 }
+
 function get_arp_list(){
 	var id = parseInt(Math.random() * 100000000);
 	var postData1 = {"id": id, "method": "KoolProxyR_getarp.sh", "params":[], "fields": ""};
@@ -355,34 +348,6 @@ function find_telegram(){
 	window.open("https://t.me/koolproxyR");
 }
 function update_KPR(){
-	// let data_version = '';
-	// $.ajax({
-	// 	url: "https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version",
-	// 	method: 'GET',
-	// 	async: true,
-	// 	cache: false,
-	// 	success: (resp) => {
-	// 		let data_version = resp.split('\n');
-	// 		var kpr_installing_md5 = data_version[0];
-	// 		var kpr_installing_version = data_version[1];
-	// 		var postData = {"id":2, "method":"ks_app_install.sh", "params":[], "fields":{"softcenter_home_url":"https://raw.githubusercontent.com/user1121114685/koolproxyR/master","softcenter_installing_todo":"koolproxyR","softcenter_installing_tar_url":"koolproxyR.tar.gz","softcenter_installing_md5": kpr_installing_md5,"softcenter_installing_version": kpr_installing_version,"koolss_title":"koolproxyR"}};
-	// 		$.ajax({
-	// 			type: "POST",
-	// 			url: "/_api/",
-	// 			async: true,
-	// 			cache:false,
-	// 			data: JSON.stringify(postData),
-	// 			dataType: "json",
-	// 			success: function(response){
-	// 				if(response){
-	// 					setTimeout("window.location.reload()", 500);
-	// 					return true;
-	// 				}
-	// 			}
-	// 		});
-
-	// 	}
-	// });
 	var id2 = parseInt(Math.random() * 100000000);
 	var postData2 = {"id": id2, "method": "KoolProxyR_update_now.sh", "params":[], "fields": ""};
 	showMsg("msg_warring","正在提交数据！","<b>等待后台运行完毕，请不要刷新本页面！</b>");
@@ -758,7 +723,7 @@ function set_version() {
 <!-- ------------------ 标签页 --------------------- -->	
 <ul class="nav nav-tabs" style="margin-bottom: 20px;">
 <li><a href="javascript:void(0);" onclick="tabSelect('app1');" id="app1-server1-jb-tab" class="active"><i class="icon-system"></i> 基本设置</a></li>
-<!-- <li><a href="javascript:void(0);" onclick="tabSelect('app2');" id="app2-server1-fwlb-tab"><i class="icon-cloud"></i>订阅规则</a></li>		 -->
+<li><a href="javascript:void(0);" onclick="tabSelect('app2');" id="app2-server1-fwlb-tab"><i class="icon-cloud"></i>玩不转？</a></li>		
 <li><a href="javascript:void(0);" onclick="tabSelect('app3');" id="app3-server1-kz-tab"><i class="icon-tools"></i> 访问控制</a></li>		
 <li><a href="javascript:void(0);" onclick="tabSelect('app4');" id="app4-server1-zdy-tab"><i class="icon-hammer"></i> 自定义规则</a></li>
 <li><a href="javascript:void(0);" onclick="tabSelect('app5');" id="app5-server1-zsgl-tab"><i class="icon-lock"></i> 证书管理</a></li>
@@ -775,8 +740,8 @@ function set_version() {
 //					{ title: 'Koolproxy运行状态', text: '<font id="_koolproxyR_status" name=_koolproxyR_status color="#1bbf35">正在获取运行状态...</font>' },
 //					{ title: 'Koolproxy规则状态', text: '<font id="_koolproxyR_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },
 			{ title: '开启进阶模式', name:'koolproxyR_mode_enable',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_mode_enable || "0",suffix: '<font color="#FF0000">【进阶模式】&nbsp;&nbsp;提供更多设置选项</font>' },
-			{ title: '过滤模式', name:'koolproxyR_base_mode',type:'select',options:[['0','不过滤'],['1','HTTP全局模式'],['2','黑名单模式']],value: dbus.koolproxyR_base_mode || "1",suffix: '<font color="#FF0000">【开启进阶模式】&nbsp;&nbsp;获得更多选项！</font>' },
-			{ title: '过滤模式', name:'koolproxyR_mode',type:'select',options:[['0','不过滤'],['1','HTTP全局模式'],['2','带HTTPS的全局模式'],['3','黑名单模式'],['4','带HTTPS的黑名单模式']],value: dbus.koolproxyR_mode || "1",suffix: '<font color="#FF0000">一般开启HTTP全局模式即可，去视频广告请在&nbsp;&nbsp;访问控制中给设备指定【带HTTPS全局模式】</font>' },
+			{ title: '过滤模式', name:'koolproxyR_base_mode',type:'select',options:[['0','不过滤'],['1','HTTP过滤模式'],['2','黑名单模式']],value: dbus.koolproxyR_base_mode || "1",suffix: '<font color="#FF0000">【开启进阶模式】&nbsp;&nbsp;获得更多选项！</font>' },
+			{ title: '过滤模式', name:'koolproxyR_mode',type:'select',options:[['0','不过滤'],['1','HTTP过滤模式'],['2','HTTP/HTTPS双过滤模式'],['3','黑名单模式'],['4','HTTP/HTTPS双黑名单模式']],value: dbus.koolproxyR_mode || "1",suffix: '<font color="#FF0000">一般开启HTTP过滤模式即可，去视频广告请在&nbsp;&nbsp;访问控制中给设备指定【HTTP/HTTPS双过滤模式】</font>' },
 			{ title: '端口控制', name:'koolproxyR_port',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_port || "0",suffix: '<lable id="readme_port"><font color="#FF0000">【端口控制】&nbsp;&nbsp;只有全端口模式下才生效</font>'},
 			{ title: '例外端口', name:'koolproxyR_bp_port',type:'text',style:'input_style', maxlen:50, value:dbus.koolproxyR_bp_port ,suffix: '<font color="#FF0000">例：</font><font color="#FF0000">【单端口】：80【多端口】：80,443</font>'},
 //					{ title: '开启Adblock Plus Host', name:'koolproxyR_host',type:'checkbox',value: dbus.koolproxyR_host == 1, suffix: '<lable id="_koolproxyR_host_nu"></lable>' },
@@ -806,6 +771,57 @@ function set_version() {
 	<li>--------------------------------------------------------------------------</li>	
 </div>
 </div>
+<div class="box boxr2" style="margin-top: 10px;">
+	<div class="heading">开发者带你玩转KoolProxyR：</div>
+	<div class="content">
+		<fieldset>
+			<div class="col-sm-10">
+				<ul style="margin-left: 30px;">
+					<li><font color="#FF6347"> 问： </font>KoolProxyR的R是日的意思吗？</li>
+					<li><font color="#1E90FF"> 答： </font>是的，日死所有广告。</li>			
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>这些模式有什么区别？</li>
+					<li><font color="#1E90FF"> 答： </font>HTTP过滤模式，只过滤80端口，HTTP/HTTPS过滤80,443端口，全端口模式过滤所有端口，包含80，443。黑名单模式只过滤黑名单内的域名所以不建议使用。</li>			
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>HTTPS过滤一定要安装证书吗？</li>
+					<li><font color="#1E90FF"> 答： </font>必须安装证书，而且必须正确安装证书。</li>			
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>我不想每次手动更新规则，可以自动更新吗？</li>
+					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
+					<li>0 3 * * * /koolshare/scripts/KoolProxyR_rule_update.sh</li>
+					<li></li>
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>我想自动升级KoolProxyR版本可以吗？</li>
+					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
+					<li>0 4 * * * /koolshare/scripts/KoolProxyR_update_now.sh</li>
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>我是安卓7.0以上的系统，我安装了证书导致部分APP打开提升没有网络了！</li>
+					<li><font color="#1E90FF"> 答： </font>请在【证书管理】中下载0.根证书的zip文件，解压出来放入下面的两个地方。PS 如何放入，如何root之类的话题，请在到专业论坛讨论。</li>
+					<li>/system/etc/security/cacerts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/system/etc/security/cacerts_google</li>
+					<li></li>
+
+					<li><font color="#FF6347"> 问： </font>KoolProxyR为什么要重启SS,V2ray，koolgame？</li>
+					<li><font color="#1E90FF"> 答： </font>是的，是需要重启来适应kpr的开关，这样才能让流量走kpr，而不会导致代理无效的问题，不需要手动重启代理。</li>			
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>为什么梅林没有KoolProxyR?开发者歧视梅林吗？</li>
+					<li><font color="#1E90FF"> 答： </font>不是的，kpr是为了更强更多规则而存在的，目前除了软路由几乎无解。梅林设备性能没有达标！</li>			
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>为什么安装了证书仍然，提升https不安全?</li>
+					<li><font color="#1E90FF"> 答： </font>Windows下面请安装的时候选择安装到[受信任的根证书颁发机构]，MAC IOS设备 请百度下如何信任证书，安卓7.0以上将.0根证书放入指定位置。</li>			
+					<li></li>
+
+					<li><font color="#FF6347"> 问： </font>我发现规则上下有重复的地方有影响吗？</li>
+					<li><font color="#1E90FF"> 答： </font>没有的，这是因为不知道网站是http的还是https的，所以http与https都需要分别设置一次。</li>			
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>KoolProxyR太棒了，我要捐赠！</li>
+					<li><font color="#1E90FF"> 答： </font>谢谢大家好意，请捐赠给生活中其他需要帮助的人吧！或许这更重要！</li>			
+					<li></li>
+				</ul>
+			</div>
+		</fieldset>
+	</div>
+</div>
+
 <div class="box boxr3">
 <div class="heading">访问控制</div>
 <div class="content">

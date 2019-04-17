@@ -183,6 +183,8 @@ update_rule(){
 		sed -i 's#btbtt.\*#\*btbtt.\*#g' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给手机百度图片放行
 		sed -i '/baidu.com\/it\/u/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		# # 给手机百度放行
+		# sed -i '/mbd.baidu.comd' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给知乎放行
 		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 
@@ -223,13 +225,11 @@ update_rule(){
 		# 给三大视频网站放行 由kp.dat负责
 		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-		sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/g.alicdn.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给https://qq.com的html规则放行
-		sed -i '/https:\/\/qq.com#/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/qq.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 
 	fi
 
@@ -267,15 +267,13 @@ update_rule(){
 		# 给三大视频网站放行 由kp.dat负责
 		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
-		sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		sed -i '/g.alicdn.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/mobile.txt
-		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		# 给知乎放行
 		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		# 给https://qq.com的html规则放行
-		sed -i '/https:\/\/qq.com#/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/qq.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 
 
 
