@@ -14,8 +14,14 @@ easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt  | sed
 easylist_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/easylistchina.txt | wc -l`
 mobile_rules_local=`cat $KSROOT/koolproxyR/data/rules/mobile.txt  | sed -n '4p'|awk '{print $3,$4}'`
 mobile_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/mobile.txt | wc -l`
-fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
 fanboy_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | wc -l`
+# 检测是否开启fanboy 全规则版本
+if [ "$koolproxyR_fanboy_all_rules" == "1" ];then
+	fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '4p'|awk '{print $3,$4}'`
+else
+	fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
+fi
+
 # video_rules_local=`cat $KSROOT/koolproxyR/data/rules/koolproxy.txt  | sed -n '4p'|awk '{print $3,$4}'`
 # 这点我当初都有疑问，今天终于揭开了。
 if [ "$koolproxyR_easylist_rules" == "1" -o "$koolproxyR_video_rules" == "1" -o "$koolproxyR_mobile_rules" == "1" -o "$koolproxyR_fanboy_rules" == "1" ]; then

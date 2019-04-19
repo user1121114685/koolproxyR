@@ -57,8 +57,6 @@ $.ajax({
 		// var kpr_installing_md5 = data_version[1];
 		locversion = dbus["koolproxyR_version"];
 		// 这里调用本地参数 与 dubs get 同理
-		dbus.koolproxyR_new_install_version = data_version[0];
-		// 这里是设置 在线版本！即使你没有更新但是在线版本号会更新。与 dbus set 同理
 		if (locversion != data_version[0]) {
 			// data_version[0] 表示组的第1个数
 			$("#update").show();
@@ -479,6 +477,7 @@ function save(){
 	dbus.koolproxyR_easylist_rules = E("_koolproxyR_easylist_rules").checked ? "1" : "0";
 	dbus.koolproxyR_video_rules = E("_koolproxyR_video_rules").checked ? "1" : "0";
 	dbus.koolproxyR_fanboy_rules = E("_koolproxyR_fanboy_rules").checked ? "1" : "0";
+	dbus.koolproxyR_fanboy_all_rules = E("_koolproxyR_fanboy_all_rules").checked ? "1" : "0";
 	dbus["koolproxyR_custom_rule"] = Base64.encode(document.getElementById("_koolproxyR_custom_rule").value);
 	// collect data from acl pannel
 	var data2 = kpacl.getAllData();
@@ -672,10 +671,10 @@ function update_rules_now(arg){
 		data: JSON.stringify(postData1),
 		dataType: "json",
 		success: function(response){
-			// if(response){
-			// 	setTimeout("window.location.reload()", 3500);
-			// 	return true;
-			// }
+			if(response){
+				setTimeout("window.location.reload()", 2000);
+				return true;
+			}
 		}
 	});
 	tabSelect("app7");
@@ -795,7 +794,7 @@ function set_version() {
 					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
 					<li>0 4 * * * /koolshare/scripts/KoolProxyR_update_now.sh</li>
 					<li></li>
-					<li><font color="#FF6347"> 问： </font>我是安卓7.0以上的系统，我安装了证书导致部分APP打开提升没有网络了！</li>
+					<li><font color="#FF6347"> 问： </font>我是安卓7.0以上的系统，我安装了证书,开启Https导致部分APP打开提升没有网络了！</li>
 					<li><font color="#1E90FF"> 答： </font>请在【证书管理】中下载0.根证书的zip文件，解压出来放入下面的两个地方。PS 如何放入，如何root之类的话题，请在到专业论坛讨论。</li>
 					<li>/system/etc/security/cacerts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/system/etc/security/cacerts_google</li>
 					<li></li>
@@ -807,9 +806,22 @@ function set_version() {
 					<li><font color="#1E90FF"> 答： </font>不是的，kpr是为了更强更多规则而存在的，目前除了软路由几乎无解。梅林设备性能没有达标！</li>			
 					<li></li>
 					<li><font color="#FF6347"> 问： </font>为什么安装了证书仍然，提升https不安全?</li>
-					<li><font color="#1E90FF"> 答： </font>Windows下面请安装的时候选择安装到[受信任的根证书颁发机构]，MAC IOS设备 请百度下如何信任证书，安卓7.0以上将.0根证书放入指定位置。</li>			
+					<li><font color="#1E90FF"> 答： </font>Windows下面请安装的时候选择安装到&nbsp;&nbsp;[受信任的根证书颁发机构]，MAC IOS设备 请百度下如何信任证书，安卓7.0以上将.0根证书放入指定位置。</li>			
 					<li></li>
-
+					<li><font color="#FF6347"> 问： </font>我把kp的证书备份下来了kpr可以导入使用吗？</li>
+					<li><font color="#1E90FF"> 答： </font>可以的，本来就是同源，可以相互导入导出证书来使用减少重复安装证书的过程。</li>			
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>我的规则更新，和更新插件十分缓慢？有解决办法吗？</li>
+					<li><font color="#1E90FF"> 答： </font>你可以将，以下域名加入【SS V2RAY WG等代理软件】的【黑白名单】中【域名黑名单】。</li>			
+					<li>raw.githubusercontent.com</li>
+					<li>easylist-downloads.adblockplus.org</li>
+					<li>secure.fanboy.co.nz</li>
+					<li>filters.adtidy.org</li>
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>我开启了fanboy全规则版本，为什么我打开网页没有以前流畅了。</li>
+					<li><font color="#1E90FF"> 答： </font>这个版本由于规则太多对不是重度国外网站使用的你来讲，确实不必要勾选，如果常年逛国外网站，又卡，那你只勾选fanboy全规则版本，其他的都取消掉吧！</li>			
+					<li>达成成就：成功榨干软路由</li>
+					<li></li>
 					<li><font color="#FF6347"> 问： </font>我发现规则上下有重复的地方有影响吗？</li>
 					<li><font color="#1E90FF"> 答： </font>没有的，这是因为不知道网站是http的还是https的，所以http与https都需要分别设置一次。</li>			
 					<li></li>
@@ -888,6 +900,9 @@ function set_version() {
 			]},	
 			{ title: 'Fanboy规则（国外）', multi: [
 				{ name: 'koolproxyR_fanboy_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由Fanboy发起，针对国外主流令人厌烦的广告过滤。</lable>&nbsp;&nbsp;' }
+			]},	
+			{ title: 'Fanboy全规则版本', multi: [
+				{ name: 'koolproxyR_fanboy_all_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_all_rules == '1', suffix: '<lable id="_kp_fanboy_all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【开启选项】--【保存】--【更新规则】就能将fanboy规则更新为最全的版本，低功耗CPU【万万不能开启】！</lable>&nbsp;&nbsp;' }
 			]},	
 
 			{ title: '规则更新', multi: [

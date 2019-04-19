@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.26"
+VERSION="900.8.27"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -51,9 +51,8 @@ sed -i '/youku.com/d' fanboy-annoyance.txt
 sed -i '/g.alicdn.com/d' fanboy-annoyance.txt
 sed -i '/tudou.com/d' fanboy-annoyance.txt
 sed -i '/iqiyi.com/d' fanboy-annoyance.txt
-sed -i '/v.qq.com/d' fanboy-annoyance.txt
+sed -i '/qq.com/d' fanboy-annoyance.txt
 sed -i '/gtimg.cn/d' fanboy-annoyance.txt
-sed -i '/l.qq.com/d' fanboy-annoyance.txt
 # 给知乎放行
 sed -i '/zhihu.com/d' fanboy-annoyance.txt
 
@@ -198,6 +197,18 @@ sed -i '/zhihu.com/d' mobile.txt
 
 # 给https://qq.com的html规则放行
 sed -i '/qq.com/d' mobile.txt
+
+# 给github的https放行
+sed -i '/github/d' mobile.txt
+# 给apple的https放行
+sed -i '/apple.com/d' mobile.txt
+# 给api.twitter.com的https放行
+sed -i '/twitter.com/d' mobile.txt
+# 给facebook.com的https放行
+sed -i '/facebook.com/d' mobile.txt
+sed -i '/fbcdn.net/d' mobile.txt
+# 给 instagram.com 放行
+sed -i '/instagram.com/d' mobile.txt
 
 
 

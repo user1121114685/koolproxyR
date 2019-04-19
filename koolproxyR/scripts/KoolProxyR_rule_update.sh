@@ -10,34 +10,17 @@ url_kp="https://kprules.b0.upaiyun.com/kp.dat"
 # 原网址跳转到https://kprule.com/koolproxy.txt跳转到又拍云，为了节省时间，还是直接去又拍云下载吧！避免某些时候跳转不过去
 url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
 url_mobile="https://filters.adtidy.org/extension/chromium/filters/11.txt"
-url_fanboy="https://secure.fanboy.co.nz/fanboy-annoyance.txt"
-
+# 检测是否开启fanboy全功能版本
+if [ "$koolproxyR_fanboy_all_rules" == "1" ];then
+	url_fanboy="https://secure.fanboy.co.nz/r/fanboy-complete.txt"
+	dbus set koolproxyR_fanboy_rules=1
+else
+	url_fanboy="https://secure.fanboy.co.nz/fanboy-annoyance.txt"
+fi
 update_rule(){
 	echo =======================================================================================================
 	echo_date 开始更新koolproxyR规则，请等待...
-	
-	# update KP官方规则 以后此规则都不需要更新了
-	# if [ "$koolproxyR_basic_koolproxyR_update" == "1" ] || [ -n "$1" ];then
-	# 	echo_date " ---------------------------------------------------------------------------------------"
-	# 	wget --no-check-certificate --timeout=8 -qO - $url_koolproxy > /tmp/koolproxy.txt
-	# 	rules_date_local=`cat $KSROOT/koolproxyR/data/rules/koolproxy.txt  | sed -n '3p'|awk '{print $3,$4}'`
-	# 	rules_date_local1=`cat /tmp/koolproxy.txt  | sed -n '3p'|awk '{print $3,$4}'`
-	# 	if [ ! -z "$rules_date_local1" ];then
-	# 		if [ "$rules_date_local" != "$rules_date_local1" ];then
-	# 			echo_date 检测到新版本 koolproxy规则，开始更新...
-	# 			echo_date 将临时文件覆盖到原始koolproxy规则文件
-	# 			mv /tmp/koolproxy.txt $KSROOT/koolproxyR/data/rules/koolproxy.txt
-	# 			wget --no-check-certificate --timeout=8 -qO - $url_daily > $KSROOT/koolproxyR/data/rules/daily.txt
-	# 			wget --no-check-certificate --timeout=8 -qO - $url_kp > $KSROOT/koolproxyR/data/rules/kp.dat
-	# 		else
-	# 			echo_date 检测到koolproxy规则本地版本号和在线版本号相同，那还更新个毛啊!
-	# 		fi
-	# 	else
-	# 		echo_date koolproxy规则文件下载失败！
-	# 	fi
-	# fi
-	
-	
+		
 	# update 中国简易列表 2.0
 	if [ "$koolproxyR_basic_easylist_update" == "1" ] || [ -n "$1" ];then
 		echo_date " ---------------------------------------------------------------------------------------"
@@ -101,8 +84,15 @@ update_rule(){
 		echo_date " ---------------------------------------------------------------------------------------"
 		wget -a /tmp/upload/kpr_log.txt -O /tmp/fanboy-annoyance.txt $url_fanboy
 		# wget --no-check-certificate --timeout=8 -qO - $url_fanboy > /tmp/fanboy-annoyance.txt
-		fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
-		fanboy_rules_local1=`cat /tmp/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
+		# 检测是否开启fanboy 全规则版本
+		if [ "$koolproxyR_fanboy_all_rules" == "1" ];then
+			fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '4p'|awk '{print $3,$4}'`
+			fanboy_rules_local1=`cat /tmp/fanboy-annoyance.txt  | sed -n '4p'|awk '{print $3,$4}'`
+		else
+			fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
+			fanboy_rules_local1=`cat /tmp/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
+		fi
+
 		echo_date fanboy规则本地版本号： $fanboy_rules_local
 		echo_date fanboy规则在线版本号： $fanboy_rules_local1
 		if [ ! -z "$fanboy_rules_local1" ];then
@@ -132,11 +122,10 @@ update_rule(){
 		# 给三大视频网站放行 由kp.dat负责
 		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
-		sed -i '/v.qq.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		sed -i '/qq.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/g.alicdn.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
-		sed -i '/l.qq.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		# 给知乎放行
 		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 
@@ -166,6 +155,9 @@ update_rule(){
 		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		# 给 instagram.com 放行
 		sed -i '/instagram.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		# 给 twitch.tv 放行
+		sed -i '/twitch.tv/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+
 
 
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
@@ -256,6 +248,7 @@ update_rule(){
 		sed -i '8,$d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		# 合二归一
 		cat  $KSROOT/koolproxyR/data/rules/mobile_https.txt >> $KSROOT/koolproxyR/data/rules/mobile.txt
+
 		# 把三大视频网站给剔除来，作为单独文件。
 		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i 'youku.com' > $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
 		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i 'iqiyi.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
@@ -274,9 +267,17 @@ update_rule(){
 		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		# 给https://qq.com的html规则放行
 		sed -i '/qq.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
-
-
-
+		# 给github的https放行
+		sed -i '/github/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 给apple的https放行
+		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 给api.twitter.com的https放行
+		sed -i '/twitter.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 给facebook.com的https放行
+		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 给 instagram.com 放行
+		sed -i '/instagram.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 	fi
 	# 删除临时文件
 	rm $KSROOT/koolproxyR/data/rules/*_https.txt

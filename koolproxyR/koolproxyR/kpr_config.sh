@@ -18,43 +18,28 @@ write_user_txt(){
 
 load_rules(){
 	sed -i "s/1|/0|/g" $SOURCE_LIST
+	sed -i "s/0|user/1|user/g" $SOURCE_LIST
+	if [ "$koolproxyR_easylist_rules" == "1" ]; then
+		echo_date 加载【KPR主规则】
+		sed -i "s/0|easylistchina/1|easylistchina/g" $SOURCE_LIST
+	fi
+	if [ "$koolproxyR_easylist_rules" == "1" ]; then
+		echo_date 加载【移动设备规则】
+		sed -i "s/0|mobile.txt/1|mobile.txt/g" $SOURCE_LIST
+	fi
+	if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_video_rules" == "0" ]; then
+		echo_date 加载【KPR视频规则】
+		sed -i "s/0|kpr_video_list/1|kpr_video_list/g" $SOURCE_LIST
+	fi
 
-	# if [ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_video_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ]; then
-		# echo_date 加载【kp.dat组件】
-		# sed -i "s/0|kp/1|kp/g" $SOURCE_LIST
-	# else
-		# if [ "$koolproxyR_oline_rules" == "1" ]; then
-		# 	echo_date 加载【绿坝规则】【每日规则】【自定义规则】
-		# 	sed -i "s/0|koolproxy/1|koolproxy/g" $SOURCE_LIST
-		# 	sed -i "s/0|daily/1|daily/g" $SOURCE_LIST
-			sed -i "s/0|user/1|user/g" $SOURCE_LIST
-		# fi
-		# if [ "$koolproxyR_video_rules" == "1" ]; then
-		# 	echo_date 加载【视频规则】
-		# 	sed -i "s/0|kp/1|kp/g" $SOURCE_LIST
-		# fi		
-		if [ "$koolproxyR_easylist_rules" == "1" ]; then
-			echo_date 加载【KPR主规则】
-			sed -i "s/0|easylistchina/1|easylistchina/g" $SOURCE_LIST
-		fi
-		if [ "$koolproxyR_easylist_rules" == "1" ]; then
-			echo_date 加载【移动设备规则】
-			sed -i "s/0|mobile.txt/1|mobile.txt/g" $SOURCE_LIST
-		fi
-		if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_video_rules" == "0" ]; then
-			echo_date 加载【KPR视频规则】
-			sed -i "s/0|kpr_video_list/1|kpr_video_list/g" $SOURCE_LIST
-		fi
-
-		if [ "$koolproxyR_video_rules" == "1" ]; then
-			echo_date 加载【KP视频规则】
-			sed -i "s/0|kp.dat/1|kp.dat/g" $SOURCE_LIST
-		fi
-		if [ "$koolproxyR_fanboy_rules" == "1" ]; then
-			echo_date 加载【Fanboy规则】
-			sed -i "s/0|fanboy/1|fanboy/g" $SOURCE_LIST	
-		fi				
-	# fi
+	if [ "$koolproxyR_video_rules" == "1" ]; then
+		echo_date 加载【KP视频规则】
+		sed -i "s/0|kp.dat/1|kp.dat/g" $SOURCE_LIST
+	fi
+	if [ "$koolproxyR_fanboy_rules" == "1" ]; then
+		echo_date 加载【Fanboy规则】
+		sed -i "s/0|fanboy/1|fanboy/g" $SOURCE_LIST	
+	fi				
 }
 
 start_koolproxy(){
@@ -166,6 +151,9 @@ write_reboot_job(){
 	# start setvice
 	[ ! -f  "/etc/crontabs/root" ] && touch /etc/crontabs/root
 	CRONTAB=`cat /etc/crontabs/root|grep KoolProxyR_check_chain.sh`
+	KoolProxyR_rule_update=`cat /etc/crontabs/root|grep KoolProxyR_rule_update.sh`
+	
+	[ -z "$KoolProxyR_rule_update" ] && echo_date 写入KPR规则自动更新... && echo  "0 3 * * * /koolshare/scripts/KoolProxyR_rule_update.sh" >> /etc/crontabs/root
 
 	[ -z "$CRONTAB" ] && echo_date 写入KPR过滤代理链守护... && echo  "*/30 * * * * $SOFT_DIR/scripts/KoolProxyR_check_chain.sh" >> /etc/crontabs/root
 #	if [ "1" == "$koolproxyR_reboot" ]; then
@@ -183,6 +171,8 @@ remove_reboot_job(){
 	# kill crontab job
 	if [ ! "$KP_ENBALE" == "1" ];then
 		if [ ! -z "$jobexist" ];then
+			echo_date 删除KPR规则自动更新...
+			sed -i '/KoolProxyR_rule_update/d' /etc/crontabs/root >/dev/null 2>&1
 			echo_date 删除KPR过滤代理链守护...
 			sed -i '/koolproxyR_check_chain/d' /etc/crontabs/root >/dev/null 2>&1
 		fi
@@ -525,6 +515,7 @@ ss_v2ray_game_restrt(){
 	SS_ENABLE=`dbus get ss_basic_enable`
 	V2_ENABLE=`dbus get v2ray_basic_enable`
 	KG_ENABLE=`dbus get koolgame_basic_enable`
+	koolclash_ENABLE=`dbus get koolclash_enable`
 	if [ "$SS_ENABLE" == "1" ]; then
 		echo_date ================== 以下为SS日志 =================
 		/koolshare/ss/ssstart.sh restart >> /tmp/upload/kpr_log.txt 2>&1
@@ -544,6 +535,13 @@ ss_v2ray_game_restrt(){
 		/koolshare/scripts/koolgame_config.sh restart
 		echo_date ================== 以上为koolgame日志 =================
 		echo_date 检测到koolgame开启，重启了你的koolgame插件以适应KPR的开启与关闭！
+	fi
+	if [ "$koolclash_ENABLE" == "1" ]; then
+	echo_date ================== 以下为koolclash日志 =================
+	/koolshare/scripts/koolclash_control.sh stop
+	/koolshare/scripts/koolclash_control.sh start
+	echo_date ================== 以上为koolclash日志 =================
+	echo_date 检测到koolclash开启，重启了你的koolclash插件以适应KPR的开启与关闭！
 	fi
 }
 

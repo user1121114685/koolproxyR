@@ -1,8 +1,8 @@
-! Checksum: gD4d2FTjexE9Aj7qbsZUvw
+! Checksum: QV78WJ8VpzvyNUQ27njUSw
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.5.74
-! TimeUpdated: 2019-04-17T15:30:11+03:00
+! Version: 2.0.5.78
+! TimeUpdated: 2019-04-19T13:30:10+03:00
 ! Expires: 2 days (update frequency)
 ! Homepage: http://adguard.com/filters.html#mobile
 @@@||https://m.beautypageants.in^$elemhide
@@ -343,6 +343,7 @@
 ||https://54.222.186.106^
 ||https://plugin.mobopay.baidu.com^
 ||https://mo.freeindoapp.com^
+||https://zhfosenghtr.com^$third-party
 ||https://ads.edadeal.ru^
 ||https://adsrvr.io^
 ||https://data2.doodlemobile.com^
@@ -392,7 +393,6 @@
 ||https://cdn-cf.postitial.com^
 ||https://ad.adapter.kaffnet.com^
 ||https://opt8.co^
-||https://ads-bidder-api.twitter.com^
 ||https://sexpennyauctions.com^$popup
 ||https://speee-ad.akamaized.net^
 ||https://config.unityads.unity3d.com^
@@ -890,7 +890,6 @@
 ||https://i.skimresources.com^
 ||https://i.tapit.com^
 ||https://iad.appboy.com^
-||https://iadsdk.apple.com^
 ||https://iamediaserve.com^
 ||https://imasdk.googleapis.com^
 ||https://imwx.com/mobile/adconfig/
@@ -1263,7 +1262,6 @@
 ||https://tb.beeline.ru/Scripts/App/AnchorCompiled.min.js
 ||https://youtube.com/api/stats/ads
 ||https://mobimagic.com/ads/
-||https://graph.facebook.com/network_ads
 ||https://s.yimg.com/av/curveball/ads/pr/$important,empty,domain=sports.yahoo.com
 ||https://turner.com/xslo/cvp/ads/$domain=cnn.com
 ||https://images-*.ssl-images-amazon.com/images/*/ape/sf/MAsf-*_.js
@@ -1466,8 +1464,6 @@
 ||https://plbslog.umeng.com^
 ||https://analysys.cn^
 ||https://logs.supersonic.com^
-||https://graph.facebook.com/*/activities?access_token=&event=
-||https://graph.facebook.com/*?fields=supports_implicit_sdk_logging
 ||https://adj.st^
 ||https://gameanalisys.appcpi.net^
 ||https://adsaccount.appcpi.net^
@@ -1524,7 +1520,6 @@
 ||https://parse-ppom-prod.herokuapp.com/parse/events^
 ||https://api.instabug.com^
 ||https://sts.batmobi.net^
-||https://api.facebook.com/method/logging.clientevent
 ||https://pps-log.op-mobile.opera.com^
 ||https://event.allnews.uodoo.com^
 ||https://tktracker.aotter.net^
@@ -1690,12 +1685,10 @@
 ||https://ep.xone.com^
 ||https://etl.xlmc.sandai.net^
 ||https://events.lbesecapi.com^
-||https://facebook.com/rtb_impression/?tr=
 ||https://gate.hockeyapp.net^
 ||https://geoip.fotoable.net^
 ||https://google-analytics.com^
 ||https://googleadapis.l.google.com^
-||https://graph.instagram.com/logging_client_events
 ||https://iam-agof-app.irquest.com^
 ||https://imp.apprevolve.com^
 ||https://inst.platform.bing.com/api/log
@@ -1829,6 +1822,7 @@
 ||http://54.222.186.106^
 ||http://plugin.mobopay.baidu.com^
 ||http://mo.freeindoapp.com^
+||http://zhfosenghtr.com^$third-party
 ||http://ads.edadeal.ru^
 ||http://adsrvr.io^
 ||http://data2.doodlemobile.com^
@@ -1878,7 +1872,6 @@
 ||http://cdn-cf.postitial.com^
 ||http://ad.adapter.kaffnet.com^
 ||http://opt8.co^
-||http://ads-bidder-api.twitter.com^
 ||http://sexpennyauctions.com^$popup
 ||http://speee-ad.akamaized.net^
 ||http://config.unityads.unity3d.com^
@@ -2376,7 +2369,6 @@
 ||http://i.skimresources.com^
 ||http://i.tapit.com^
 ||http://iad.appboy.com^
-||http://iadsdk.apple.com^
 ||http://iamediaserve.com^
 ||http://imasdk.googleapis.com^
 ||http://imwx.com/mobile/adconfig/
@@ -2749,7 +2741,6 @@
 ||http://tb.beeline.ru/Scripts/App/AnchorCompiled.min.js
 ||http://youtube.com/api/stats/ads
 ||http://mobimagic.com/ads/
-||http://graph.facebook.com/network_ads
 ||http://s.yimg.com/av/curveball/ads/pr/$important,empty,domain=sports.yahoo.com
 ||http://turner.com/xslo/cvp/ads/$domain=cnn.com
 ||http://images-*.ssl-images-amazon.com/images/*/ape/sf/MAsf-*_.js
@@ -2952,8 +2943,6 @@
 ||http://plbslog.umeng.com^
 ||http://analysys.cn^
 ||http://logs.supersonic.com^
-||http://graph.facebook.com/*/activities?access_token=&event=
-||http://graph.facebook.com/*?fields=supports_implicit_sdk_logging
 ||http://adj.st^
 ||http://gameanalisys.appcpi.net^
 ||http://adsaccount.appcpi.net^
@@ -3010,7 +2999,6 @@
 ||http://parse-ppom-prod.herokuapp.com/parse/events^
 ||http://api.instabug.com^
 ||http://sts.batmobi.net^
-||http://api.facebook.com/method/logging.clientevent
 ||http://pps-log.op-mobile.opera.com^
 ||http://event.allnews.uodoo.com^
 ||http://tktracker.aotter.net^
@@ -3176,12 +3164,10 @@
 ||http://ep.xone.com^
 ||http://etl.xlmc.sandai.net^
 ||http://events.lbesecapi.com^
-||http://facebook.com/rtb_impression/?tr=
 ||http://gate.hockeyapp.net^
 ||http://geoip.fotoable.net^
 ||http://google-analytics.com^
 ||http://googleadapis.l.google.com^
-||http://graph.instagram.com/logging_client_events
 ||http://iam-agof-app.irquest.com^
 ||http://imp.apprevolve.com^
 ||http://inst.platform.bing.com/api/log
@@ -3286,6 +3272,7 @@ https://blogdoiphone.com#@#.header-ad
 https://blogdoiphone.com#@#.custom-ad
 https://westseattleblog.com#@#.custom-ad
 https://westseattleblog.com#@#.header-ad
+https://m.hd21.com#$?##banner_overlay-postitial-video { remove: true; }
 https://ktuu.com##aside > .visible-xs-block > .row:has(> .col-xs-24 > a.ptr[onclick^="trackNativeLink('https://www.ktuu.com/content/sponsored/"])
 https://ktuu.com##aside > .visible-xs-block > .row:has(> .col-xs-24 > a.ptr[onclick^="trackNativeLink('https://www.ktuu.com/content/sponsored/"]) + hr
 https://gorodrabot.ru##.vacancies_container > div[class="clearfix vacancy"]:has(> div[id*="_R-A-"])
@@ -3308,13 +3295,11 @@ https://gematsu.com###sidebar > #section:contains(Advertisement)
 https://m.auto.ru##.content > div.index.i-bem > div.section:has(> div > a[href^="https://an.yandex.ru/"])
 https://m.auto.ru##.content > div.card > div[class*="_type_card"]:not([data-bem]):has(> div > div[class$="__badge"]:contains(/^Реклама/))
 https://www-chip-de.cdn.ampproject.org##.amp-article > div:not([class]):not([id]) > .amp-article-chapter[-ext-has='.cart']
-https://mobile.twitter.com##section[role="region"] > div > div[style^="padding-bottom"] > div[class] > div[class][-ext-has='div.rn-1uif7bo[dir="auto"]']
 https://reddit.com##.PostsList > .Post[-ext-has='.PostHeader__promoted-flair']
 https://m.sabah.com.tr##.manset > ul > li:has(>a[href^="/haber/advertorial/"])
 https://m.imgur.com##.GalleryInfiniteScroll .GalleryHandler-postContainer[-ext-has='.Post-opContainer--promoted']
 https://chiemgau24.de##div[data-id-module="col-width-watcher"] > div.id-Container--hasNoHeadline:matches-css-before(content:*- Reklame)
 https://chiemgau24.de##div[data-id-module="col-width-watcher"] > div.id-Container--hasHeadline:has(> h3 > span:contains(Auch interessant))
-https://mobile.twitter.com##._29ahSMvH section.rn-1oszu61 div[class][style*="padding-"] > ._1_KafmK5[-ext-has='svg.YunaQoc2']
 https://wetter.de##.large-4 > .wrapper-teaser:has([data-adformat])
 https://money.cnn.com##.content-scroll > div#ng-view > section.headline_list:has(> div.section_header:contains(Partner Offers))
 https://lifehack.org##.visible-xs[style^="background-color: rgb"]:has(>[id^="div-gpt-ad"])
@@ -3335,6 +3320,8 @@ https://pikabu.ru###stories_container > .post:has(> div > a > span:contains(сп
 https://m.reddit.com##article[class="Post size-compact"][-ext-has=".PostHeader__sponsored-flair"]
 https://nnm-club.tv,all-tor.net,free-rutor.org,lenfilm.tv,krutor.org,fast-bit.org,tor-ru.net,hd-bit.org,radikal.ru,hdkinomax.com,on-movie.net,fastpic.ru,rutor.is,baskino.club,rutor.info,nnm.me,korzik.net,seasonvar.ru,rsload.net,nnm-club.me,nnmclub.to,rustorka.com,rustorka.com,top-tor.org,super-tor.net,free-ru.org#%#window.WebSocket = undefined;
 https://pornhub.com#%#AG_onLoad(function() { if (typeof redirect !== 'function') return; var str = redirect.toString(); var m = str.match(/\'(\/view.*)\'/); if (m.length != 2) return; var link = m[1]; window.location.href = m[1]; });
+https://m.hd21.com#%#document.cookie = "adv_show=3";
+https://m.hd21.com#%#AG_abortOnPropertyRead('mobileAdvPop');
 https://m.xhamster.one#%#AG_abortOnPropertyRead('Pop');
 https://hanime.tv#%#document.cookie = "in_m=1";
 https://motherless.com#%#AG_abortInlineScript(/awentw/, 'Math.floor');
@@ -3412,6 +3399,8 @@ https://m.news.de##.articleTeaser + div[style="height: 250px"]
 https://m.news.de##.aside > div[style="height: 600px;"]
 https://m.news.de##.unisterAdsStart
 https://9to5google.com,9to5toys.com,9to5mac.com,electrek.co##.post-content > .inlinead ~ div[class*=" "]:not([id]):not([style])
+https://m.hd21.com##.trade > .mercantile + p
+https://rp-online.de##.park-section-portal-right > aside[data-portal-id="topmobile2"]
 https://pcgames.de##.wadtag
 https://argusleader.com,azcentral.com,battlecreekenquirer.com,baxterbulletin.com,bucyrustelegraphforum.com,burlingtonfreepress.com,centralfloridafuture.com,citizen-times.com,clarionledger.com,coloradoan.com,courier-journal.com,courierpress.com,dailyworld.com,delawareonline.com,delmarvanow.com,desertsun.com,desmoinesregister.com,floridatoday.com,freep.com,fsunews.com,greatfallstribune.com,guampdn.com,hattiesburgamerican.com,hometownlife.com,indystar.com,jconline.com,kitsapsun.com,lansingstatejournal.com,lcsun-news.com,montgomeryadvertiser.com,mycentraljersey.com,naplesnews.com,news-leader.com,news-press.com,newsleader.com,pal-item.com,pnj.com,portclintonnewsherald.com,press-citizen.com,redding.com,rgj.com,sctimes.com,shreveporttimes.com,statesmanjournal.com,stevenspointjournal.com,tallahassee.com,tcpalm.com,theadvertiser.com,thecalifornian.com,thegleaner.com,thenews-messenger.com,thenewsstar.com,thespectrum.com,thestarpress.com,thetimesherald.com,thetowntalk.com,usatoday.com,vcstar.com,visaliatimesdelta.com##partner-banner
 https://m.dm5.com,manhuaren.com##.adform_2
@@ -3692,13 +3681,10 @@ https://wasabisyrup.com##.top-group
 https://wasabisyrup.com##.article-gallery > .article-gallery-group > .content-group
 https://redtube.com###content_container > div[class]:not(.show_page_modals):not([id]):not([style])
 https://youtube.com##ytm-promoted-video-renderer
-https://iphone.facebook.com,m.facebook.com,touch.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
 https://m.voyeurhit.com##.container > .section--normal[style*="margin-top: -15px"]
 https://avcanada.ca##.postbody > div[id^="post_content"] > .content ~ center
 https://xbabe.com###fltd
 https://vikiporn.com##.under_player_adv
-https://iphone.facebook.com,x.facebook.com,mobile.facebook.com##article[data-store*="is_sponsored.1"]
-https://x.facebook.com,mobile.facebook.com##.storyStream > .fullwidth.carded
 https://m.allboxing.ru##.arcticmodal-container
 https://m.delmagyar.hu##.closable-ad
 https://m.delmagyar.hu###block___frappe_mobil
@@ -4269,6 +4255,7 @@ http://blogdoiphone.com#@#.header-ad
 http://blogdoiphone.com#@#.custom-ad
 http://westseattleblog.com#@#.custom-ad
 http://westseattleblog.com#@#.header-ad
+http://m.hd21.com#$?##banner_overlay-postitial-video { remove: true; }
 http://ktuu.com##aside > .visible-xs-block > .row:has(> .col-xs-24 > a.ptr[onclick^="trackNativeLink('https://www.ktuu.com/content/sponsored/"])
 http://ktuu.com##aside > .visible-xs-block > .row:has(> .col-xs-24 > a.ptr[onclick^="trackNativeLink('https://www.ktuu.com/content/sponsored/"]) + hr
 http://gorodrabot.ru##.vacancies_container > div[class="clearfix vacancy"]:has(> div[id*="_R-A-"])
@@ -4291,13 +4278,11 @@ http://gematsu.com###sidebar > #section:contains(Advertisement)
 http://m.auto.ru##.content > div.index.i-bem > div.section:has(> div > a[href^="https://an.yandex.ru/"])
 http://m.auto.ru##.content > div.card > div[class*="_type_card"]:not([data-bem]):has(> div > div[class$="__badge"]:contains(/^Реклама/))
 http://www-chip-de.cdn.ampproject.org##.amp-article > div:not([class]):not([id]) > .amp-article-chapter[-ext-has='.cart']
-http://mobile.twitter.com##section[role="region"] > div > div[style^="padding-bottom"] > div[class] > div[class][-ext-has='div.rn-1uif7bo[dir="auto"]']
 http://reddit.com##.PostsList > .Post[-ext-has='.PostHeader__promoted-flair']
 http://m.sabah.com.tr##.manset > ul > li:has(>a[href^="/haber/advertorial/"])
 http://m.imgur.com##.GalleryInfiniteScroll .GalleryHandler-postContainer[-ext-has='.Post-opContainer--promoted']
 http://chiemgau24.de##div[data-id-module="col-width-watcher"] > div.id-Container--hasNoHeadline:matches-css-before(content:*- Reklame)
 http://chiemgau24.de##div[data-id-module="col-width-watcher"] > div.id-Container--hasHeadline:has(> h3 > span:contains(Auch interessant))
-http://mobile.twitter.com##._29ahSMvH section.rn-1oszu61 div[class][style*="padding-"] > ._1_KafmK5[-ext-has='svg.YunaQoc2']
 http://wetter.de##.large-4 > .wrapper-teaser:has([data-adformat])
 http://money.cnn.com##.content-scroll > div#ng-view > section.headline_list:has(> div.section_header:contains(Partner Offers))
 http://lifehack.org##.visible-xs[style^="background-color: rgb"]:has(>[id^="div-gpt-ad"])
@@ -4318,6 +4303,8 @@ http://pikabu.ru###stories_container > .post:has(> div > a > span:contains(спo
 http://m.reddit.com##article[class="Post size-compact"][-ext-has=".PostHeader__sponsored-flair"]
 http://nnm-club.tv,all-tor.net,free-rutor.org,lenfilm.tv,krutor.org,fast-bit.org,tor-ru.net,hd-bit.org,radikal.ru,hdkinomax.com,on-movie.net,fastpic.ru,rutor.is,baskino.club,rutor.info,nnm.me,korzik.net,seasonvar.ru,rsload.net,nnm-club.me,nnmclub.to,rustorka.com,rustorka.com,top-tor.org,super-tor.net,free-ru.org#%#window.WebSocket = undefined;
 http://pornhub.com#%#AG_onLoad(function() { if (typeof redirect !== 'function') return; var str = redirect.toString(); var m = str.match(/\'(\/view.*)\'/); if (m.length != 2) return; var link = m[1]; window.location.href = m[1]; });
+http://m.hd21.com#%#document.cookie = "adv_show=3";
+http://m.hd21.com#%#AG_abortOnPropertyRead('mobileAdvPop');
 http://m.xhamster.one#%#AG_abortOnPropertyRead('Pop');
 http://hanime.tv#%#document.cookie = "in_m=1";
 http://motherless.com#%#AG_abortInlineScript(/awentw/, 'Math.floor');
@@ -4395,6 +4382,8 @@ http://m.news.de##.articleTeaser + div[style="height: 250px"]
 http://m.news.de##.aside > div[style="height: 600px;"]
 http://m.news.de##.unisterAdsStart
 http://9to5google.com,9to5toys.com,9to5mac.com,electrek.co##.post-content > .inlinead ~ div[class*=" "]:not([id]):not([style])
+http://m.hd21.com##.trade > .mercantile + p
+http://rp-online.de##.park-section-portal-right > aside[data-portal-id="topmobile2"]
 http://pcgames.de##.wadtag
 http://argusleader.com,azcentral.com,battlecreekenquirer.com,baxterbulletin.com,bucyrustelegraphforum.com,burlingtonfreepress.com,centralfloridafuture.com,citizen-times.com,clarionledger.com,coloradoan.com,courier-journal.com,courierpress.com,dailyworld.com,delawareonline.com,delmarvanow.com,desertsun.com,desmoinesregister.com,floridatoday.com,freep.com,fsunews.com,greatfallstribune.com,guampdn.com,hattiesburgamerican.com,hometownlife.com,indystar.com,jconline.com,kitsapsun.com,lansingstatejournal.com,lcsun-news.com,montgomeryadvertiser.com,mycentraljersey.com,naplesnews.com,news-leader.com,news-press.com,newsleader.com,pal-item.com,pnj.com,portclintonnewsherald.com,press-citizen.com,redding.com,rgj.com,sctimes.com,shreveporttimes.com,statesmanjournal.com,stevenspointjournal.com,tallahassee.com,tcpalm.com,theadvertiser.com,thecalifornian.com,thegleaner.com,thenews-messenger.com,thenewsstar.com,thespectrum.com,thestarpress.com,thetimesherald.com,thetowntalk.com,usatoday.com,vcstar.com,visaliatimesdelta.com##partner-banner
 http://m.dm5.com,manhuaren.com##.adform_2
@@ -4675,13 +4664,10 @@ http://wasabisyrup.com##.top-group
 http://wasabisyrup.com##.article-gallery > .article-gallery-group > .content-group
 http://redtube.com###content_container > div[class]:not(.show_page_modals):not([id]):not([style])
 http://youtube.com##ytm-promoted-video-renderer
-http://iphone.facebook.com,m.facebook.com,touch.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
 http://m.voyeurhit.com##.container > .section--normal[style*="margin-top: -15px"]
 http://avcanada.ca##.postbody > div[id^="post_content"] > .content ~ center
 http://xbabe.com###fltd
 http://vikiporn.com##.under_player_adv
-http://iphone.facebook.com,x.facebook.com,mobile.facebook.com##article[data-store*="is_sponsored.1"]
-http://x.facebook.com,mobile.facebook.com##.storyStream > .fullwidth.carded
 http://m.allboxing.ru##.arcticmodal-container
 http://m.delmagyar.hu##.closable-ad
 http://m.delmagyar.hu###block___frappe_mobil

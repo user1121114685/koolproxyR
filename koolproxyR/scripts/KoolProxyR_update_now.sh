@@ -11,6 +11,7 @@ update_kpr(){
     koolproxyR_installing_version=`cat /tmp/koolproxyR_version  | sed -n '1p'`
     # koolproxyR_installing_version=`dbus get koolproxyR_new_install_version`
     koolproxyR_version_now=`dbus get koolproxyR_version`
+    dbus set koolproxyR_new_install_version=$koolproxyR_installing_version
     echo_date1 当前本地版本：$koolproxyR_version_now  ,当前最新版本为: $koolproxyR_installing_version
     rm -rf /tmp/version
     echo_date1 ====================== 判断更新 ===========================
