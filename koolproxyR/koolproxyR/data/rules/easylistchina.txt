@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: vheSRt1QdX+TyeyUoyia5w
-! Version: 201904201732
+! Checksum: OIJzOSyTFTpqVzT0NUmSAQ
+! Version: 201904201922
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 !  ******************************* koolproxy 语法*******************************

@@ -41,7 +41,7 @@ update_rule(){
 
 		echo_date KPR主规则 本地版本号： $easylist_rules_local
 		echo_date KPR主规则 在线版本号： $easylist_rules_local1
-		if (("$easylistchina_rule_local" >= 10000 ));then
+		if [ "$easylistchina_rule_local" -gt 10000 ];then
 			if [ "$easylist_rules_local" != "$easylist_rules_local1" ];then
 				echo_date 检测到新版本 KPR主规则 ，开始更新...
 				echo_date 将临时文件覆盖到原始 KPR主规则文件
@@ -64,7 +64,7 @@ update_rule(){
 		mobile_nu_local=`grep -E -v "^!" /tmp/mobile.txt | wc -l`
 		echo_date 移动设备规则本地版本号： $mobile_rules_local
 		echo_date 移动设备规则在线版本号： $mobile_rules_local1
-		if (("$mobile_nu_local" >= 1000 ));then
+		if [ "$mobile_nu_local" -gt 1000 ];then
 			if [ "$mobile_rules_local" != "$mobile_rules_local1" ];then
 				echo_date 检测到新版本 移动设备规则，开始更新...
 				echo_date 将临时文件覆盖到原始 移动设备规则 文件
@@ -104,7 +104,7 @@ update_rule(){
 
 		echo_date fanboy规则本地版本号： $fanboy_rules_local
 		echo_date fanboy规则在线版本号： $fanboy_rules_local1
-		if (( "$fanboy_nu_local" >= 20000 ));then
+		if [ "$fanboy_nu_local" -gt 20000 ];then
 			if [ "$fanboy_rules_local" != "$fanboy_rules_local1" ];then
 				echo_date 检测到新版本 fanboy规则 列表，开始更新...
 				echo_date 将临时文件覆盖到原始 fanboy规则 文件

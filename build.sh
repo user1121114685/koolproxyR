@@ -1,12 +1,14 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.30"
+VERSION="900.8.31"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
 CHANGELOG="正式移除了KP绿坝规则，和KP加密规则。现在所有规则都是未加密的了。"
 
+# 转化DOS格式到unix 需要 apt-get install dos2unix
+find . -type f -exec dos2unix {} \;
 #get latest rules
 rm -rf ./koolproxyR/koolproxyR/data/rules/*
 rm -rf ./koolproxyR/koolproxyR/data/source.list
