@@ -10,6 +10,7 @@ url_kp="https://kprules.b0.upaiyun.com/kp.dat"
 # 原网址跳转到https://kprule.com/koolproxy.txt跳转到又拍云，为了节省时间，还是直接去又拍云下载吧！避免某些时候跳转不过去
 url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
 url_mobile="https://filters.adtidy.org/extension/chromium/filters/11.txt"
+kpr_our_rule="https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kpr_our_rule.txt"
 # 检测是否开启fanboy全功能版本
 if [ "$koolproxyR_fanboy_all_rules" == "1" ];then
 	url_fanboy="https://secure.fanboy.co.nz/r/fanboy-complete.txt"
@@ -27,6 +28,12 @@ update_rule(){
 		# wget --no-check-certificate --timeout=8 -qO - $url_easylist > /tmp/easylistchina.txt
 		wget -a /tmp/upload/kpr_log.txt -O /tmp/easylistchina.txt $url_easylist
 		wget -a /tmp/upload/kpr_log.txt -O /tmp/cjx-annoyance.txt $url_cjx
+		wget -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt $kpr_our_rule
+		kpr_our_rule_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt | wc -l`
+		cjx_rule_nu_local=`grep -E -v "^!" /tmp/cjx-annoyance.txt | wc -l`
+		easylistchina_rule_nu_local=`grep -E -v "^!" /tmp/easylistchina.txt | wc -l`
+		# expr 进行运算，将统计到的规则条数相加 如果条数大于 10000 条就说明下载完毕
+		easylistchina_rule_local=`expr $kpr_our_rule_nu_local + $cjx_rule_nu_local + $easylistchina_rule_nu_local`
 		cat /tmp/cjx-annoyance.txt >> /tmp/easylistchina.txt
 		rm /tmp/cjx-annoyance.txt
 		easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
@@ -34,7 +41,7 @@ update_rule(){
 
 		echo_date KPR主规则 本地版本号： $easylist_rules_local
 		echo_date KPR主规则 在线版本号： $easylist_rules_local1
-		if [ ! -z "$easylist_rules_local1" ];then
+		if (("$easylistchina_rule_local" >= 10000 ));then
 			if [ "$easylist_rules_local" != "$easylist_rules_local1" ];then
 				echo_date 检测到新版本 KPR主规则 ，开始更新...
 				echo_date 将临时文件覆盖到原始 KPR主规则文件
@@ -54,9 +61,10 @@ update_rule(){
 		wget -a /tmp/upload/kpr_log.txt -O /tmp/mobile.txt $url_mobile
 		mobile_rules_local=`cat $KSROOT/koolproxyR/data/rules/mobile.txt  | sed -n '4p'|awk '{print $3,$4}'`
 		mobile_rules_local1=`cat /tmp/mobile.txt | sed -n '4p'|awk '{print $3,$4}'`
+		mobile_nu_local=`grep -E -v "^!" /tmp/mobile.txt | wc -l`
 		echo_date 移动设备规则本地版本号： $mobile_rules_local
 		echo_date 移动设备规则在线版本号： $mobile_rules_local1
-		if [ ! -z "$mobile_rules_local1" ];then
+		if (("$mobile_nu_local" >= 1000 ));then
 			if [ "$mobile_rules_local" != "$mobile_rules_local1" ];then
 				echo_date 检测到新版本 移动设备规则，开始更新...
 				echo_date 将临时文件覆盖到原始 移动设备规则 文件
@@ -92,10 +100,11 @@ update_rule(){
 			fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
 			fanboy_rules_local1=`cat /tmp/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`
 		fi
+		fanboy_nu_local=`grep -E -v "^!" /tmp/fanboy-annoyance.txt | wc -l`
 
 		echo_date fanboy规则本地版本号： $fanboy_rules_local
 		echo_date fanboy规则在线版本号： $fanboy_rules_local1
-		if [ ! -z "$fanboy_rules_local1" ];then
+		if (( "$fanboy_nu_local" >= 20000 ));then
 			if [ "$fanboy_rules_local" != "$fanboy_rules_local1" ];then
 				echo_date 检测到新版本 fanboy规则 列表，开始更新...
 				echo_date 将临时文件覆盖到原始 fanboy规则 文件
@@ -210,7 +219,6 @@ update_rule(){
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 		sed -i '6,$d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 合二归一
-		wget -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kpr_our_rule.txt
 		cat $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt >> $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		cat $KSROOT/koolproxyR/data/rules/easylistchina_https.txt >> $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 把三大视频网站给剔除来，作为单独文件。

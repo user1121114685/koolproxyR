@@ -37,12 +37,15 @@ esac
 KP_ENBALE=`dbus get koolproxy_enable`
 koolproxyR_enable=`dbus get koolproxyR_enable`
 [ "$KP_ENBALE" == "1" ] && sh $KSROOT/koolproxy/kp_config.sh stop >> /tmp/upload/kpr_log.txt
+# 删除KP的二进制和核心配置文件。保留其他所有配置，避免小白两个都安装导致一些莫名其妙的问题。
+rm -rf $KSROOT/koolproxy/kp_config.sh >/dev/null 2>&1
+rm -rf $KSROOT/koolproxy/koolproxy >/dev/null 2>&1
 [ "$koolproxyR_enable" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh stop >> /tmp/upload/kpr_log.txt
 
 # remove old files
 rm -rf $KSROOT/bin/koolproxy >/dev/null 2>&1
-rm -rf $KSROOT/scripts/KoolproxyR_* >/dev/null 2>&1
-rm -rf $KSROOT/webs/module_KoolproxyR.asp >/dev/null 2>&1
+rm -rf $KSROOT/scripts/KoolProxyR_* >/dev/null 2>&1
+rm -rf $KSROOT/webs/Module_koolproxyR.asp >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/koolproxy >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/*.sh >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/data/gen_ca.sh >/dev/null 2>&1
@@ -97,7 +100,7 @@ dbus set softcenter_module_koolproxyR_description="KPR更多规则更舒服！"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=900.8.29
-dbus set koolproxyR_version=900.8.29
+dbus set softcenter_module_koolproxyR_version=900.8.30
+dbus set koolproxyR_version=900.8.30
 
 [ "$koolproxyR_enable" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh restart

@@ -651,7 +651,7 @@ function restore_cert(){
 		contentType: false,
 		complete:function(res){
 			if(res.status==200){
-				kp_cert('KoolproxyR_cert.sh', 2);
+				kp_cert('KoolProxyR_cert.sh', 2);
 			}
 		}
 	});
@@ -875,7 +875,7 @@ function set_version() {
 	<div id="kp_certificate_management" class="section"></div>
 	<script type="text/javascript">
 		$('#kp_certificate_management').forms([
-			{ title: '证书备份', suffix: '<button onclick="kp_cert(\'KoolproxyR_cert.sh\', 1);" class="btn btn-success">证书备份 <i class="icon-download"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kp_cert_0(\'KoolproxyR_cert.sh\', 3);" class="btn btn-success">生成 .0根证书 <i class="icon-download"></i></button><font color="#FF0000">【.0根证书】&nbsp;&nbsp;用于安卓7.0以上的设备安装HTTPS证书，详见教程。</font></lable>' },
+			{ title: '证书备份', suffix: '<button onclick="kp_cert(\'KoolProxyR_cert.sh\', 1);" class="btn btn-success">证书备份 <i class="icon-download"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kp_cert_0(\'KoolProxyR_cert.sh\', 3);" class="btn btn-success">生成 .0根证书 <i class="icon-download"></i></button><font color="#FF0000">【.0根证书】&nbsp;&nbsp;用于安卓7.0以上的设备安装HTTPS证书，详见教程。</font></lable>' },
 			{ title: '证书恢复', suffix: '<input type="file" id="file" size="50">&nbsp;&nbsp;<button id="upload1" type="button"  onclick="restore_cert();" class="btn btn-danger">上传并恢复 <i class="icon-cloud"></i></button>' }
 		]);
 	</script>

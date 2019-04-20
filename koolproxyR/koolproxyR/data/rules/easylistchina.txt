@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: QgUsTlbfmVUYh5TCsBciNw
-! Version: 201904200452
+! Checksum: vheSRt1QdX+TyeyUoyia5w
+! Version: 201904201732
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 !  ******************************* koolproxy 语法*******************************
@@ -2259,6 +2259,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 @@||http://doub.io^$generichide
 @@||http://fm.ipinyou.$domain=ipinyou.com.cn
 @@||http://fm.p0y.cn^$domain=ipinyou.com.cn
+||https://jiekc.com^
 ||https://zhfosenghtr.com^
 ||https://0082tv.net^$third-party
 ||https://00880808.com^
@@ -8778,6 +8779,8 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||https://6ped2nd3yp.com^$domain=nodkey.xyz
 ||https://itiexue.net/wap/tiexue/js/chuping/nativeshare
 ||https://tiexue.net/zgg/
+||https://m1968.com/files/h5/
+||https://img33.com^*.gif
 ||https://alicdn.com^$domain=99a18.com|99re.com|99re16.com
 ||https://sinaimg.cn^$domain=99a18.com|99re.com|99re16.com
 ||https://immedlinkum.info^
@@ -11374,6 +11377,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||https://sinajs.cn/open/analytics/
 ||https://stadig.ifeng.com^
 ||https://wrating.com^$third-party
+||http://jiekc.com^
 ||http://zhfosenghtr.com^
 ||http://0082tv.net^$third-party
 ||http://00880808.com^
@@ -17893,6 +17897,8 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||http://6ped2nd3yp.com^$domain=nodkey.xyz
 ||http://itiexue.net/wap/tiexue/js/chuping/nativeshare
 ||http://tiexue.net/zgg/
+||http://m1968.com/files/h5/
+||http://img33.com^*.gif
 ||http://alicdn.com^$domain=99a18.com|99re.com|99re16.com
 ||http://sinaimg.cn^$domain=99a18.com|99re.com|99re16.com
 ||http://immedlinkum.info^
@@ -25180,6 +25186,7 @@ https://i-cable.com#@#.video_ad
 https://bitauto.com,yinyuetai.com#@#a[href^="http://ad.doubleclick.net/"]
 https://brandsales.58.com#@#div[id^="ad_"]
 https://gohome.com.hk#@#div[id^="div-gpt-ad"]
+https://juxiangyou.com#@#.ad-img
 https://7255.com###J_search_bd > div:last-child
 https://7255.com###right > div:first-child
 https://7255.com##.act-search-tab
@@ -30710,6 +30717,7 @@ http://i-cable.com#@#.video_ad
 http://bitauto.com,yinyuetai.com#@#a[href^="http://ad.doubleclick.net/"]
 http://brandsales.58.com#@#div[id^="ad_"]
 http://gohome.com.hk#@#div[id^="div-gpt-ad"]
+http://juxiangyou.com#@#.ad-img
 http://7255.com###J_search_bd > div:last-child
 http://7255.com###right > div:first-child
 http://7255.com##.act-search-tab
