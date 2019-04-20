@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: Kh7HFFTdUG6lGaxYVrhNxg
-! Version: 201904200342
+! Checksum: Sm+k+PONhxCweT/GoNKliQ
+! Version: 201904200442
 ! Title: Fanboy's Annoyance List
-! Last modified: 20 Apr 2019 03:42 UTC
+! Last modified: 20 Apr 2019 04:42 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -33,7 +33,6 @@
 @@@||https://elance-odesk.com/marketing-ui/master/js/interstitial.js
 @@@||https://energytribune.com/wp-content/plugins/bwp-minify/*shareaholic
 @@@||https://examiner.com/sites/all/modules/custom/ex_omniture/s_code.js
-@@@||https://expedia.*/opinionlab/oo_engine.js$script
 @@@||https://footy-boots.com/wp-content*/comment-reply.js
 @@@||https://georiot.com/snippet.js$domain=bound2hiphop.com
 @@@||https://google.com/friendconnect/$script,domain=blogspot.com
@@ -367,10 +366,6 @@
 @@@||https://golem.de/staticrl/images/icons-social.png
 @@@||https://golem.de/staticrl/images/social_flattr_
 @@@||https://google.*-youtube.jpg
-@@@||https://google.*/gplus-64.png
-@@@||https://google.*/images/*/social/$image,~third-party
-@@@||https://google.*/images/google-$image,~third-party
-@@@||https://google.*/retailer_google.png
 @@@||https://google.com/analytics/images/*_social.png
 @@@||https://google.com/analytics/images/social.png
 @@@||https://google.com/js/platform.js$domain=hiphopwired.com|listenonrepeat.com|log84.de
@@ -455,7 +450,6 @@
 @@@||https://login.mos.ru^$image
 @@@||https://lurkmo.re/images/*/Twitter-$~third-party
 @@@||https://lurkmo.re/images/*YouTube.png$~third-party
-@@@||https://lurkmore.*/images/FB_small.png$~third-party
 @@@||https://lurkmore.so/images/*/Twitter-$~third-party
 @@@||https://lurkmore.so/images/*YouTube.png$~third-party
 @@@||https://m.yabber.cloud/images/social/$image,domain=allboxing.ru
@@ -691,7 +685,6 @@
 @@@||https://vpobede.ru/assets/images/footer-social/$~third-party,xmlhttprequest
 @@@||https://vpornoonlain.tv^*/share/$image,~third-party
 @@@||https://wappalyzer.com/sites/default/files/icons/$image
-@@@||https://wat.*/assets/images/common/fbsubscribe.jpg
 @@@||https://watch.aetnd.com^*_SocialMedia_$image
 @@@||https://weather.com/cssRollup?
 @@@||https://weather.com/jsRollup?
@@ -722,11 +715,6 @@
 @@@||https://wsj.net^*/social_icons.png$domain=marketwatch.com
 @@@||https://wuv.de/var/wuv/storage/images/media/bilder/$image,domain=wuv.de
 @@@||https://wwe.com^*/btn_facebook_
-@@@||https://www.google.*/images/*google.png
-@@@||https://www.google.*/images/*googleplus.png
-@@@||https://www.google.*/landing/now/images/integrations/$image,~third-party
-@@@||https://www.google.*/tv/images/*youtube.png
-@@@||https://www.google.*/tv/images/youtube.jpg
 @@@||https://xda-developers.com^*/google-plus-login-small.png
 @@@||https://xing-share.com/plugins/$script,stylesheet
 @@@||https://xkcd.com/comics/$image,~third-party
@@ -807,7 +795,6 @@
 @@||http://elance-odesk.com/marketing-ui/master/js/interstitial.js
 @@||http://energytribune.com/wp-content/plugins/bwp-minify/*shareaholic
 @@||http://examiner.com/sites/all/modules/custom/ex_omniture/s_code.js
-@@||http://expedia.*/opinionlab/oo_engine.js$script
 @@||http://footy-boots.com/wp-content*/comment-reply.js
 @@||http://georiot.com/snippet.js$domain=bound2hiphop.com
 @@||http://google.com/friendconnect/$script,domain=blogspot.com
@@ -1141,10 +1128,6 @@
 @@||http://golem.de/staticrl/images/icons-social.png
 @@||http://golem.de/staticrl/images/social_flattr_
 @@||http://google.*-youtube.jpg
-@@||http://google.*/gplus-64.png
-@@||http://google.*/images/*/social/$image,~third-party
-@@||http://google.*/images/google-$image,~third-party
-@@||http://google.*/retailer_google.png
 @@||http://google.com/analytics/images/*_social.png
 @@||http://google.com/analytics/images/social.png
 @@||http://google.com/js/platform.js$domain=hiphopwired.com|listenonrepeat.com|log84.de
@@ -1229,7 +1212,6 @@
 @@||http://login.mos.ru^$image
 @@||http://lurkmo.re/images/*/Twitter-$~third-party
 @@||http://lurkmo.re/images/*YouTube.png$~third-party
-@@||http://lurkmore.*/images/FB_small.png$~third-party
 @@||http://lurkmore.so/images/*/Twitter-$~third-party
 @@||http://lurkmore.so/images/*YouTube.png$~third-party
 @@||http://m.yabber.cloud/images/social/$image,domain=allboxing.ru
@@ -1465,7 +1447,6 @@
 @@||http://vpobede.ru/assets/images/footer-social/$~third-party,xmlhttprequest
 @@||http://vpornoonlain.tv^*/share/$image,~third-party
 @@||http://wappalyzer.com/sites/default/files/icons/$image
-@@||http://wat.*/assets/images/common/fbsubscribe.jpg
 @@||http://watch.aetnd.com^*_SocialMedia_$image
 @@||http://weather.com/cssRollup?
 @@||http://weather.com/jsRollup?
@@ -1496,11 +1477,6 @@
 @@||http://wsj.net^*/social_icons.png$domain=marketwatch.com
 @@||http://wuv.de/var/wuv/storage/images/media/bilder/$image,domain=wuv.de
 @@||http://wwe.com^*/btn_facebook_
-@@||http://www.google.*/images/*google.png
-@@||http://www.google.*/images/*googleplus.png
-@@||http://www.google.*/landing/now/images/integrations/$image,~third-party
-@@||http://www.google.*/tv/images/*youtube.png
-@@||http://www.google.*/tv/images/youtube.jpg
 @@||http://xda-developers.com^*/google-plus-login-small.png
 @@||http://xing-share.com/plugins/$script,stylesheet
 @@||http://xkcd.com/comics/$image,~third-party
@@ -2337,7 +2313,6 @@
 ||https://scmp.com/misc/abacus_
 ||https://snip.ly^$script
 ||https://space.com/images/site/social/
-||https://thelocal.*/interstitial/
 ||https://thesouthafrican.com^*/iab_
 ||https://thrillist.com/campaigns/vortexInfo/$script
 ||https://tunein.com/account/newiframe/signup/*conversionPopup
@@ -2484,7 +2459,6 @@
 ||https://htcsource.com/wp-content/uploads/*/icons.png
 ||https://huffingtonpost.com/images/bookmarking/
 ||https://hulkshare.com/facebox.html
-||https://ibtimes.*/popup_black.js
 ||https://impactloud.com/img/follow.png
 ||https://itsmyurls.com/links/
 ||https://kuwaittimes.net/fb.
@@ -2552,7 +2526,6 @@
 ||https://hunstoncanoeclub.co.uk/media/system/js/modal.js
 ||https://inblu.com^*/cookies.js
 ||https://jimmychoo.com^*/first-time-visitor-
-||https://kayak.*/privacy/
 ||https://mad-daily.com^*/cp-module-
 ||https://ncaa.com^*/ncaa_consent.js
 ||https://omgubuntu.co.uk/wp-content/plugins/omg-magnific/magnific.min.js
@@ -3549,7 +3522,6 @@
 ||http://scmp.com/misc/abacus_
 ||http://snip.ly^$script
 ||http://space.com/images/site/social/
-||http://thelocal.*/interstitial/
 ||http://thesouthafrican.com^*/iab_
 ||http://thrillist.com/campaigns/vortexInfo/$script
 ||http://tunein.com/account/newiframe/signup/*conversionPopup
@@ -3696,7 +3668,6 @@
 ||http://htcsource.com/wp-content/uploads/*/icons.png
 ||http://huffingtonpost.com/images/bookmarking/
 ||http://hulkshare.com/facebox.html
-||http://ibtimes.*/popup_black.js
 ||http://impactloud.com/img/follow.png
 ||http://itsmyurls.com/links/
 ||http://kuwaittimes.net/fb.
@@ -3764,7 +3735,6 @@
 ||http://hunstoncanoeclub.co.uk/media/system/js/modal.js
 ||http://inblu.com^*/cookies.js
 ||http://jimmychoo.com^*/first-time-visitor-
-||http://kayak.*/privacy/
 ||http://mad-daily.com^*/cp-module-
 ||http://ncaa.com^*/ncaa_consent.js
 ||http://omgubuntu.co.uk/wp-content/plugins/omg-magnific/magnific.min.js

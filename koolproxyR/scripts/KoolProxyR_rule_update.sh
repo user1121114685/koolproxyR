@@ -157,6 +157,8 @@ update_rule(){
 		sed -i '/instagram.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		# 给 twitch.tv 放行
 		sed -i '/twitch.tv/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		# 删除可能导致卡顿的HTTPS规则
+		sed -i '/\.\*\//d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 
 
 
@@ -200,6 +202,9 @@ update_rule(){
 		# 给facebook.com的https放行
 		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		# 删除可能导致卡顿的HTTPS规则
+		sed -i '/\.\*\//d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+
 
 
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
@@ -246,6 +251,9 @@ update_rule(){
 		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
 		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
 		cat $KSROOT/koolproxyR/data/rules/mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/mobile_https.txt
+		# 删除可能导致卡顿的HTTPS规则
+		sed -i '/\.\*\//d' $KSROOT/koolproxyR/data/rules/mobile_https.txt
+
 
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 		sed -i '8,$d' $KSROOT/koolproxyR/data/rules/mobile.txt

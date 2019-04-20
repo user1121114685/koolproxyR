@@ -103,7 +103,6 @@
 @@@||https://b.scorecardresearch.com/r$domain=macworld.com|elmundo.es|pcworld.com|seattletimes.com|ancestry.com|ancestry.co.uk|ancestry.ca|ancestry.de|ancestry.it|ancestry.fr|ancestry.se|ancestry.mx
 @@@||https://scorecardresearch.com/r$image,domain=billetnet.dk|billettservice.no|lippupalvelu.fi|pcworld.com|techhive.com|ticketmaster.ae|ticketmaster.co.uk|ticketmaster.de|ticketmaster.ie|ticketmaster.nl|ticnet.se|wsj.com
 @@@||https://mobile-content.sessionm.com/javascripts/api/sessionm.min.js$domain=cbslocal.com
-@@@||https://www.googleadservices.*/aclk?*&adurl=$~third-party
 @@@||https://m.sports.naver.com/*/gamecenter/*tab=record$elemhide,jsinject
 @@@||https://imasdk.googleapis.com/js/core/bridge*.html$domain=m.au.ign.com
 @@@||https://google-analytics.com^$domain=wtf.nl
@@ -250,7 +249,6 @@
 @@||http://b.scorecardresearch.com/r$domain=macworld.com|elmundo.es|pcworld.com|seattletimes.com|ancestry.com|ancestry.co.uk|ancestry.ca|ancestry.de|ancestry.it|ancestry.fr|ancestry.se|ancestry.mx
 @@||http://scorecardresearch.com/r$image,domain=billetnet.dk|billettservice.no|lippupalvelu.fi|pcworld.com|techhive.com|ticketmaster.ae|ticketmaster.co.uk|ticketmaster.de|ticketmaster.ie|ticketmaster.nl|ticnet.se|wsj.com
 @@||http://mobile-content.sessionm.com/javascripts/api/sessionm.min.js$domain=cbslocal.com
-@@||http://www.googleadservices.*/aclk?*&adurl=$~third-party
 @@||http://m.sports.naver.com/*/gamecenter/*tab=record$elemhide,jsinject
 @@||http://imasdk.googleapis.com/js/core/bridge*.html$domain=m.au.ign.com
 @@||http://google-analytics.com^$domain=wtf.nl
