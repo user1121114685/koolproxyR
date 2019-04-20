@@ -23,7 +23,7 @@ load_rules(){
 		echo_date 加载【KPR主规则】
 		sed -i "s/0|easylistchina/1|easylistchina/g" $SOURCE_LIST
 	fi
-	if [ "$koolproxyR_easylist_rules" == "1" ]; then
+	if [ "$koolproxyR_mobile_rules" == "1" ]; then
 		echo_date 加载【移动设备规则】
 		sed -i "s/0|mobile.txt/1|mobile.txt/g" $SOURCE_LIST
 	fi

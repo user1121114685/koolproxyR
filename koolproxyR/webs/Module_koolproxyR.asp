@@ -902,7 +902,7 @@ function set_version() {
 				{ name: 'koolproxyR_fanboy_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由Fanboy发起，针对国外主流令人厌烦的广告过滤。</lable>&nbsp;&nbsp;' }
 			]},	
 			{ title: 'Fanboy全规则版本', multi: [
-				{ name: 'koolproxyR_fanboy_all_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_all_rules == '1', suffix: '<lable id="_kp_fanboy_all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【开启选项】--【保存】--【更新规则】就能将fanboy规则更新为最全的版本，低功耗CPU【万万不能开启】！</lable>&nbsp;&nbsp;' }
+				{ name: 'koolproxyR_fanboy_all_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_all_rules == '1', suffix: '<lable id="_kp_fanboy_all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【开启/关闭选项】--【保存】--【更新规则】就能将fanboy规则更新为最全的版本，低功耗CPU【万万不能开启】！关闭也需要更新一次规则。</lable>&nbsp;&nbsp;' }
 			]},	
 
 			{ title: '规则更新', multi: [

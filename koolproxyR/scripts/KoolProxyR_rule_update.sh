@@ -164,6 +164,8 @@ update_rule(){
 		sed -i '15,$d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		# 合二归一
 		cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		# 删除可能导致kpr卡死的神奇规则
+		sed -i '/https:\/\/\*/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 	fi
 
 
@@ -222,7 +224,8 @@ update_rule(){
 		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给https://qq.com的html规则放行
 		sed -i '/qq.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-
+		# 删除可能导致kpr卡死的神奇规则
+		sed -i '/https:\/\/\*/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 	fi
 
 
@@ -278,6 +281,8 @@ update_rule(){
 		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		# 给 instagram.com 放行
 		sed -i '/instagram.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 删除可能导致kpr卡死的神奇规则
+		sed -i '/https:\/\/\*/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 	fi
 	# 删除临时文件
 	rm $KSROOT/koolproxyR/data/rules/*_https.txt

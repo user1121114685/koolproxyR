@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.27"
+VERSION="900.8.28"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -86,6 +86,8 @@ sed -i '/instagram.com/d' fanboy-annoyance_https.txt
 sed -i '15,$d' fanboy-annoyance.txt
 # 合二归一
 cat fanboy-annoyance_https.txt >> fanboy-annoyance.txt
+# 删除可能导致kpr卡死的神奇规则
+sed -i '/https:\/\/\*/d' fanboy-annoyance.txt
 ## -------------------------------------------------------fanboy处理结束------------------------------------------------------
 
 
@@ -148,7 +150,8 @@ sed -i '/tudou.com/d' easylistchina.txt
 sed -i '/gtimg.cn/d' easylistchina.txt
 # 给https://qq.com的html规则放行
 sed -i '/qq.com/d' easylistchina.txt
-
+# 删除可能导致kpr卡死的神奇规则
+sed -i '/https:\/\/\*/d' easylistchina.txt
 
 
 # -----------------------------------------KPR 中国简易规则处理结束------------------------------------------------
@@ -209,6 +212,8 @@ sed -i '/facebook.com/d' mobile.txt
 sed -i '/fbcdn.net/d' mobile.txt
 # 给 instagram.com 放行
 sed -i '/instagram.com/d' mobile.txt
+# 删除可能导致kpr卡死的神奇规则
+sed -i '/https:\/\/\*/d' mobile.txt
 
 
 
