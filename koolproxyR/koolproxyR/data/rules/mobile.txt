@@ -1,8 +1,8 @@
-! Checksum: bD+Qr9synKQiFwrCUjGQfA
+! Checksum: cyd1sCZENBkdKvbpeEGylw
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.5.79
-! TimeUpdated: 2019-04-19T16:30:09+03:00
+! Version: 2.0.5.86
+! TimeUpdated: 2019-04-25T19:30:09+03:00
 ! Expires: 2 days (update frequency)
 ! Homepage: http://adguard.com/filters.html#mobile
 @@@||https://m.beautypageants.in^$elemhide
@@ -3270,6 +3270,7 @@ https://blogdoiphone.com#@#.header-ad
 https://blogdoiphone.com#@#.custom-ad
 https://westseattleblog.com#@#.custom-ad
 https://westseattleblog.com#@#.header-ad
+https://dailynkjp.com#$?##im_interstitial_panel { remove: true; }
 https://mobile.donanimhaber.com##div[style^="width: 100%; float: left; position: relative;"] > div[style*="margin: 10px auto; text-align: center; width: 320px; height: 100px;"]:has(> div[id^="div-gpt-ad-"])
 https://m.hd21.com#$?##banner_overlay-postitial-video { remove: true; }
 https://ktuu.com##aside > .visible-xs-block > .row:has(> .col-xs-24 > a.ptr[onclick^="trackNativeLink('https://www.ktuu.com/content/sponsored/"])
@@ -3398,10 +3399,15 @@ https://m.news.de##.articleTeaser + div[style="height: 250px"]
 https://m.news.de##.aside > div[style="height: 600px;"]
 https://m.news.de##.unisterAdsStart
 https://9to5google.com,9to5toys.com,9to5mac.com,electrek.co##.post-content > .inlinead ~ div[class*=" "]:not([id]):not([style])
+https://3prn.com###top11
+https://3prn.com##.bottom_spot
+https://3prn.com##.mobile-spot-under-video
+https://3prn.com##.thumb-text.mobile_vertical
 https://m.hd21.com##.trade > .mercantile + p
+https://yandex.com.tr##.content__prelayout > div > a[target="_blank"]
 https://rp-online.de##.park-section-portal-right > aside[data-portal-id="topmobile2"]
 https://pcgames.de##.wadtag
-https://argusleader.com,azcentral.com,battlecreekenquirer.com,baxterbulletin.com,bucyrustelegraphforum.com,burlingtonfreepress.com,centralfloridafuture.com,citizen-times.com,clarionledger.com,coloradoan.com,courier-journal.com,courierpress.com,dailyworld.com,delawareonline.com,delmarvanow.com,desertsun.com,desmoinesregister.com,floridatoday.com,freep.com,fsunews.com,greatfallstribune.com,guampdn.com,hattiesburgamerican.com,hometownlife.com,indystar.com,jconline.com,kitsapsun.com,lansingstatejournal.com,lcsun-news.com,montgomeryadvertiser.com,mycentraljersey.com,naplesnews.com,news-leader.com,news-press.com,newsleader.com,pal-item.com,pnj.com,portclintonnewsherald.com,press-citizen.com,redding.com,rgj.com,sctimes.com,shreveporttimes.com,statesmanjournal.com,stevenspointjournal.com,tallahassee.com,tcpalm.com,theadvertiser.com,thecalifornian.com,thegleaner.com,thenews-messenger.com,thenewsstar.com,thespectrum.com,thestarpress.com,thetimesherald.com,thetowntalk.com,usatoday.com,vcstar.com,visaliatimesdelta.com##partner-banner
+https://app.com,greenvilleonline.com,argusleader.com,azcentral.com,battlecreekenquirer.com,baxterbulletin.com,bucyrustelegraphforum.com,burlingtonfreepress.com,centralfloridafuture.com,citizen-times.com,clarionledger.com,coloradoan.com,courier-journal.com,courierpress.com,dailyworld.com,delawareonline.com,delmarvanow.com,desertsun.com,desmoinesregister.com,floridatoday.com,freep.com,fsunews.com,greatfallstribune.com,guampdn.com,hattiesburgamerican.com,hometownlife.com,indystar.com,jconline.com,kitsapsun.com,lansingstatejournal.com,lcsun-news.com,montgomeryadvertiser.com,mycentraljersey.com,naplesnews.com,news-leader.com,news-press.com,newsleader.com,pal-item.com,pnj.com,portclintonnewsherald.com,press-citizen.com,redding.com,rgj.com,sctimes.com,shreveporttimes.com,statesmanjournal.com,stevenspointjournal.com,tallahassee.com,tcpalm.com,theadvertiser.com,thecalifornian.com,thegleaner.com,thenews-messenger.com,thenewsstar.com,thespectrum.com,thestarpress.com,thetimesherald.com,thetowntalk.com,usatoday.com,vcstar.com,visaliatimesdelta.com##partner-banner
 https://m.dm5.com,manhuaren.com##.adform_2
 https://m.dm5.com,manhuaren.com##.detail-ad-con
 https://amazon.de###WrapperDivToHideBTF > .aw-campaigns
@@ -3414,7 +3420,6 @@ https://dcard.tw##div[class^="PostPageContainer__AdContainer-"]
 https://gotporn.com###floaterBanner
 https://frag-mutti.de##.anchor-ad
 https://www-xda--developers-com.cdn.ampproject.org##.brave-banner
-https://freep.com,usatoday.com##partner-banner
 https://kmph.com,kfoxtv.com,fox17.com##div[class^="interstory_"]
 https://chefkoch.de##.responsive-ad--top
 https://kino-teatr.ru###aio_passback
@@ -3438,7 +3443,7 @@ https://denverpost.com###mobile-adhesion
 https://tubewolf.com##.banner-top
 https://m.humoruniv.com###read > div[id$="_wrap"]
 https://m.humoruniv.com##div[style="margin:10px 0 10px 0;"] > div[style*="height:250px"]
-https://amp.fakty.ua##amp-iframe
+https://gadgets.ndtv.com,amp.fakty.ua##amp-iframe
 https://yahoo.com##.stream-sm-ad
 https://zerohedge.com##iframe[src^="//www.dianomi.com"]
 https://swedroid.se##div[id$="_ad_mobile"]
@@ -3776,7 +3781,6 @@ https://gesundheitsfrage.net,gutefrage.net,finanzfrage.net###anchor-ad
 https://apkmirror.com##.appRow.showOnMobileAndTablet
 https://m.tr.investing.com##.adDrawer
 https://yahoo.com##div.controller[class*="smartphone_Px"][data-reactid]
-https://greenvilleonline.com##partner-banner
 https://yahoo.com##.caas-da
 https://yahoo.com##.item-beacon.caas-loaded
 https://gomovies.cd,123moviestube.io###mv-info > div.mobile-btn
@@ -4046,7 +4050,7 @@ https://amp.theguardian.com##amp-list
 https://amp.theguardian.com##amp-iframe
 https://ntv.com.tr,wccftech.com##.amp-ad
 https://zeenews.india.com##amp-iframe
-https://bloomberg.com##.amp-taboola
+https://indiatoday.in,bloomberg.com##.amp-taboola
 https://m.gsmarena.com##.top-adv
 https://m.gsmarena.com##.adv-mid
 https://m.gsmarena.com##.adv-top
@@ -4254,6 +4258,7 @@ http://blogdoiphone.com#@#.header-ad
 http://blogdoiphone.com#@#.custom-ad
 http://westseattleblog.com#@#.custom-ad
 http://westseattleblog.com#@#.header-ad
+http://dailynkjp.com#$?##im_interstitial_panel { remove: true; }
 http://mobile.donanimhaber.com##div[style^="width: 100%; float: left; position: relative;"] > div[style*="margin: 10px auto; text-align: center; width: 320px; height: 100px;"]:has(> div[id^="div-gpt-ad-"])
 http://m.hd21.com#$?##banner_overlay-postitial-video { remove: true; }
 http://ktuu.com##aside > .visible-xs-block > .row:has(> .col-xs-24 > a.ptr[onclick^="trackNativeLink('https://www.ktuu.com/content/sponsored/"])
@@ -4382,10 +4387,15 @@ http://m.news.de##.articleTeaser + div[style="height: 250px"]
 http://m.news.de##.aside > div[style="height: 600px;"]
 http://m.news.de##.unisterAdsStart
 http://9to5google.com,9to5toys.com,9to5mac.com,electrek.co##.post-content > .inlinead ~ div[class*=" "]:not([id]):not([style])
+http://3prn.com###top11
+http://3prn.com##.bottom_spot
+http://3prn.com##.mobile-spot-under-video
+http://3prn.com##.thumb-text.mobile_vertical
 http://m.hd21.com##.trade > .mercantile + p
+http://yandex.com.tr##.content__prelayout > div > a[target="_blank"]
 http://rp-online.de##.park-section-portal-right > aside[data-portal-id="topmobile2"]
 http://pcgames.de##.wadtag
-http://argusleader.com,azcentral.com,battlecreekenquirer.com,baxterbulletin.com,bucyrustelegraphforum.com,burlingtonfreepress.com,centralfloridafuture.com,citizen-times.com,clarionledger.com,coloradoan.com,courier-journal.com,courierpress.com,dailyworld.com,delawareonline.com,delmarvanow.com,desertsun.com,desmoinesregister.com,floridatoday.com,freep.com,fsunews.com,greatfallstribune.com,guampdn.com,hattiesburgamerican.com,hometownlife.com,indystar.com,jconline.com,kitsapsun.com,lansingstatejournal.com,lcsun-news.com,montgomeryadvertiser.com,mycentraljersey.com,naplesnews.com,news-leader.com,news-press.com,newsleader.com,pal-item.com,pnj.com,portclintonnewsherald.com,press-citizen.com,redding.com,rgj.com,sctimes.com,shreveporttimes.com,statesmanjournal.com,stevenspointjournal.com,tallahassee.com,tcpalm.com,theadvertiser.com,thecalifornian.com,thegleaner.com,thenews-messenger.com,thenewsstar.com,thespectrum.com,thestarpress.com,thetimesherald.com,thetowntalk.com,usatoday.com,vcstar.com,visaliatimesdelta.com##partner-banner
+http://app.com,greenvilleonline.com,argusleader.com,azcentral.com,battlecreekenquirer.com,baxterbulletin.com,bucyrustelegraphforum.com,burlingtonfreepress.com,centralfloridafuture.com,citizen-times.com,clarionledger.com,coloradoan.com,courier-journal.com,courierpress.com,dailyworld.com,delawareonline.com,delmarvanow.com,desertsun.com,desmoinesregister.com,floridatoday.com,freep.com,fsunews.com,greatfallstribune.com,guampdn.com,hattiesburgamerican.com,hometownlife.com,indystar.com,jconline.com,kitsapsun.com,lansingstatejournal.com,lcsun-news.com,montgomeryadvertiser.com,mycentraljersey.com,naplesnews.com,news-leader.com,news-press.com,newsleader.com,pal-item.com,pnj.com,portclintonnewsherald.com,press-citizen.com,redding.com,rgj.com,sctimes.com,shreveporttimes.com,statesmanjournal.com,stevenspointjournal.com,tallahassee.com,tcpalm.com,theadvertiser.com,thecalifornian.com,thegleaner.com,thenews-messenger.com,thenewsstar.com,thespectrum.com,thestarpress.com,thetimesherald.com,thetowntalk.com,usatoday.com,vcstar.com,visaliatimesdelta.com##partner-banner
 http://m.dm5.com,manhuaren.com##.adform_2
 http://m.dm5.com,manhuaren.com##.detail-ad-con
 http://amazon.de###WrapperDivToHideBTF > .aw-campaigns
@@ -4398,7 +4408,6 @@ http://dcard.tw##div[class^="PostPageContainer__AdContainer-"]
 http://gotporn.com###floaterBanner
 http://frag-mutti.de##.anchor-ad
 http://www-xda--developers-com.cdn.ampproject.org##.brave-banner
-http://freep.com,usatoday.com##partner-banner
 http://kmph.com,kfoxtv.com,fox17.com##div[class^="interstory_"]
 http://chefkoch.de##.responsive-ad--top
 http://kino-teatr.ru###aio_passback
@@ -4422,7 +4431,7 @@ http://denverpost.com###mobile-adhesion
 http://tubewolf.com##.banner-top
 http://m.humoruniv.com###read > div[id$="_wrap"]
 http://m.humoruniv.com##div[style="margin:10px 0 10px 0;"] > div[style*="height:250px"]
-http://amp.fakty.ua##amp-iframe
+http://gadgets.ndtv.com,amp.fakty.ua##amp-iframe
 http://yahoo.com##.stream-sm-ad
 http://zerohedge.com##iframe[src^="//www.dianomi.com"]
 http://swedroid.se##div[id$="_ad_mobile"]
@@ -4760,7 +4769,6 @@ http://gesundheitsfrage.net,gutefrage.net,finanzfrage.net###anchor-ad
 http://apkmirror.com##.appRow.showOnMobileAndTablet
 http://m.tr.investing.com##.adDrawer
 http://yahoo.com##div.controller[class*="smartphone_Px"][data-reactid]
-http://greenvilleonline.com##partner-banner
 http://yahoo.com##.caas-da
 http://yahoo.com##.item-beacon.caas-loaded
 http://gomovies.cd,123moviestube.io###mv-info > div.mobile-btn
@@ -5030,7 +5038,7 @@ http://amp.theguardian.com##amp-list
 http://amp.theguardian.com##amp-iframe
 http://ntv.com.tr,wccftech.com##.amp-ad
 http://zeenews.india.com##amp-iframe
-http://bloomberg.com##.amp-taboola
+http://indiatoday.in,bloomberg.com##.amp-taboola
 http://m.gsmarena.com##.top-adv
 http://m.gsmarena.com##.adv-mid
 http://m.gsmarena.com##.adv-top

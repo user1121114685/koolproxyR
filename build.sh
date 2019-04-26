@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.31"
+VERSION="900.8.32"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -86,6 +86,11 @@ sed -i '/instagram.com/d' fanboy-annoyance_https.txt
 # 删除可能导致Kpr变慢的Https规则
 sed -i '/\.\*\//d' fanboy-annoyance_https.txt
 
+# 给国内三大电商平台放行
+sed -i '/https:\/\/jd.com/d' fanboy-annoyance_https.txt
+sed -i '/https:\/\/taobao.com/d' fanboy-annoyance_https.txt
+sed -i '/https:\/\/tmall.com/d' fanboy-annoyance_https.txt
+
 # 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 sed -i '15,$d' fanboy-annoyance.txt
 # 合二归一
@@ -158,6 +163,11 @@ sed -i '/gtimg.cn/d' easylistchina.txt
 sed -i '/qq.com/d' easylistchina.txt
 # 删除可能导致kpr卡死的神奇规则
 sed -i '/https:\/\/\*/d' easylistchina.txt
+# 给国内三大电商平台放行
+sed -i '/https:\/\/jd.com/d' easylistchina.txt
+sed -i '/https:\/\/taobao.com/d' easylistchina.txt
+sed -i '/https:\/\/tmall.com/d' easylistchina.txt
+
 
 
 # -----------------------------------------KPR 中国简易规则处理结束------------------------------------------------
@@ -184,6 +194,11 @@ cat mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> mob
 
 # 删除可能导致Kpr变慢的Https规则
 sed -i '/\.\*\//d' mobile_https.txt
+
+# 给国内三大电商平台放行
+sed -i '/https:\/\/jd.com/d' mobile_https.txt
+sed -i '/https:\/\/taobao.com/d' mobile_https.txt
+sed -i '/https:\/\/tmall.com/d' mobile_https.txt
 
 
 # 删除不必要信息重新打包 15 表示从第15行开始 $表示结束

@@ -41,6 +41,11 @@ if [ "$koolproxyR_easylist_rules" == "1" -o "$koolproxyR_video_rules" == "1" -o 
 		http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;视频规则已经加载&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
 		return 0
 	fi
+	if [ "$koolproxyR_mobile_rules" == "1" -a "$koolproxyR_video_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
+		http_response "移动设备规则：$mobile_rules_local / $mobile_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;视频规则已经加载&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+		return 0
+	fi
+
 	if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_mobile_rules" == "1" ]; then
 		http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;移动设备规则：$mobile_rules_local / $mobile_nu_local条"
 		return 0

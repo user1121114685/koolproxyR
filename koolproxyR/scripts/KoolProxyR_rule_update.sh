@@ -168,6 +168,11 @@ update_rule(){
 		sed -i '/twitch.tv/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		# 删除可能导致卡顿的HTTPS规则
 		sed -i '/\.\*\//d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		# 给国内三大电商平台放行
+		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+
 
 
 
@@ -239,6 +244,11 @@ update_rule(){
 		sed -i '/qq.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 删除可能导致kpr卡死的神奇规则
 		sed -i '/https:\/\/\*/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		# 给国内三大电商平台放行
+		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+
 	fi
 
 
@@ -299,6 +309,11 @@ update_rule(){
 		sed -i '/instagram.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		# 删除可能导致kpr卡死的神奇规则
 		sed -i '/https:\/\/\*/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 给国内三大电商平台放行
+		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+
 	fi
 	# 删除临时文件
 	rm $KSROOT/koolproxyR/data/rules/*_https.txt

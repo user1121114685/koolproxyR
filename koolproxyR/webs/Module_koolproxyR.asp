@@ -787,7 +787,7 @@ function set_version() {
 					<li></li>
 					<li><font color="#FF6347"> 问： </font>我不想每次手动更新规则，可以自动更新吗？</li>
 					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
-					<li>0 3 * * * /koolshare/scripts/KoolProxyR_rule_update.sh</li>
+					<li>0 3 * * * /koolshare/scripts/KoolProxyR_rule_update.sh update</li>
 					<li></li>
 					<li></li>
 					<li><font color="#FF6347"> 问： </font>我想自动升级KoolProxyR版本可以吗？</li>
@@ -798,7 +798,12 @@ function set_version() {
 					<li><font color="#1E90FF"> 答： </font>请在【证书管理】中下载0.根证书的zip文件，解压出来放入下面的两个地方。PS 如何放入，如何root之类的话题，请在到专业论坛讨论。</li>
 					<li>/system/etc/security/cacerts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/system/etc/security/cacerts_google</li>
 					<li></li>
-
+					<li><font color="#FF6347"> 问： </font>我的安卓手机，刷机后卡开机界面了。谷歌服务哪点一直过不了。</li>
+					<li><font color="#1E90FF"> 答： </font>请在【访问控制】中给手机放行，或者，暂时关闭KPR！</li>
+					<li></li>
+					<li><font color="#FF6347"> 问： </font>我同事安装了kpr和v2ray发现开机变慢了。需要等待4-5分钟才能开机。</li>
+					<li><font color="#1E90FF"> 答： </font>感谢TG的“dantes”的测试，此问题原因不明，等查明原因后立即修复。大家开机多等下。感谢理解。 </li>
+					<li></li>
 					<li><font color="#FF6347"> 问： </font>KoolProxyR为什么要重启SS,V2ray，koolgame？</li>
 					<li><font color="#1E90FF"> 答： </font>是的，是需要重启来适应kpr的开关，这样才能让流量走kpr，而不会导致代理无效的问题，不需要手动重启代理。</li>			
 					<li></li>

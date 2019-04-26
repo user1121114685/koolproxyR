@@ -151,9 +151,9 @@ write_reboot_job(){
 	# start setvice
 	[ ! -f  "/etc/crontabs/root" ] && touch /etc/crontabs/root
 	CRONTAB=`cat /etc/crontabs/root|grep KoolProxyR_check_chain.sh`
-	KoolProxyR_rule_update=`cat /etc/crontabs/root|grep KoolProxyR_rule_update.sh`
+	KoolProxyR_rule_update=`cat /etc/crontabs/root|grep KoolProxyR_rule_update.sh\ update`
 	
-	[ -z "$KoolProxyR_rule_update" ] && echo_date 写入KPR规则自动更新... && echo  "0 3 * * * /koolshare/scripts/KoolProxyR_rule_update.sh update" >> /etc/crontabs/root
+	[ -z "$KoolProxyR_rule_update" ] && echo_date 写入KPR规则自动更新... && echo  "15 3 * * * /koolshare/scripts/KoolProxyR_rule_update.sh update" >> /etc/crontabs/root
 
 	[ -z "$CRONTAB" ] && echo_date 写入KPR过滤代理链守护... && echo  "*/30 * * * * $SOFT_DIR/scripts/KoolProxyR_check_chain.sh" >> /etc/crontabs/root
 #	if [ "1" == "$koolproxyR_reboot" ]; then
