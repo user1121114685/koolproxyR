@@ -66,6 +66,7 @@ start_koolproxy(){
 		[ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_video_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ] && echo_date 选择【视频模式】
 	fi
 	cd $KP_DIR && koolproxy -d --ttl 188 --ttlport 3001 --ipv6
+	# start-stop-daemon -S -b -q -x koolproxy -d --ttl 188 --ttlport 3001 --ipv6
 }
 
 stop_koolproxy(){

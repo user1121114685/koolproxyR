@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.32"
+VERSION="900.8.33"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -97,6 +97,11 @@ sed -i '15,$d' fanboy-annoyance.txt
 cat fanboy-annoyance_https.txt >> fanboy-annoyance.txt
 # 删除可能导致kpr卡死的神奇规则
 sed -i '/https:\/\/\*/d' fanboy-annoyance.txt
+# 给 netflix.com 放行
+sed -i '/netflix.com/d' fanboy-annoyance.txt
+# 给 tvbs.com 放行
+sed -i '/tvbs.com/d' fanboy-annoyance.txt
+
 ## -------------------------------------------------------fanboy处理结束------------------------------------------------------
 
 
@@ -167,6 +172,12 @@ sed -i '/https:\/\/\*/d' easylistchina.txt
 sed -i '/https:\/\/jd.com/d' easylistchina.txt
 sed -i '/https:\/\/taobao.com/d' easylistchina.txt
 sed -i '/https:\/\/tmall.com/d' easylistchina.txt
+# 给 tvbs.com 放行
+sed -i '/tvbs.com/d' easylistchina.txt
+# 给 netflix.com 放行
+sed -i '/netflix.com/d' easylistchina.txt
+
+
 
 
 
@@ -239,6 +250,11 @@ sed -i '/fbcdn.net/d' mobile.txt
 sed -i '/instagram.com/d' mobile.txt
 # 删除可能导致kpr卡死的神奇规则
 sed -i '/https:\/\/\*/d' mobile.txt
+# 给 tvbs.com 放行
+sed -i '/tvbs.com/d' mobile.txt
+# 给 netflix.com 放行
+sed -i '/netflix.com/d' mobile.txt
+
 
 
 

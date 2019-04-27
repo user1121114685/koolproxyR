@@ -3544,8 +3544,6 @@ https://mobile.reuters.com##.amp-ad-container
 https://s.famitsu.com##.pr-container
 https://mainichi.jp##aside.ad
 https://bengo4.com##div[id^="ad-slot-"]
-https://tvbs.com.tw##.ad_320x50_mo
-https://tvbs.com.tw##.advertising_lightbox
 https://megatube.xxx##.mobile_advertising
 https://m.nhaccuatui.com##.bannerAdv
 https://m.doisongphapluat.com##.list_news > li div.title_news > label._mB
@@ -4532,8 +4530,6 @@ http://mobile.reuters.com##.amp-ad-container
 http://s.famitsu.com##.pr-container
 http://mainichi.jp##aside.ad
 http://bengo4.com##div[id^="ad-slot-"]
-http://tvbs.com.tw##.ad_320x50_mo
-http://tvbs.com.tw##.advertising_lightbox
 http://megatube.xxx##.mobile_advertising
 http://m.nhaccuatui.com##.bannerAdv
 http://m.doisongphapluat.com##.list_news > li div.title_news > label._mB

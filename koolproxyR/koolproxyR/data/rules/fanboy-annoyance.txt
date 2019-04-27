@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: xOLFOVU+5eG5itpU1PaCQw
-! Version: 201904261242
+! Checksum: IKCflUIKP84u6+qX5W18hQ
+! Version: 201904271241
 ! Title: Fanboy's Annoyance List
-! Last modified: 26 Apr 2019 12:42 UTC
+! Last modified: 27 Apr 2019 12:41 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -8556,7 +8556,7 @@ https://inspire52.com###scrolltriggered
 https://youtube.com###secondary-links
 https://applebees.com###section_community
 https://sciencedaily.com###seealso
-https://40tech.com,amandapeyton.com,blockr.io,blogsdna.com,bulawayo24.com,businessinsider.com,crikey.com.au,dailymotion.com,designtaxi.com,firstsrowsports.eu,fwix.com,geek.com,geekosystem.com,gossipcop.com,hellomagazine.com,html5test.com,imm.io,indiegogo.com,madthumbs.com,mcdonalds.com,mediaite.com,medicaldaily.com,midwestsportsfans.com,monstercockland.com,mtvmusic.com,notepad-plus-plus.org,people-press.org,plosone.org,redpepperland.com,scitechdaily.com,seriouseats.com,sputniknews.com,stabmag.com,tcmag.com,technewsworld.com,techvert.com,themoviedb.org,thethirdpole.net,tnp.no,torrentfreak.com,tvnz.co.nz,usgs.gov,voltairenet.org,washingtonpost.com,whatbrowser.org,wolframalpha.com,wwitv.com,xxxymovies.com###share
+https://40tech.com,amandapeyton.com,blockr.io,blogsdna.com,bulawayo24.com,businessinsider.com,crikey.com.au,dailymotion.com,designtaxi.com,firstsrowsports.eu,fwix.com,geek.com,geekosystem.com,gossipcop.com,hellomagazine.com,hqbabes.com,html5test.com,imm.io,indiegogo.com,madthumbs.com,mcdonalds.com,mediaite.com,medicaldaily.com,midwestsportsfans.com,monstercockland.com,mtvmusic.com,notepad-plus-plus.org,people-press.org,plosone.org,redpepperland.com,scitechdaily.com,seriouseats.com,sputniknews.com,stabmag.com,tcmag.com,technewsworld.com,techvert.com,themoviedb.org,thethirdpole.net,tnp.no,torrentfreak.com,tvnz.co.nz,usgs.gov,voltairenet.org,washingtonpost.com,whatbrowser.org,wolframalpha.com,wwitv.com,xxxymovies.com###share
 https://ew.com###share-article
 https://pornhub.com###sharePlaylist
 https://biorxiv.org###shareit
@@ -13359,7 +13359,6 @@ https://makelaarsland.nl#@##cookie-notice
 https://flybe.com#@##cookie-policy-modal
 https://bk.com#@##cookie-popup
 https://lauritz.com,qxl.de,qxl.dk,qxl.fi,qxl.no,qxl.se#@##cookie-wrapper
-https://media.netflix.com#@##cookieAlert
 https://ad.win.nl,techopital.com#@##cookieConsent
 https://ad.win.nl#@##cookieConsentBox
 https://techopital.com#@##cookieConsentContainer
@@ -18092,7 +18091,7 @@ http://inspire52.com###scrolltriggered
 http://youtube.com###secondary-links
 http://applebees.com###section_community
 http://sciencedaily.com###seealso
-http://40tech.com,amandapeyton.com,blockr.io,blogsdna.com,bulawayo24.com,businessinsider.com,crikey.com.au,dailymotion.com,designtaxi.com,firstsrowsports.eu,fwix.com,geek.com,geekosystem.com,gossipcop.com,hellomagazine.com,html5test.com,imm.io,indiegogo.com,madthumbs.com,mcdonalds.com,mediaite.com,medicaldaily.com,midwestsportsfans.com,monstercockland.com,mtvmusic.com,notepad-plus-plus.org,people-press.org,plosone.org,redpepperland.com,scitechdaily.com,seriouseats.com,sputniknews.com,stabmag.com,tcmag.com,technewsworld.com,techvert.com,themoviedb.org,thethirdpole.net,tnp.no,torrentfreak.com,tvnz.co.nz,usgs.gov,voltairenet.org,washingtonpost.com,whatbrowser.org,wolframalpha.com,wwitv.com,xxxymovies.com###share
+http://40tech.com,amandapeyton.com,blockr.io,blogsdna.com,bulawayo24.com,businessinsider.com,crikey.com.au,dailymotion.com,designtaxi.com,firstsrowsports.eu,fwix.com,geek.com,geekosystem.com,gossipcop.com,hellomagazine.com,hqbabes.com,html5test.com,imm.io,indiegogo.com,madthumbs.com,mcdonalds.com,mediaite.com,medicaldaily.com,midwestsportsfans.com,monstercockland.com,mtvmusic.com,notepad-plus-plus.org,people-press.org,plosone.org,redpepperland.com,scitechdaily.com,seriouseats.com,sputniknews.com,stabmag.com,tcmag.com,technewsworld.com,techvert.com,themoviedb.org,thethirdpole.net,tnp.no,torrentfreak.com,tvnz.co.nz,usgs.gov,voltairenet.org,washingtonpost.com,whatbrowser.org,wolframalpha.com,wwitv.com,xxxymovies.com###share
 http://ew.com###share-article
 http://pornhub.com###sharePlaylist
 http://biorxiv.org###shareit
@@ -22895,7 +22894,6 @@ http://makelaarsland.nl#@##cookie-notice
 http://flybe.com#@##cookie-policy-modal
 http://bk.com#@##cookie-popup
 http://lauritz.com,qxl.de,qxl.dk,qxl.fi,qxl.no,qxl.se#@##cookie-wrapper
-http://media.netflix.com#@##cookieAlert
 http://ad.win.nl,techopital.com#@##cookieConsent
 http://ad.win.nl#@##cookieConsentBox
 http://techopital.com#@##cookieConsentContainer

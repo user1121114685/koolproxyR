@@ -182,6 +182,10 @@ update_rule(){
 		cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		# 删除可能导致kpr卡死的神奇规则
 		sed -i '/https:\/\/\*/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		# 给 netflix.com 放行
+		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		# 给 tvbs.com 放行
+		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 	fi
 
 
@@ -248,6 +252,11 @@ update_rule(){
 		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		# 给 netflix.com 放行
+		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		# 给 tvbs.com 放行
+		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+
 
 	fi
 
@@ -313,6 +322,11 @@ update_rule(){
 		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 给 netflix.com 放行
+		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 给 tvbs.com 放行
+		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+
 
 	fi
 	# 删除临时文件
