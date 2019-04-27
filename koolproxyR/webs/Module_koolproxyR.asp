@@ -782,6 +782,9 @@ function set_version() {
 					<li><font color="#FF6347"> 问： </font>这些模式有什么区别？</li>
 					<li><font color="#1E90FF"> 答： </font>HTTP过滤模式，只过滤80端口，HTTP/HTTPS过滤80,443端口，全端口模式过滤所有端口，包含80，443。黑名单模式只过滤黑名单内的域名所以不建议使用。</li>			
 					<li></li>
+					<li><font color="#FF6347"> 问： </font>某些网站我不想去广告，或者某些网站屏蔽了，我的设备无法访问。</li>
+					<li><font color="#1E90FF"> 答： </font>请使用&nbsp;&nbsp;@@|&nbsp;&nbsp;或者@@@@|&nbsp;&nbsp;对域名进行放行，http访问的网站@@|http://xxx.yyy.com&nbsp;&nbsp;&nbsp;&nbsp;https访问的网站@@@@|https://drive.google.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【自定义规则】中进行设置。如果你觉得这个规则影响了更多人，请反馈，或者提交规则到kpr，提交的规则将在KPR主规则中，惠及所有KPR用户。</li>			
+					<li></li>
 					<li><font color="#FF6347"> 问： </font>HTTPS过滤一定要安装证书吗？</li>
 					<li><font color="#1E90FF"> 答： </font>必须安装证书，而且必须正确安装证书。</li>			
 					<li></li>
