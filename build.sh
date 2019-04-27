@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.34"
+VERSION="900.8.35"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -59,17 +59,17 @@ sed -i '/gtimg.cn/d' fanboy-annoyance.txt
 sed -i '/zhihu.com/d' fanboy-annoyance.txt
 
 
-# 将白名单转化成https https放行用三个@ http 用2个@
-cat fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@@@||https://#g' >> fanboy-annoyance_https.txt
-cat fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> fanboy-annoyance_https.txt
+# # 将白名单转化成https https放行用三个@ http 用2个@
+# cat fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@@@||https://#g' >> fanboy-annoyance_https.txt
+# cat fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> fanboy-annoyance_https.txt
 # 将规则转化成kp能识别的https
 cat fanboy-annoyance.txt | grep "^||" | sed 's#^||#||https://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep "^||" | sed 's#^||#||http://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> fanboy-annoyance_https.txt
-cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> fanboy-annoyance_https.txt
-cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> fanboy-annoyance_https.txt
+# cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> fanboy-annoyance_https.txt
+# cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> fanboy-annoyance_https.txt
 
 
 # 给github的https放行
@@ -120,9 +120,9 @@ sed -i '/zhihu.com/d' easylistchina.txt
 
 
 
-# 将白名单转化成https
-cat easylistchina.txt | grep "^@@||" | sed 's#^@@||#@@@@||https://#g' >> easylistchina_https.txt
-cat easylistchina.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> easylistchina_https.txt
+# # 将白名单转化成https
+# cat easylistchina.txt | grep "^@@||" | sed 's#^@@||#@@@@||https://#g' >> easylistchina_https.txt
+# cat easylistchina.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> easylistchina_https.txt
 # 将规则转化成kp能识别的https
 cat easylistchina.txt | grep "^||" | sed 's#^||#||https://#g' >> easylistchina_https.txt
 cat easylistchina.txt | grep "^||" | sed 's#^||#||http://#g' >> easylistchina_https.txt
@@ -132,8 +132,8 @@ cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g
 cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> easylistchina_https.txt
 cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -i '^|http' >> easylistchina_https.txt
 
-cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> easylistchina_https.txt
-cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> easylistchina_https.txt
+# cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> easylistchina_https.txt
+# cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> easylistchina_https.txt
 # 给facebook.com的https放行
 sed -i '/facebook.com/d' easylistchina_https.txt
 sed -i '/fbcdn.net/d' easylistchina_https.txt
@@ -190,17 +190,17 @@ sed -i '/^\$/d' mobile.txt
 sed -i '/\*\$/d' mobile.txt
 
 
-# 将白名单转化成https
-cat mobile.txt | grep "^@@||" | sed 's#^@@||#@@@@||https://#g' >> mobile_https.txt
-cat mobile.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> mobile_https.txt
+# # 将白名单转化成https
+# cat mobile.txt | grep "^@@||" | sed 's#^@@||#@@@@||https://#g' >> mobile_https.txt
+# cat mobile.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> mobile_https.txt
 # 将规则转化成kp能识别的https
 cat mobile.txt | grep "^||" | sed 's#^||#||https://#g' >> mobile_https.txt
 cat mobile.txt | grep "^||" | sed 's#^||#||http://#g' >> mobile_https.txt
 cat mobile.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> mobile_https.txt
 cat mobile.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> mobile_https.txt
 cat mobile.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> mobile_https.txt
-cat mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> mobile_https.txt
-cat mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> mobile_https.txt
+# cat mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> mobile_https.txt
+# cat mobile.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> mobile_https.txt
 
 
 # 删除可能导致Kpr变慢的Https规则
