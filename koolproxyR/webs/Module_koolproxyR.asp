@@ -682,7 +682,7 @@ function update_rules_now(arg){
 
 
 function set_version() {
-	$('#_koolproxyR_version').html('<font color="#1bbf35">KoolProxyR</font>');
+	$('#_koolproxyR_version').html('<font color="#808080">KoolProxyR</font>');
 }
 
 </script>
@@ -691,13 +691,10 @@ function set_version() {
 <div class="heading">
 <span id="_koolproxyR_version"></span>
 <a href="#/soft-center.asp" class="btn" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">返回</a>
+<a href="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/Changelog.txt" target="_blank" class="btn btn-primary" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">更新日志</a>
 </div>
 <div class="content">
-	<span id="msg" class="col-sm-12" style="margin-top:10px;width:700px">koolproxyR是koolproxy的重制版本，并且不断增加新的功能，请和koolproxy二选一。</span>
-</div>	
-<div class="content">
-	<span id="msg1" class="col-sm-12" style="line-height:30px;width:700px">
-		责任申明：koolproxy二进制文件及kp.dat归koolproxy官方所有。<a href="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/Changelog.txt" target="_blank"> 【更新日志】 </a></span>
+	<span id="msg" class="col-sm-12" style="margin-top:10px;width:700px"><font color="#1bbf35">KoolProxyR为免费开源软件，追求体验更快、更清洁的网络，屏蔽烦人的广告 ！</font><font color="#778899">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>
 </div>	
 </div>
 <div class="box" style="margin-top: 0px;">
@@ -759,14 +756,13 @@ function set_version() {
 </div>
 </div>
 <div id="kp_mode_readme" class="box boxr1" style="margin-top: 15px;">
-<div class="heading">贡献者列表（排名不分先后）： <a class="pull-right" data-toggle="tooltip" title="Hide/Show Notes" href="javascript:toggleVisibility('notes');"><span id="sesdivnotesshowhide"><i class="icon-chevron-up"></i></span></a></div>
+<div class="heading">优秀提示<a class="pull-right" data-toggle="tooltip" title="Hide/Show Notes" href="javascript:toggleVisibility('notes');"><span id="sesdivnotesshowhide"><i class="icon-chevron-up"></i></span></a></div>
 <div class="section content" id="sesdivnotes">
-	<li>【本插件修改自】https://github.com/koolshare/ledesoft/tree/master/koolproxy</li>	
-	<li>【KoolProxy官网】https://koolproxy.io</li>	
+	<li>不管你多么优秀，请一定注意以下几件事。</li>	
 	<li>--------------------------------------------------------------------------</li>	
-	<li>【HouZi】感谢猴子对koolproxy及koolproxy规则所做的贡献。</li>		
-	<li>【XiaoBao】感谢小宝对koolproxy二进制文件所做的贡献。</li>
-	<li>【Fw867】感谢Fw867对Openwrt X64软件中心所做的贡献。</li>
+	<li>一，请不要随意开启全端口模式和黑名单模式，除非你知道你在做什么。</li>		
+	<li>二，请给设备正确安装https证书，如果证书不正确，kpr也就废了。</li>
+	<li>三，遇到搞不定的事情，请及时到tg群反馈。kpr的tg群。</li>
 	<li>--------------------------------------------------------------------------</li>	
 </div>
 </div>
@@ -857,8 +853,8 @@ function set_version() {
 		<li>访问控制面板中【ip地址】和【mac地址】至少一个不能为空！只有ip时匹配ip，只有mac时匹配mac，两个都有一起匹配！</li>
 		<li>在路由器下的设备，不管是电脑，还是移动设备，都可以在浏览器中输入<i><b>110.110.110.110</b></i>来下载证书。</i></li>
 		<li>如果想在多台装有koolroxy的路由设备上使用一个证书，请用本插件的证书备份功能，并上传到另一台路由。</li>
-		<li><font color="red">注意！【全端口模式】过滤效果牛逼和覆盖的范围更广，但却对设备的性能有非常高的要求，请根据自己的设备的情况进行选择！</font></li>
-		<li><font color="red">注意！如果使用全端口模式过滤导致一些端口出现问题，可以开启端口控制，进行例外端口排除！</font></li>
+		<li><font color="red">注意！【全端口模式】一般情况慎重选择，因为kpr支持非标准端口过滤，只要规则上有。</font></li>
+		<li><font color="red">注意！【黑名单模式】一般情况下请无论如何都不要选，毕竟黑名单里面的规则不过毛毛雨。</font></li>
 	</div>
 	<br><hr>
 </div>
@@ -903,8 +899,8 @@ function set_version() {
 			{ title: '移动设备规则', multi: [
 			{ name: 'koolproxyR_mobile_rules',type:'checkbox',value: dbus.koolproxyR_mobile_rules == '1', suffix: '<lable id="_kp_mobile_rules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由adguard官方人员编写，主要用于去除移动设备端的广告。</lable>&nbsp;&nbsp;' }
 			]},
-			{ title: '视频规则 kp.dat', multi: [
-				{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由KoolProxy官方人员（houzi-）编写的加密规则，在HTTPS模式下ctrl+↑ 唤出VIP解析。</lable>&nbsp;&nbsp;' },
+			{ title: '视频规则（加密）', multi: [
+				{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则可以屏蔽国内网站的视频广告，需HTTPS模式。ctrl+↑ 唤出VIP解析。</lable>&nbsp;&nbsp;' },
 			]},	
 			{ title: 'Fanboy规则（国外）', multi: [
 				{ name: 'koolproxyR_fanboy_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由Fanboy发起，针对国外主流令人厌烦的广告过滤。</lable>&nbsp;&nbsp;' }
@@ -914,10 +910,6 @@ function set_version() {
 			]},	
 
 			{ title: '规则更新', multi: [
-//						{ name: 'koolproxyR_basic_rule_update',type: 'select', options:[['0', '禁用'], ['1', '开启']], value: dbus.koolproxyR_basic_rule_update || "1", suffix: ' &nbsp;&nbsp;' },
-//						{ name: 'koolproxyR_basic_rule_update_day', type: 'select', options:option_day_time, value: dbus.koolproxyR_basic_rule_update_day || "7",suffix: ' &nbsp;&nbsp;' },
-//						{ name: 'koolproxyR_basic_rule_update_hr', type: 'select', options:option_hour_time, value: dbus.koolproxyR_basic_rule_update_hr || "3",suffix: ' &nbsp;&nbsp;' },
-				// { name:'koolproxyR_basic_koolproxyR_update',type:'checkbox',value: dbus.koolproxyR_basic_koolproxyR_update != 0, suffix: '<lable id="_koolproxyR_basic_koolproxyR_update_txt">KP官方规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update != 0, suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">KPR主规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_mobile_update',type:'checkbox',value: dbus.koolproxyR_basic_mobile_update != 0, suffix: '<lable id="_koolproxyR_basic_mobile_update_txt">移动设备规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_video_update',type:'checkbox',value: dbus.koolproxyR_basic_video_update != 0, suffix: '<lable id="_koolproxyR_basic_video_update_txt">KP视频规则</lable>&nbsp;&nbsp;' },
@@ -933,10 +925,7 @@ function set_version() {
 		<li> KoolProxyR请根据自己的实际情况选择使用。</li>
 		<li><font color="green"> 【冲突解决】</font>尝试下少勾选部分规则，看看是否好转。。</li>
 		<li> 如果遇到问题，或者更好的规则请记得向KPR反馈。</li>
-		<!-- <li><font color="red"> 注意！规则加载的越多产生冲突且不兼容的问题就会大大增加。</font></li>		
-		<li><font color="red"> 注意！我们无法去保证所有规则都能完美地在KoolProxy上面运行。</font></li>
-		<li><font color="red"> 注意！规则不是越多越好，建议第三方规则根据自己需要勾选一种即可。</font></li>
-		<li><font color="red"> 如果用户在选择规则上出现的风险，将由用户去承担，KoolProxy不承担任何责任。</font></li> -->
+		<li><font color="red"> 规则都是从网上收集，可能更新后会出现问题，不要慌，反馈一下就好了。</font></li>
 	</div>
 	<br><hr>			
 </div>

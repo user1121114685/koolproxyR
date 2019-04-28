@@ -1,11 +1,11 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.35"
+VERSION="900.8.36"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
-CHANGELOG="正式移除了KP绿坝规则，和KP加密规则。现在所有规则都是未加密的了。"
+CHANGELOG="维护阶段的kpr"
 
 # 转化DOS格式到unix 需要 apt-get install dos2unix
 find . -type f -exec dos2unix {} \;
@@ -41,8 +41,12 @@ wget -O mobile.txt https://filters.adtidy.org/extension/chromium/filters/11.txt
 
 # wget https://kprules.b0.upaiyun.com/koolproxy.txt
 # wget https://kprules.b0.upaiyun.com/daily.txt
-wget https://kprules.b0.upaiyun.com/kp.dat
-wget https://kprules.b0.upaiyun.com/user.txt
+# 暂时先用临时的替代
+# wget https://kprules.b0.upaiyun.com/kp.dat
+# wget https://kprules.b0.upaiyun.com/user.txt
+wget https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/kp.dat
+wget https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/user.txt
+
 ## ---------------------------------------------------fanboy处理开始------------------------------------------------------
 ## 删除导致KP崩溃的规则
 sed -i '/^\$/d' fanboy-annoyance.txt
