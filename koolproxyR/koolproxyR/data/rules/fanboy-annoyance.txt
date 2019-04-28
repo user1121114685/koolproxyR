@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: PdjxzPQa1S7UdV/45ztrNQ
-! Version: 201904280842
+! Checksum: 0GdFlJ1ry5FgMbCp4mjbYw
+! Version: 201904281242
 ! Title: Fanboy's Annoyance List
-! Last modified: 28 Apr 2019 08:42 UTC
+! Last modified: 28 Apr 2019 12:42 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -732,7 +732,6 @@
 ||https://iubenda.com^$third-party
 ||https://jimstatic.com/ckies.js
 ||https://marfeel.mgr.consensu.org^$third-party
-||https://microsoft.com/mscc/
 ||https://mycookies.it^$third-party
 ||https://oil.axelspringer.com^$third-party
 ||https://onetag.mgr.consensu.org^$third-party
@@ -1942,7 +1941,6 @@
 ||http://iubenda.com^$third-party
 ||http://jimstatic.com/ckies.js
 ||http://marfeel.mgr.consensu.org^$third-party
-||http://microsoft.com/mscc/
 ||http://mycookies.it^$third-party
 ||http://oil.axelspringer.com^$third-party
 ||http://onetag.mgr.consensu.org^$third-party
@@ -3077,7 +3075,6 @@ https://visual.ly###graphic_prev_arrow
 https://itthing.com###greet_block
 https://thumbzilla.com###greeting
 https://grist.org###grist-flyout-box
-https://microsoft.com###gsfx_brnd_corpflyoutad_inner
 https://translate.google.com###gt-bbar
 https://healthcentral.com###hb
 https://newscientist.com###hdkey
@@ -3731,7 +3728,6 @@ https://softpedia.com###spsbtns
 https://cultofmac.com###ss_dealOfTheDayButton
 https://realitypod.com###ss_sidebar
 https://slashdot.org###stackcommerce-adwrap
-https://microsoft.com###standardRating
 https://appstechnews.com,cloudcomputing-news.net,developer-tech.com,marketingtechnews.net,telecomstechnews.com,wearabletechnology-news.com###statement
 https://natureworldnews.com###static_menu[style="position: fixed; z-index: 100; top: 0px; width: 100%; left: 0px;"]
 https://1up.com###status-bar
@@ -5381,7 +5377,6 @@ https://w24.co.za##.subscribe_wrapper
 https://pokernews.com##.suggestion
 https://nzherald.co.nz##.supportingBanner
 https://businessinsider.com,businessinsider.com.au##.survey
-https://microsoft.com##.survey-background
 https://insightcrime.org##.suscribe
 https://theoatmeal.com##.swatch2_links
 https://mirror.co.uk##.swipe-prompt
@@ -7929,8 +7924,6 @@ https://engadget.com##a[data-engadget-popname="engadget_share"]
 https://time.com##a[href*="social-share-article"]
 https://fijisun.com.fj,thecable.ng##a[href="#share"]
 https://hartpury.ac.uk##a[href="http://www.youtube.com/user/HartpuryUWE"]
-https://office.microsoft.com##a[href="redir/XT103954461.aspx"]
-https://office.microsoft.com##a[href="redir/XT103954465.aspx"]
 https://yourcityoffice.com##a[href^="http://pinterest.com/"]
 https://yourcityoffice.com##a[href^="http://www.linkedin.com"]
 https://buzzfeed.com##a[href^="https://apple.news/"]
@@ -8339,7 +8332,6 @@ https://tunngle.net###delirioBiscottoso
 https://paradoxplaza.com###disablingDiv
 https://biodiv.be,bitmoji.com,clementoni.com,decisiondeskhq.com,greybox.com,liveradio.ie,snp.org,volksbuehne.berlin###disclaimer
 https://goccl.co.uk###divMessage
-https://microsoft.com###divNRMain
 https://giftsandcare.com###divbottom
 https://tenerife-guided-walks.com###dmPopup
 https://tenerife-guided-walks.com###dmPopupMask
@@ -8349,7 +8341,6 @@ https://aeriagames.com###dp2018dialog
 https://hetzner.com###dpi-banner
 https://drupal.org###drupalorg-crosssite-gdpr
 https://shatter-box.com###elGuestTerms
-https://live.com,microsoft.com,office.com,skype.com,visualstudio.com,windows.com,xbox.com###epb
 https://complex.com###eucn
 https://tartybikes.co.uk###eureg
 https://eplan.at,eplan.ch,eplan.co.uk,eplan.de,eplan.es,eplan.hr###fancybox-overlay
@@ -8608,7 +8599,6 @@ https://voat.co##.eppnotice
 https://airproducts.co.uk##.eu-dp
 https://avid.com##.fancybox-opened
 https://avid.com##.fancybox-overlay
-https://microsoft.com##.feedback-visible
 https://thebodyshop.com##.first-time-visitor
 https://wallpaperdirect.com##.fixed-bottom.container
 https://bleacherreport.com##.fixedRegion
@@ -11342,7 +11332,6 @@ https://tactxflashlights.com#@#.widget_subscribe
 https://twellow.com#@#a[href="http://www.twellow.com/"]
 https://nasa.gov#@#backtotop
 https://reddit.com#@#img[alt="submit to reddit"]
-https://answers.microsoft.com#@##SocialIcons
 https://google.at,google.be,google.ca,google.ch,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.th,google.co.za,google.com,google.com.ar,google.com.au,google.com.br,google.com.hk,google.com.mx,google.com.tr,google.com.ua,google.cz,google.dk,google.es,google.fi,google.fr,google.hu,google.it,google.nl,google.pl,google.ro,google.ru,google.se,google.sk#@##\5f __plus_0
 https://google.at,google.be,google.ca,google.ch,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.th,google.co.za,google.com,google.com.ar,google.com.au,google.com.br,google.com.hk,google.com.mx,google.com.tr,google.com.ua,google.cz,google.dk,google.es,google.fi,google.fr,google.hu,google.it,google.nl,google.pl,google.ro,google.ru,google.se,google.sk#@##\5f __plusone_0
 https://beautifulplanet4u.com#@##advancedsocialwidget
@@ -11707,7 +11696,6 @@ https://runescape.com,study.163.com#@#.socialBox
 https://ceneo.pl,showmax.com#@#.socialBtns
 https://tomshardware.com#@#.socialButton
 https://keepa.com,mousehuntgame.com#@#.socialButtons
-https://answers.microsoft.com#@#.socialIcon
 https://pbs.org#@#.socialList
 https://welt.de#@#.socialMedia
 https://wweek.com#@#.socialRight
@@ -11952,7 +11940,6 @@ https://ramics-conference.org#@#.nf-form-content
 https://aklagare.se,boekmeter.nl,gamesmeter.nl,moviemeter.nl,musicmeter.nl,nzherald.co.nz,pokemon.com,shopstyle.com,thenextweb.com#@#.no-cookies
 https://bosch-home.com#@#.o-cookielaw
 https://pieseauto.ro#@#.page-cookies
-https://account.microsoft.com#@#.privacy-container
 https://metallica.com#@#.privacy_policy_message_box
 https://jyllands-posten.dk#@#.qc-cmp-showing
 https://jyllands-posten.dk#@#.qc-cmp-ui-container
@@ -12611,7 +12598,6 @@ http://visual.ly###graphic_prev_arrow
 http://itthing.com###greet_block
 http://thumbzilla.com###greeting
 http://grist.org###grist-flyout-box
-http://microsoft.com###gsfx_brnd_corpflyoutad_inner
 http://translate.google.com###gt-bbar
 http://healthcentral.com###hb
 http://newscientist.com###hdkey
@@ -13265,7 +13251,6 @@ http://softpedia.com###spsbtns
 http://cultofmac.com###ss_dealOfTheDayButton
 http://realitypod.com###ss_sidebar
 http://slashdot.org###stackcommerce-adwrap
-http://microsoft.com###standardRating
 http://appstechnews.com,cloudcomputing-news.net,developer-tech.com,marketingtechnews.net,telecomstechnews.com,wearabletechnology-news.com###statement
 http://natureworldnews.com###static_menu[style="position: fixed; z-index: 100; top: 0px; width: 100%; left: 0px;"]
 http://1up.com###status-bar
@@ -14916,7 +14901,6 @@ http://w24.co.za##.subscribe_wrapper
 http://pokernews.com##.suggestion
 http://nzherald.co.nz##.supportingBanner
 http://businessinsider.com,businessinsider.com.au##.survey
-http://microsoft.com##.survey-background
 http://insightcrime.org##.suscribe
 http://theoatmeal.com##.swatch2_links
 http://mirror.co.uk##.swipe-prompt
@@ -17464,8 +17448,6 @@ http://engadget.com##a[data-engadget-popname="engadget_share"]
 http://time.com##a[href*="social-share-article"]
 http://fijisun.com.fj,thecable.ng##a[href="#share"]
 http://hartpury.ac.uk##a[href="http://www.youtube.com/user/HartpuryUWE"]
-http://office.microsoft.com##a[href="redir/XT103954461.aspx"]
-http://office.microsoft.com##a[href="redir/XT103954465.aspx"]
 http://yourcityoffice.com##a[href^="http://pinterest.com/"]
 http://yourcityoffice.com##a[href^="http://www.linkedin.com"]
 http://buzzfeed.com##a[href^="https://apple.news/"]
@@ -17874,7 +17856,6 @@ http://tunngle.net###delirioBiscottoso
 http://paradoxplaza.com###disablingDiv
 http://biodiv.be,bitmoji.com,clementoni.com,decisiondeskhq.com,greybox.com,liveradio.ie,snp.org,volksbuehne.berlin###disclaimer
 http://goccl.co.uk###divMessage
-http://microsoft.com###divNRMain
 http://giftsandcare.com###divbottom
 http://tenerife-guided-walks.com###dmPopup
 http://tenerife-guided-walks.com###dmPopupMask
@@ -17884,7 +17865,6 @@ http://aeriagames.com###dp2018dialog
 http://hetzner.com###dpi-banner
 http://drupal.org###drupalorg-crosssite-gdpr
 http://shatter-box.com###elGuestTerms
-http://live.com,microsoft.com,office.com,skype.com,visualstudio.com,windows.com,xbox.com###epb
 http://complex.com###eucn
 http://tartybikes.co.uk###eureg
 http://eplan.at,eplan.ch,eplan.co.uk,eplan.de,eplan.es,eplan.hr###fancybox-overlay
@@ -18143,7 +18123,6 @@ http://voat.co##.eppnotice
 http://airproducts.co.uk##.eu-dp
 http://avid.com##.fancybox-opened
 http://avid.com##.fancybox-overlay
-http://microsoft.com##.feedback-visible
 http://thebodyshop.com##.first-time-visitor
 http://wallpaperdirect.com##.fixed-bottom.container
 http://bleacherreport.com##.fixedRegion
@@ -20877,7 +20856,6 @@ http://tactxflashlights.com#@#.widget_subscribe
 http://twellow.com#@#a[href="http://www.twellow.com/"]
 http://nasa.gov#@#backtotop
 http://reddit.com#@#img[alt="submit to reddit"]
-http://answers.microsoft.com#@##SocialIcons
 http://google.at,google.be,google.ca,google.ch,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.th,google.co.za,google.com,google.com.ar,google.com.au,google.com.br,google.com.hk,google.com.mx,google.com.tr,google.com.ua,google.cz,google.dk,google.es,google.fi,google.fr,google.hu,google.it,google.nl,google.pl,google.ro,google.ru,google.se,google.sk#@##\5f __plus_0
 http://google.at,google.be,google.ca,google.ch,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.th,google.co.za,google.com,google.com.ar,google.com.au,google.com.br,google.com.hk,google.com.mx,google.com.tr,google.com.ua,google.cz,google.dk,google.es,google.fi,google.fr,google.hu,google.it,google.nl,google.pl,google.ro,google.ru,google.se,google.sk#@##\5f __plusone_0
 http://beautifulplanet4u.com#@##advancedsocialwidget
@@ -21242,7 +21220,6 @@ http://runescape.com,study.163.com#@#.socialBox
 http://ceneo.pl,showmax.com#@#.socialBtns
 http://tomshardware.com#@#.socialButton
 http://keepa.com,mousehuntgame.com#@#.socialButtons
-http://answers.microsoft.com#@#.socialIcon
 http://pbs.org#@#.socialList
 http://welt.de#@#.socialMedia
 http://wweek.com#@#.socialRight
@@ -21487,7 +21464,6 @@ http://ramics-conference.org#@#.nf-form-content
 http://aklagare.se,boekmeter.nl,gamesmeter.nl,moviemeter.nl,musicmeter.nl,nzherald.co.nz,pokemon.com,shopstyle.com,thenextweb.com#@#.no-cookies
 http://bosch-home.com#@#.o-cookielaw
 http://pieseauto.ro#@#.page-cookies
-http://account.microsoft.com#@#.privacy-container
 http://metallica.com#@#.privacy_policy_message_box
 http://jyllands-posten.dk#@#.qc-cmp-showing
 http://jyllands-posten.dk#@#.qc-cmp-ui-container

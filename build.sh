@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.36"
+VERSION="900.8.37"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -105,6 +105,8 @@ sed -i '/https:\/\/\*/d' fanboy-annoyance.txt
 sed -i '/netflix.com/d' fanboy-annoyance.txt
 # 给 tvbs.com 放行
 sed -i '/tvbs.com/d' fanboy-annoyance.txt
+# 给 microsoft.com 放行
+sed -i '/microsoft.com/d' fanboy-annoyance.txt
 
 ## -------------------------------------------------------fanboy处理结束------------------------------------------------------
 
@@ -180,6 +182,8 @@ sed -i '/https:\/\/tmall.com/d' easylistchina.txt
 sed -i '/tvbs.com/d' easylistchina.txt
 # 给 netflix.com 放行
 sed -i '/netflix.com/d' easylistchina.txt
+# 给 microsoft.com 放行
+sed -i '/microsoft.com/d' easylistchina.txt
 
 
 
@@ -258,6 +262,8 @@ sed -i '/https:\/\/\*/d' mobile.txt
 sed -i '/tvbs.com/d' mobile.txt
 # 给 netflix.com 放行
 sed -i '/netflix.com/d' mobile.txt
+# 给 microsoft.com 放行
+sed -i '/microsoft.com/d' mobile.txt
 
 
 

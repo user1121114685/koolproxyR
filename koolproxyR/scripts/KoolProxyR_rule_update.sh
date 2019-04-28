@@ -186,6 +186,9 @@ update_rule(){
 		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		# 给 tvbs.com 放行
 		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		# 给 microsoft.com 放行
+		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+
 	fi
 
 
@@ -256,6 +259,9 @@ update_rule(){
 		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给 tvbs.com 放行
 		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		# 给 microsoft.com 放行
+		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+
 
 
 	fi
@@ -326,6 +332,8 @@ update_rule(){
 		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 		# 给 tvbs.com 放行
 		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
+		# 给 microsoft.com 放行
+		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/mobile.txt
 
 
 	fi

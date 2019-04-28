@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: P6uzRDg/LRCSQGpS1zVndw
-! Version: 201904280902
+! Checksum: dy/HTHuL5xuVIxO/fazveQ
+! Version: 201904281252
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 !  ******************************* koolproxy 语法*******************************
@@ -6280,7 +6280,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||https://pic.zol-img.com.cn^$object
 ||https://picasion.com^$~collapse,domain=520cc.me
 ||https://picb.cc/uploads/2018/06/26/2zxrsi.jpg
-||https://picgd.com/images/2018/10/17/4L8J6.gif
+||https://picgd.com/images/*.gif
 ||https://picgd.com/images/2018/12/01/h1pi5.png
 ||https://piclect.com^*.gif$third-party
 ||https://picpar.com^$domain=18board.com|18p2p.com
@@ -15417,7 +15417,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||http://pic.zol-img.com.cn^$object
 ||http://picasion.com^$~collapse,domain=520cc.me
 ||http://picb.cc/uploads/2018/06/26/2zxrsi.jpg
-||http://picgd.com/images/2018/10/17/4L8J6.gif
+||http://picgd.com/images/*.gif
 ||http://picgd.com/images/2018/12/01/h1pi5.png
 ||http://piclect.com^*.gif$third-party
 ||http://picpar.com^$domain=18board.com|18p2p.com
@@ -19270,6 +19270,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||http://wrating.com^$third-party
 https://ubmcmm.baidustatic.com
 https://szxx.com.cn###A0
+https://vuetifyjs.com###patrons
 https://szxx.com.cn###A1
 https://szxx.com.cn###A2
 https://gpcxw.com###AA2
@@ -22596,12 +22597,6 @@ https://kocpc.com.tw##.sidebar:nth-child(2)
 https://kocpc.com.tw##.sidebar:nth-child(3)
 https://pic.sogou.com##.sidebar_box.shut
 https://v2ex.com##.sidebar_compliance
-https://uisdc.com##.sidebar_left_1
-https://uisdc.com##.sidebar_left_2
-https://uisdc.com##.sidebar_left_3
-https://uisdc.com##.sidebar_left_4
-https://uisdc.com##.sidebar_right_1
-https://uisdc.com##.sidebar_right_2
 https://v2ex.com##.sidebar_units
 https://uraban.me##.sider > a
 https://docin.com##.sider_gg
@@ -23945,6 +23940,7 @@ https://bee.coupons,blogspot.com,blogspot.hk,blogspot.jp,blogspot.tw,comic.tw,ja
 https://i-cable.com#@#.video_ad
 https://bitauto.com,yinyuetai.com#@#a[href^="http://ad.doubleclick.net/"]
 https://brandsales.58.com#@#div[id^="ad_"]
+https://paltv.top#@##adsense
 https://gohome.com.hk#@#div[id^="div-gpt-ad"]
 https://7255.com###J_search_bd > div:last-child
 https://7255.com###right > div:first-child
@@ -24779,6 +24775,7 @@ https://weibo.com###Pl_Core_P7MultiPicPlay__7
 https://weibo.com##.apps_PCD_reco_detail_right
 http://ubmcmm.baidustatic.com
 http://szxx.com.cn###A0
+http://vuetifyjs.com###patrons
 http://szxx.com.cn###A1
 http://szxx.com.cn###A2
 http://gpcxw.com###AA2
@@ -28112,12 +28109,6 @@ http://kocpc.com.tw##.sidebar:nth-child(2)
 http://kocpc.com.tw##.sidebar:nth-child(3)
 http://pic.sogou.com##.sidebar_box.shut
 http://v2ex.com##.sidebar_compliance
-http://uisdc.com##.sidebar_left_1
-http://uisdc.com##.sidebar_left_2
-http://uisdc.com##.sidebar_left_3
-http://uisdc.com##.sidebar_left_4
-http://uisdc.com##.sidebar_right_1
-http://uisdc.com##.sidebar_right_2
 http://v2ex.com##.sidebar_units
 http://uraban.me##.sider > a
 http://docin.com##.sider_gg
@@ -29466,6 +29457,7 @@ http://bee.coupons,blogspot.com,blogspot.hk,blogspot.jp,blogspot.tw,comic.tw,jas
 http://i-cable.com#@#.video_ad
 http://bitauto.com,yinyuetai.com#@#a[href^="http://ad.doubleclick.net/"]
 http://brandsales.58.com#@#div[id^="ad_"]
+http://paltv.top#@##adsense
 http://gohome.com.hk#@#div[id^="div-gpt-ad"]
 http://7255.com###J_search_bd > div:last-child
 http://7255.com###right > div:first-child

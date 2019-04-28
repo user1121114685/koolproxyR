@@ -1293,7 +1293,6 @@
 ||https://a.bitmango.com^
 ||https://bitmango.com/log
 ||https://tracking.directservices.it^
-||https://vortex.data.microsoft.com^
 ||https://onedrive-collection.device.mobileengagement.windows.net^
 ||https://metrics.timewarnercable.com^
 ||https://flurry.agentportal-*.yahoodns.net^
@@ -1430,7 +1429,6 @@
 ||https://openstat.net^
 ||https://ping.taplytics.com^
 ||https://ping.xlmc.sandai.net^
-||https://pipe.aria.microsoft.com/Collector/
 ||https://play.googleapis.com/log|
 ||https://play.googleapis.com/play/log^
 ||https://prugskh.com^
@@ -2772,7 +2770,6 @@
 ||http://a.bitmango.com^
 ||http://bitmango.com/log
 ||http://tracking.directservices.it^
-||http://vortex.data.microsoft.com^
 ||http://onedrive-collection.device.mobileengagement.windows.net^
 ||http://metrics.timewarnercable.com^
 ||http://flurry.agentportal-*.yahoodns.net^
@@ -2909,7 +2906,6 @@
 ||http://openstat.net^
 ||http://ping.taplytics.com^
 ||http://ping.xlmc.sandai.net^
-||http://pipe.aria.microsoft.com/Collector/
 ||http://play.googleapis.com/log|
 ||http://play.googleapis.com/play/log^
 ||http://prugskh.com^
