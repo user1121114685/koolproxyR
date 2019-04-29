@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: dy/HTHuL5xuVIxO/fazveQ
-! Version: 201904281252
+! Checksum: 1//dXgz16ogo7MWmeWbH3w
+! Version: 201904291352
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 !  ******************************* koolproxy 语法*******************************
@@ -22,6 +22,20 @@
 !驱动之家 首页广告
 https://news.mydrivers.com###dangbei_down > IMG
 https://news.mydrivers.com###aswift_1
+!驱动之家 去广告补充（去空白页，页面更美观）
+||https://news.mydrivers.com##.baidu_left > .adsbygoogle
+||https://news.mydrivers.com##.news_right > div:nth-of-type(2)
+||https://news.mydrivers.com##div.side_ad_top.ad_warp:nth-of-type(8)
+||https://news.mydrivers.com###taobao_add > div:nth-of-type(3)
+||https://news.mydrivers.com##.news_left > div:nth-of-type(5)
+||https://news.mydrivers.com##.news_info > div:nth-of-type(5)
+||https://news.mydrivers.com##.news_info > div:nth-of-type(6)
+||https://news.mydrivers.com###taobao_add
+||http://www.mydrivers.com##.main_right > div:nth-of-type(3)
+||http://www.mydrivers.com##body > div:nth-of-type(11)
+||http://www.mydrivers.com##div:nth-of-type(13)
+||http://www.mydrivers.com##div:nth-of-type(17)
+||http://www.mydrivers.com##body > div:nth-of-type(7)
 ||https://googlesyndication.com^$third-party
 ||https://tanx.com^$third-party,domain=~1688.com|~alimama.com|~taobao.com|~tmall.com
 !btbtt 首页广告
@@ -30,12 +44,38 @@ http://*btbtt.*###wrapper_right_bg
 |http://*btbtt.*/view/image/QT_*
 http://*btbtt.*###wrapper_left_bg
 http://*btbtt.*###wrapper2 > DIV.width:nth-child(2) > DIV.error
+||http://www.btbtt.co/view/image/QT_QT.jpg$image
+http://www.btbtt.co###wrapper_right_bg
+http://www.btbtt.co###wrapper_left_bg
+||http://www.btbtt.co##div.width:nth-of-type(2)
 ! 爱奇艺广告
 !天天美剧
 http://ttmeiju.me##DIV:nth-child(2) > P > A > IMG
 http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ! 谷歌网盘放行
 @@@@|https://drive.google.com
+! macx.cn
+@@@@|https://www.macx.cn
+! 直播吧
+||https://pcgg.qiumibao.com/webAdvert.php$subdocument
+https://www.zhibo8.cc##.ad_box_250
+https://www.zhibo8.cc###popautoapp
+! 5173首页补充去广告
+||http://www.5173.com##body > .top
+||http://www.5173.com##.gg_130 > .close_btn
+||http://www.5173.com###ggFloat > .inner
+||http://www.5173.com##.gt-wrapimg-signin
+! 巨超值 去下方弹框
+||https://best.pconline.com.cn###JnoLoginFixedBottom
+! 斗鱼去播放器解码弹窗广告
+https://www.douyu.com##.LotteryContainer
+https://www.douyu.com##.UPlayerLotteryEnter-giftImg
+https://www.douyu.com##.is-baodeng.is-active.UPlayerLotteryEnter
+https://www.douyu.com##.PaladinWeek-toast
+||https://www.douyu.com##.PaladinWeek-toast
+! 游侠游戏论坛 去首页上方广告
+||http://game.ali213.net###wp > div:nth-of-type(1)
+||http://game.ali213.net###hd_ad
 ! ----------------------------------------------请在此行线以上填写新增规则------------------------------------------------------
 ! ------------------------------------------------------------------------------------------------------------------------------
 !x  --------------------------------------------- 以下规则搬运自 koolproxy -------------------------------------------------------
@@ -7486,6 +7526,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||https://zp365.com/newImages/201*.swf
 ||https://zpgjz.com/cdn/new1/4.gif
 ||https://zpiyi.com/public/js/global.js
+||https://zqsx.net/bbs/kehu/
 ||https://zqzq*.com:*/da.aspx
 ||https://zrblog.net/zanzhu/
 ||https://zsjjob.com/user/member/google.htm
@@ -7515,7 +7556,9 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||https://zzsky.cn/images/a_d_
 ||https://zzz4.com/JS_AD/
 ||https://zzzyk.com/js/
-||https://zqsx.net/bbs/kehu/
+||https://wples.com/pc/common.js
+||https://vansky.com/agdg/vans/*_top
+||https://duouoo.com/vss/wz
 ||https://alicdn.com^$domain=99a18.com|99re.com|99re16.com
 ||https://sinaimg.cn^$domain=99a18.com|99re.com|99re16.com
 ||https://immedlinkum.info^
@@ -8441,7 +8484,10 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||https://ifengimg.com^*679.js
 ||https://cryptaloot.pro^
 ||https://yuyyio.com^
-||https://47n209.com^
+||https://bsmakeup.com.cn^
+||https://z3uk6.cn^
+||https://cxrjl.cn^
+||https://jwhfn.cn^
 ||https://0234408.cn^
 ||https://03196688.com^
 ||https://0577renliu.
@@ -8470,6 +8516,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||https://2zm4.cn^
 ||https://365yigou.cn^
 ||https://3ql1pb.cn^
+||https://47n209.com^
 ||https://4a3zf.cn^
 ||https://4ekx.cn^
 ||https://4z5o27.cn^
@@ -16623,6 +16670,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||http://zp365.com/newImages/201*.swf
 ||http://zpgjz.com/cdn/new1/4.gif
 ||http://zpiyi.com/public/js/global.js
+||http://zqsx.net/bbs/kehu/
 ||http://zqzq*.com:*/da.aspx
 ||http://zrblog.net/zanzhu/
 ||http://zsjjob.com/user/member/google.htm
@@ -16652,7 +16700,9 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||http://zzsky.cn/images/a_d_
 ||http://zzz4.com/JS_AD/
 ||http://zzzyk.com/js/
-||http://zqsx.net/bbs/kehu/
+||http://wples.com/pc/common.js
+||http://vansky.com/agdg/vans/*_top
+||http://duouoo.com/vss/wz
 ||http://alicdn.com^$domain=99a18.com|99re.com|99re16.com
 ||http://sinaimg.cn^$domain=99a18.com|99re.com|99re16.com
 ||http://immedlinkum.info^
@@ -17580,7 +17630,10 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||http://ifengimg.com^*679.js
 ||http://cryptaloot.pro^
 ||http://yuyyio.com^
-||http://47n209.com^
+||http://bsmakeup.com.cn^
+||http://z3uk6.cn^
+||http://cxrjl.cn^
+||http://jwhfn.cn^
 ||http://0234408.cn^
 ||http://03196688.com^
 ||http://0577renliu.
@@ -17609,6 +17662,7 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||http://2zm4.cn^
 ||http://365yigou.cn^
 ||http://3ql1pb.cn^
+||http://47n209.com^
 ||http://4a3zf.cn^
 ||http://4ekx.cn^
 ||http://4z5o27.cn^
@@ -19270,8 +19324,14 @@ http://ttmeiju.me###footer > DIV:first-child > P > IMG
 ||http://wrating.com^$third-party
 https://ubmcmm.baidustatic.com
 https://szxx.com.cn###A0
-https://vuetifyjs.com###patrons
+https://wmzhe.com##.downloader
+https://wuzuowei.net###focusslide
+https://wuzuowei.net##.widget_ui_asb
+https://w3cschool.cn##.abox-item
+https://leagueofmovie.com###leftfixedad
+https://leagueofmovie.com###rightfixedad
 https://szxx.com.cn###A1
+https://blog.csdn.net###article_content > LINK + A
 https://szxx.com.cn###A2
 https://gpcxw.com###AA2
 https://yahoo.com###ACT_crazy
@@ -20155,6 +20215,7 @@ https://xdowns.com###part_1
 https://hifidiy.net###part_left2
 https://hifidiy.net###part_right_gg7
 https://18avhub.com,18avtube.com,mm-cg.com###partner
+https://vuetifyjs.com###patrons
 https://hefei.cc###pb_sm_l
 https://bdimg.com,tieba.baidu.com,tieba.com,wapp.baidu.com###pblist > li[class]:not(.j_post_list_item)
 https://1111.baidu.com,bdimg.com,tieba.baidu.com,tieba.com,xingqu.baidu.com###pc2client
@@ -21458,7 +21519,7 @@ https://downza.cn##.down_top
 https://downza.cn##.downbtn
 https://portablesoft.org##.downcenter
 https://yxzoo.com##.downgg
-https://onlinedown.net,wmzhe.com##.downgs
+https://onlinedown.net##.downgs
 https://188soft.com##.download
 https://duote.com##.download-box:first-child
 https://greenxf.com##.download-list > li:nth-child(-n+4)
@@ -23824,7 +23885,7 @@ https://dpp.org.tw#@##ad_small
 https://timesdata.com#@##adbody
 https://tt1069.com#@##adbrite
 https://abbao.cn,tt1069.com,xietui.com#@##adcontent
-https://cgvoo.com,mcfuns.com.tw,mrmad.com.tw,myself-bbs.com,pbhz.com,sportsyeah.hk,ugediao.com,zhuihd.com#@##adsense
+https://cgvoo.com,mcfuns.com.tw,mrmad.com.tw,myself-bbs.com,paltv.top,pbhz.com,sportsyeah.hk,ugediao.com,zhuihd.com#@##adsense
 https://wenku8.net#@##adtop
 https://union.58.com#@##advertise
 https://nyaa.pt,pantsu.cat#@##banner_ad
@@ -23940,7 +24001,6 @@ https://bee.coupons,blogspot.com,blogspot.hk,blogspot.jp,blogspot.tw,comic.tw,ja
 https://i-cable.com#@#.video_ad
 https://bitauto.com,yinyuetai.com#@#a[href^="http://ad.doubleclick.net/"]
 https://brandsales.58.com#@#div[id^="ad_"]
-https://paltv.top#@##adsense
 https://gohome.com.hk#@#div[id^="div-gpt-ad"]
 https://7255.com###J_search_bd > div:last-child
 https://7255.com###right > div:first-child
@@ -24775,8 +24835,14 @@ https://weibo.com###Pl_Core_P7MultiPicPlay__7
 https://weibo.com##.apps_PCD_reco_detail_right
 http://ubmcmm.baidustatic.com
 http://szxx.com.cn###A0
-http://vuetifyjs.com###patrons
+http://wmzhe.com##.downloader
+http://wuzuowei.net###focusslide
+http://wuzuowei.net##.widget_ui_asb
+http://w3cschool.cn##.abox-item
+http://leagueofmovie.com###leftfixedad
+http://leagueofmovie.com###rightfixedad
 http://szxx.com.cn###A1
+http://blog.csdn.net###article_content > LINK + A
 http://szxx.com.cn###A2
 http://gpcxw.com###AA2
 http://yahoo.com###ACT_crazy
@@ -25664,6 +25730,7 @@ http://xdowns.com###part_1
 http://hifidiy.net###part_left2
 http://hifidiy.net###part_right_gg7
 http://18avhub.com,18avtube.com,mm-cg.com###partner
+http://vuetifyjs.com###patrons
 http://hefei.cc###pb_sm_l
 http://bdimg.com,tieba.baidu.com,tieba.com,wapp.baidu.com###pblist > li[class]:not(.j_post_list_item)
 http://1111.baidu.com,bdimg.com,tieba.baidu.com,tieba.com,xingqu.baidu.com###pc2client
@@ -26968,7 +27035,7 @@ http://downza.cn##.down_top
 http://downza.cn##.downbtn
 http://portablesoft.org##.downcenter
 http://yxzoo.com##.downgg
-http://onlinedown.net,wmzhe.com##.downgs
+http://onlinedown.net##.downgs
 http://188soft.com##.download
 http://duote.com##.download-box:first-child
 http://greenxf.com##.download-list > li:nth-child(-n+4)
@@ -29339,7 +29406,7 @@ http://dpp.org.tw#@##ad_small
 http://timesdata.com#@##adbody
 http://tt1069.com#@##adbrite
 http://abbao.cn,tt1069.com,xietui.com#@##adcontent
-http://cgvoo.com,mcfuns.com.tw,mrmad.com.tw,myself-bbs.com,pbhz.com,sportsyeah.hk,ugediao.com,zhuihd.com#@##adsense
+http://cgvoo.com,mcfuns.com.tw,mrmad.com.tw,myself-bbs.com,paltv.top,pbhz.com,sportsyeah.hk,ugediao.com,zhuihd.com#@##adsense
 http://wenku8.net#@##adtop
 http://union.58.com#@##advertise
 http://nyaa.pt,pantsu.cat#@##banner_ad
@@ -29457,7 +29524,6 @@ http://bee.coupons,blogspot.com,blogspot.hk,blogspot.jp,blogspot.tw,comic.tw,jas
 http://i-cable.com#@#.video_ad
 http://bitauto.com,yinyuetai.com#@#a[href^="http://ad.doubleclick.net/"]
 http://brandsales.58.com#@#div[id^="ad_"]
-http://paltv.top#@##adsense
 http://gohome.com.hk#@#div[id^="div-gpt-ad"]
 http://7255.com###J_search_bd > div:last-child
 http://7255.com###right > div:first-child

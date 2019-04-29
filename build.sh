@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.37"
+VERSION="900.8.38"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -289,7 +289,9 @@ sed -i 's/$/|0|0/' source.list
 sed -i '/user.txt/d' source.list
 echo "1|user.txt|0|0" >> source.list
 echo "0|kp.dat|0|0" >> source.list
-
+# source.list的格式命名
+# 开关 0表示关闭 1表示开启
+# 开关|规则名字|规则网址|规则备注名字
 # 不支持规则
 
 # 1 小于2个字符的 例如 ab

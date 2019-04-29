@@ -79,13 +79,13 @@ update_rule(){
 	fi
 
 	# update 视频规则
-	if [ "$koolproxyR_basic_video_update" == "1" ] || [ -n "$1" ];then
-		echo_date " ---------------------------------------------------------------------------------------"
-		echo_date 加密视频规则kp.dat 看不到版本号。所以强制更新。！
-		wget -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kp.dat $url_kp
-		echo_date  视频规则已经更新。
+	# if [ "$koolproxyR_basic_video_update" == "1" ] || [ -n "$1" ];then
+	# 	echo_date " ---------------------------------------------------------------------------------------"
+	# 	echo_date 加密视频规则kp.dat 看不到版本号。所以强制更新。！
+	# 	wget -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kp.dat $url_kp
+	# 	echo_date  视频规则已经更新。
 
-	fi
+	# fi
 
 	# update fanboy规则
 	if [ "$koolproxyR_basic_fanboy_update" == "1" ] || [ -n "$1" ];then
