@@ -69,6 +69,8 @@ http://m.youku.com##.hdwrap
 http://v.youku.com##.laifeng
 http://youku.com##.pop-prompt-box
 http://m.youku.com##.recommend
+@@@@https://*u-ads.adap.tv*youku.$domain=youku.com
+@@http://*u-ads.adap.tv*youku.$domain=youku.com
 @@@@||https://cupid.iqiyi.com^
 ||https://iqiyi.com/track$popup
 ||https://kfc.com.cn^$popup,domain=iqiyi.com

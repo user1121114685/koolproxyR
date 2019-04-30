@@ -32,7 +32,18 @@ case $(uname -m) in
 		exit 1
 	;;
 esac
+# 感谢这位大佬的教程。
+# https://www.linuxquestions.org/questions/debian-26/debian-hangs-at-boot-with-random-crng-init-done-4175613405/#post5889997
+# 此举解决了kpr与v2ray冲突，与SS冲突，导致开机过慢的问题
+# haveged 项目的目的是提供一个易用、不可预测的随机数生成器，基于 HAVEGE 算法。
 
+entropy_avail=`cat /proc/sys/kernel/random/entropy_avail`
+
+# 如果值比较低(<1000),建议安装 haveged. 否则加密程序会等待系统有足够的熵。
+
+if [ "$entropy_avail" -lt 1000 ];then
+	opkg update && opkg install haveged
+fi
 # stop first
 KP_ENBALE=`dbus get koolproxy_enable`
 koolproxyR_enable=`dbus get koolproxyR_enable`
@@ -100,7 +111,7 @@ dbus set softcenter_module_koolproxyR_description="KPR更多规则更舒服！"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=900.8.38
-dbus set koolproxyR_version=900.8.38
+dbus set softcenter_module_koolproxyR_version=900.8.39
+dbus set koolproxyR_version=900.8.39
 
 [ "$koolproxyR_enable" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh restart

@@ -446,7 +446,7 @@ function toggleVisibility(whichone) {
 
 function save(){
 	var KP = document.getElementById('_koolproxyR_enable').checked==false;			
-	var R1 = document.getElementById('_koolproxyR_mobile_rules').checked==false;
+	var R1 = document.getElementById('_koolproxyR_replenish_rules').checked==false;
 	var R2 = document.getElementById('_koolproxyR_easylist_rules').checked==false;
 	var R3 = document.getElementById('_koolproxyR_video_rules').checked==false;
 	var R4 = document.getElementById('_koolproxyR_fanboy_rules').checked==false;
@@ -472,7 +472,7 @@ function save(){
 //			dbus.koolproxyR_reboot = E('_koolproxyR_reboot').value;
 //			dbus.koolproxyR_reboot_hour = E('_koolproxyR_reboot_hour').value;
 //			dbus.koolproxyR_reboot_inter_hour = E('_koolproxyR_reboot_inter_hour').value;
-	dbus.koolproxyR_mobile_rules = E("_koolproxyR_mobile_rules").checked ? "1" : "0";
+	dbus.koolproxyR_replenish_rules = E("_koolproxyR_replenish_rules").checked ? "1" : "0";
 	// dbus.koolproxyR_video_rules = E("_koolproxyR_video_rules").checked ? "1" : "0";
 	dbus.koolproxyR_easylist_rules = E("_koolproxyR_easylist_rules").checked ? "1" : "0";
 	dbus.koolproxyR_video_rules = E("_koolproxyR_video_rules").checked ? "1" : "0";
@@ -788,7 +788,6 @@ function set_version() {
 					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
 					<li>0 3 * * * /koolshare/scripts/KoolProxyR_rule_update.sh update</li>
 					<li></li>
-					<li></li>
 					<li><font color="#FF6347"> 问： </font>我想自动升级KoolProxyR版本可以吗？</li>
 					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
 					<li>0 4 * * * /koolshare/scripts/KoolProxyR_update_now.sh</li>
@@ -799,9 +798,6 @@ function set_version() {
 					<li></li>
 					<li><font color="#FF6347"> 问： </font>我的安卓手机，刷机后卡开机界面了。谷歌服务哪点一直过不了。</li>
 					<li><font color="#1E90FF"> 答： </font>请在【访问控制】中给手机放行，或者，暂时关闭KPR！</li>
-					<li></li>
-					<li><font color="#FF6347"> 问： </font>我同事安装了kpr和v2ray发现开机变慢了。需要等待4-5分钟才能开机。</li>
-					<li><font color="#1E90FF"> 答： </font>感谢TG的“dantes”的测试，此问题原因不明，等查明原因后立即修复。大家开机多等下。感谢理解。 </li>
 					<li></li>
 					<li><font color="#FF6347"> 问： </font>KoolProxyR为什么要重启SS,V2ray，koolgame？</li>
 					<li><font color="#1E90FF"> 答： </font>是的，是需要重启来适应kpr的开关，这样才能让流量走kpr，而不会导致代理无效的问题，不需要手动重启代理。</li>			
@@ -851,7 +847,7 @@ function set_version() {
 		<li>【全端口模式】是包括443和80端口以内的全部端口进行过滤，如果被过滤的设备开启这个，也需要安装证书！</li>
 		<li>需要自定义列表内没有的主机时，把【主机别名】留空，填写其它的即可！</li>
 		<li>访问控制面板中【ip地址】和【mac地址】至少一个不能为空！只有ip时匹配ip，只有mac时匹配mac，两个都有一起匹配！</li>
-		<li>在路由器下的设备，不管是电脑，还是移动设备，都可以在浏览器中输入<i><b>110.110.110.110</b></i>来下载证书。</i></li>
+		<li>在路由器下的设备，不管是电脑，还是补充，都可以在浏览器中输入<i><b>110.110.110.110</b></i>来下载证书。</i></li>
 		<li>如果想在多台装有koolroxy的路由设备上使用一个证书，请用本插件的证书备份功能，并上传到另一台路由。</li>
 		<li><font color="red">注意！【全端口模式】一般情况慎重选择，因为kpr支持非标准端口过滤，只要规则上有。</font></li>
 		<li><font color="red">注意！【黑名单模式】一般情况下请无论如何都不要选，毕竟黑名单里面的规则不过毛毛雨。</font></li>
@@ -896,8 +892,8 @@ function set_version() {
 			{ title: 'KPR  主规则', multi: [
 				{ name: 'koolproxyR_easylist_rules',type:'checkbox',value: dbus.koolproxyR_easylist_rules == '1', suffix: '<lable id="_kp_easylist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由EasylistChina和CJX sAnnoyance 与KPR自定义规则组成，是KPR的首选规则.。</lable>&nbsp;&nbsp;' },
 			]},	
-			{ title: '移动设备规则', multi: [
-			{ name: 'koolproxyR_mobile_rules',type:'checkbox',value: dbus.koolproxyR_mobile_rules == '1', suffix: '<lable id="_kp_mobile_rules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由adguard官方人员编写，主要用于去除移动设备端的广告。</lable>&nbsp;&nbsp;' }
+			{ title: '补充规则', multi: [
+			{ name: 'koolproxyR_replenish_rules',type:'checkbox',value: dbus.koolproxyR_replenish_rules == '1', suffix: '<lable id="_kp_replenish_rules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由adguard官方整理的DNS过滤名单，主要用于对其他规则补充。</lable>&nbsp;&nbsp;' }
 			]},
 			{ title: '视频规则（加密）', multi: [
 				{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则可以屏蔽国内网站的视频广告，需HTTPS模式。</lable>&nbsp;&nbsp;' },
@@ -911,7 +907,7 @@ function set_version() {
 
 			{ title: '规则更新', multi: [
 				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update != 0, suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">KPR主规则</lable>&nbsp;&nbsp;' },
-				{ name:'koolproxyR_basic_mobile_update',type:'checkbox',value: dbus.koolproxyR_basic_mobile_update != 0, suffix: '<lable id="_koolproxyR_basic_mobile_update_txt">移动设备规则</lable>&nbsp;&nbsp;' },
+				{ name:'koolproxyR_basic_replenish_update',type:'checkbox',value: dbus.koolproxyR_basic_replenish_update != 0, suffix: '<lable id="_koolproxyR_basic_replenish_update_txt">补充规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_video_update',type:'checkbox',value: dbus.koolproxyR_basic_video_update != 0, suffix: '<lable id="_koolproxyR_basic_video_update_txt">KP视频规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update != 0, suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
 				{ suffix: '<button id="_update_rules_now" style="margin-top:5px;" onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' },
