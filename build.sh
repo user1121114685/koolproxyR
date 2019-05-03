@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.39"
+VERSION="900.8.41"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -74,14 +74,15 @@ cat fanboy-annoyance.txt | grep "^||" | sed 's#^||#||http://#g' >> fanboy-annoya
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> fanboy-annoyance_https.txt
-cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> fanboy-annoyance_https.txt
-cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> fanboy-annoyance_https.txt
+# cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> fanboy-annoyance_https.txt
+# cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> fanboy-annoyance_https.txt
 
 
 # 给github的https放行
 sed -i '/github/d' fanboy-annoyance_https.txt
 # 给apple的https放行
 sed -i '/apple.com/d' fanboy-annoyance_https.txt
+sed -i '/mzstatic.com/d' fanboy-annoyance_https.txt
 # 给api.twitter.com的https放行
 sed -i '/twitter.com/d' fanboy-annoyance_https.txt
 # 给facebook.com的https放行
@@ -140,8 +141,8 @@ cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g
 cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> easylistchina_https.txt
 cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -i '^|http' >> easylistchina_https.txt
 
-cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> easylistchina_https.txt
-cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> easylistchina_https.txt
+# cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> easylistchina_https.txt
+# cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> easylistchina_https.txt
 # 给facebook.com的https放行
 sed -i '/facebook.com/d' easylistchina_https.txt
 sed -i '/fbcdn.net/d' easylistchina_https.txt
@@ -209,8 +210,8 @@ cat AdGuard_DNS.txt | grep "^||" | sed 's#^||#||http://#g' >> AdGuard_DNS_https.
 cat AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> AdGuard_DNS_https.txt
 cat AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> AdGuard_DNS_https.txt
 cat AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> AdGuard_DNS_https.txt
-cat AdGuard_DNS.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> AdGuard_DNS_https.txt
-cat AdGuard_DNS.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> AdGuard_DNS_https.txt
+# cat AdGuard_DNS.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> AdGuard_DNS_https.txt
+# cat AdGuard_DNS.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> AdGuard_DNS_https.txt
 
 
 # 删除可能导致Kpr变慢的Https规则
@@ -251,6 +252,7 @@ sed -i '/qq.com/d' AdGuard_DNS.txt
 sed -i '/github/d' AdGuard_DNS.txt
 # 给apple的https放行
 sed -i '/apple.com/d' AdGuard_DNS.txt
+sed -i '/mzstatic.com/d' AdGuard_DNS.txt
 # 给api.twitter.com的https放行
 sed -i '/twitter.com/d' AdGuard_DNS.txt
 # 给facebook.com的https放行

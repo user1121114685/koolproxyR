@@ -370,6 +370,10 @@ function issues_KP(){
 function update_KPR_rule(){
 	window.open("https://github.com/user1121114685/koolproxyR_rule_list/edit/master/kpr_our_rule.txt");
 }
+function update_KPR_rule_education(){
+	window.open("https://shaoxia.xyz/post/koolproxyr%E8%A7%84%E5%88%99%E7%BC%96%E5%86%99%E6%95%99%E7%A8%8B/");
+}
+
 function verifyFields(){
 	var a = E('_koolproxyR_enable').checked;
 //			var f = (E('_koolproxyR_reboot').value == '1');
@@ -746,10 +750,13 @@ function set_version() {
 //						{ name: 'koolproxyR_reboot_hour', type: 'select', options: option_reboot_hour, value: dbus.koolproxyR_reboot_hour || "", suffix: '<lable id="koolproxyR_reboot_hour_suf">重启</lable>', prefix: '<span id="koolproxyR_reboot_hour_pre" class="help-block"><lable>每天</lable></span>' },
 //						{ name: 'koolproxyR_reboot_inter_hour', type: 'select', options: option_reboot_inter, value: dbus.koolproxyR_reboot_inter_hour || "", suffix: '<lable id="koolproxyR_reboot_inter_hour_suf">重启</lable>', prefix: '<span id="koolproxyR_reboot_inter_hour_pre" class="help-block"><lable>每隔</lable></span>' }
 //					] },
-			{ title: '证书下载', suffix: ' <button id="_download_cert" onclick="download_cert();" class="btn btn-danger">证书下载</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="https_KP();" class="btn btn-success">相关教程</button>' },
-			{ title: '项目信息', suffix: ' <button id="_find_github" onclick="find_github();" class="btn">开源地址</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR();" class="btn">更新插件</button>' },
-			{ title: '交流渠道', suffix: ' <button onclick="issues_KP();" class="btn btn-danger">建议及反馈</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="find_telegram();" class="btn btn-danger">加入TG群</button>' },
-//					{ title: 'KoolProxy官方链接', suffix: ' <button id="_findkp_github" onclick="findkp_github();" class="btn">KoolProxy</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="KP_KP();" class="btn">KoolProxy官网</button>' }
+			{ title: '证书下载', suffix: ' <button id="_download_cert" onclick="download_cert();"style="border-radius: 20px"  class="btn btn-danger">证书下载</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="https_KP();" style="border-radius: 20px" class="btn btn-success">相关教程</button>' },
+			{ title: '项目信息', suffix: ' <button id="_find_github" onclick="find_github();"style="border-radius: 20px"  class="btn">开源地址</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR();"style="border-radius: 20px"  class="btn">更新插件</button>' },
+			{ title: '交流渠道', suffix: ' <button onclick="issues_KP();" style="border-radius: 20px" class="btn btn-danger">建议反馈</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="find_telegram();"style="border-radius: 20px"  class="btn btn-danger">加入TG群</button>'  },
+
+			
+
+                         
 
 		]);
 	</script>
@@ -875,8 +882,8 @@ function set_version() {
 	<div id="kp_certificate_management" class="section"></div>
 	<script type="text/javascript">
 		$('#kp_certificate_management').forms([
-			{ title: '证书备份', suffix: '<button onclick="kp_cert(\'KoolProxyR_cert.sh\', 1);" class="btn btn-success">证书备份 <i class="icon-download"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kp_cert_0(\'KoolProxyR_cert.sh\', 3);" class="btn btn-success">生成 .0根证书 <i class="icon-download"></i></button><font color="#FF0000">【.0根证书】&nbsp;&nbsp;用于安卓7.0以上的设备安装HTTPS证书，详见教程。</font></lable>' },
-			{ title: '证书恢复', suffix: '<input type="file" id="file" size="50">&nbsp;&nbsp;<button id="upload1" type="button"  onclick="restore_cert();" class="btn btn-danger">上传并恢复 <i class="icon-cloud"></i></button>' }
+			{ title: '证书备份', suffix: '<button onclick="kp_cert(\'KoolProxyR_cert.sh\', 1);" style="border-radius: 15px" class="btn btn-success">证书备份 <i class="icon-download"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kp_cert_0(\'KoolProxyR_cert.sh\', 3);" style="border-radius: 15px" class="btn btn-success">生成 .0根证书 <i class="icon-download"></i></button><font color="#FF0000">【.0根证书】&nbsp;&nbsp;用于安卓7.0以上的设备安装HTTPS证书，详见教程。</font></lable>' },
+			{ title: '证书恢复', suffix: '<input type="file" id="file" size="50">&nbsp;&nbsp;<button id="upload1" type="button"  onclick="restore_cert();" style="border-radius: 15px" class="btn btn-danger">上传并恢复 <i class="icon-cloud"></i></button>' }
 		]);
 	</script>
 </div>
@@ -910,9 +917,11 @@ function set_version() {
 				{ name:'koolproxyR_basic_replenish_update',type:'checkbox',value: dbus.koolproxyR_basic_replenish_update != 0, suffix: '<lable id="_koolproxyR_basic_replenish_update_txt">补充规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_video_update',type:'checkbox',value: dbus.koolproxyR_basic_video_update != 0, suffix: '<lable id="_koolproxyR_basic_video_update_txt">KP视频规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update != 0, suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
-				{ suffix: '<button id="_update_rules_now" style="margin-top:5px;" onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' },
+				
+                                  { suffix: '<button id="_update_rules_now"style="border-radius: 15px""background-color:#EAADEA"  onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' },
+
 			]},	
-			{ title: '为KoolProxyR贡献规则', suffix: '<font color="#FF0000">通过此链接贡献的规则，将服务更多的KPR用户。方便更多人</font>&nbsp;&nbsp;&nbsp;<button onclick="update_KPR_rule();" class="btn">提交规则</button>' }
+			{ title: '为KoolProxyR贡献规则', suffix: '<font color="#FF0000">通过此链接贡献的规则，将服务更多的KPR用户。方便更多人</font>&nbsp;&nbsp;&nbsp;<button onclick="update_KPR_rule();" style="border-radius: 15px" class="btn">提交规则</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR_rule_education();" style="border-radius: 15px" class="btn">提交规则教程</button>' }
 		]);
 	</script>
 	<br><hr>

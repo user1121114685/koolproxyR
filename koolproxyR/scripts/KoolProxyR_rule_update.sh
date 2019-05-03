@@ -149,14 +149,15 @@ update_rule(){
 		cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
-		cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
-		cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		# cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		# cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 
 
 		# 给github放行
 		sed -i '/github/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		# 给apple的https放行
 		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		sed -i '/mzstatic.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		# 给api.twitter.com的https放行
 		sed -i '/twitter.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		# 给facebook.com的https放行
@@ -218,8 +219,8 @@ update_rule(){
 		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
-		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
-		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		# cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		# cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 		# 给facebook.com的https放行
 		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
@@ -282,8 +283,8 @@ update_rule(){
 		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
 		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
 		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
+		# cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
+		# cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
 		# 删除可能导致卡顿的HTTPS规则
 		sed -i '/\.\*\//d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
 
@@ -315,6 +316,7 @@ update_rule(){
 		sed -i '/github/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
 		# 给apple的https放行
 		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
+		sed -i '/mzstatic.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
 		# 给api.twitter.com的https放行
 		sed -i '/twitter.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
 		# 给facebook.com的https放行

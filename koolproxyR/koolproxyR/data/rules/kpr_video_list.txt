@@ -1,4 +1,6 @@
-||https://bsv.atm.youku.com
+||https://youku.com/cms/tool/pub/get_putdata.
+||https://cp31.ott.cibntv.net/*.mp4$domain=youku.com,third-party
+||http://cp31.ott.cibntv.net/*.mp4$domain=youku.com,third-party
 ||https://atm.youku.com^
 ||https://hudong.alicdn.com/api/data/$domain=player.youku.com
 ||https://hudong.pl.youku.com/interact/player/get/plugins?
@@ -69,8 +71,8 @@ http://m.youku.com##.hdwrap
 http://v.youku.com##.laifeng
 http://youku.com##.pop-prompt-box
 http://m.youku.com##.recommend
-@@@@https://*u-ads.adap.tv*youku.$domain=youku.com
-@@http://*u-ads.adap.tv*youku.$domain=youku.com
+@@@@https://data.video.iqiyi.com
+@@@@https://cupid.iqiyi.com
 @@@@||https://cupid.iqiyi.com^
 ||https://iqiyi.com/track$popup
 ||https://kfc.com.cn^$popup,domain=iqiyi.com
@@ -276,6 +278,8 @@ http://v.qq.com##a[href*="amway.com.cn"]
 ||http://discuz.gtimg.cn/cloud/scripts/discuz_tips.js
 ||http://gtimg.cn/mediastyle/event/20160306_music_live/img/skd.jpg
 ||http://pgdt.gtimg.cn/gdt/$domain=info.3g.qq.com
+@@@@https://livep.l.qq.com
+@@@@https://vd.l.qq.com
 ||https://l.qq.com/lview?
 ||https://mail.qq.com/lview?
 ||http://l.qq.com/lview?

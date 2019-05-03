@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: L9nE7xV6WoiwG3DkPSrEfQ
-! Version: 201904300841
+! Checksum: QAbfePmso6T7lM+N/s0EoA
+! Version: 201905030842
 ! Title: Fanboy's Annoyance List
-! Last modified: 30 Apr 2019 08:41 UTC
+! Last modified: 03 May 2019 08:42 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -21449,19 +21449,3 @@ http://meethue.com,mydziewczyny.pl#@#[data-cookie-id]
 http://mymuesli.com#@#cookies_consent
 http://birramenabrea.com#@#div[data-cookie]
 http://timeout.com#@#div[data-module="cookie_banner"]
-@@http://*/nk-sub.min.js$script,~third-party
-@@http://*/cookie*/jquery.cookie.js$script,~third-party,domain=~albeco.com.pl
-@@http://*/cookie_law/plugin.js$script,~third-party
-@@http://*/zig_cookiepolicybar/*/CookieBar.js$script,~third-party
-@@http://*/wp-content/plugins/wp-minify/min/?*,wp-content$stylesheet
-@@http://*.php?f=js/*.js,js$script,domain=undicom.pl
-@@http://*/angular-facebook.js
-@@http://*/share-sprite-$domain=askubuntu.com|mathoverflow.net|serverfault.com|stackapps.com|stackexchange.com|stackoverflow.com|superuser.com
-@@http://*/socialmedia_$domain=defacto.expert
-@@http://*/wp-content/js/googleplus-sign-in.js$script
-@@http://*/wp-content/plugins/2-click-socialmedia-buttons/js/social_bookmarks-min.js?$~third-party
-@@http://*/wp-content/plugins/facebook-page-promoter-lightbox/includes/featherlight/close.png$image,~third-party
-@@http://*/wp-content/plugins/super-socializer/css/front.css$~third-party
-@@http://*/wp-content/plugins/super-socializer/js/front/facebook/sdk.js$~third-party
-@@http://*/wp-content/plugins/wp-minify/min/?*,wp-content$stylesheet
-@@http://*/wp-content/plugins/wp-rocket/$image,~third-party

@@ -1,8 +1,8 @@
-! Checksum: N+fhIxcHxPY36gDDgzWnmA
+! Checksum: j6Q1tukp9O8eyEalaSFKog
 ! Title: AdGuard Simplified domain names filter
 ! Description: Filter composed of several other filters (English filter, Social media filter, Spyware filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.
-! Version: 2.0.4.76
-! TimeUpdated: 2019-04-30T11:30:20+03:00
+! Version: 2.0.4.80
+! TimeUpdated: 2019-05-02T20:30:18+03:00
 ! Expires: 2 days (update frequency)
 !
 @@@@||https://blog.logrocket.com^|
@@ -2356,7 +2356,6 @@
 ||https://prolinker.ru^
 ||https://promenadd.ru^
 ||https://promo-banner.ru^
-||https://promo-bc.com^
 ||https://promo.md^
 ||https://promo.partner.alawar.ru^
 ||https://promo.rzonline.ru^
@@ -3672,6 +3671,12 @@
 ||https://svitnews.com^
 ||https://vi.bigmir.net^
 ||https://widget.mediastealer.com^
+||https://reftedlettiny.info^
+||https://torshatencalsi.info^
+||https://adtorio.com^
+||https://vestlitt.online^
+||https://serverflox.online^
+||https://420147981.world^
 ||https://yesra.xyz^
 ||https://cepailru.com^
 ||https://nanoadexchange.com^
@@ -4218,6 +4223,7 @@
 ||https://wirenth.com^
 ||https://4dsbanner.net^
 ||https://spunto.ru^
+||https://promo-bc.com^
 ||https://apopgo.com^
 ||https://cobalten.com^
 ||https://soujoobafoo.com^
@@ -5851,6 +5857,9 @@
 ||https://api.ads.watchabc.go.com^
 ||https://ad.prismamediadigital.com^
 ||https://ad2play.ftv-publicite.fr^
+||https://socdm.com^
+||https://criteo.com^
+||https://criteo.net^
 ||https://mblapi.ssl2.duapps.com^
 ||https://api.mobula.ds.duapps.com^
 ||https://noxagile.duapp.com^
@@ -6879,7 +6888,6 @@
 ||https://aag.yahooapis.jp^
 ||https://entrypoint.search.yahooapis.jp^
 ||https://siteanalytics.jp^
-||https://socdm.com^
 ||https://tag.nifty.com^
 ||https://thatsping.jp^
 ||https://tracer.jp^
@@ -12567,6 +12575,7 @@
 ||https://advmaiotg.com^
 ||https://adxpddpc.com^
 ||https://aeeefzfuk.com^
+||https://aefvxtue.com^
 ||https://aeizbvtknp.com^
 ||https://aemxvcqi.com^
 ||https://aeobzaii.com^
@@ -12649,6 +12658,7 @@
 ||https://auyyklnpj.com^
 ||https://avjxftprif.com^
 ||https://avkigyhrazah.com^
+||https://avoljljeif.com^
 ||https://avonnfckdeqeyr.com^
 ||https://avpgdzdesjnt.com^
 ||https://avrdrpwt.com^
@@ -12678,6 +12688,7 @@
 ||https://baphruesqm.com^
 ||https://bardogjvsa.com^
 ||https://bavftcgoapga.com^
+||https://bbfasycx.com^
 ||https://bbillwowlfur.com^
 ||https://bbnnjjom.com^
 ||https://bbxaumvpzqpunx.com^
@@ -12689,11 +12700,14 @@
 ||https://bdnfszdqwaduv.com^
 ||https://bdtmbiezv.com^
 ||https://bdtwxreri.com^
+||https://bdyhvguiq.com^
 ||https://beelzgkdjr.com^
 ||https://begnsbnjegnolq.com^
 ||https://bekiruvppl.com^
 ||https://bfhlxjwc.com^
 ||https://bfmrffluuazwn.com^
+||https://bfrhqyaxtxbq.com^
+||https://bftmphbwpwnnt.com^
 ||https://bfxachbubcki.com^
 ||https://bgchxhhzdee.com^
 ||https://bgfdrngowyy.com^
@@ -12706,6 +12720,7 @@
 ||https://bhpxcsmvkqgd.com^
 ||https://biijdpauyvf.com^
 ||https://bikuetrh.com^
+||https://biliqpvehf.com^
 ||https://bimwswreljucxa.com^
 ||https://binullxzwnsqws.com^
 ||https://birslhmnnc.com^
@@ -12755,6 +12770,7 @@
 ||https://bwohgwrk.com^
 ||https://bwvigmkn.com^
 ||https://bxejeqyudkgum.com^
+||https://bxknvtbmzsqc.com^
 ||https://bxniyvvxufxyoy.com^
 ||https://bxvydxjqklq.com^
 ||https://bygigguvflpv.com^
@@ -12818,6 +12834,7 @@
 ||https://cjojvvfyb.com^
 ||https://cjsgmoekcb.com^
 ||https://cjuztylaun.com^
+||https://cjwjpmudu.com^
 ||https://ckxyvauhqfuoin.com^
 ||https://clgyhwaoh.com^
 ||https://clkkcokl.com^
@@ -12915,6 +12932,7 @@
 ||https://djagrjpaoek.com^
 ||https://djiufagozzla.com^
 ||https://djnroblmpyxrh.com^
+||https://dkgitkwo.com^
 ||https://dktaqipmquo.com^
 ||https://dkxeorhjmua.com^
 ||https://dlotljikswmvq.com^
@@ -12928,6 +12946,7 @@
 ||https://dnpehliwdvjkp.com^
 ||https://dnzevkqpk.com^
 ||https://dojmlztmbrvp.com^
+||https://doksfyhdtqmipa.com^
 ||https://donhyxngg.com^
 ||https://dpnahzfbb.com^
 ||https://dpoffxqjlgt.com^
@@ -12973,6 +12992,7 @@
 ||https://dywqwrtnhegyz.com^
 ||https://dzacosgvnz.com^
 ||https://dzaqzgjsot.com^
+||https://dzblysulli.com^
 ||https://dzkmbajm.com^
 ||https://dzqoubtxsaskdl.com^
 ||https://dzztjcbt.com^
@@ -13012,6 +13032,7 @@
 ||https://elatsadlux.com^
 ||https://elcolpplwua.com^
 ||https://elfnwncr.com^
+||https://elimpfdlss.com^
 ||https://eloumbsyd.com^
 ||https://elvfmxguozafu.com^
 ||https://elwbhndbxfqk.com^
@@ -13067,8 +13088,10 @@
 ||https://ezuereisgj.com^
 ||https://fabrtgzehf.com^
 ||https://faegbmhey.com^
+||https://fbhfbgtj.com^
 ||https://fbpetrwt.com^
 ||https://fcbykurluasdeu.com^
+||https://fcihwhsiukz.com^
 ||https://fcjodgfpjiswa.com^
 ||https://fdbrwxtm.com^
 ||https://fdrkesvb.com^
@@ -13117,6 +13140,7 @@
 ||https://fpluhtibx.com^
 ||https://fpoxpjpxn.com^
 ||https://fpqeowmsv.com^
+||https://fpunplooxphq.com^
 ||https://fpxkjlzmkqp.com^
 ||https://fpxthotxzuf.com^
 ||https://fpzcaabzhvzz.com^
@@ -13139,6 +13163,7 @@
 ||https://fsjvhkobubai.com^
 ||https://fsmpxxdyv.com^
 ||https://fsnhesxsw.com^
+||https://fsohxklbxdi.com^
 ||https://fsqknqvlngde.com^
 ||https://ftqgkcmbkptohh.com^
 ||https://ftttziizhuplfj.com^
@@ -13148,6 +13173,7 @@
 ||https://ftymzxmic.com^
 ||https://fuaawvoqbzza.com^
 ||https://fukkzdxfyrchhc.com^
+||https://fupgvldb.com^
 ||https://fuwgbbkktwbu.com^
 ||https://fuymatqqiyz.com^
 ||https://fvenxjtzuaxu.com^
@@ -13155,6 +13181,7 @@
 ||https://fviwwkvvxs.com^
 ||https://fvsdvxjpxi.com^
 ||https://fvzompquocgdsu.com^
+||https://fvzusqdf.com^
 ||https://fwbhvrpiunlzyh.com^
 ||https://fwwdmnkjg.com^
 ||https://fwzqogrlgsdl.com^
@@ -13164,6 +13191,7 @@
 ||https://fxpqoyxlas.com^
 ||https://fxvbsnwnwoib.com^
 ||https://fynprrom.com^
+||https://fyphnmoz.com^
 ||https://fytrvzettfn.com^
 ||https://fyyyyppk.com^
 ||https://fzbnuyjgyexs.com^
@@ -13241,6 +13269,7 @@
 ||https://grgxptjsgl.com^
 ||https://grkrkurbyykok.com^
 ||https://grlygpybnhbwcu.com^
+||https://grsdvgnr.com^
 ||https://grsnseuoispsco.com^
 ||https://gsghbxydcyum.com^
 ||https://gsjhehtqvin.com^
@@ -13255,6 +13284,7 @@
 ||https://gvahzhgblkkyr.com^
 ||https://gvhqnlti.com^
 ||https://gvoraoonpi.com^
+||https://gvwyxnyq.com^
 ||https://gwovohvkzay.com^
 ||https://gwxaulcgmizcq.com^
 ||https://gxeoadmo.com^
@@ -13267,6 +13297,7 @@
 ||https://gxzfpusmd.com^
 ||https://gynzvwhup.com^
 ||https://gyycgkchjtimu.com^
+||https://gzmknnasowdtop.com^
 ||https://gzoprhvqhie.com^
 ||https://gzqoxmkuhl.com^
 ||https://hafksvqiir.com^
@@ -13289,6 +13320,7 @@
 ||https://hcyqwhquqjosn.com^
 ||https://hdcfyrzx.com^
 ||https://hddzzizitskc.com^
+||https://hdfsruiqwgjdo.com^
 ||https://hdnvtfyvyhq.com^
 ||https://hdoabbjyyebca.com^
 ||https://hduefoyd.com^
@@ -13299,6 +13331,7 @@
 ||https://hehraybryciyls.com^
 ||https://hezasoiduicbha.com^
 ||https://hfedqcww.com^
+||https://hffgptqfpewjz.com^
 ||https://hfslmsbj.com^
 ||https://hfubvezyoyqs.com^
 ||https://hgbxmqyqoplpif.com^
@@ -13336,6 +13369,7 @@
 ||https://hnshjxowpldar.com^
 ||https://hntntnfizowo.com^
 ||https://hntxitqhto.com^
+||https://hoghqjddg.com^
 ||https://hogylomirfc.com^
 ||https://hohrnldconk.com^
 ||https://hoqqzlvwukpo.com^
@@ -13392,6 +13426,7 @@
 ||https://iapxxrjzc.com^
 ||https://iasodjsbjcq.com^
 ||https://iatwyqgvpq.com^
+||https://ibclxtlh.com^
 ||https://ibetinwubwl.com^
 ||https://ibfsream.com^
 ||https://ibfueyttemsefi.com^
@@ -13446,6 +13481,7 @@
 ||https://ilugfyhlfv.com^
 ||https://iluwjbuwm.com^
 ||https://ilxwlsnzhzukj.com^
+||https://imayjubge.com^
 ||https://imbpmlyhkk.com^
 ||https://imevdywafhro.com^
 ||https://imidshmpzr.com^
@@ -13469,6 +13505,7 @@
 ||https://irfiysdcrnleu.com^
 ||https://isfxsiooyjad.com^
 ||https://isnsgjhthhaqtu.com^
+||https://ispaagigjygd.com^
 ||https://isxwajatbig.com^
 ||https://itlmnxlauah.com^
 ||https://itsyuvrlesq.com^
@@ -13591,6 +13628,7 @@
 ||https://jwbroglwc.com^
 ||https://jwgsepzz.com^
 ||https://jwwyuxjv.com^
+||https://jxexqemgbxvv.com^
 ||https://jxmhgmkuw.com^
 ||https://jxnwpeqkhtkrw.com^
 ||https://jxseoruuv.com^
@@ -13659,6 +13697,7 @@
 ||https://kmypiwpbastt.com^
 ||https://knepsiwviviwed.com^
 ||https://knimmqli.com^
+||https://knndhcnwv.com^
 ||https://knnvmkbemftwgj.com^
 ||https://knpbefvk.com^
 ||https://knqjhdkndh.com^
@@ -13691,6 +13730,7 @@
 ||https://kwajysvvjeyvs.com^
 ||https://kwcrryneebg.com^
 ||https://kweayxzfazrws.com^
+||https://kwflzktzaxczm.com^
 ||https://kwkxvbjz.com^
 ||https://kwomkjjoajcyyt.com^
 ||https://kwsmqtposrub.com^
@@ -13751,6 +13791,7 @@
 ||https://lliumrpvj.com^
 ||https://llpdtbmowsg.com^
 ||https://llrblpesvjc.com^
+||https://llsdercqm.com^
 ||https://llvidwpt.com^
 ||https://lmccawemcuqma.com^
 ||https://lmcoiiwpguaorp.com^
@@ -13954,6 +13995,7 @@
 ||https://nntvphjayapz.com^
 ||https://nnulezwhvbrzwu.com^
 ||https://nnvqabkpa.com^
+||https://nobpgppgbucy.com^
 ||https://nofhtrsaz.com^
 ||https://noiaifyednjt.com^
 ||https://nolpjfsu.com^
@@ -14020,6 +14062,7 @@
 ||https://ocfsmefzzarkmo.com^
 ||https://ocixtsnyxxvyaw.com^
 ||https://ocrwyhamhfpfc.com^
+||https://odanetrlgvunth.com^
 ||https://odezwmru.com^
 ||https://odlkdyoe.com^
 ||https://ododtktl.com^
@@ -14038,6 +14081,7 @@
 ||https://ogyhsyuhczvjg.com^
 ||https://ohrdpvkzhzbg.com^
 ||https://oijjptnwrg.com^
+||https://oimpkumntje.com^
 ||https://oinqqbzs.com^
 ||https://oiumoqzo.com^
 ||https://oixisqtlbhygp.com^
@@ -14051,6 +14095,7 @@
 ||https://omakfhugexq.com^
 ||https://onocjgpq.com^
 ||https://oofpjjtc.com^
+||https://ookiqhfioldxwj.com^
 ||https://ootqfqjhzfrtn.com^
 ||https://oounzfsyxiuj.com^
 ||https://ooutqfslr.com^
@@ -14131,6 +14176,7 @@
 ||https://pkitdifnkz.com^
 ||https://pkvhprfhbtft.com^
 ||https://pkxquvydrgin.com^
+||https://plhvzqkkirw.com^
 ||https://pllregftgbgmdi.com^
 ||https://plxtejszb.com^
 ||https://plzjcnyxcdl.com^
@@ -14311,6 +14357,7 @@
 ||https://qyfunsvmtudozq.com^
 ||https://qyifxakawscsyd.com^
 ||https://qyiiudex.com^
+||https://qyillxuyjdlmh.com^
 ||https://qyqbslpprlph.com^
 ||https://qyqvfjvbzosz.com^
 ||https://qyrzcsoaey.com^
@@ -14349,6 +14396,7 @@
 ||https://rfcsmdodviqhn.com^
 ||https://rfcxwidka.com^
 ||https://rfgldefouazmj.com^
+||https://rfmtxdjulpdb.com^
 ||https://rfpnlsbbu.com^
 ||https://rfrsnqen.com^
 ||https://rgejlqtlr.com^
@@ -14419,6 +14467,7 @@
 ||https://rxgbytxipwa.com^
 ||https://rxhicseychr.com^
 ||https://rxysradiyvcp.com^
+||https://ryrrhgpmlif.com^
 ||https://ryybhoklizmuew.com^
 ||https://rzfldcrlwe.com^
 ||https://rzizcnhoobxw.com^
@@ -14442,6 +14491,7 @@
 ||https://sdtqotoe.com^
 ||https://sdzxojlt.com^
 ||https://secfpgpqx.com^
+||https://seoaelrfdy.com^
 ||https://sepyqhipq.com^
 ||https://seuojaesymeriv.com^
 ||https://sfgkhgfdsochwd.com^
@@ -14467,6 +14517,7 @@
 ||https://sicteppojdwr.com^
 ||https://sihciabzm.com^
 ||https://sinyfqrmiqgd.com^
+||https://siqcrwlrqjc.com^
 ||https://sisrgcvomn.com^
 ||https://sisyqzktimhrgo.com^
 ||https://sivqblzejhx.com^
@@ -14497,6 +14548,7 @@
 ||https://ssigftlcuc.com^
 ||https://ssjgkyyrqiwjol.com^
 ||https://ssqzsdcnoqv.com^
+||https://stekcwrdwohbch.com^
 ||https://sthtrtvkkt.com^
 ||https://stvayyokjvxnl.com^
 ||https://sudolljkjzxdfc.com^
@@ -14560,11 +14612,13 @@
 ||https://thqwivyhdpoem.com^
 ||https://tibzpgmogjqa.com^
 ||https://ticpqxnv.com^
+||https://tielsdhblnmiv.com^
 ||https://tifzusomh.com^
 ||https://tikjbfpd.com^
 ||https://tiphkuloov.com^
 ||https://tiptwfbksobui.com^
 ||https://tjdrxdsto.com^
+||https://tjtukeaszrqco.com^
 ||https://tjyoznaozivi.com^
 ||https://tkewsaesxhf.com^
 ||https://tkhoazslm.com^
@@ -14625,6 +14679,7 @@
 ||https://tyccaweownne.com^
 ||https://tylzbdkjsjig.com^
 ||https://tyuawmgqsbz.com^
+||https://tzbdudhsip.com^
 ||https://tzfywuot.com^
 ||https://tzyvolvenvyim.com^
 ||https://uabdikmdwqdbr.com^
@@ -14746,6 +14801,7 @@
 ||https://vbiudrdieouauc.com^
 ||https://vbjpddtj.com^
 ||https://vbqcwfleda.com^
+||https://vbuhzjnj.com^
 ||https://vbwakfbazxd.com^
 ||https://vbwfqaisbgn.com^
 ||https://vbxrcekqkmrzyd.com^
@@ -14824,6 +14880,7 @@
 ||https://vsrpztnxdejo.com^
 ||https://vsrsviytlb.com^
 ||https://vsstaewjpqcymx.com^
+||https://vsupeokq.com^
 ||https://vsxjjmyz.com^
 ||https://vtbyvtmabpclx.com^
 ||https://vtcxhnri.com^
@@ -14845,6 +14902,7 @@
 ||https://vwxptkkqbyppe.com^
 ||https://vxijqpsxpdlztm.com^
 ||https://vxkupxpf.com^
+||https://vxneczkffmaxkf.com^
 ||https://vxrpmslex.com^
 ||https://vxyqsxeo.com^
 ||https://vxzudzbjvtegu.com^
@@ -14939,10 +14997,12 @@
 ||https://wuuyczqcgm.com^
 ||https://wuyednuhrxvsr.com^
 ||https://wvetuwwcojfgw.com^
+||https://wvrmnqgmemkw.com^
 ||https://wvrntfonizbxn.com^
 ||https://wvvftburvtyz.com^
 ||https://wwmcuhvqaf.com^
 ||https://wwngdgldlsv.com^
+||https://wwnuowyww.com^
 ||https://wwohikwhl.com^
 ||https://wwwmurgd.com^
 ||https://wxhpszslw.com^
@@ -15022,6 +15082,7 @@
 ||https://xlnwabndmqn.com^
 ||https://xlqkpyimdep.com^
 ||https://xlspkqpnnqj.com^
+||https://xmevsiig.com^
 ||https://xmgrjuqqc.com^
 ||https://xmlqerwrehfqo.com^
 ||https://xmrchaqjwqyvz.com^
@@ -15063,8 +15124,10 @@
 ||https://xvxcpdcnfgte.com^
 ||https://xwavfvpzg.com^
 ||https://xwcqrzkle.com^
+||https://xwdlgzrnuyo.com^
 ||https://xwrmlohlri.com^
 ||https://xwvofxgqilhy.com^
+||https://xwxbiywlavgpm.com^
 ||https://xxdjmuekj.com^
 ||https://xxhgzzinkrbbo.com^
 ||https://xxqriuedmqzs.com^
@@ -15125,15 +15188,18 @@
 ||https://ykombouoo.com^
 ||https://ykyryixcwn.com^
 ||https://ylbslipwhfdwr.com^
+||https://yleztmobykox.com^
 ||https://yllfdnftjo.com^
 ||https://ylnmzwwc.com^
 ||https://ymgjtzciu.com^
 ||https://ymhqeelitngcr.com^
+||https://ympkaxpaf.com^
 ||https://ymvkirvjqgha.com^
 ||https://ymzrrizntbhde.com^
 ||https://ynhetcoypgnl.com^
 ||https://ynhonjqahrh.com^
 ||https://ynkakgknfljv.com^
+||https://ynkbueizwqu.com^
 ||https://ynlvwynnsstalh.com^
 ||https://ynoiezey.com^
 ||https://yntwcepykkts.com^
@@ -15209,12 +15275,14 @@
 ||https://zdhnepeadrwetg.com^
 ||https://zdjkzqwpqvwcmc.com^
 ||https://zdydvjzexmp.com^
+||https://zeokfeyraxls.com^
 ||https://zfcjtxosje.com^
 ||https://zfoeiywwiqo.com^
 ||https://zfpsotrgboqp.com^
 ||https://zggnhhadif.com^
 ||https://zgwuvfye.com^
 ||https://zhpdtoott.com^
+||https://zhrmtsxcdkjj.com^
 ||https://zidqkapwgnsh.com^
 ||https://ziqdunppuzjd.com^
 ||https://zisbrygtluib.com^
@@ -15263,6 +15331,7 @@
 ||https://zppkpktskuf.com^
 ||https://zpwqnicvzi.com^
 ||https://zpwtylxpfeje.com^
+||https://zpxgdlqoofx.com^
 ||https://zpxlmtujszhixe.com^
 ||https://zqdvdygz.com^
 ||https://zqeskyeg.com^
@@ -20491,7 +20560,6 @@
 ||https://rdstation.com^
 ||https://rdstation.com.br^
 ||https://analytic.rocks^
-||https://settings.crashlytics.com^
 ||https://client-api.matchinguu.com^
 ||https://counter.log24.ru^
 ||https://dcmn.com^
@@ -21199,8 +21267,6 @@
 ||https://craktraffic.com^
 ||https://crashfootwork.com^
 ||https://crazyegg.com^
-||https://criteo.com^
-||https://criteo.net^
 ||https://crmmetrix.fr^
 ||https://crmmetrixwris.com^
 ||https://crosspixel.net^
@@ -22172,7 +22238,6 @@
 ||https://oixpre.net^
 ||https://oixssp-lab.net^
 ||https://oixssp.net^
-||https://ojrq.net^
 ||https://okt.to^
 ||https://oktopost.com^
 ||https://omarsys.com^
@@ -23396,6 +23461,7 @@
 ||https://um-public-panel-prod.s3.amazonaws.com^
 ||https://collection-endpoint-prod.herokuapp.com^
 ||https://collection-endpoint-staging.herokuapp.com^
+||https://app.airtrack.jp^
 ||https://xray.mail.ru^
 ||https://tracking.linda.de^
 ||https://cdn.odoscope.cloud^
@@ -24143,7 +24209,6 @@
 ||https://metrics.brightcove.com^
 ||https://metrics.cnn.com^
 ||https://metrics.foxnews.com^
-||https://metrics.mzstatic.com^
 ||https://metrics.pacsun.com^
 ||https://metrics.washingtonpost.com^
 ||https://meter-svc.nytimes.com^
@@ -24879,7 +24944,6 @@
 ||https://config2.mparticle.com^
 ||https://counter.kingsoft.com^
 ||https://crasheye.cn^
-||https://e.crashlytics.com^
 ||https://data.mistat.*.xiaomi.com^
 ||https://data.mistat.xiaomi.com^
 ||https://data.sec.miui.com^
@@ -30104,7 +30168,6 @@
 ||http://prolinker.ru^
 ||http://promenadd.ru^
 ||http://promo-banner.ru^
-||http://promo-bc.com^
 ||http://promo.md^
 ||http://promo.partner.alawar.ru^
 ||http://promo.rzonline.ru^
@@ -31420,6 +31483,12 @@
 ||http://svitnews.com^
 ||http://vi.bigmir.net^
 ||http://widget.mediastealer.com^
+||http://reftedlettiny.info^
+||http://torshatencalsi.info^
+||http://adtorio.com^
+||http://vestlitt.online^
+||http://serverflox.online^
+||http://420147981.world^
 ||http://yesra.xyz^
 ||http://cepailru.com^
 ||http://nanoadexchange.com^
@@ -31966,6 +32035,7 @@
 ||http://wirenth.com^
 ||http://4dsbanner.net^
 ||http://spunto.ru^
+||http://promo-bc.com^
 ||http://apopgo.com^
 ||http://cobalten.com^
 ||http://soujoobafoo.com^
@@ -33599,6 +33669,9 @@
 ||http://api.ads.watchabc.go.com^
 ||http://ad.prismamediadigital.com^
 ||http://ad2play.ftv-publicite.fr^
+||http://socdm.com^
+||http://criteo.com^
+||http://criteo.net^
 ||http://mblapi.ssl2.duapps.com^
 ||http://api.mobula.ds.duapps.com^
 ||http://noxagile.duapp.com^
@@ -34627,7 +34700,6 @@
 ||http://aag.yahooapis.jp^
 ||http://entrypoint.search.yahooapis.jp^
 ||http://siteanalytics.jp^
-||http://socdm.com^
 ||http://tag.nifty.com^
 ||http://thatsping.jp^
 ||http://tracer.jp^
@@ -40315,6 +40387,7 @@
 ||http://advmaiotg.com^
 ||http://adxpddpc.com^
 ||http://aeeefzfuk.com^
+||http://aefvxtue.com^
 ||http://aeizbvtknp.com^
 ||http://aemxvcqi.com^
 ||http://aeobzaii.com^
@@ -40397,6 +40470,7 @@
 ||http://auyyklnpj.com^
 ||http://avjxftprif.com^
 ||http://avkigyhrazah.com^
+||http://avoljljeif.com^
 ||http://avonnfckdeqeyr.com^
 ||http://avpgdzdesjnt.com^
 ||http://avrdrpwt.com^
@@ -40426,6 +40500,7 @@
 ||http://baphruesqm.com^
 ||http://bardogjvsa.com^
 ||http://bavftcgoapga.com^
+||http://bbfasycx.com^
 ||http://bbillwowlfur.com^
 ||http://bbnnjjom.com^
 ||http://bbxaumvpzqpunx.com^
@@ -40437,11 +40512,14 @@
 ||http://bdnfszdqwaduv.com^
 ||http://bdtmbiezv.com^
 ||http://bdtwxreri.com^
+||http://bdyhvguiq.com^
 ||http://beelzgkdjr.com^
 ||http://begnsbnjegnolq.com^
 ||http://bekiruvppl.com^
 ||http://bfhlxjwc.com^
 ||http://bfmrffluuazwn.com^
+||http://bfrhqyaxtxbq.com^
+||http://bftmphbwpwnnt.com^
 ||http://bfxachbubcki.com^
 ||http://bgchxhhzdee.com^
 ||http://bgfdrngowyy.com^
@@ -40454,6 +40532,7 @@
 ||http://bhpxcsmvkqgd.com^
 ||http://biijdpauyvf.com^
 ||http://bikuetrh.com^
+||http://biliqpvehf.com^
 ||http://bimwswreljucxa.com^
 ||http://binullxzwnsqws.com^
 ||http://birslhmnnc.com^
@@ -40503,6 +40582,7 @@
 ||http://bwohgwrk.com^
 ||http://bwvigmkn.com^
 ||http://bxejeqyudkgum.com^
+||http://bxknvtbmzsqc.com^
 ||http://bxniyvvxufxyoy.com^
 ||http://bxvydxjqklq.com^
 ||http://bygigguvflpv.com^
@@ -40566,6 +40646,7 @@
 ||http://cjojvvfyb.com^
 ||http://cjsgmoekcb.com^
 ||http://cjuztylaun.com^
+||http://cjwjpmudu.com^
 ||http://ckxyvauhqfuoin.com^
 ||http://clgyhwaoh.com^
 ||http://clkkcokl.com^
@@ -40663,6 +40744,7 @@
 ||http://djagrjpaoek.com^
 ||http://djiufagozzla.com^
 ||http://djnroblmpyxrh.com^
+||http://dkgitkwo.com^
 ||http://dktaqipmquo.com^
 ||http://dkxeorhjmua.com^
 ||http://dlotljikswmvq.com^
@@ -40676,6 +40758,7 @@
 ||http://dnpehliwdvjkp.com^
 ||http://dnzevkqpk.com^
 ||http://dojmlztmbrvp.com^
+||http://doksfyhdtqmipa.com^
 ||http://donhyxngg.com^
 ||http://dpnahzfbb.com^
 ||http://dpoffxqjlgt.com^
@@ -40721,6 +40804,7 @@
 ||http://dywqwrtnhegyz.com^
 ||http://dzacosgvnz.com^
 ||http://dzaqzgjsot.com^
+||http://dzblysulli.com^
 ||http://dzkmbajm.com^
 ||http://dzqoubtxsaskdl.com^
 ||http://dzztjcbt.com^
@@ -40760,6 +40844,7 @@
 ||http://elatsadlux.com^
 ||http://elcolpplwua.com^
 ||http://elfnwncr.com^
+||http://elimpfdlss.com^
 ||http://eloumbsyd.com^
 ||http://elvfmxguozafu.com^
 ||http://elwbhndbxfqk.com^
@@ -40815,8 +40900,10 @@
 ||http://ezuereisgj.com^
 ||http://fabrtgzehf.com^
 ||http://faegbmhey.com^
+||http://fbhfbgtj.com^
 ||http://fbpetrwt.com^
 ||http://fcbykurluasdeu.com^
+||http://fcihwhsiukz.com^
 ||http://fcjodgfpjiswa.com^
 ||http://fdbrwxtm.com^
 ||http://fdrkesvb.com^
@@ -40865,6 +40952,7 @@
 ||http://fpluhtibx.com^
 ||http://fpoxpjpxn.com^
 ||http://fpqeowmsv.com^
+||http://fpunplooxphq.com^
 ||http://fpxkjlzmkqp.com^
 ||http://fpxthotxzuf.com^
 ||http://fpzcaabzhvzz.com^
@@ -40887,6 +40975,7 @@
 ||http://fsjvhkobubai.com^
 ||http://fsmpxxdyv.com^
 ||http://fsnhesxsw.com^
+||http://fsohxklbxdi.com^
 ||http://fsqknqvlngde.com^
 ||http://ftqgkcmbkptohh.com^
 ||http://ftttziizhuplfj.com^
@@ -40896,6 +40985,7 @@
 ||http://ftymzxmic.com^
 ||http://fuaawvoqbzza.com^
 ||http://fukkzdxfyrchhc.com^
+||http://fupgvldb.com^
 ||http://fuwgbbkktwbu.com^
 ||http://fuymatqqiyz.com^
 ||http://fvenxjtzuaxu.com^
@@ -40903,6 +40993,7 @@
 ||http://fviwwkvvxs.com^
 ||http://fvsdvxjpxi.com^
 ||http://fvzompquocgdsu.com^
+||http://fvzusqdf.com^
 ||http://fwbhvrpiunlzyh.com^
 ||http://fwwdmnkjg.com^
 ||http://fwzqogrlgsdl.com^
@@ -40912,6 +41003,7 @@
 ||http://fxpqoyxlas.com^
 ||http://fxvbsnwnwoib.com^
 ||http://fynprrom.com^
+||http://fyphnmoz.com^
 ||http://fytrvzettfn.com^
 ||http://fyyyyppk.com^
 ||http://fzbnuyjgyexs.com^
@@ -40989,6 +41081,7 @@
 ||http://grgxptjsgl.com^
 ||http://grkrkurbyykok.com^
 ||http://grlygpybnhbwcu.com^
+||http://grsdvgnr.com^
 ||http://grsnseuoispsco.com^
 ||http://gsghbxydcyum.com^
 ||http://gsjhehtqvin.com^
@@ -41003,6 +41096,7 @@
 ||http://gvahzhgblkkyr.com^
 ||http://gvhqnlti.com^
 ||http://gvoraoonpi.com^
+||http://gvwyxnyq.com^
 ||http://gwovohvkzay.com^
 ||http://gwxaulcgmizcq.com^
 ||http://gxeoadmo.com^
@@ -41015,6 +41109,7 @@
 ||http://gxzfpusmd.com^
 ||http://gynzvwhup.com^
 ||http://gyycgkchjtimu.com^
+||http://gzmknnasowdtop.com^
 ||http://gzoprhvqhie.com^
 ||http://gzqoxmkuhl.com^
 ||http://hafksvqiir.com^
@@ -41037,6 +41132,7 @@
 ||http://hcyqwhquqjosn.com^
 ||http://hdcfyrzx.com^
 ||http://hddzzizitskc.com^
+||http://hdfsruiqwgjdo.com^
 ||http://hdnvtfyvyhq.com^
 ||http://hdoabbjyyebca.com^
 ||http://hduefoyd.com^
@@ -41047,6 +41143,7 @@
 ||http://hehraybryciyls.com^
 ||http://hezasoiduicbha.com^
 ||http://hfedqcww.com^
+||http://hffgptqfpewjz.com^
 ||http://hfslmsbj.com^
 ||http://hfubvezyoyqs.com^
 ||http://hgbxmqyqoplpif.com^
@@ -41084,6 +41181,7 @@
 ||http://hnshjxowpldar.com^
 ||http://hntntnfizowo.com^
 ||http://hntxitqhto.com^
+||http://hoghqjddg.com^
 ||http://hogylomirfc.com^
 ||http://hohrnldconk.com^
 ||http://hoqqzlvwukpo.com^
@@ -41140,6 +41238,7 @@
 ||http://iapxxrjzc.com^
 ||http://iasodjsbjcq.com^
 ||http://iatwyqgvpq.com^
+||http://ibclxtlh.com^
 ||http://ibetinwubwl.com^
 ||http://ibfsream.com^
 ||http://ibfueyttemsefi.com^
@@ -41194,6 +41293,7 @@
 ||http://ilugfyhlfv.com^
 ||http://iluwjbuwm.com^
 ||http://ilxwlsnzhzukj.com^
+||http://imayjubge.com^
 ||http://imbpmlyhkk.com^
 ||http://imevdywafhro.com^
 ||http://imidshmpzr.com^
@@ -41217,6 +41317,7 @@
 ||http://irfiysdcrnleu.com^
 ||http://isfxsiooyjad.com^
 ||http://isnsgjhthhaqtu.com^
+||http://ispaagigjygd.com^
 ||http://isxwajatbig.com^
 ||http://itlmnxlauah.com^
 ||http://itsyuvrlesq.com^
@@ -41339,6 +41440,7 @@
 ||http://jwbroglwc.com^
 ||http://jwgsepzz.com^
 ||http://jwwyuxjv.com^
+||http://jxexqemgbxvv.com^
 ||http://jxmhgmkuw.com^
 ||http://jxnwpeqkhtkrw.com^
 ||http://jxseoruuv.com^
@@ -41407,6 +41509,7 @@
 ||http://kmypiwpbastt.com^
 ||http://knepsiwviviwed.com^
 ||http://knimmqli.com^
+||http://knndhcnwv.com^
 ||http://knnvmkbemftwgj.com^
 ||http://knpbefvk.com^
 ||http://knqjhdkndh.com^
@@ -41439,6 +41542,7 @@
 ||http://kwajysvvjeyvs.com^
 ||http://kwcrryneebg.com^
 ||http://kweayxzfazrws.com^
+||http://kwflzktzaxczm.com^
 ||http://kwkxvbjz.com^
 ||http://kwomkjjoajcyyt.com^
 ||http://kwsmqtposrub.com^
@@ -41499,6 +41603,7 @@
 ||http://lliumrpvj.com^
 ||http://llpdtbmowsg.com^
 ||http://llrblpesvjc.com^
+||http://llsdercqm.com^
 ||http://llvidwpt.com^
 ||http://lmccawemcuqma.com^
 ||http://lmcoiiwpguaorp.com^
@@ -41702,6 +41807,7 @@
 ||http://nntvphjayapz.com^
 ||http://nnulezwhvbrzwu.com^
 ||http://nnvqabkpa.com^
+||http://nobpgppgbucy.com^
 ||http://nofhtrsaz.com^
 ||http://noiaifyednjt.com^
 ||http://nolpjfsu.com^
@@ -41768,6 +41874,7 @@
 ||http://ocfsmefzzarkmo.com^
 ||http://ocixtsnyxxvyaw.com^
 ||http://ocrwyhamhfpfc.com^
+||http://odanetrlgvunth.com^
 ||http://odezwmru.com^
 ||http://odlkdyoe.com^
 ||http://ododtktl.com^
@@ -41786,6 +41893,7 @@
 ||http://ogyhsyuhczvjg.com^
 ||http://ohrdpvkzhzbg.com^
 ||http://oijjptnwrg.com^
+||http://oimpkumntje.com^
 ||http://oinqqbzs.com^
 ||http://oiumoqzo.com^
 ||http://oixisqtlbhygp.com^
@@ -41799,6 +41907,7 @@
 ||http://omakfhugexq.com^
 ||http://onocjgpq.com^
 ||http://oofpjjtc.com^
+||http://ookiqhfioldxwj.com^
 ||http://ootqfqjhzfrtn.com^
 ||http://oounzfsyxiuj.com^
 ||http://ooutqfslr.com^
@@ -41879,6 +41988,7 @@
 ||http://pkitdifnkz.com^
 ||http://pkvhprfhbtft.com^
 ||http://pkxquvydrgin.com^
+||http://plhvzqkkirw.com^
 ||http://pllregftgbgmdi.com^
 ||http://plxtejszb.com^
 ||http://plzjcnyxcdl.com^
@@ -42059,6 +42169,7 @@
 ||http://qyfunsvmtudozq.com^
 ||http://qyifxakawscsyd.com^
 ||http://qyiiudex.com^
+||http://qyillxuyjdlmh.com^
 ||http://qyqbslpprlph.com^
 ||http://qyqvfjvbzosz.com^
 ||http://qyrzcsoaey.com^
@@ -42097,6 +42208,7 @@
 ||http://rfcsmdodviqhn.com^
 ||http://rfcxwidka.com^
 ||http://rfgldefouazmj.com^
+||http://rfmtxdjulpdb.com^
 ||http://rfpnlsbbu.com^
 ||http://rfrsnqen.com^
 ||http://rgejlqtlr.com^
@@ -42167,6 +42279,7 @@
 ||http://rxgbytxipwa.com^
 ||http://rxhicseychr.com^
 ||http://rxysradiyvcp.com^
+||http://ryrrhgpmlif.com^
 ||http://ryybhoklizmuew.com^
 ||http://rzfldcrlwe.com^
 ||http://rzizcnhoobxw.com^
@@ -42190,6 +42303,7 @@
 ||http://sdtqotoe.com^
 ||http://sdzxojlt.com^
 ||http://secfpgpqx.com^
+||http://seoaelrfdy.com^
 ||http://sepyqhipq.com^
 ||http://seuojaesymeriv.com^
 ||http://sfgkhgfdsochwd.com^
@@ -42215,6 +42329,7 @@
 ||http://sicteppojdwr.com^
 ||http://sihciabzm.com^
 ||http://sinyfqrmiqgd.com^
+||http://siqcrwlrqjc.com^
 ||http://sisrgcvomn.com^
 ||http://sisyqzktimhrgo.com^
 ||http://sivqblzejhx.com^
@@ -42245,6 +42360,7 @@
 ||http://ssigftlcuc.com^
 ||http://ssjgkyyrqiwjol.com^
 ||http://ssqzsdcnoqv.com^
+||http://stekcwrdwohbch.com^
 ||http://sthtrtvkkt.com^
 ||http://stvayyokjvxnl.com^
 ||http://sudolljkjzxdfc.com^
@@ -42308,11 +42424,13 @@
 ||http://thqwivyhdpoem.com^
 ||http://tibzpgmogjqa.com^
 ||http://ticpqxnv.com^
+||http://tielsdhblnmiv.com^
 ||http://tifzusomh.com^
 ||http://tikjbfpd.com^
 ||http://tiphkuloov.com^
 ||http://tiptwfbksobui.com^
 ||http://tjdrxdsto.com^
+||http://tjtukeaszrqco.com^
 ||http://tjyoznaozivi.com^
 ||http://tkewsaesxhf.com^
 ||http://tkhoazslm.com^
@@ -42373,6 +42491,7 @@
 ||http://tyccaweownne.com^
 ||http://tylzbdkjsjig.com^
 ||http://tyuawmgqsbz.com^
+||http://tzbdudhsip.com^
 ||http://tzfywuot.com^
 ||http://tzyvolvenvyim.com^
 ||http://uabdikmdwqdbr.com^
@@ -42494,6 +42613,7 @@
 ||http://vbiudrdieouauc.com^
 ||http://vbjpddtj.com^
 ||http://vbqcwfleda.com^
+||http://vbuhzjnj.com^
 ||http://vbwakfbazxd.com^
 ||http://vbwfqaisbgn.com^
 ||http://vbxrcekqkmrzyd.com^
@@ -42572,6 +42692,7 @@
 ||http://vsrpztnxdejo.com^
 ||http://vsrsviytlb.com^
 ||http://vsstaewjpqcymx.com^
+||http://vsupeokq.com^
 ||http://vsxjjmyz.com^
 ||http://vtbyvtmabpclx.com^
 ||http://vtcxhnri.com^
@@ -42593,6 +42714,7 @@
 ||http://vwxptkkqbyppe.com^
 ||http://vxijqpsxpdlztm.com^
 ||http://vxkupxpf.com^
+||http://vxneczkffmaxkf.com^
 ||http://vxrpmslex.com^
 ||http://vxyqsxeo.com^
 ||http://vxzudzbjvtegu.com^
@@ -42687,10 +42809,12 @@
 ||http://wuuyczqcgm.com^
 ||http://wuyednuhrxvsr.com^
 ||http://wvetuwwcojfgw.com^
+||http://wvrmnqgmemkw.com^
 ||http://wvrntfonizbxn.com^
 ||http://wvvftburvtyz.com^
 ||http://wwmcuhvqaf.com^
 ||http://wwngdgldlsv.com^
+||http://wwnuowyww.com^
 ||http://wwohikwhl.com^
 ||http://wwwmurgd.com^
 ||http://wxhpszslw.com^
@@ -42770,6 +42894,7 @@
 ||http://xlnwabndmqn.com^
 ||http://xlqkpyimdep.com^
 ||http://xlspkqpnnqj.com^
+||http://xmevsiig.com^
 ||http://xmgrjuqqc.com^
 ||http://xmlqerwrehfqo.com^
 ||http://xmrchaqjwqyvz.com^
@@ -42811,8 +42936,10 @@
 ||http://xvxcpdcnfgte.com^
 ||http://xwavfvpzg.com^
 ||http://xwcqrzkle.com^
+||http://xwdlgzrnuyo.com^
 ||http://xwrmlohlri.com^
 ||http://xwvofxgqilhy.com^
+||http://xwxbiywlavgpm.com^
 ||http://xxdjmuekj.com^
 ||http://xxhgzzinkrbbo.com^
 ||http://xxqriuedmqzs.com^
@@ -42873,15 +43000,18 @@
 ||http://ykombouoo.com^
 ||http://ykyryixcwn.com^
 ||http://ylbslipwhfdwr.com^
+||http://yleztmobykox.com^
 ||http://yllfdnftjo.com^
 ||http://ylnmzwwc.com^
 ||http://ymgjtzciu.com^
 ||http://ymhqeelitngcr.com^
+||http://ympkaxpaf.com^
 ||http://ymvkirvjqgha.com^
 ||http://ymzrrizntbhde.com^
 ||http://ynhetcoypgnl.com^
 ||http://ynhonjqahrh.com^
 ||http://ynkakgknfljv.com^
+||http://ynkbueizwqu.com^
 ||http://ynlvwynnsstalh.com^
 ||http://ynoiezey.com^
 ||http://yntwcepykkts.com^
@@ -42957,12 +43087,14 @@
 ||http://zdhnepeadrwetg.com^
 ||http://zdjkzqwpqvwcmc.com^
 ||http://zdydvjzexmp.com^
+||http://zeokfeyraxls.com^
 ||http://zfcjtxosje.com^
 ||http://zfoeiywwiqo.com^
 ||http://zfpsotrgboqp.com^
 ||http://zggnhhadif.com^
 ||http://zgwuvfye.com^
 ||http://zhpdtoott.com^
+||http://zhrmtsxcdkjj.com^
 ||http://zidqkapwgnsh.com^
 ||http://ziqdunppuzjd.com^
 ||http://zisbrygtluib.com^
@@ -43011,6 +43143,7 @@
 ||http://zppkpktskuf.com^
 ||http://zpwqnicvzi.com^
 ||http://zpwtylxpfeje.com^
+||http://zpxgdlqoofx.com^
 ||http://zpxlmtujszhixe.com^
 ||http://zqdvdygz.com^
 ||http://zqeskyeg.com^
@@ -48239,7 +48372,6 @@
 ||http://rdstation.com^
 ||http://rdstation.com.br^
 ||http://analytic.rocks^
-||http://settings.crashlytics.com^
 ||http://client-api.matchinguu.com^
 ||http://counter.log24.ru^
 ||http://dcmn.com^
@@ -48947,8 +49079,6 @@
 ||http://craktraffic.com^
 ||http://crashfootwork.com^
 ||http://crazyegg.com^
-||http://criteo.com^
-||http://criteo.net^
 ||http://crmmetrix.fr^
 ||http://crmmetrixwris.com^
 ||http://crosspixel.net^
@@ -49920,7 +50050,6 @@
 ||http://oixpre.net^
 ||http://oixssp-lab.net^
 ||http://oixssp.net^
-||http://ojrq.net^
 ||http://okt.to^
 ||http://oktopost.com^
 ||http://omarsys.com^
@@ -51144,6 +51273,7 @@
 ||http://um-public-panel-prod.s3.amazonaws.com^
 ||http://collection-endpoint-prod.herokuapp.com^
 ||http://collection-endpoint-staging.herokuapp.com^
+||http://app.airtrack.jp^
 ||http://xray.mail.ru^
 ||http://tracking.linda.de^
 ||http://cdn.odoscope.cloud^
@@ -51891,7 +52021,6 @@
 ||http://metrics.brightcove.com^
 ||http://metrics.cnn.com^
 ||http://metrics.foxnews.com^
-||http://metrics.mzstatic.com^
 ||http://metrics.pacsun.com^
 ||http://metrics.washingtonpost.com^
 ||http://meter-svc.nytimes.com^
@@ -52627,7 +52756,6 @@
 ||http://config2.mparticle.com^
 ||http://counter.kingsoft.com^
 ||http://crasheye.cn^
-||http://e.crashlytics.com^
 ||http://data.mistat.*.xiaomi.com^
 ||http://data.mistat.xiaomi.com^
 ||http://data.sec.miui.com^
@@ -55569,4 +55697,3 @@ http://p-up.ru^
 http://red.by^
 http://w7.ru^
 http://wq3.ru^
-@@http://*dnsotls-ds.metric.gstatic.com^
