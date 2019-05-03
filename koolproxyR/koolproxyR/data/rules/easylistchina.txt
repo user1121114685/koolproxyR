@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: B16vst/MHHKleE9vXSaxuw
-! Version: 201905030902
+! Checksum: uNNRJy2RyJAVCxDd8CmOrg
+! Version: 201905030932
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 !  ******************************* koolproxy 语法*******************************
@@ -6828,7 +6828,6 @@ https://www.douyu.com##.closeBg-998534
 ||https://strip.taobaocdn.com/tfscom/$subdocument
 ||https://stulip.org/static/js/header.js
 ||https://su.bdimg.com/static/dspui/js/
-||https://sub.powerapple.com^
 ||https://subhd.com/images/970
 ||https://subhd.com/images/ap/
 ||https://sudupan.com^*.gif
@@ -15987,7 +15986,6 @@ https://www.douyu.com##.closeBg-998534
 ||http://strip.taobaocdn.com/tfscom/$subdocument
 ||http://stulip.org/static/js/header.js
 ||http://su.bdimg.com/static/dspui/js/
-||http://sub.powerapple.com^
 ||http://subhd.com/images/970
 ||http://subhd.com/images/ap/
 ||http://sudupan.com^*.gif

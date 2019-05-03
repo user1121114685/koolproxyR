@@ -155,10 +155,7 @@ update_rule(){
 
 		# 给github放行
 		sed -i '/github/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
-		# 给apple的https放行
-		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
-		sed -i '/mzstatic.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
-		# 给api.twitter.com的https放行
+ vb                                                           		# 给api.twitter.com的https放行
 		sed -i '/twitter.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		# 给facebook.com的https放行
 		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
@@ -205,6 +202,10 @@ update_rule(){
 		# sed -i '/mbd.baidu.comd' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给知乎放行
 		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		# 给apple的https放行
+		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/mzstatic.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+
 
 
 

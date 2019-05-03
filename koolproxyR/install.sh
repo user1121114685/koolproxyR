@@ -7,28 +7,28 @@ eval `dbus export koolproxyR_`
 # 判断路由架构和平台
 case $(uname -m) in
 	armv7l)
-		logger "本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，arm平台不能安装！！！"
-		logger "退出KoolProxyR安装！"
+		echo "本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，arm平台不能安装！！！"
+		echo "退出KoolProxyR安装！"
 		exit 1
 	;;
 	mips)
-		logger "本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，mips平台不能安装！！！"
-		logger "退出KoolProxyR安装！"！
+		echo "本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，mips平台不能安装！！！"
+		echo "退出KoolProxyR安装！"！
 		exit 1
 	;;
 	x86_64)
 		fw867=`cat /etc/banner|grep fw867`
 		if [ -d "/koolshare" ] && [ -n "$fw867" ];then
-			logger "固件平台【koolshare OpenWRT/LEDE x86_64】符合安装要求，开始安装插件！"
+			echo "固件平台【koolshare OpenWRT/LEDE x86_64】符合安装要求，开始安装插件！"
 		else
-			logger "本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，其它x86_64固件平台不能安装！！！"
-			logger "退出KoolProxyR安装！"
+			echo "本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，其它x86_64固件平台不能安装！！！"
+			echo "退出KoolProxyR安装！"
 			exit 1
 		fi
 	;;
   *)
-		logger 本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，其它平台不能安装！！！
-  		logger "退出KoolProxyR安装！"
+		echo 本KoolProxyR插件用于koolshare OpenWRT/LEDE x86_64固件平台，其它平台不能安装！！！
+  		echo "退出KoolProxyR安装！"
 		exit 1
 	;;
 esac
@@ -37,13 +37,13 @@ esac
 # 此举解决了kpr与v2ray冲突，与SS冲突，导致开机过慢的问题
 # haveged 项目的目的是提供一个易用、不可预测的随机数生成器，基于 HAVEGE 算法。
 
-entropy_avail=`cat /proc/sys/kernel/random/entropy_avail`
+# entropy_avail=`cat /proc/sys/kernel/random/entropy_avail`
 
-# 如果值比较低(<1000),建议安装 haveged. 否则加密程序会等待系统有足够的熵。
+# # 如果值比较低(<1000),建议安装 haveged. 否则加密程序会等待系统有足够的熵。
 
-if [ "$entropy_avail" -lt 1000 ];then
+# if [ "$entropy_avail" -lt 1000 ];then
 	opkg update && opkg install haveged
-fi
+# fi
 # stop first
 KP_ENBALE=`dbus get koolproxy_enable`
 koolproxyR_enable=`dbus get koolproxyR_enable`
@@ -111,7 +111,7 @@ dbus set softcenter_module_koolproxyR_description="KPR更多规则更舒服！"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=900.8.39
-dbus set koolproxyR_version=900.8.39
+dbus set softcenter_module_koolproxyR_version=900.8.41
+dbus set koolproxyR_version=900.8.41
 
 [ "$koolproxyR_enable" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh restart

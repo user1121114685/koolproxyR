@@ -187,6 +187,9 @@ sed -i '/tvbs.com/d' easylistchina.txt
 sed -i '/netflix.com/d' easylistchina.txt
 # 给 microsoft.com 放行
 sed -i '/microsoft.com/d' easylistchina.txt
+# 给apple的https放行
+sed -i '/apple.com/d' easylistchina.txt
+sed -i '/mzstatic.com/d' easylistchina.txt
 
 
 
