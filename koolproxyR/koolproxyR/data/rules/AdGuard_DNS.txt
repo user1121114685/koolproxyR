@@ -1,8 +1,8 @@
-! Checksum: X2m6tbcPswdMFYAaOwN2lg
+! Checksum: knPZlFHO26d2ACr22xwsWw
 ! Title: AdGuard Simplified domain names filter
 ! Description: Filter composed of several other filters (English filter, Social media filter, Spyware filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.
-! Version: 2.0.4.84
-! TimeUpdated: 2019-05-06T18:05:14+03:00
+! Version: 2.0.4.85
+! TimeUpdated: 2019-05-06T18:30:20+03:00
 ! Expires: 2 days (update frequency)
 !
 ||https://tertmateruse.ru^
@@ -2534,7 +2534,6 @@
 ||https://ruschopi.ru^
 ||https://ruscontext.com^
 ||https://rushkolnik.ru^
-||https://rusmedserv.com^
 ||https://rusrestbest.
 ||https://russervisbest.ru^
 ||https://russian-cuties.info^
@@ -30429,7 +30428,6 @@
 ||http://ruschopi.ru^
 ||http://ruscontext.com^
 ||http://rushkolnik.ru^
-||http://rusmedserv.com^
 ||http://rusrestbest.
 ||http://russervisbest.ru^
 ||http://russian-cuties.info^

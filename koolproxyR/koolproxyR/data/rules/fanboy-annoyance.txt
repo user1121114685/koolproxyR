@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: Bg5HWhIjQCkpga/WhWo/gA
-! Version: 201905061442
+! Checksum: BgbMh0QQylhdpKVm6+IF8Q
+! Version: 201905061532
 ! Title: Fanboy's Annoyance List
-! Last modified: 06 May 2019 14:42 UTC
+! Last modified: 06 May 2019 15:32 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -91,13 +91,8 @@
 ||https://curiyo.com^$third-party
 ||https://cursors-4u.net^$third-party
 ||https://cxpublic.com^$third-party
-||https://d15r06k2ko210l.cloudfront.net^
-||https://d1uh1a7az90pt0.cloudfront.net^
-||https://d2ip7iv1l4ergv.cloudfront.net^
-||https://d9etzk30b05yg.cloudfront.net^
 ||https://desipearl.com^$third-party
 ||https://devscroll.com^$third-party
-||https://dhpikd1t89arn.cloudfront.net^
 ||https://digsby.com^$third-party
 ||https://diigo.com/images/diigo-icon/$third-party
 ||https://discordapp.com/api/servers/*/widget.json$third-party,xmlhttprequest
@@ -207,7 +202,6 @@
 ||https://mailerlite.com^$third-party
 ||https://mailjet.com/statics/js/widget.modal.js$third-party
 ||https://mailjet.com/widget/$third-party
-||https://mailmunch.s3.amazonaws.com^
 ||https://manychat.com^$third-party
 ||https://mg2connext.com^$third-party
 ||https://misosoup.io^$third-party
@@ -384,7 +378,6 @@
 ||https://widgets.dzone.com^$third-party
 ||https://widgets.outbrain.com^$third-party
 ||https://widgets.seekitlocal.com^$third-party
-||https://widgets.sprinkletxt.com^
 ||https://widgets.tapcdn.com^$third-party
 ||https://widgets.tapiture.com^$third-party
 ||https://widgetsplus.com^$third-party
@@ -416,7 +409,6 @@
 ||https://cleverpush.com^$third-party
 ||https://contentsitesrv.com/js/push/$third-party
 ||https://copush.com^$third-party
-||https://d2r1yp2w7bby2u.cloudfront.net^
 ||https://fortpush.com^$third-party
 ||https://foxpush.com^$third-party
 ||https://foxpush.net^$third-party
@@ -482,7 +474,6 @@
 ||https://sendtonews.com/player/sidebar.php?$third-party
 ||https://addnow.com^$third-party
 ||https://addthis.com^$third-party
-||https://addthiscdn.com^
 ||https://addtoany.com^$third-party
 ||https://ahalogy.com^$third-party
 ||https://aim-ads.com/multimedia-themonitor-com/wwwroot/*_twitter_
@@ -521,7 +512,6 @@
 ||https://connect.ok.ru^$third-party
 ||https://conversionsbox.com^$third-party
 ||https://crowdynews.com^$third-party
-||https://d5k6iufjynyu8.cloudfront.net^
 ||https://del.icio.us/feeds/js/$third-party
 ||https://delicious.com/static/img/delicious.$third-party
 ||https://digg.com/img/badges/$third-party
@@ -654,7 +644,6 @@
 ||https://twitcker.com^$third-party
 ||https://twitcount.com^$third-party
 ||https://twitstat.us^$third-party
-||https://twitter-badges.s3.amazonaws.com^
 ||https://twittercounter.com^$third-party
 ||https://twitterforweb.com^$third-party
 ||https://twittericon.com^$third-party
@@ -705,10 +694,7 @@
 ||https://civiccomputing.com^*=cookie$third-party
 ||https://clickio.mgr.consensu.org^$third-party
 ||https://clickiocdn.com^$third-party
-||https://cmp.network-n.com^
-||https://cmp.nextday.media^
 ||https://consensu.org/gdpr/$third-party
-||https://consent.subscriptions.archant.co.uk^
 ||https://consent.truste.com^$third-party
 ||https://cookie-accept.com^$third-party
 ||https://cookie-script.com^$third-party
@@ -723,7 +709,6 @@
 ||https://cookiemanager1.contentforces.com^$third-party
 ||https://cookieq.com^$third-party
 ||https://cookiereports.com^$third-party
-||https://cookies.innershed.co.uk^
 ||https://cookiescript.info^$third-party
 ||https://dmgmediaprivacy.co.uk^$third-party
 ||https://fundingchoices.google.com^$third-party
@@ -737,7 +722,6 @@
 ||https://onetag.mgr.consensu.org^$third-party
 ||https://onetrust.com^$third-party
 ||https://privacy-center.org^$third-party
-||https://privacy.purch.com^
 ||https://publy.net^$third-party
 ||https://sharethis.mgr.consensu.org^$third-party
 ||https://signatu.com^$third-party
@@ -755,7 +739,6 @@
 ||https://bostonglobe.com/common/js/velocity/
 ||https://businessinsider.in/bimed/
 ||https://bwbx.io^*/mini_player/
-||https://cf-particle-html.eip.telegraph.co.uk^
 ||https://cjr.org/interstitial_
 ||https://complex.com/toolbar/
 ||https://conteudo.jsuol.com.br^*/ucopy.js$script
@@ -802,13 +785,10 @@
 ||https://xhamster.com/ajax/cams-widget/
 ||https://xhamster.com/ajax/wid-cams-widget/
 ||https://xhamster.one/ajax/wid-cams-widget/
-||https://alerts.ndtv.com^
-||https://alerts.thedailystar.net^
 ||https://bdstatic.com/linksubmit/push.js
 ||https://indiatimes.com/pn/
 ||https://irishtimes.com/assets/js/notify.js
 ||https://ndtv.com/popupNotification.aspx
-||https://notify.hindustantimes.com^
 ||https://ultimedia.com/js/common/notification.js
 ||https://aish.com^*-Subscribe-
 ||https://aish.com^*/Newsletter-
@@ -821,8 +801,6 @@
 ||https://cultofmac.com^*/sidebar_weekender_
 ||https://destinyconnect.com^*/sing-up-sidebar.
 ||https://destinyman.com^*/sign-up-banner.
-||https://emailing.rfi.fr^
-||https://forms.windowsitpro.com^
 ||https://goodhousekeeping.co.za^*/subscribe-
 ||https://goodhousekeeping.co.za^*/subscribe.
 ||https://ibtimes.co.in^*/newsletter.js
@@ -837,7 +815,6 @@
 ||https://motorsport.com/join/popup/
 ||https://netdna-cdn.com/wp-content/uploads/mySpoonful-Signup-Banner.jpg
 ||https://netdna-ssl.com^*-mailchimp-
-||https://newsletter.bdnews24.com^
 ||https://nscreenmedia.com^*-newsletter.
 ||https://oghits.com^*/modules/modal/assets/js/modal.min.js
 ||https://oilprice.com/iframes/sidebar_signupform/
@@ -852,13 +829,11 @@
 ||https://seattletimes.com/wp-content/plugins/st-user-messaging/$script
 ||https://sfgate.com^*/subscribe.html
 ||https://shareblue.com^*/signup_banner_
-||https://subscriptions.cbc.ca^
 ||https://thefinancialbrand.com^*/subscribe_today.
 ||https://thegrio.com^*/fotolia_79292360_
 ||https://thejewishstar.com/images/enews-
 ||https://therealnews.com^*/sign_up.
 ||https://therealnews.com^*/subfp.
-||https://tmform.azurewebsites.net^
 ||https://webmd.com/dtmcms/live/webmd/*/newsletter/
 ||https://womenonwheels.co.za^*/subscribe-
 ||https://cdprojektred.com^*/top.png
@@ -920,7 +895,6 @@
 ||https://cloudfront.net/linkedin/
 ||https://cloudfront.net/twitter/
 ||https://cnet.com/rest/v1.0/tweets/
-||https://curate.venturebeat.com^
 ||https://dailykostv.com/digg.html
 ||https://deusm.com/informationweek/editor-*.png
 ||https://di.fm/_papi/v1/di/timed_alerts$xmlhttprequest
@@ -970,7 +944,6 @@
 ||https://seocentro.com/bookmark/
 ||https://sheknows.com/api/module?id=follow_social
 ||https://shine.cn/js/share.js
-||https://social.dw.de^
 ||https://sourceforge.net/social/
 ||https://static2.stuff.co.nz^$subdocument
 ||https://store.yahoo.net/lib/directron/icons-test02.jpg
@@ -986,18 +959,10 @@
 ||https://wordpress.com^*/facebook.png
 ||https://wordpress.com^*/twitter1.png
 ||https://worldtruth.tv^*/fb.png
-||https://addthis.com^
 ||https://google.com^*/fastbutton?
-||https://appconsent.io^
-||https://consent.23g.io^
-||https://consent.cmp.oath.com^
-||https://consent.theneweuropean.co.uk^
-||https://cookie.oup.com^
 ||https://dam.bbcchannels.com^*/outside-iframe.js
 ||https://emerse.com/consent.js
 ||https://freedoflondon.com/Styles/dialog-popup/jquery-ui.js
-||https://gdpr.internetbrands.com^
-||https://gdpr.prisa.com^
 ||https://harpercollins.co.uk/js/cookie.js
 ||https://hunstoncanoeclub.co.uk/media/system/js/modal.js
 ||https://inblu.com^*/cookies.js
@@ -1007,27 +972,19 @@
 ||https://omgubuntu.co.uk/wp-content/plugins/omg-magnific/magnific.min.js
 ||https://onlive.co.uk/account/cookie_notice
 ||https://parliamentlive.tv/cookie/
-||https://privacypolicy.trgr.be^
 ||https://propcom.co.uk/cookie/
-||https://sp.knowyourmeme.com^
-||https://sthelensstar-gb.sthelensstar.co.uk^
-||https://thenational-gb.thenational.scot^
 ||https://windguru.cz/forms/consent.php
-||https://worcesternews-gb.worcesternews.co.uk^
 ||https://yimg.com^*/guce.js
 ||https://inn.co.il/push.js
-||https://push.cnnindonesia.com^
 ||https://pusha.se^$third-party
 ||https://linker.hr^$third-party
 ||https://thscore.co^*/backTop.
 ||https://thscore.mobi^*/top.
 ||https://4gtv.tv^*/scriptUP.
 ||https://focus.de/fol/pics/special/informiert.gif
-||https://mdsngpush.finanzen.net^
 ||https://stncdn.it^*/smartbanner.
 ||https://valentins.de^*/glyphicon_up.
 ||https://vebidoo.de/images/xtotop.
-||https://sendinblue.com^
 ||https://5-tv.ru^*/up.png
 ||https://gnezdo.ru^$third-party
 ||https://kommersant.ru^*/top100.
@@ -1063,7 +1020,6 @@
 ||https://revistaforum.com.br^*/jquery.fancybox.min.js
 ||https://smonitor.com.br^$third-party
 ||https://ara.cat^*/newsletters/
-||https://newsletters.vocento.com^
 ||https://24o.it^*/ias/
 ||https://blitzquotidiano.it^*/IAS_
 ||https://blitzquotidiano.it^*/System24_
@@ -1099,7 +1055,6 @@
 ||https://mastertop100.org^$third-party
 ||https://milanofinanza.it/img/top.png
 ||https://monovolume.cc^*/up_btn.
-||https://notifiche.secoloditalia.it^
 ||https://occhidellaguerra.it^*/mail_bottone_
 ||https://player.pulsemediatv.com^$third-party
 ||https://player.streamshow.it^$third-party
@@ -1132,7 +1087,6 @@
 ||https://getjoys.com/js/popup.js?v=
 ||https://hitoradio.com^*/sicon_
 ||https://mingpao.com/image/sms.gif
-||https://share.baidu.com^
 ||https://plugins.mixi.jp/favorite.pl?$third-party
 ||https://apfel-faq.de/name.js
 ||https://auto-motor-und-sport.de/img/google.svg
@@ -1154,7 +1108,6 @@
 ||https://assets.pinterest.com/js/pinit.js
 ||https://google.com^*/fastbutton?
 ||https://pinterest.com/images/
-||https://xing-share.com^
 ||https://google.com^*/fastbutton?
 ||https://sanoma.nl/media/static/images/icon_zienl.png
 ||https://dni.ru^*/sotial-
@@ -1177,31 +1130,21 @@
 ||https://tn-sport.net/like/
 ||https://byom.de/js/cookie.de.js
 ||https://henryschein.at^*/CookieList.aspx
-||https://cnil.links-lab.fr^
-||https://cookies.leadplace.fr^
 ||https://docteurclic.com/ajax/ajax_get_disc.aspx
 ||https://jeu.video^*/partners.js
 ||https://styria.hr^*/cookies.min.js
-||https://cookie.wieni.be^
-||https://cookies.nos.nl^
 ||https://cookiesv2.publiekeomroep.nl/light/
 ||https://tol.postnl.nl/content/toljs/$script
 ||https://sanoma.fi^*/sccm.js
 ||https://bastabugie.it/it/cookies.js
 ||https://cippy.it/Scripts/toastr.js
 ||https://cms24.it/js/kekse.js
-||https://cookie.aerostatonet.it^
-||https://cookies.gardena.net^
 ||https://creaweb.it/cookie/
 ||https://cure-naturali.it/cookies?
 ||https://effekt.it/analytics/
-||https://privacyportal.fatergroup.com^
 ||https://spesasicura.com/Scripts/cookie.js
 ||https://4hifi.pl/scripts/jquery.cookie.js
 ||https://animesub.info/skrypty/pierdolecookie.js
-||https://cookie.gazeta.pl^
-||https://cookies.fakt.pl^
-||https://cookies.forbes.pl^
 ||https://gry-online.pl/js/cookie2.js
 ||https://lubuskie.pl/themes/src/cookie.js
 ||https://muzeumwp.pl/cookies/cookies.js
@@ -1209,17 +1152,12 @@
 ||https://nowehoryzonty.pl/js/cookies.js
 ||https://orange.pl/ocp-http/map/js/cookies.js
 ||https://prideandglory.pl/polityka_cookies.js
-||https://privacy.totaaltv.nl^
 ||https://rmf.fm/zgody/js/rodo_rmf.js
-||https://rodo.agora.pl^
 ||https://rp.pl/cmp/
 ||https://skryptcookies.pl^$third-party
 ||https://sycow.pl/a/cookie.js
 ||https://wkd.com.pl/cookies/cookies.js
-||https://zgody.infor.pl^
 ||https://remixshop.com/bg/site/ajaxCheckCookiePolicy
-||https://cookies.unidadeditorial.es^
-||https://privacy.schibsted.com^
 ||https://tmgrup.com.tr^*/tmdconsent-
 ||http://123cursors.com^$third-party
 ||http://1worldonline.com^$third-party

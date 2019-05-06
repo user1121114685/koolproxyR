@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.0.0"
+VERSION="2.0.1"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -71,6 +71,7 @@ cat fanboy-annoyance.txt | grep "^||" | sed 's#^||#||https://#g' >> fanboy-annoy
 sed -i 's/\(,domain=\).*//g' fanboy-annoyance_https.txt
 sed -i 's/\(\$domain=\).*//g' fanboy-annoyance_https.txt
 sed -i 's/\(domain=\).*//g' fanboy-annoyance_https.txt
+sed -i '/\^$/d' fanboy-annoyance_https.txt
 
 cat fanboy-annoyance.txt | grep "^||" | sed 's#^||#||http://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> fanboy-annoyance_https.txt
@@ -135,6 +136,7 @@ cat easylistchina.txt | grep "^||" | sed 's#^||#||https://#g' >> easylistchina_h
 sed -i 's/\(,domain=\).*//g' easylistchina_https.txt
 sed -i 's/\(\$domain=\).*//g' easylistchina_https.txt
 sed -i 's/\(domain=\).*//g' easylistchina_https.txt
+sed -i '/\^$/d' easylistchina_https.txt
 
 cat easylistchina.txt | grep "^||" | sed 's#^||#||http://#g' >> easylistchina_https.txt
 cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> easylistchina_https.txt
@@ -210,6 +212,8 @@ cat AdGuard_DNS.txt | grep "^||" | sed 's#^||#||https://#g' >> AdGuard_DNS_https
 sed -i 's/\(,domain=\).*//g' AdGuard_DNS_https.txt
 sed -i 's/\(\$domain=\).*//g' AdGuard_DNS_https.txt
 sed -i 's/\(domain=\).*//g' AdGuard_DNS_https.txt
+# sed -i '/\^$/d' AdGuard_DNS_https.txt
+
 
 cat AdGuard_DNS.txt | grep "^||" | sed 's#^||#||http://#g' >> AdGuard_DNS_https.txt
 cat AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> AdGuard_DNS_https.txt

@@ -1,7 +1,6 @@
 ||https://youku.com/cms/tool/pub/get_putdata.
 ||https://cp31.ott.cibntv.net/*.mp4$domain=youku.com,third-party
 ||http://cp31.ott.cibntv.net/*.mp4$domain=youku.com,third-party
-||https://atm.youku.com^
 ||https://hudong.pl.youku.com/interact/player/get/plugins?
 ||https://hudong.pl.youku.com/interact/web/get/timeLinePlugin?
 ||https://hudong.pl.youku.com/jsapi/interact/playerPlugins.js
@@ -95,7 +94,6 @@ http://m.youku.com##.recommend
 ||https://iqiyi.com/etx?
 ||https://iqiyi.com/js/pingback/
 ||https://iqiyi.com/track
-||https://msg.iqiyi.com^
 ||http://iqiyi.com/track$popup
 ||http://kfc.com.cn^$popup,domain=iqiyi.com
 ||http://miaozhen.com^$popup,domain=iqiyi.com
