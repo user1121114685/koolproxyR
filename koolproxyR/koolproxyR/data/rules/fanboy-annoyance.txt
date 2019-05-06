@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: LwduNMC000FC3JE5PFyPgg
-! Version: 201905030932
+! Checksum: Bg5HWhIjQCkpga/WhWo/gA
+! Version: 201905061442
 ! Title: Fanboy's Annoyance List
-! Last modified: 03 May 2019 09:32 UTC
+! Last modified: 06 May 2019 14:42 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -38,7 +38,7 @@
 ||https://apester.com^$third-party
 ||https://api.branch.io^$third-party
 ||https://api.flattr.com^$third-party
-||https://api.search.live.net^$third-party,domain=~bing.com
+||https://api.search.live.net^$third-party
 ||https://api.traq.li^$third-party
 ||https://app.e2ma.net^$third-party
 ||https://appboy.eu^$third-party
@@ -70,7 +70,7 @@
 ||https://bumpin.com^$third-party
 ||https://buzz-stats.com^$third-party
 ||https://carambo.la^$third-party
-||https://care2.com/petitions/$third-party,domain=~thepetitionsite.com
+||https://care2.com/petitions/$third-party
 ||https://celebjihad.com^$third-party
 ||https://chameleon.ad^$third-party
 ||https://civicscience.com/widget/jspoll/$third-party
@@ -133,7 +133,7 @@
 ||https://flashgroup.com^$third-party
 ||https://fluidsurveys.com^$third-party
 ||https://folloyu.com^$third-party
-||https://form.jotformpro.com^$third-party,domain=entrepreneur.com
+||https://form.jotformpro.com^$third-party
 ||https://freetellafriend.com^$third-party
 ||https://frizbit.com^$third-party
 ||https://fwix.com^$third-party
@@ -332,7 +332,7 @@
 ||https://survey.constantcontact.com^$third-party
 ||https://survey.io^$third-party
 ||https://surveygizmo.com^$~subdocument,third-party
-||https://surveymonkey.com^$~subdocument,third-party,domain=~surverymonkey.co.uk|~surveymonkey.co.uk|~surveymonkey.de
+||https://surveymonkey.com^$~subdocument,third-party
 ||https://swiftypecdn.com^$third-party
 ||https://swishu.com^$third-party
 ||https://synapsys.us^$third-party
@@ -392,11 +392,11 @@
 ||https://wishpond.com^$third-party
 ||https://woobox.com^$third-party
 ||https://worldgravity.com^$third-party
-||https://ws.audioscrobbler.com^$third-party,domain=~last.fm|~lastfm.de|~lastfm.ru|~play.google.com|~spotify.com
+||https://ws.audioscrobbler.com^$third-party
 ||https://yimg.com/uq/syndication/
 ||https://yottos.com^$third-party
 ||https://youappi.com/widget/$third-party
-||https://youtube.com/v/*autoplay$third-party,domain=7chan.org|boards.4chan.org
+||https://youtube.com/v/*autoplay$third-party
 ||https://ytimg.com^*/www-subscribe-widget-$script
 ||https://zaparena.com^$third-party
 ||https://zeddit.com^$third-party
@@ -482,7 +482,7 @@
 ||https://sendtonews.com/player/sidebar.php?$third-party
 ||https://addnow.com^$third-party
 ||https://addthis.com^$third-party
-||https://addthiscdn.com^$domain=~addthis.com
+||https://addthiscdn.com^
 ||https://addtoany.com^$third-party
 ||https://ahalogy.com^$third-party
 ||https://aim-ads.com/multimedia-themonitor-com/wwwroot/*_twitter_
@@ -512,7 +512,7 @@
 ||https://bufferapp.com^$third-party
 ||https://button.like.co^$third-party
 ||https://button.spread.ly^$third-party
-||https://buttons.googlesyndication.com^$third-party,domain=~google.com
+||https://buttons.googlesyndication.com^$third-party
 ||https://buttons.reddit.com^$third-party
 ||https://buzzbuttons.com^$third-party
 ||https://cdn.wibiya.com^$script
@@ -522,13 +522,13 @@
 ||https://conversionsbox.com^$third-party
 ||https://crowdynews.com^$third-party
 ||https://d5k6iufjynyu8.cloudfront.net^
-||https://del.icio.us/feeds/js/$third-party,domain=~delicious.com
+||https://del.icio.us/feeds/js/$third-party
 ||https://delicious.com/static/img/delicious.$third-party
 ||https://digg.com/img/badges/$third-party
 ||https://digg.com^$script,subdocument,third-party
 ||https://diggstatic.com^*/follow_buttons/
 ||https://donreach.com^$third-party
-||https://encrypted-tbn2.gstatic.com/images?$domain=vitorrent.org
+||https://encrypted-tbn2.gstatic.com/images?
 ||https://external.followgram.me^$third-party
 ||https://fanconverter.wetpaint.me^$third-party
 ||https://fark.com^$script,third-party
@@ -599,8 +599,8 @@
 ||https://reddit.com/domain/$third-party
 ||https://reddit.com/static/$third-party
 ||https://reddit.com^*/submitted.embed?$third-party
-||https://redditstatic.com/button/$third-party,domain=~reddit.com
-||https://redditstatic.s3.amazonaws.com^$third-party,domain=~reddit.com
+||https://redditstatic.com/button/$third-party
+||https://redditstatic.s3.amazonaws.com^$third-party
 ||https://revinate.com^$third-party
 ||https://rp-api.com/rjs/repostus.js
 ||https://saywidgets.awe.sm^$third-party
@@ -637,7 +637,7 @@
 ||https://store.yahoo.net^*/facebook.png$third-party
 ||https://store.yahoo.net^*/twitter.png$third-party
 ||https://storeya.com/externalscript/$third-party
-||https://stumble-upon.com^$third-party,domain=~stumbleupon.com
+||https://stumble-upon.com^$third-party
 ||https://stumbleupon.com/badge/$third-party
 ||https://stumbleupon.com/hostedbadge$third-party
 ||https://stumbleupon.com/services/$third-party
@@ -665,7 +665,7 @@
 ||https://vk.com/widget_community.php$third-party
 ||https://vk.com/widget_community_messages.php?$third-party
 ||https://vk.com/widget_like.php$third-party
-||https://vkontakte.ru/js/api/$third-party,domain=~arudex.com|~vk.com
+||https://vkontakte.ru/js/api/$third-party
 ||https://vkontakte.ru/share.php?$third-party
 ||https://vkontakte.ru/widget_community.php$third-party
 ||https://vkontakte.ru/widget_like.php$third-party
@@ -758,7 +758,7 @@
 ||https://cf-particle-html.eip.telegraph.co.uk^
 ||https://cjr.org/interstitial_
 ||https://complex.com/toolbar/
-||https://conteudo.jsuol.com.br^*/ucopy.js$script,domain=uol.com.br
+||https://conteudo.jsuol.com.br^*/ucopy.js$script
 ||https://cultofmac.com/e2ma.js
 ||https://d.yimg.com/ds/badge2.js
 ||https://dailymaverick.co.za/images/iabsa.png
@@ -778,7 +778,7 @@
 ||https://mediafire.com/images/backgrounds/download/*promo
 ||https://mg.co.za^*/iabsa_
 ||https://moneytalksnews.com/wp-content/themes/mtn/assets/js/mtn-modal.$script
-||https://netdna-cdn.com/wp-content/plugins/omg-magnific/magnific.min.js?$domain=omgchrome.com
+||https://netdna-cdn.com/wp-content/plugins/omg-magnific/magnific.min.js?
 ||https://newyorker.com^*/failsafe/
 ||https://orain.org/w/index.php/Special:BannerRandom?
 ||https://planelogger.com^*/avitop6.
@@ -794,11 +794,11 @@
 ||https://tunein.com/account/newiframe/signup/*conversionPopup
 ||https://tutorvista.com/iframe_container/
 ||https://washingtonmonthly.com/interstitial
-||https://wikimedia.org/wiki/Special:BannerLoader?$domain=wikipedia.org
-||https://wikimedia.org/wiki/Special:BannerRandom?$domain=wikipedia.org
+||https://wikimedia.org/wiki/Special:BannerLoader?
+||https://wikimedia.org/wiki/Special:BannerRandom?
 ||https://wp.com/wp-content/mu-plugins/post-flair/
 ||https://wp.com^*/linkwidgets/slingshot_
-||https://wufoo.com/embed/$subdocument,third-party,domain=heavy.com
+||https://wufoo.com/embed/$subdocument,third-party
 ||https://xhamster.com/ajax/cams-widget/
 ||https://xhamster.com/ajax/wid-cams-widget/
 ||https://xhamster.one/ajax/wid-cams-widget/
@@ -835,8 +835,8 @@
 ||https://manoramaonline.com/OnmanoramaNewsletter/
 ||https://mnn.com^*/signup-
 ||https://motorsport.com/join/popup/
-||https://netdna-cdn.com/wp-content/uploads/mySpoonful-Signup-Banner.jpg$domain=myspoonful.com
-||https://netdna-ssl.com^*-mailchimp-$domain=sassymanila.com
+||https://netdna-cdn.com/wp-content/uploads/mySpoonful-Signup-Banner.jpg
+||https://netdna-ssl.com^*-mailchimp-
 ||https://newsletter.bdnews24.com^
 ||https://nscreenmedia.com^*-newsletter.
 ||https://oghits.com^*/modules/modal/assets/js/modal.min.js
@@ -847,7 +847,7 @@
 ||https://sassyhongkong.com^*-mailchimp-
 ||https://sassymamahk.com^*-news-letter-
 ||https://sassymamahk.com^*-Newsletter-
-||https://scene7.com^*subscribe$domain=ny1.com
+||https://scene7.com^*subscribe
 ||https://scmp.com/misc/inkstone_sub_widget/
 ||https://seattletimes.com/wp-content/plugins/st-user-messaging/$script
 ||https://sfgate.com^*/subscribe.html
@@ -862,7 +862,7 @@
 ||https://webmd.com/dtmcms/live/webmd/*/newsletter/
 ||https://womenonwheels.co.za^*/subscribe-
 ||https://cdprojektred.com^*/top.png
-||https://cloudfront.net^*/nav-top.$domain=bdnews24.com
+||https://cloudfront.net^*/nav-top.
 ||https://cricketcountry.com^*/topa.jpg
 ||https://dailypioneer.com/images/top.png
 ||https://denso.com^*/pagetop.
@@ -912,7 +912,7 @@
 ||https://burntorangereport.com/upload/scripts/popup.js
 ||https://bwwstatic.com/socialtop
 ||https://chicagotribune.com/sn.php
-||https://cloudfront.net/bluebar/67bec96/images/ico/apple-touch-icon-precomposed.png$domain=dxracer.com
+||https://cloudfront.net/bluebar/67bec96/images/ico/apple-touch-icon-precomposed.png
 ||https://cloudfront.net/facebook/
 ||https://cloudfront.net/facebookpage/
 ||https://cloudfront.net/googleplus/
@@ -922,7 +922,7 @@
 ||https://cnet.com/rest/v1.0/tweets/
 ||https://curate.venturebeat.com^
 ||https://dailykostv.com/digg.html
-||https://deusm.com/informationweek/editor-*.png$domain=informationweek.com
+||https://deusm.com/informationweek/editor-*.png
 ||https://di.fm/_papi/v1/di/timed_alerts$xmlhttprequest
 ||https://enjin.com/images/layout/footer-icons.png
 ||https://eurotrucksimulator2.com/images/logo_blog.png
@@ -946,7 +946,7 @@
 ||https://livescience.com/social.php
 ||https://marketingsherpa.com/Zlatko/facebook.jpg
 ||https://marketingsherpa.com/Zlatko/in.jpg
-||https://media-imdb.com/images*/facebook-$domain=imdb.com
+||https://media-imdb.com/images*/facebook-
 ||https://moltenusa.com/images/com_connecton.gif
 ||https://moneycontrol.co.in^*/whatapps-icon.
 ||https://moneycontrol.co.in^*/whatsapp_messenger-
@@ -954,7 +954,7 @@
 ||https://mybetting.co.uk/facebook.png
 ||https://mybetting.co.uk/twitter.png
 ||https://naturalnews.com/getviews2.
-||https://netdna-cdn.com^*/follow.png$domain=edmsauce.com
+||https://netdna-cdn.com^*/follow.png
 ||https://newsarama.com/social.php
 ||https://phoronix.com/*/facebook.png
 ||https://phoronix.com/*/googlep.png
@@ -986,8 +986,8 @@
 ||https://wordpress.com^*/facebook.png
 ||https://wordpress.com^*/twitter1.png
 ||https://worldtruth.tv^*/fb.png
-||https://addthis.com^$domain=thewatchseries.to
-||https://google.com^*/fastbutton?$domain=autobild.de|tellows.de
+||https://addthis.com^
+||https://google.com^*/fastbutton?
 ||https://appconsent.io^
 ||https://consent.23g.io^
 ||https://consent.cmp.oath.com^
@@ -1027,14 +1027,14 @@
 ||https://stncdn.it^*/smartbanner.
 ||https://valentins.de^*/glyphicon_up.
 ||https://vebidoo.de/images/xtotop.
-||https://sendinblue.com^$domain=voetbal24.be
+||https://sendinblue.com^
 ||https://5-tv.ru^*/up.png
 ||https://gnezdo.ru^$third-party
 ||https://kommersant.ru^*/top100.
 ||https://kommersant.uk^*-subscribe-
 ||https://mirtesen.ru^$third-party
 ||https://news.net.finam.ru^$third-party
-||https://odnoklassniki.ru^$~stylesheet,domain=~odnoklassniki.ru|~ok.ru
+||https://odnoklassniki.ru^$~stylesheet
 ||https://static.smi2.net^$third-party
 ||https://top100.rambler.ru^$third-party
 ||https://tv-soyuz.ru^*/up.png
@@ -1046,7 +1046,7 @@
 ||https://pourquoidocteur.fr/img2/in.png
 ||https://gamespark.jp^*/pagetop.
 ||https://girlsheaven-job.net^*/pagetop.
-||https://img.mixi.net^$third-party,domain=~mixi.jp
+||https://img.mixi.net^$third-party
 ||https://j-wave.co.jp^*/pagetop.
 ||https://jreast.co.jp^*/bg-pagetop_
 ||https://keisei.co.jp^*/go_top_
@@ -1149,13 +1149,13 @@
 ||https://static.pe.studivz.net^*/library.js$third-party
 ||https://suedtirolnews.it^*/whatsapp.
 ||https://werkenntwen.de/images/buttons/$third-party
-||https://widgets.getsitecontrol.com^*/script.js$domain=winfuture.de
-||https://google.com^*/fastbutton?$domain=gamestar.de
-||https://assets.pinterest.com/js/pinit.js$domain=focus.de
-||https://google.com^*/fastbutton?$domain=focus.de
-||https://pinterest.com/images/$domain=focus.de
-||https://xing-share.com^$domain=focus.de
-||https://google.com^*/fastbutton?$domain=tvspielfilm.de
+||https://widgets.getsitecontrol.com^*/script.js
+||https://google.com^*/fastbutton?
+||https://assets.pinterest.com/js/pinit.js
+||https://google.com^*/fastbutton?
+||https://pinterest.com/images/
+||https://xing-share.com^
+||https://google.com^*/fastbutton?
 ||https://sanoma.nl/media/static/images/icon_zienl.png
 ||https://dni.ru^*/sotial-
 ||https://spynews.ro/templates/default/img/face.png
@@ -7022,6 +7022,7 @@ https://cwseed.com,wonderingsound.com###sharetools
 https://500px.com,dearblankpleaseblank.com,groundup.org.za,jpost.com,lumension.com,sciencedaily.com,techsplurge.com###sharing
 https://treehugger.com###sharing-tools
 https://cwtv.com###shr
+https://perezhilton.com###side-follow
 https://tasteofhome.com###sideExpandAd
 https://bozemandailychronicle.com###side_icons
 https://seriouseats.com###sidebar > .content-unit
@@ -11274,6 +11275,7 @@ https://forum.qscservice.com,kvraudio.com,minetest.net#@#.back2top
 https://thefirefly.com#@#.block-subscribe
 https://novojornal.co.ao#@#.box-newsletter
 https://azcentral.com#@#.close-wrap > .close-overlay
+https://ffmovies.ru,fmovies.to,fmovies.world#@#.fa-rss
 https://electnext.com,youtube.com#@#.feed-icon
 https://battle.net,squareup.com,yandex.by,yandex.com,yandex.com.tr,yandex.kz,yandex.ru,yandex.ua#@#.feedback-button
 https://toutelanutrition.com#@#.footer-newsletter
@@ -11306,7 +11308,7 @@ https://humblebundle.com#@#.subscribe-box
 https://stackexchange.com#@#.subscribe-container
 https://twit.tv#@#.subscribe-panel
 https://wtfast.com#@#.subscribe_box
-https://reddit.com#@#.subscription-box
+https://reddit.com,yesplz.coffee#@#.subscription-box
 https://ctpost.com#@#.taboola-frame
 https://theonion.com#@#.taboola-inbetweener
 https://ctpost.com#@#.taboolaloader
@@ -16532,6 +16534,7 @@ http://cwseed.com,wonderingsound.com###sharetools
 http://500px.com,dearblankpleaseblank.com,groundup.org.za,jpost.com,lumension.com,sciencedaily.com,techsplurge.com###sharing
 http://treehugger.com###sharing-tools
 http://cwtv.com###shr
+http://perezhilton.com###side-follow
 http://tasteofhome.com###sideExpandAd
 http://bozemandailychronicle.com###side_icons
 http://seriouseats.com###sidebar > .content-unit
@@ -20784,6 +20787,7 @@ http://forum.qscservice.com,kvraudio.com,minetest.net#@#.back2top
 http://thefirefly.com#@#.block-subscribe
 http://novojornal.co.ao#@#.box-newsletter
 http://azcentral.com#@#.close-wrap > .close-overlay
+http://ffmovies.ru,fmovies.to,fmovies.world#@#.fa-rss
 http://electnext.com,youtube.com#@#.feed-icon
 http://battle.net,squareup.com,yandex.by,yandex.com,yandex.com.tr,yandex.kz,yandex.ru,yandex.ua#@#.feedback-button
 http://toutelanutrition.com#@#.footer-newsletter
@@ -20816,7 +20820,7 @@ http://humblebundle.com#@#.subscribe-box
 http://stackexchange.com#@#.subscribe-container
 http://twit.tv#@#.subscribe-panel
 http://wtfast.com#@#.subscribe_box
-http://reddit.com#@#.subscription-box
+http://reddit.com,yesplz.coffee#@#.subscription-box
 http://ctpost.com#@#.taboola-frame
 http://theonion.com#@#.taboola-inbetweener
 http://ctpost.com#@#.taboolaloader

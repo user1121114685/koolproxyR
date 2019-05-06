@@ -38,16 +38,26 @@ esac
 # haveged 项目的目的是提供一个易用、不可预测的随机数生成器，基于 HAVEGE 算法。
 
 # entropy_avail=`cat /proc/sys/kernel/random/entropy_avail`
+entropy_avail=`opkg list-installed |grep -i "haveged"`
 
-# # 如果值比较低(<1000),建议安装 haveged. 否则加密程序会等待系统有足够的熵。
 
-# if [ "$entropy_avail" -lt 1000 ];then
-	opkg update && opkg install haveged
-# fi
+if [ "$entropy_avail" == "" ];then
+ # 离线安装包下载地址 https://downloads.openwrt.org/releases/packages-18.06/x86_64/packages/
+ 	echo "开始安装haveged,解决ss,v2ray冲突导致开机变慢的问题。"
+	opkg install /tmp/koolproxyR/haveged_1.9.4-1_x86_64.ipk
+	#opkg update && opkg install haveged
+else
+	echo "你已安装haveged，不用担心与ss,v2ray冲突导致开机变慢的问题。"
+fi
 # stop first
 KP_ENBALE=`dbus get koolproxy_enable`
 koolproxyR_enable=`dbus get koolproxyR_enable`
-[ "$KP_ENBALE" == "1" ] && sh $KSROOT/koolproxy/kp_config.sh stop >> /tmp/upload/kpr_log.txt
+
+if [ "$KP_ENBALE" == "1" ]; then
+	if [ -f "$KSROOT/koolproxy/kp_config.sh" ];then
+		sh $KSROOT/koolproxy/kp_config.sh stop >> /tmp/upload/kpr_log.txt
+	fi
+fi
 # 删除KP的二进制和核心配置文件。保留其他所有配置，避免小白两个都安装导致一些莫名其妙的问题。
 rm -rf $KSROOT/koolproxy/kp_config.sh >/dev/null 2>&1
 rm -rf $KSROOT/koolproxy/koolproxy >/dev/null 2>&1
@@ -74,7 +84,7 @@ mkdir -p $KSROOT/koolproxyR/data
 cp -rf /tmp/koolproxyR/scripts/* $KSROOT/scripts/
 cp -rf /tmp/koolproxyR/webs/* $KSROOT/webs/
 cp -rf /tmp/koolproxyR/init.d/* $KSROOT/init.d/
-if [ ! -f $KSROOT/koolproxyR/data/rules/user.txt ];then
+if [ ! -f "$KSROOT/koolproxyR/data/rules/user.txt" ];then
 	cp -rf /tmp/koolproxyR/* $KSROOT/
 else
 	mv $KSROOT/koolproxyR/data/rules/user.txt /tmp/user.txt.tmp
@@ -111,7 +121,7 @@ dbus set softcenter_module_koolproxyR_description="KPR更多规则更舒服！"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=900.8.41
-dbus set koolproxyR_version=900.8.41
+dbus set softcenter_module_koolproxyR_version=2.0.0
+dbus set koolproxyR_version=2.0.0
 
 [ "$koolproxyR_enable" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh restart

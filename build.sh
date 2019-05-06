@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="900.8.41"
+VERSION="2.0.0"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -11,9 +11,9 @@ CHANGELOG="维护阶段的kpr"
 # 转化DOS格式到unix 需要 apt-get install dos2unix
 find . -type f -exec dos2unix {} \;
 #get latest rules
-rm -rf ./koolproxyR/koolproxyR/data/rules/*
+rm -rf ./koolproxyR/koolproxyR/data/rules/*.txt
 rm -rf ./koolproxyR/koolproxyR/data/source.list
-rm -rf ./koolproxyR/koolproxyR/koolproxy
+# rm -rf ./koolproxyR/koolproxyR/koolproxy
 cd koolproxyR/koolproxyR/data/rules
 # mkdir oridata
 # cd oridata
@@ -46,7 +46,7 @@ wget -O AdGuard_DNS.txt https://filters.adtidy.org/extension/chromium/filters/15
 # 暂时先用临时的替代
 # wget https://kprules.b0.upaiyun.com/kp.dat
 # wget https://kprules.b0.upaiyun.com/user.txt
-wget https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/kp.dat
+# wget https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/kp.dat
 wget https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/user.txt
 
 ## ---------------------------------------------------fanboy处理开始------------------------------------------------------
@@ -65,17 +65,17 @@ sed -i '/gtimg.cn/d' fanboy-annoyance.txt
 sed -i '/zhihu.com/d' fanboy-annoyance.txt
 
 
-# # 将白名单转化成https https放行用三个@ http 用2个@
-# cat fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@@@||https://#g' >> fanboy-annoyance_https.txt
-# cat fanboy-annoyance.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> fanboy-annoyance_https.txt
 # 将规则转化成kp能识别的https
 cat fanboy-annoyance.txt | grep "^||" | sed 's#^||#||https://#g' >> fanboy-annoyance_https.txt
+# 移出https不支持规则domain=
+sed -i 's/\(,domain=\).*//g' fanboy-annoyance_https.txt
+sed -i 's/\(\$domain=\).*//g' fanboy-annoyance_https.txt
+sed -i 's/\(domain=\).*//g' fanboy-annoyance_https.txt
+
 cat fanboy-annoyance.txt | grep "^||" | sed 's#^||#||http://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> fanboy-annoyance_https.txt
 cat fanboy-annoyance.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> fanboy-annoyance_https.txt
-# cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> fanboy-annoyance_https.txt
-# cat fanboy-annoyance.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> fanboy-annoyance_https.txt
 
 
 # 给github的https放行
@@ -129,11 +129,13 @@ sed -i '/zhihu.com/d' easylistchina.txt
 
 
 
-# # 将白名单转化成https
-# cat easylistchina.txt | grep "^@@||" | sed 's#^@@||#@@@@||https://#g' >> easylistchina_https.txt
-# cat easylistchina.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> easylistchina_https.txt
 # 将规则转化成kp能识别的https
 cat easylistchina.txt | grep "^||" | sed 's#^||#||https://#g' >> easylistchina_https.txt
+# 移出https不支持规则domain=
+sed -i 's/\(,domain=\).*//g' easylistchina_https.txt
+sed -i 's/\(\$domain=\).*//g' easylistchina_https.txt
+sed -i 's/\(domain=\).*//g' easylistchina_https.txt
+
 cat easylistchina.txt | grep "^||" | sed 's#^||#||http://#g' >> easylistchina_https.txt
 cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> easylistchina_https.txt
 # 源文件替换成http
@@ -141,8 +143,6 @@ cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g
 cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> easylistchina_https.txt
 cat easylistchina.txt | grep -i '^[0-9a-z]'| grep -i '^|http' >> easylistchina_https.txt
 
-# cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> easylistchina_https.txt
-# cat easylistchina.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> easylistchina_https.txt
 # 给facebook.com的https放行
 sed -i '/facebook.com/d' easylistchina_https.txt
 sed -i '/fbcdn.net/d' easylistchina_https.txt
@@ -204,17 +204,17 @@ sed -i '/^\$/d' AdGuard_DNS.txt
 sed -i '/\*\$/d' AdGuard_DNS.txt
 
 
-# # 将白名单转化成https
-cat AdGuard_DNS.txt | grep "^@@||" | sed 's#^@@||#@@@@||https://#g' >> AdGuard_DNS_https.txt
-cat AdGuard_DNS.txt | grep "^@@||" | sed 's#^@@||#@@||http://#g' >> AdGuard_DNS_https.txt
 # 将规则转化成kp能识别的https
 cat AdGuard_DNS.txt | grep "^||" | sed 's#^||#||https://#g' >> AdGuard_DNS_https.txt
+# 移出https不支持规则domain=
+sed -i 's/\(,domain=\).*//g' AdGuard_DNS_https.txt
+sed -i 's/\(\$domain=\).*//g' AdGuard_DNS_https.txt
+sed -i 's/\(domain=\).*//g' AdGuard_DNS_https.txt
+
 cat AdGuard_DNS.txt | grep "^||" | sed 's#^||#||http://#g' >> AdGuard_DNS_https.txt
 cat AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> AdGuard_DNS_https.txt
 cat AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> AdGuard_DNS_https.txt
 cat AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> AdGuard_DNS_https.txt
-# cat AdGuard_DNS.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@@@https://\*#g' >> AdGuard_DNS_https.txt
-# cat AdGuard_DNS.txt | grep -i '^@@'| grep -v '^@@|'| sed 's#^@@#@@http://\*#g' >> AdGuard_DNS_https.txt
 
 
 # 删除可能导致Kpr变慢的Https规则
@@ -224,7 +224,6 @@ sed -i '/\.\*\//d' AdGuard_DNS_https.txt
 sed -i '/https:\/\/jd.com/d' AdGuard_DNS_https.txt
 sed -i '/https:\/\/taobao.com/d' AdGuard_DNS_https.txt
 sed -i '/https:\/\/tmall.com/d' AdGuard_DNS_https.txt
-
 
 # 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 sed -i '8,$d' AdGuard_DNS.txt
@@ -307,7 +306,7 @@ echo "0|kp.dat|0|0" >> source.list
 # @@*$stylesheet
 
 cd ..
-wget https://raw.githubusercontent.com/koolshare/ledesoft/master/koolproxy/koolproxy/koolproxy/koolproxy
+# wget https://raw.githubusercontent.com/koolshare/ledesoft/master/koolproxy/koolproxy/koolproxy/koolproxy
 cd ../..
 # Check and include base
 DIR="$( cd "$( dirname "$BASH_SOURCE[0]" )" && pwd )"
