@@ -1,9 +1,9 @@
 {
-"version":"2.0.1",
-"md5":"07cb0a85b9261ab86fb10a05e8c151cb",
+"version":"2.0.2",
+"md5":"51e991a5563debadec09478d27a28988",
 "home_url":"Module_koolproxyR.asp",
 "title":"koolproxyR",
 "description":"KPR更多规则更舒服！",
 "changelog":"维护阶段的kpr",
-"build_date":"2019-05-06_23:54:50"
+"build_date":"2019-05-07_11:36:17"
 }

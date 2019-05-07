@@ -146,6 +146,8 @@ update_rule(){
 		sed -i 's/\(\$domain=\).*//g' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		sed -i 's/\(domain=\).*//g' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		sed -i '/\^$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		sed -i '/\^\*\.gif/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		sed -i '/\^\*\.jpg/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 
 		cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep "^||" | sed 's#^||#||http://#g' >> $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 
@@ -218,6 +220,9 @@ update_rule(){
 		sed -i 's/\(\$domain=\).*//g' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 		sed -i 's/\(domain=\).*//g' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
 		sed -i '/\^$/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		sed -i '/\^\*\.gif/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		sed -i '/\^\*\.jpg/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+
 
 
 		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep "^||" | sed 's#^||#||http://#g' >> $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
@@ -283,7 +288,9 @@ update_rule(){
 		sed -i 's/\(,domain=\).*//g' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
 		sed -i 's/\(\$domain=\).*//g' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
 		sed -i 's/\(domain=\).*//g' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		# sed -i '/\^$/d' $KSROOT/koolproxyR/data/rules/easylistchina_https.txt
+		# sed -i '/\^$/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
+		# sed -i '/\^\*\.gif/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
+		# sed -i '/\^\*\.jpg/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
 
 
 		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep "^||" | sed 's#^||#||http://#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt

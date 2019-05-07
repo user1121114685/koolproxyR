@@ -1,6 +1,4 @@
 ||https://youku.com/cms/tool/pub/get_putdata.
-||https://cp31.ott.cibntv.net/*.mp4$domain=youku.com,third-party
-||http://cp31.ott.cibntv.net/*.mp4$domain=youku.com,third-party
 ||https://hudong.pl.youku.com/interact/player/get/plugins?
 ||https://hudong.pl.youku.com/interact/web/get/timeLinePlugin?
 ||https://hudong.pl.youku.com/jsapi/interact/playerPlugins.js
@@ -260,6 +258,7 @@ http://dapenti.com,iqiyi.com,v.qq.com##a[href*=".jd.com"]
 http://v.qq.com##a[href*=".renrendai.com"]
 http://letv.com,v.qq.com##a[href*=".vip.com"]
 http://v.qq.com##a[href*="amway.com.cn"]
+@@@@https://ykimg.alicdn.com
 ||https://hudong.alicdn.com/api/data/
 ||http://hudong.alicdn.com/api/data/$domain=player.youku.com
 ||https://goods.tudou.com/api?
