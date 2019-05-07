@@ -538,11 +538,13 @@ ss_v2ray_game_restrt(){
 		echo_date 检测到koolgame开启，重启了你的koolgame插件以适应KPR的开启与关闭！
 	fi
 	if [ "$koolclash_ENABLE" == "1" ]; then
-	echo_date ================== 以下为koolclash日志 =================
-	/koolshare/scripts/koolclash_control.sh stop
-	/koolshare/scripts/koolclash_control.sh start
-	echo_date ================== 以上为koolclash日志 =================
-	echo_date 检测到koolclash开启，重启了你的koolclash插件以适应KPR的开启与关闭！
+		# echo_date ================== 以下为koolclash日志 =================
+		# /koolshare/scripts/koolclash_control.sh stop
+		# dbus set koolclash_enable=1
+		# /koolshare/scripts/koolclash_control.sh start
+		# echo_date ================== 以上为koolclash日志 =================
+		# echo_date 检测到koolclash开启，重启了你的koolclash插件以适应KPR的开启与关闭！
+		echo_date 检测到koolclash开启，等koolclash兼容KP后开放此功能！
 	fi
 }
 

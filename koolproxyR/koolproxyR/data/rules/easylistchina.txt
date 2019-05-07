@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: 2pCLSN/S00SFppQLITMKoA
-! Version: 201905070322
+! Checksum: 7JLeV9kgzzjN/E8Flakbvg
+! Version: 201905071512
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 !  ******************************* koolproxy 语法*******************************
@@ -20,6 +20,7 @@
 !优酷规则补充。
 ||https://ykimg.com/material/*/ad/
 ||https://tip.soku.com/searches/soku/kubox/v4/sideads.json
+||vali.cp31.ott.cibntv.net
 @@@@https://liangcang-material.alicdn.com
 @@@@https://log.mmstat.com
 @@@@https://gm.mmstat.com
@@ -5725,6 +5726,16 @@ https://www.douyu.com##.closeBg-998534
 ||https://flyoffline.com/images/ss-
 ||https://flyoffline.com/images/vpn-
 ||https://8ziyuan.com/images/infolinksad.jpg
+||https://36dm.com/images/l0
+||https://36dm.com/images/ny0
+||https://36dm.club/images/00
+||https://163.com/special/*_960/
+||https://163.com/special/*_netease
+||https://naquan.com/packages/assets/js/jquery.reveal.js
+||https://91wii.com/data/ad/
+||https://bcquan.me/front/components/get_global_ad
+||https://bcquan.me/front/components/get_top_games
+||https://bcquan.me/front/home/render
 ||https://0512s.com^$third-party
 ||https://100669.com^$third-party
 ||https://15tianqi.com^$third-party
@@ -6156,6 +6167,7 @@ https://www.douyu.com##.closeBg-998534
 ||https://lancdn.com/tmp3/GG_Notice.png
 ||https://chinaacc.com/upload/*zhongjizhicheng
 ||https://zhangzishi.cc/cdn-cgi/apps/
+||https://macx.cn/js/blockadblock.js
 ||https://laosiji.com/static/js/lib/od_statistics.js
 ||https://100bt.com/dc?Url
 ||https://115img.com/static/115tj.js
@@ -6295,10 +6307,12 @@ https://www.douyu.com##.closeBg-998534
 ||https://cnzz.com^$third-party
 ||https://duba.com/proxy/tj/
 ||https://google-analytics.com/analytics.js
-||https://googletagmanager.com/gtm.js?$third-party
 ||https://hm.baidu.com^$third-party
 ||https://sinajs.cn/open/analytics/
 ||https://wrating.com^$third-party
+||http://zhaibei112.top^
+||http://wwlolbs.com^
+||http://293870.com^
 ||http://0024aaaa.com^
 ||http://0082tv.net^$third-party
 ||http://00880808.com^
@@ -12856,6 +12870,16 @@ https://www.douyu.com##.closeBg-998534
 ||http://flyoffline.com/images/ss-
 ||http://flyoffline.com/images/vpn-
 ||http://8ziyuan.com/images/infolinksad.jpg
+||http://36dm.com/images/l0
+||http://36dm.com/images/ny0
+||http://36dm.club/images/00
+||http://163.com/special/*_960/
+||http://163.com/special/*_netease
+||http://naquan.com/packages/assets/js/jquery.reveal.js
+||http://91wii.com/data/ad/
+||http://bcquan.me/front/components/get_global_ad
+||http://bcquan.me/front/components/get_top_games
+||http://bcquan.me/front/home/render
 ||http://alicdn.com^$domain=99a18.com|99re.com|99re16.com
 ||http://sinaimg.cn^$domain=99a18.com|99re.com|99re16.com
 ||http://immedlinkum.info^
@@ -15246,6 +15270,7 @@ https://www.douyu.com##.closeBg-998534
 ||http://lancdn.com/tmp3/GG_Notice.png
 ||http://chinaacc.com/upload/*zhongjizhicheng
 ||http://zhangzishi.cc/cdn-cgi/apps/
+||http://macx.cn/js/blockadblock.js
 ||http://map.baidu.com^$domain=laosiji.com
 ||http://laosiji.com/static/js/lib/od_statistics.js
 ||http://100bt.com/dc?Url
@@ -15487,7 +15512,6 @@ https://www.douyu.com##.closeBg-998534
 ||http://cnzz.com^$third-party
 ||http://duba.com/proxy/tj/
 ||http://google-analytics.com/analytics.js
-||http://googletagmanager.com/gtm.js?$third-party
 ||http://hm.baidu.com^$third-party
 ||http://msg.71.am^
 ||http://rs.sinajs.cn^
@@ -15497,6 +15521,9 @@ https://www.douyu.com##.closeBg-998534
 ||http://wrating.com^$third-party
 https://ubmcmm.baidustatic.com
 https://szxx.com.cn###A0
+https://bcquan.me##.bcqad
+https://codexiu.cn##.blog-twitter:first-child
+https://36dm.club##A[style="color:red;"][href^="show-"]
 https://isharebest.com##.ad
 https://8ziyuan.com##.deanadsside
 https://szxx.com.cn###A1
@@ -21035,6 +21062,9 @@ https://weibo.com###Pl_Core_P7MultiPicPlay__7
 https://weibo.com##.apps_PCD_reco_detail_right
 http://ubmcmm.baidustatic.com
 http://szxx.com.cn###A0
+http://bcquan.me##.bcqad
+http://codexiu.cn##.blog-twitter:first-child
+http://36dm.club##A[style="color:red;"][href^="show-"]
 http://isharebest.com##.ad
 http://8ziyuan.com##.deanadsside
 http://szxx.com.cn###A1

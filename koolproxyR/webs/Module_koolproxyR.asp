@@ -812,7 +812,7 @@ function set_version() {
 					<li><font color="#FF6347"> 问： </font>为什么梅林没有KoolProxyR?开发者歧视梅林吗？</li>
 					<li><font color="#1E90FF"> 答： </font>不是的，kpr是为了更强更多规则而存在的，目前除了软路由几乎无解。梅林设备性能没有达标！</li>			
 					<li></li>
-					<li><font color="#FF6347"> 问： </font>为什么安装了证书仍然，提升https不安全?</li>
+					<li><font color="#FF6347"> 问： </font>为什么安装了证书仍然，提示https不安全?</li>
 					<li><font color="#1E90FF"> 答： </font>Windows下面请安装的时候选择安装到&nbsp;&nbsp;[受信任的根证书颁发机构]，MAC IOS设备 请百度下如何信任证书，安卓7.0以上将.0根证书放入指定位置。</li>			
 					<li></li>
 					<li><font color="#FF6347"> 问： </font>我把kp的证书备份下来了kpr可以导入使用吗？</li>

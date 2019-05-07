@@ -174,9 +174,6 @@ update_rule(){
 		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 
-
-
-
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 		sed -i '15,$d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		# 合二归一
@@ -187,8 +184,13 @@ update_rule(){
 		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		# 给 tvbs.com 放行
 		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		sed -i '/googletagmanager.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		# 给 microsoft.com 放行
 		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		# 给apple的https放行
+		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		sed -i '/mzstatic.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+
 
 	fi
 
@@ -269,6 +271,7 @@ update_rule(){
 		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给 tvbs.com 放行
 		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/googletagmanager.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给 microsoft.com 放行
 		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 
@@ -347,6 +350,7 @@ update_rule(){
 		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
 		# 给 tvbs.com 放行
 		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
+		sed -i '/googletagmanager.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
 		# 给 microsoft.com 放行
 		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
 

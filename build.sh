@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.0.2"
+VERSION="2.0.3"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -112,6 +112,7 @@ sed -i '/https:\/\/\*/d' fanboy-annoyance.txt
 sed -i '/netflix.com/d' fanboy-annoyance.txt
 # 给 tvbs.com 放行
 sed -i '/tvbs.com/d' fanboy-annoyance.txt
+sed -i '/googletagmanager.com/d' fanboy-annoyance.txt
 # 给 microsoft.com 放行
 sed -i '/microsoft.com/d' fanboy-annoyance.txt
 
@@ -190,6 +191,7 @@ sed -i '/https:\/\/taobao.com/d' easylistchina.txt
 sed -i '/https:\/\/tmall.com/d' easylistchina.txt
 # 给 tvbs.com 放行
 sed -i '/tvbs.com/d' easylistchina.txt
+sed -i '/googletagmanager.com/d' easylistchina.txt
 # 给 netflix.com 放行
 sed -i '/netflix.com/d' easylistchina.txt
 # 给 microsoft.com 放行
@@ -278,6 +280,7 @@ sed -i '/instagram.com/d' AdGuard_DNS.txt
 sed -i '/https:\/\/\*/d' AdGuard_DNS.txt
 # 给 tvbs.com 放行
 sed -i '/tvbs.com/d' AdGuard_DNS.txt
+sed -i '/googletagmanager.com/d' AdGuard_DNS.txt
 # 给 netflix.com 放行
 sed -i '/netflix.com/d' AdGuard_DNS.txt
 # 给 microsoft.com 放行
