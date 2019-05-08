@@ -1,8 +1,8 @@
-! Checksum: k1VHsayOSZHzTeti9mlRAw
+! Checksum: rPoOu4MJij8wB5h+UvZT1w
 ! Title: AdGuard Simplified domain names filter
 ! Description: Filter composed of several other filters (English filter, Social media filter, Spyware filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.
-! Version: 2.0.4.86
-! TimeUpdated: 2019-05-06T19:30:20+03:00
+! Version: 2.0.4.87
+! TimeUpdated: 2019-05-07T19:30:21+03:00
 ! Expires: 2 days (update frequency)
 !
 ||https://tertmateruse.ru^
@@ -3630,6 +3630,7 @@
 ||https://svitnews.com^
 ||https://vi.bigmir.net^
 ||https://widget.mediastealer.com^
+||https://nvoepbzqtn.com^
 ||https://zoteromedia.com^
 ||https://ae7c783736eb2ff.com^
 ||https://reftedlettiny.info^
@@ -6921,6 +6922,7 @@
 ||https://2ssltome.ga^
 ||https://2xbpub.com^
 ||https://303marketplace.com^
+||https://320157981.world^
 ||https://32b4oilo.com^
 ||https://332-d.com^
 ||https://3393.com^
@@ -6934,6 +6936,7 @@
 ||https://360protected.com^
 ||https://365sbaffiliates.com^
 ||https://3cnce854.com^
+||https://3da86d9fe797f228.com^
 ||https://3lift.com^
 ||https://3lr67y45.com^
 ||https://3omb.com^
@@ -6987,6 +6990,7 @@
 ||https://8baf7ae42000024.com^
 ||https://8s8.eu^
 ||https://8yxupue8.com^
+||https://93c8c9a28e1db445.com^
 ||https://97d73lsi.com^
 ||https://9ads.mobi^
 ||https://9d63c80da.pw^
@@ -6997,6 +7001,7 @@
 ||https://a.adroll.com^
 ||https://a.ligatus.com^
 ||https://a.raasnet.com^
+||https://a2b108bd2461b12e.com^
 ||https://a2gw.com^
 ||https://a3m.io^
 ||https://a3pub.com^
@@ -7592,6 +7597,7 @@
 ||https://afdads.com^
 ||https://aff-online.com^
 ||https://aff.biz^
+||https://aff201868865.com^
 ||https://affasi.com^
 ||https://affbot1.com^
 ||https://affbot3.com^
@@ -8030,6 +8036,7 @@
 ||https://burjam.com^
 ||https://burnsoftware.info^
 ||https://burporess.pro^
+||https://burria.info^
 ||https://businesscare.com^
 ||https://businessclick.com^
 ||https://busterzaster.de^
@@ -8100,6 +8107,7 @@
 ||https://cdna.tremormedia.com^
 ||https://cdnads.com^
 ||https://cdnapi.net^
+||https://cdnasjdkajgfhgajfjkagfa.pro^
 ||https://cdnativ.com^
 ||https://cdnload.top^
 ||https://cdnondemand.org^
@@ -8784,6 +8792,7 @@
 ||https://future-hawk-content.co.uk^
 ||https://futureresiduals.com^
 ||https://futureus.com^
+||https://fvwlzsm3tt921krvoq6.pro^
 ||https://fwbntw.com^
 ||https://fxdepo.com^
 ||https://fxyc0dwa.com^
@@ -9279,6 +9288,7 @@
 ||https://kromeleta.ru^
 ||https://kug-74.com^
 ||https://kumpulblogger.com^
+||https://kzbiz.co^
 ||https://lacerta.space^
 ||https://ladbrokesaffiliates.com.au^
 ||https://laim.tv^
@@ -9822,6 +9832,7 @@
 ||https://oodode.com^
 ||https://ooecyaauiz.com^
 ||https://oofte.com^
+||https://oopt.fr^
 ||https://oos4l.com^
 ||https://opap.co.kr^
 ||https://openbook.net^
@@ -9914,6 +9925,7 @@
 ||https://passive-earner.com^
 ||https://patecrafts.com^
 ||https://patiskcontentdelivery.info^
+||https://patoris.xyz^
 ||https://pautaspr.com^
 ||https://paxmedia.net^
 ||https://pay-click.ru^
@@ -10267,6 +10279,7 @@
 ||https://refbanners.com^
 ||https://referback.com^
 ||https://referralargumentationnetwork.info^
+||https://reflethenfortoft.info^
 ||https://regardensa.com^
 ||https://regdfh.info^
 ||https://registry.cw.cm^
@@ -10952,6 +10965,7 @@
 ||https://underdog.media^
 ||https://undertone.com^
 ||https://undousun.com^
+||https://undrininvereb.info^
 ||https://unhardward.com^
 ||https://unicast.com^
 ||https://unifini.de^
@@ -11127,6 +11141,7 @@
 ||https://wateristian.com^
 ||https://waycash.net^
 ||https://waymp.com^
+||https://wbdds.com^
 ||https://wbptqzmv.com^
 ||https://wcmcs.net^
 ||https://wcpanalytics.com^
@@ -11331,6 +11346,7 @@
 ||https://zwaar.org^
 ||https://zxxds.net^
 ||https://zyiis.net^
+||https://zylstina.xyz^
 ||https://zypenetwork.com^
 ||https://104.154.
 ||https://104.197.
@@ -14233,6 +14249,7 @@
 ||https://pxcveedcuzy.com^
 ||https://pxiqcfkbxof.com^
 ||https://pxjmdtryd.com^
+||https://pxlqyrteuuh.com^
 ||https://pxphhwnmwuey.com^
 ||https://pxthyfgzm.com^
 ||https://pxzacgmr.com^
@@ -14476,6 +14493,7 @@
 ||https://rvtxrtzbswdji.com^
 ||https://rvyvkjqffmdp.com^
 ||https://rwalomjwgyljqj.com^
+||https://rwgvulisul.com^
 ||https://rwkxvess.com^
 ||https://rwphwhdoktfq.com^
 ||https://rwugdvqdpxfz.com^
@@ -14552,6 +14570,7 @@
 ||https://smuucatbrc.com^
 ||https://snfhwcvdqxioj.com^
 ||https://snrmqtnnlxdgdh.com^
+||https://snsfjpes.com^
 ||https://snsgsqyv.com^
 ||https://snxvrnhe.com^
 ||https://soehcsryxyd.com^
@@ -15380,6 +15399,7 @@
 ||https://zrosbqwecw.com^
 ||https://zsikmzoehqw.com^
 ||https://ztiqalyrbfsnl.com^
+||https://ztslmijniaoqip.com^
 ||https://ztxohhagymj.com^
 ||https://zudlddyzgogsh.com^
 ||https://zuiiyzgiof.com^
@@ -25175,6 +25195,7 @@
 ||https://datacoral.io^
 ||https://dataxpand.com^
 ||https://ddm.io^
+||https://departapp.com^
 ||https://devatics.com^
 ||https://distiltag.com^
 ||https://districtm.io^
@@ -25186,6 +25207,7 @@
 ||https://ecsanalytics.com^
 ||https://elastx.net^
 ||https://eluxer.net^
+||https://emxdgt.com^
 ||https://engageclick.com^
 ||https://engagemaster.com^
 ||https://engagio.com^
@@ -25285,6 +25307,7 @@
 ||https://m-t.io^
 ||https://mabipa.com^
 ||https://macandcheeseandads.com^
+||https://marketperf.com^
 ||https://marketshot.com^
 ||https://marketshot.fr^
 ||https://maropost.com^
@@ -25371,6 +25394,7 @@
 ||https://rezync.com^
 ||https://rfr-69.com^
 ||https://rockincontent.net^
+||https://rp-rep.net^
 ||https://rstg.io^
 ||https://rtb123.com^
 ||https://rumpelstiltskinhead.com^
@@ -25492,6 +25516,7 @@
 ||https://visto1.net^
 ||https://waframedia9.com^
 ||https://walmeric.com^
+||https://wbdx.fr^
 ||https://whizstats.com^
 ||https://widerplanet.com^
 ||https://womtp.com^
@@ -26348,6 +26373,7 @@
 ||https://vologda-info.ru^
 ||https://webtalking.ru^
 ||https://webvisor.com^
+||https://botize.com^
 ||https://ccrtvi.com^
 ||https://contadorvisitasgratis.com^
 ||https://delidatax.net^
@@ -31524,6 +31550,7 @@
 ||http://svitnews.com^
 ||http://vi.bigmir.net^
 ||http://widget.mediastealer.com^
+||http://nvoepbzqtn.com^
 ||http://zoteromedia.com^
 ||http://ae7c783736eb2ff.com^
 ||http://reftedlettiny.info^
@@ -34815,6 +34842,7 @@
 ||http://2ssltome.ga^
 ||http://2xbpub.com^
 ||http://303marketplace.com^
+||http://320157981.world^
 ||http://32b4oilo.com^
 ||http://332-d.com^
 ||http://3393.com^
@@ -34828,6 +34856,7 @@
 ||http://360protected.com^
 ||http://365sbaffiliates.com^
 ||http://3cnce854.com^
+||http://3da86d9fe797f228.com^
 ||http://3lift.com^
 ||http://3lr67y45.com^
 ||http://3omb.com^
@@ -34881,6 +34910,7 @@
 ||http://8baf7ae42000024.com^
 ||http://8s8.eu^
 ||http://8yxupue8.com^
+||http://93c8c9a28e1db445.com^
 ||http://97d73lsi.com^
 ||http://9ads.mobi^
 ||http://9d63c80da.pw^
@@ -34891,6 +34921,7 @@
 ||http://a.adroll.com^
 ||http://a.ligatus.com^
 ||http://a.raasnet.com^
+||http://a2b108bd2461b12e.com^
 ||http://a2gw.com^
 ||http://a3m.io^
 ||http://a3pub.com^
@@ -35486,6 +35517,7 @@
 ||http://afdads.com^
 ||http://aff-online.com^
 ||http://aff.biz^
+||http://aff201868865.com^
 ||http://affasi.com^
 ||http://affbot1.com^
 ||http://affbot3.com^
@@ -35924,6 +35956,7 @@
 ||http://burjam.com^
 ||http://burnsoftware.info^
 ||http://burporess.pro^
+||http://burria.info^
 ||http://businesscare.com^
 ||http://businessclick.com^
 ||http://busterzaster.de^
@@ -35994,6 +36027,7 @@
 ||http://cdna.tremormedia.com^
 ||http://cdnads.com^
 ||http://cdnapi.net^
+||http://cdnasjdkajgfhgajfjkagfa.pro^
 ||http://cdnativ.com^
 ||http://cdnload.top^
 ||http://cdnondemand.org^
@@ -36678,6 +36712,7 @@
 ||http://future-hawk-content.co.uk^
 ||http://futureresiduals.com^
 ||http://futureus.com^
+||http://fvwlzsm3tt921krvoq6.pro^
 ||http://fwbntw.com^
 ||http://fxdepo.com^
 ||http://fxyc0dwa.com^
@@ -37173,6 +37208,7 @@
 ||http://kromeleta.ru^
 ||http://kug-74.com^
 ||http://kumpulblogger.com^
+||http://kzbiz.co^
 ||http://lacerta.space^
 ||http://ladbrokesaffiliates.com.au^
 ||http://laim.tv^
@@ -37716,6 +37752,7 @@
 ||http://oodode.com^
 ||http://ooecyaauiz.com^
 ||http://oofte.com^
+||http://oopt.fr^
 ||http://oos4l.com^
 ||http://opap.co.kr^
 ||http://openbook.net^
@@ -37808,6 +37845,7 @@
 ||http://passive-earner.com^
 ||http://patecrafts.com^
 ||http://patiskcontentdelivery.info^
+||http://patoris.xyz^
 ||http://pautaspr.com^
 ||http://paxmedia.net^
 ||http://pay-click.ru^
@@ -38161,6 +38199,7 @@
 ||http://refbanners.com^
 ||http://referback.com^
 ||http://referralargumentationnetwork.info^
+||http://reflethenfortoft.info^
 ||http://regardensa.com^
 ||http://regdfh.info^
 ||http://registry.cw.cm^
@@ -38846,6 +38885,7 @@
 ||http://underdog.media^
 ||http://undertone.com^
 ||http://undousun.com^
+||http://undrininvereb.info^
 ||http://unhardward.com^
 ||http://unicast.com^
 ||http://unifini.de^
@@ -39021,6 +39061,7 @@
 ||http://wateristian.com^
 ||http://waycash.net^
 ||http://waymp.com^
+||http://wbdds.com^
 ||http://wbptqzmv.com^
 ||http://wcmcs.net^
 ||http://wcpanalytics.com^
@@ -39225,6 +39266,7 @@
 ||http://zwaar.org^
 ||http://zxxds.net^
 ||http://zyiis.net^
+||http://zylstina.xyz^
 ||http://zypenetwork.com^
 ||http://104.154.
 ||http://104.197.
@@ -42127,6 +42169,7 @@
 ||http://pxcveedcuzy.com^
 ||http://pxiqcfkbxof.com^
 ||http://pxjmdtryd.com^
+||http://pxlqyrteuuh.com^
 ||http://pxphhwnmwuey.com^
 ||http://pxthyfgzm.com^
 ||http://pxzacgmr.com^
@@ -42370,6 +42413,7 @@
 ||http://rvtxrtzbswdji.com^
 ||http://rvyvkjqffmdp.com^
 ||http://rwalomjwgyljqj.com^
+||http://rwgvulisul.com^
 ||http://rwkxvess.com^
 ||http://rwphwhdoktfq.com^
 ||http://rwugdvqdpxfz.com^
@@ -42446,6 +42490,7 @@
 ||http://smuucatbrc.com^
 ||http://snfhwcvdqxioj.com^
 ||http://snrmqtnnlxdgdh.com^
+||http://snsfjpes.com^
 ||http://snsgsqyv.com^
 ||http://snxvrnhe.com^
 ||http://soehcsryxyd.com^
@@ -43274,6 +43319,7 @@
 ||http://zrosbqwecw.com^
 ||http://zsikmzoehqw.com^
 ||http://ztiqalyrbfsnl.com^
+||http://ztslmijniaoqip.com^
 ||http://ztxohhagymj.com^
 ||http://zudlddyzgogsh.com^
 ||http://zuiiyzgiof.com^
@@ -53069,6 +53115,7 @@
 ||http://datacoral.io^
 ||http://dataxpand.com^
 ||http://ddm.io^
+||http://departapp.com^
 ||http://devatics.com^
 ||http://distiltag.com^
 ||http://districtm.io^
@@ -53080,6 +53127,7 @@
 ||http://ecsanalytics.com^
 ||http://elastx.net^
 ||http://eluxer.net^
+||http://emxdgt.com^
 ||http://engageclick.com^
 ||http://engagemaster.com^
 ||http://engagio.com^
@@ -53179,6 +53227,7 @@
 ||http://m-t.io^
 ||http://mabipa.com^
 ||http://macandcheeseandads.com^
+||http://marketperf.com^
 ||http://marketshot.com^
 ||http://marketshot.fr^
 ||http://maropost.com^
@@ -53265,6 +53314,7 @@
 ||http://rezync.com^
 ||http://rfr-69.com^
 ||http://rockincontent.net^
+||http://rp-rep.net^
 ||http://rstg.io^
 ||http://rtb123.com^
 ||http://rumpelstiltskinhead.com^
@@ -53386,6 +53436,7 @@
 ||http://visto1.net^
 ||http://waframedia9.com^
 ||http://walmeric.com^
+||http://wbdx.fr^
 ||http://whizstats.com^
 ||http://widerplanet.com^
 ||http://womtp.com^
@@ -54242,6 +54293,7 @@
 ||http://vologda-info.ru^
 ||http://webtalking.ru^
 ||http://webvisor.com^
+||http://botize.com^
 ||http://ccrtvi.com^
 ||http://contadorvisitasgratis.com^
 ||http://delidatax.net^
