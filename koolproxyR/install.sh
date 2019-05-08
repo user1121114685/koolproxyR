@@ -84,7 +84,9 @@ rm -rf $KSROOT/koolproxyR/data/gen_ca.sh >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/data/koolproxyR_ipset.conf >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/data/openssl.cnf >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/data/version >/dev/null 2>&1
-mv $KSROOT/koolproxyR/data/rules/user.txt /tmp/user.txt.tmp
+if [ -f "$KSROOT/koolproxyR/data/rules/user.txt" ];then
+	mv $KSROOT/koolproxyR/data/rules/user.txt /tmp/user.txt.tmp
+fi
 rm -rf $KSROOT/koolproxyR/data/rules/* >/dev/null 2>&1
 
 # copy new files
@@ -105,7 +107,8 @@ fi
 cp -f /tmp/koolproxyR/uninstall.sh $KSROOT/scripts/uninstall_koolproxyR.sh
 rm -rf $KSROOT/install.sh
 rm -rf $KSROOT/uninstall.sh
-
+rm -rf $KSROOT/libhavege*.ipk
+rm -rf $KSROOT/haveged*.ipk
 [ ! -L "/tmp/upload/user.txt" ] && ln -sf $KSROOT/koolproxyR/data/rules/user.txt /tmp/upload/user.txt
 
 cd /
@@ -132,7 +135,7 @@ dbus set softcenter_module_koolproxyR_description="KPR更多规则更舒服！"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=2.0.4
-dbus set koolproxyR_version=2.0.4
+dbus set softcenter_module_koolproxyR_version=2.0.5
+dbus set koolproxyR_version=2.0.5
 
 [ "$koolproxyR_enable" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh restart

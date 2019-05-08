@@ -631,6 +631,76 @@ function kp_cert(script, arg){
 		}
 	});
 }
+
+function kpr_debug_0(script, arg){
+	var id = parseInt(Math.random() * 100000000);
+	var postData = {"id": id, "method": script, "params":[arg], "fields": ""};
+	$.ajax({
+		type: "POST",
+		url: "/_api/",
+		async: true,
+		cache:false,
+		data: JSON.stringify(postData),
+		dataType: "json",
+		success: function(response){
+			return true;
+		}
+	});
+	tabSelect("app7");
+}
+
+function kpr_debug_1(script, arg){
+	var id = parseInt(Math.random() * 100000000);
+	var postData = {"id": id, "method": script, "params":[arg], "fields": ""};
+	$.ajax({
+		type: "POST",
+		url: "/_api/",
+		async: true,
+		cache:false,
+		data: JSON.stringify(postData),
+		dataType: "json",
+		success: function(response){
+			return true;
+		}
+	});
+	tabSelect("app7");
+}
+
+function kpr_debug_2(script, arg){
+	var id = parseInt(Math.random() * 100000000);
+	var postData = {"id": id, "method": script, "params":[arg], "fields": ""};
+	$.ajax({
+		type: "POST",
+		url: "/_api/",
+		async: true,
+		cache:false,
+		data: JSON.stringify(postData),
+		dataType: "json",
+		success: function(response){
+			return true;
+		}
+	});
+	tabSelect("app7");
+}
+
+function kpr_debug_3(script, arg){
+	var id = parseInt(Math.random() * 100000000);
+	var postData = {"id": id, "method": script, "params":[arg], "fields": ""};
+	$.ajax({
+		type: "POST",
+		url: "/_api/",
+		async: true,
+		cache:false,
+		data: JSON.stringify(postData),
+		dataType: "json",
+		success: function(response){
+			return true;
+		}
+	});
+	tabSelect("app7");
+}
+
+
 function restore_cert(){
 	var filename = $("#file").val();
 	filename = filename.split('\\');
@@ -923,6 +993,7 @@ function set_version() {
 			]},	
 			{ title: '为KoolProxyR贡献规则', suffix: '<font color="#FF0000">通过此链接贡献的规则，将服务更多的KPR用户。方便更多人</font>&nbsp;&nbsp;&nbsp;<button onclick="update_KPR_rule();" style="border-radius: 15px" class="btn">提交规则</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR_rule_education();" style="border-radius: 15px" class="btn">提交规则教程</button>' }
 		]);
+
 	</script>
 	<br><hr>
 	<h4>规则管理说明</h4>
@@ -938,13 +1009,20 @@ function set_version() {
 <div class="box boxr7">
 <div class="heading">状态日志</div>
 <div class="content">
+	<div id="kpr_debug_management" class="section"></div>
+	<script type="text/javascript">
+		$('#kpr_debug_management').forms([
+		{ title: '成就高手之路', suffix: '<button onclick="kpr_debug_0(\'KoolProxyR_debug.sh\', 0);" style="border-radius: 15px" class="btn btn-success">开启全调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_1(\'KoolProxyR_debug.sh\', 1);" style="border-radius: 15px" class="btn btn-success">开启-INFO调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_2(\'KoolProxyR_debug.sh\', 2);" style="border-radius: 15px" class="btn btn-success">开启-AD调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_3(\'KoolProxyR_debug.sh\', 3);" style="border-radius: 15px" class="btn btn-success">开启-WARNING调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="save();" style="border-radius: 15px" class="btn btn-success">关闭调试模式 </button></lable>' },
+		]);
+	</script>
 	<div class="section kp_log content">
-		<script type="text/javascript">
-			y = Math.floor(docu.getViewSize().height * 0.55);
-			s = 'height:' + ((y > 300) ? y : 300) + 'px;display:block';
-			$('.section.kp_log').append('<textarea class="as-script" name="koolproxyR_log" id="_koolproxyR_log" wrap="off" style="max-width:100%; min-width: 100%; margin: 0; ' + s + '" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>');
-		</script>
-	</div>
+			<script type="text/javascript">
+				y = Math.floor(docu.getViewSize().height * 0.55);
+				s = 'height:' + ((y > 300) ? y : 300) + 'px;display:block';
+				$('.section.kp_log').append('<textarea class="as-script" name="koolproxyR_log" id="_koolproxyR_log" wrap="off" style="max-width:100%; min-width: 100%; margin: 0; ' + s + '" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>');
+			</script>
+		</div>
+	
 </div>
 </div>
 <div id="msg_warring" class="alert alert-warning icon" style="display:none;">

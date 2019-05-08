@@ -1,8 +1,8 @@
-! Checksum: rPoOu4MJij8wB5h+UvZT1w
+! Checksum: JiJMu9u2v2FVNJmGhGgXPg
 ! Title: AdGuard Simplified domain names filter
 ! Description: Filter composed of several other filters (English filter, Social media filter, Spyware filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.
-! Version: 2.0.4.87
-! TimeUpdated: 2019-05-07T19:30:21+03:00
+! Version: 2.0.4.88
+! TimeUpdated: 2019-05-08T19:30:19+03:00
 ! Expires: 2 days (update frequency)
 !
 ||https://tertmateruse.ru^
@@ -3630,6 +3630,10 @@
 ||https://svitnews.com^
 ||https://vi.bigmir.net^
 ||https://widget.mediastealer.com^
+||https://salaure.pro^
+||https://foreventwithenwas.info^
+||https://ketapang.biz^
+||https://ulaleth.xyz^
 ||https://nvoepbzqtn.com^
 ||https://zoteromedia.com^
 ||https://ae7c783736eb2ff.com^
@@ -9539,6 +9543,7 @@
 ||https://mgcash.com^
 ||https://mgcashgate.com^
 ||https://mgplatform.com^
+||https://mgti1kofb8.com^
 ||https://mi-mi-fa.com^
 ||https://mibebu.com^
 ||https://microadinc.com^
@@ -9703,6 +9708,7 @@
 ||https://newgentraffic.com^
 ||https://newideasdaily.com^
 ||https://newsadstream.com^
+||https://newsarmor.com^
 ||https://newsmaxfeednetwork.com^
 ||https://newstogram.com^
 ||https://newsushe.info^
@@ -10659,6 +10665,7 @@
 ||https://struq.com^
 ||https://sturdynotwithstandingpersuasive.info^
 ||https://style-eyes.eu^
+||https://suaningrebtersed.info^
 ||https://subemania.com^
 ||https://sublimemedia.net^
 ||https://submissing.com^
@@ -10900,6 +10907,7 @@
 ||https://trigami.com^
 ||https://trigr.co^
 ||https://trimpur.com^
+||https://tripedrated.xyz^
 ||https://trk4.com^
 ||https://trkalot.com^
 ||https://trkclk.net^
@@ -31550,6 +31558,10 @@
 ||http://svitnews.com^
 ||http://vi.bigmir.net^
 ||http://widget.mediastealer.com^
+||http://salaure.pro^
+||http://foreventwithenwas.info^
+||http://ketapang.biz^
+||http://ulaleth.xyz^
 ||http://nvoepbzqtn.com^
 ||http://zoteromedia.com^
 ||http://ae7c783736eb2ff.com^
@@ -37459,6 +37471,7 @@
 ||http://mgcash.com^
 ||http://mgcashgate.com^
 ||http://mgplatform.com^
+||http://mgti1kofb8.com^
 ||http://mi-mi-fa.com^
 ||http://mibebu.com^
 ||http://microadinc.com^
@@ -37623,6 +37636,7 @@
 ||http://newgentraffic.com^
 ||http://newideasdaily.com^
 ||http://newsadstream.com^
+||http://newsarmor.com^
 ||http://newsmaxfeednetwork.com^
 ||http://newstogram.com^
 ||http://newsushe.info^
@@ -38579,6 +38593,7 @@
 ||http://struq.com^
 ||http://sturdynotwithstandingpersuasive.info^
 ||http://style-eyes.eu^
+||http://suaningrebtersed.info^
 ||http://subemania.com^
 ||http://sublimemedia.net^
 ||http://submissing.com^
@@ -38820,6 +38835,7 @@
 ||http://trigami.com^
 ||http://trigr.co^
 ||http://trimpur.com^
+||http://tripedrated.xyz^
 ||http://trk4.com^
 ||http://trkalot.com^
 ||http://trkclk.net^

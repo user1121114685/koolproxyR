@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: dk3p7uFCRoRM8xQXEHgb7Q
-! Version: 201905080122
+! Checksum: mNDzpBrrSH3LI4MjeR0Y1Q
+! Version: 201905081752
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 !  ******************************* koolproxy 语法*******************************
@@ -18,6 +18,7 @@
 !  "||" 为子域通配符，方便匹配主域名下的所有子域
 ! -------------------------------------------------------------------------------------------
 !优酷规则补充。
+@@||*.mp4.ts
 ||https://ykimg.com/material/*/ad/
 ||https://tip.soku.com/searches/soku/kubox/v4/sideads.json
 ||vali.cp31.ott.cibntv.net
@@ -26,6 +27,8 @@
 @@@@https://gm.mmstat.com
 @@@@https://yt.mmstat.com
 @@@@https://yt1.mmstat.com
+@@@@https://ykugc.cp31.ott.cibntv.net
+@@||ykugc.cp31.ott.cibntv.net
 ! 腾讯视频
 ! 爱奇艺
 @@@@https://tbcache.com
@@ -96,6 +99,11 @@ https://www.douyu.com##.closeBg-998534
 |https://www.youtube.com/youtubei/v1/log_event
 |https://googleads.g.doubleclick.net
 ||https://youtube.com/get_midroll_
+|https://m.youtube.com/youtubei/v1/log_event
+|https://googleads.g.doubleclick.net/pagead/id
+! 115上传文件放行
+@@@@https://uplb.115.com
+@@@@https://fhnfile.oss-cn-shenzhen.aliyuncs.com
 ! ----------------------------------------------请在此行线以上填写新增规则------------------------------------------------------
 ! ------------------------------------------------------------------------------------------------------------------------------
 !x  --------------------------------------------- 以下规则搬运自 koolproxy -------------------------------------------------------
@@ -1831,7 +1839,7 @@ https://www.douyu.com##.closeBg-998534
 ||https://1328f.com/js/jquery.js
 ||https://13322.com/newIndex/ad/
 ||https://1342a.com/js/jquery.js
-||https://138vps.com/fa_ds/
+||https://138vps.com/fa/
 ||https://139file.com/jsa/
 ||https://141h.com/data/attachment/noblock/cf/
 ||https://145.239.6.59/g3/
@@ -2904,7 +2912,6 @@ https://www.douyu.com##.closeBg-998534
 ||https://cidianwang.com/js/right
 ||https://cidianwang.com/js/zdtop.js
 ||https://ciliba.org/Public/static/js/common-v2.js
-||https://cilimao.cc/amaod/
 ||https://citysbs.com/chongqing/*/1920x179-
 ||https://citysbs.com/no/*/1190x60-
 ||https://citysbs.com/no/*/650x50-
@@ -4884,7 +4891,6 @@ https://www.douyu.com##.closeBg-998534
 ||https://shuowan.com/Public/shuo/20160119/569dafddd13be.jpg
 ||https://shuqi6.com/static/jquery/gg.js
 ||https://sihbb.com/yang/
-||https://sina-img.club/sepic/images/yl850.gif
 ||https://sina.cn/cm/sinaads_
 ||https://sina.cn/interface/*_game_wap_home_mid_list_in.
 ||https://sina.cn^*/impress?
@@ -6310,6 +6316,9 @@ https://www.douyu.com##.closeBg-998534
 ||https://hm.baidu.com^$third-party
 ||https://sinajs.cn/open/analytics/
 ||https://wrating.com^$third-party
+||http://sina-img.club^
+||http://zmlled.cn^
+||http://zhixiuchang.com^
 ||http://0024aaaa.com^
 ||http://0082tv.net^$third-party
 ||http://00880808.com^
@@ -8591,7 +8600,7 @@ https://www.douyu.com##.closeBg-998534
 ||http://1328f.com/js/jquery.js
 ||http://13322.com/newIndex/ad/
 ||http://1342a.com/js/jquery.js
-||http://138vps.com/fa_ds/
+||http://138vps.com/fa/
 ||http://139file.com/jsa/
 ||http://141h.com/data/attachment/noblock/cf/
 ||http://145.239.6.59/g3/
@@ -9779,7 +9788,6 @@ https://www.douyu.com##.closeBg-998534
 ||http://cidianwang.com/js/right
 ||http://cidianwang.com/js/zdtop.js
 ||http://ciliba.org/Public/static/js/common-v2.js
-||http://cilimao.cc/amaod/
 ||http://citysbs.com/chongqing/*/1920x179-
 ||http://citysbs.com/no/*/1190x60-
 ||http://citysbs.com/no/*/650x50-
@@ -11964,7 +11972,6 @@ https://www.douyu.com##.closeBg-998534
 ||http://shuowan.com/Public/shuo/20160119/569dafddd13be.jpg
 ||http://shuqi6.com/static/jquery/gg.js
 ||http://sihbb.com/yang/
-||http://sina-img.club/sepic/images/yl850.gif
 ||http://sina.cn/cm/sinaads_
 ||http://sina.cn/interface/*_game_wap_home_mid_list_in.
 ||http://sina.cn^*/impress?
@@ -13810,6 +13817,10 @@ https://www.douyu.com##.closeBg-998534
 ||http://ifengimg.com^*679.js
 ||http://cryptaloot.pro^
 ||http://yuyyio.com^
+||http://5mbd2.com^
+||http://ei4f.cn^
+||http://0551zgz.com^
+||http://vb4rvq.cn^
 ||http://0234408.cn^
 ||http://03196688.com^
 ||http://0577renliu.
@@ -15522,6 +15533,7 @@ https://www.douyu.com##.closeBg-998534
 ||http://wrating.com^$third-party
 https://ubmcmm.baidustatic.com
 https://szxx.com.cn###A0
+https://acgsou.com##A[style="color:red;"][href^="show-"]
 https://szxx.com.cn###A1
 https://szxx.com.cn###A2
 https://gpcxw.com###AA2
@@ -19644,7 +19656,7 @@ https://ithome.com.tw##div[class="span4"]
 https://r3sub.com##div[class] > a[href^="show.php?id="]
 https://bdimg.com,tieba.baidu.com,tieba.com##div[class][lgoinprompt="prompt"]
 https://cyol.com##div[class^="AD"]
-https://cilimao.cc##div[class^="FixBanner"]
+https://cilimao.xyz##div[class^="FixBanner"]
 https://ali213.net##div[class^="GG"]
 https://mbd.baidu.com##div[class^="_"][style="visibility: visible;"]
 https://chengdu.cn,oeeee.com##div[class^="ad-"]
@@ -21062,6 +21074,7 @@ https://weibo.com###Pl_Core_P7MultiPicPlay__7
 https://weibo.com##.apps_PCD_reco_detail_right
 http://ubmcmm.baidustatic.com
 http://szxx.com.cn###A0
+http://acgsou.com##A[style="color:red;"][href^="show-"]
 http://szxx.com.cn###A1
 http://szxx.com.cn###A2
 http://gpcxw.com###AA2
@@ -25192,7 +25205,7 @@ http://ithome.com.tw##div[class="span4"]
 http://r3sub.com##div[class] > a[href^="show.php?id="]
 http://bdimg.com,tieba.baidu.com,tieba.com##div[class][lgoinprompt="prompt"]
 http://cyol.com##div[class^="AD"]
-http://cilimao.cc##div[class^="FixBanner"]
+http://cilimao.xyz##div[class^="FixBanner"]
 http://ali213.net##div[class^="GG"]
 http://mbd.baidu.com##div[class^="_"][style="visibility: visible;"]
 http://chengdu.cn,oeeee.com##div[class^="ad-"]
