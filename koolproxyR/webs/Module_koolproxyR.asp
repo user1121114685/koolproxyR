@@ -360,7 +360,7 @@ function update_KPR(){
 		}
 	});
 	reload = 1;
-	tabSelect("app7");
+	tabSelect("app8");
 
 }
 function issues_KP(){
@@ -412,9 +412,9 @@ function verifyFields(){
 }
 
 function tabSelect(obj){
-	var tableX = ['app1-server1-jb-tab','app2-server1-fwlb-tab','app3-server1-kz-tab','app4-server1-zdy-tab','app5-server1-zsgl-tab','app6-server1-gzgl-tab','app7-server1-rz-tab'];
-	var boxX = ['boxr1','boxr2','boxr3','boxr4','boxr5','boxr6','boxr7'];
-	var appX = ['app1','app2','app3','app4','app5','app6','app7'];
+	var tableX = ['app1-server1-jb-tab','app2-server1-fwlb-tab','app3-server1-kz-tab','app4-server1-zdy-tab','app5-server1-zsgl-tab','app6-server1-gzgl-tab','app7-server1-rzz-tap','app8-server1-rz-tab'];
+	var boxX = ['boxr1','boxr2','boxr3','boxr4','boxr5','boxr6','boxr7','boxr8'];
+	var appX = ['app1','app2','app3','app4','app5','app6','app7','app8'];
 	for (var i = 0; i < tableX.length; i++){
 		if(obj == appX[i]){
 			$('#'+tableX[i]).addClass('active');
@@ -424,12 +424,16 @@ function tabSelect(obj){
 			$('.'+boxX[i]).hide();
 		}
 	}
-	if(obj=='app7'){
+	if(obj=='app8'){
 		setTimeout("get_log();", 400);
 		elem.display('save-button', false);
 	}else{
 		elem.display('save-button', true);
 	}
+	if(obj=='app7'){
+		elem.display('save-button', false);
+	}
+
 }
 function showMsg(Outtype, title, msg){
 	$('#'+Outtype).html('<h5>'+title+'</h5>'+msg+'<a class="close"><i class="icon-cancel"></i></a>');
@@ -522,7 +526,7 @@ function save(){
 			}
 		}
 	});
-	tabSelect("app7");
+	tabSelect("app8");
 }
 
 function get_log(){
@@ -572,7 +576,7 @@ function get_user_txt() {
 	});
 }
 function kp_cert_0(script, arg){
-	tabSelect("app7");
+	tabSelect("app8");
 	var id = parseInt(Math.random() * 100000000);
 	var postData = {"id": id, "method": script, "params":[arg], "fields": ""};
 	$.ajax({
@@ -602,7 +606,7 @@ function kp_cert_0(script, arg){
 	});
 }
 function kp_cert(script, arg){
-	tabSelect("app7");
+	tabSelect("app8");
 	var id = parseInt(Math.random() * 100000000);
 	var postData = {"id": id, "method": script, "params":[arg], "fields": ""};
 	$.ajax({
@@ -646,7 +650,8 @@ function kpr_debug_0(script, arg){
 			return true;
 		}
 	});
-	tabSelect("app7");
+	reload = 1;
+	tabSelect("app8");
 }
 
 function kpr_debug_1(script, arg){
@@ -663,7 +668,8 @@ function kpr_debug_1(script, arg){
 			return true;
 		}
 	});
-	tabSelect("app7");
+	reload = 1;
+	tabSelect("app8");
 }
 
 function kpr_debug_2(script, arg){
@@ -680,7 +686,8 @@ function kpr_debug_2(script, arg){
 			return true;
 		}
 	});
-	tabSelect("app7");
+	reload = 1;
+	tabSelect("app8");
 }
 
 function kpr_debug_3(script, arg){
@@ -697,7 +704,8 @@ function kpr_debug_3(script, arg){
 			return true;
 		}
 	});
-	tabSelect("app7");
+	reload = 1;
+	tabSelect("app8");
 }
 
 
@@ -751,14 +759,15 @@ function update_rules_now(arg){
 			}
 		}
 	});
-	tabSelect("app7");
+	tabSelect("app8");
 }
 
-
+                                                       
 function set_version() {
-	$('#_koolproxyR_version').html('<font color="#808080">KoolProxyR</font>');
-}
 
+	$('#_koolproxyR_version').html('<img src="/res/icon_koolproxyR-v.png">');
+}
+	
 </script>
 
 <div class="box">
@@ -766,10 +775,13 @@ function set_version() {
 <span id="_koolproxyR_version"></span>
 <a href="#/soft-center.asp" class="btn" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">返回</a>
 <a href="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/Changelog.txt" target="_blank" class="btn btn-primary" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">更新日志</a>
+                
 </div>
-<div class="content">
-	<span id="msg" class="col-sm-12" style="margin-top:10px;width:700px"><font color="#1bbf35">KoolProxyR为免费开源软件，追求体验更快、更清洁的网络，屏蔽烦人的广告 ！</font><font color="#778899">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>
-</div>	
+<div class="content"><span class="col"  style="line-height:30px;width:700px">
+	<font color="#808080">KoolProxyR为免费开源软件，追求体验更快、更清洁的网络，屏蔽烦人的广告 ！</font></span>
+
+
+	
 </div>
 <div class="box" style="margin-top: 0px;">
 <div class="heading">
@@ -778,7 +790,7 @@ function set_version() {
 	<div id="koolproxyR_switch_pannel" class="section" style="margin-top: -20px;"></div>
 	<script type="text/javascript">
 		$('#koolproxyR_switch_pannel').forms([
-			{ title: '开启KoolProxyR', name:'koolproxyR_enable',type:'checkbox',value: dbus.koolproxyR_enable == 1 }
+			{ title: '开启KoolProxyR', name:'koolproxyR_enable',type:'checkbox',value: dbus.koolproxyR_enable == 1 } 
 		]);
 	</script>
 	<hr />
@@ -798,11 +810,11 @@ function set_version() {
 <li><a href="javascript:void(0);" onclick="tabSelect('app4');" id="app4-server1-zdy-tab"><i class="icon-hammer"></i> 自定义规则</a></li>
 <li><a href="javascript:void(0);" onclick="tabSelect('app5');" id="app5-server1-zsgl-tab"><i class="icon-lock"></i> 证书管理</a></li>
 <li><a href="javascript:void(0);" onclick="tabSelect('app6');" id="app6-server1-gzgl-tab"><i class="icon-cmd"></i> 规则状态</a></li>
-<li><a href="javascript:void(0);" onclick="tabSelect('app7');" id="app7-server1-rz-tab"><i class="icon-info"></i> 日志信息</a></li>
+<li><a href="javascript:void(0);" onclick="tabSelect('app7');" id="app7-server1-rzz-tap"><i class="icon-wake"></i> 附加設置</a></li>
+<li><a href="javascript:void(0);" onclick="tabSelect('app8');" id="app8-server1-rz-tab"><i class="icon-info"></i> 日志信息</a></li>
 </ul>
-<br/>
 <div class="box boxr1" style="margin-top: 0px;">
-<div class="content">
+<div class="content"></div>
 	<div id="identification" class="section"></div>
 	<script type="text/javascript">
 		$('#identification').forms([
@@ -833,7 +845,7 @@ function set_version() {
 </div>
 </div>
 <div id="kp_mode_readme" class="box boxr1" style="margin-top: 15px;">
-<div class="heading">优秀提示<a class="pull-right" data-toggle="tooltip" title="Hide/Show Notes" href="javascript:toggleVisibility('notes');"><span id="sesdivnotesshowhide"><i class="icon-chevron-up"></i></span></a></div>
+<div class="heading">友情提示<a class="pull-right" data-toggle="tooltip" title="Hide/Show Notes" href="javascript:toggleVisibility('notes');"><span id="sesdivnotesshowhide"><i class="icon-chevron-up"></i></span></a></div>
 <div class="section content" id="sesdivnotes">
 	<li>不管你多么优秀，请一定注意以下几件事。</li>	
 	<li>--------------------------------------------------------------------------</li>	
@@ -987,8 +999,7 @@ function set_version() {
 				{ name:'koolproxyR_basic_replenish_update',type:'checkbox',value: dbus.koolproxyR_basic_replenish_update != 0, suffix: '<lable id="_koolproxyR_basic_replenish_update_txt">补充规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_video_update',type:'checkbox',value: dbus.koolproxyR_basic_video_update != 0, suffix: '<lable id="_koolproxyR_basic_video_update_txt">KP视频规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update != 0, suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
-				
-                                  { suffix: '<button id="_update_rules_now"style="border-radius: 15px""background-color:#EAADEA"  onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' },
+                { suffix: '<button id="_update_rules_now"style="border-radius: 15px""background-color:#EAADEA"  onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' },
 
 			]},	
 			{ title: '为KoolProxyR贡献规则', suffix: '<font color="#FF0000">通过此链接贡献的规则，将服务更多的KPR用户。方便更多人</font>&nbsp;&nbsp;&nbsp;<button onclick="update_KPR_rule();" style="border-radius: 15px" class="btn">提交规则</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR_rule_education();" style="border-radius: 15px" class="btn">提交规则教程</button>' }
@@ -1001,28 +1012,33 @@ function set_version() {
 		<li> KoolProxyR请根据自己的实际情况选择使用。</li>
 		<li><font color="green"> 【冲突解决】</font>尝试下少勾选部分规则，看看是否好转。。</li>
 		<li> 如果遇到问题，或者更好的规则请记得向KPR反馈。</li>
-		<li><font color="red"> 规则都是从网上收集，可能更新后会出现问题，不要慌，反馈一下就好了。</font></li>
-	</div>
+	</div>	<li><font color="red"> 规则都是从网上收集，可能更新后会出现问题，不要慌，反馈一下就好了。</font></li>
 	<br><hr>			
 </div>
 </div>
 <div class="box boxr7">
-<div class="heading">状态日志</div>
+<div class="heading">附加功能</div>
 <div class="content">
-	<div id="kpr_debug_management" class="section"></div>
+<div id="kpr_debug_management" class="section"></div>
 	<script type="text/javascript">
 		$('#kpr_debug_management').forms([
-		{ title: '成就高手之路', suffix: '<button onclick="kpr_debug_0(\'KoolProxyR_debug.sh\', 0);" style="border-radius: 15px" class="btn btn-success">开启全调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_1(\'KoolProxyR_debug.sh\', 1);" style="border-radius: 15px" class="btn btn-success">开启-INFO调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_2(\'KoolProxyR_debug.sh\', 2);" style="border-radius: 15px" class="btn btn-success">开启-AD调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_3(\'KoolProxyR_debug.sh\', 3);" style="border-radius: 15px" class="btn btn-success">开启-WARNING调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="save();" style="border-radius: 15px" class="btn btn-success">关闭调试模式 </button></lable>' },
+		{ title: '', suffix: '<button onclick="kpr_debug_0(\'KoolProxyR_debug.sh\', 0);" style="border-radius: 15px" class="btn btn-success">开启全调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_1(\'KoolProxyR_debug.sh\', 1);" style="border-radius: 15px" class="btn btn-success">开启-INFO调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_2(\'KoolProxyR_debug.sh\', 2);" style="border-radius: 15px" class="btn btn-success">开启-AD调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_3(\'KoolProxyR_debug.sh\', 3);" style="border-radius: 15px" class="btn btn-success">开启-WARNING调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="save();" style="border-radius: 15px" class="btn btn-success">关闭调试模式 </button></lable>' },
 		]);
 	</script>
+</div>
+</div>
+</div>
+</div>
+<div class="box boxr8">
+<div class="heading">状态日志</div>
+<div class="content">
 	<div class="section kp_log content">
-			<script type="text/javascript">
-				y = Math.floor(docu.getViewSize().height * 0.55);
-				s = 'height:' + ((y > 300) ? y : 300) + 'px;display:block';
-				$('.section.kp_log').append('<textarea class="as-script" name="koolproxyR_log" id="_koolproxyR_log" wrap="off" style="max-width:100%; min-width: 100%; margin: 0; ' + s + '" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>');
-			</script>
-		</div>
-	
+		<script type="text/javascript">
+			y = Math.floor(docu.getViewSize().height * 0.55);
+			s = 'height:' + ((y > 300) ? y : 300) + 'px;display:block';
+			$('.section.kp_log').append('<textarea class="as-script" name="koolproxyR_log" id="_koolproxyR_log" wrap="off" style="max-width:100%; min-width: 100%; margin: 0; ' + s + '" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>');
+		</script>
+	</div>
 </div>
 </div>
 <div id="msg_warring" class="alert alert-warning icon" style="display:none;">

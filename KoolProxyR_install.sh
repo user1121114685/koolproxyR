@@ -13,10 +13,23 @@ clean(){
 	find /tmp -name "*.tar.gz"|xargs rm -rf >/dev/null 2>&1
 }
 
+url_version="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version"
+wget --no-check-certificate --timeout=8 -qO - $url_version > /tmp/koolproxyR_version
+koolproxyR_installing_md5=`cat /tmp/koolproxyR_version  | sed -n '2p'`
+
 echo_date ==============================================
 echo_date koolproxyR 开始下载最新版KPR。
 echo_date ===============================================
 wget -O /tmp/upload/koolproxyR.tar.gz https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR.tar.gz
+koolproxyR_download_md5=`md5sum /tmp/upload/koolproxyR.tar.gz|awk '{print $1}'`
+echo_date 远程版本md5：$koolproxyR_installing_md5
+echo_date 您下载版本md5：$koolproxyR_download_md5
+if [ "$koolproxyR_installing_md5" != "$koolproxyR_download_md5" ]; then
+    echo_date 一个悲伤的故事，MD5校验不通过，勇士请重新来过吧！
+    rm -rf /tmp/upload/koolproxyR.tar.gz
+    exit
+fi
+
 echo_date ==============================================
 echo_date koolproxyR 开始执行安装程序。
 
@@ -29,7 +42,6 @@ echo_date ====================== step 1 ===========================
 echo_date 开启软件在线安装！
 sleep 1
 if [ -f $TARGET_DIR/$soft_name ];then
-    echo_date $TARGET_DIR目录下检测到上传的在线安装包$soft_name
     mv /tmp/upload/$soft_name /tmp
     sleep 1
     echo_date 尝试解压在线安装包在线安装包
@@ -98,7 +110,7 @@ if [ -f $TARGET_DIR/$soft_name ];then
             fi
             sleep 1
         done
-        echo_date 离线包安装完成！
+        echo_date 安装完成！
         sleep 1
         echo_date 一点点清理工作...
         sleep 1

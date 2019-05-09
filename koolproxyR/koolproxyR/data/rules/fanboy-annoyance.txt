@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: qdrwSNAp6/4huDoruKSOLg
-! Version: 201905081741
+! Checksum: LigC5csMi5CHVoFMmVJQpQ
+! Version: 201905091441
 ! Title: Fanboy's Annoyance List
-! Last modified: 08 May 2019 17:41 UTC
+! Last modified: 09 May 2019 14:41 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -4458,6 +4458,7 @@ https://aegis7.com##.forcetoregister
 https://patch.com##.form-card
 https://ijreview.com##.formRow
 https://huffingtonpost.com##.forma_email
+https://hiapkdownload.com,modapkdown.com##.fot-float-box
 https://theweek.com##.fourFreeBar
 https://fanpop.com##.fp_panel
 https://chowhound.com##.fr_relarrow
@@ -4817,6 +4818,7 @@ https://washingtonpost.com##.network-news
 https://chillicothenews.com##.network_bucket
 https://v3.co.uk##.network_links
 https://filehorse.com##.networking
+https://hiapkdownload.com,modapkdown.com##.new-fixd-box
 https://guyism.com##.new-guy
 https://v3.co.uk##.new_connection
 https://ndtv.com##.new_nextarrow
@@ -13983,6 +13985,7 @@ http://aegis7.com##.forcetoregister
 http://patch.com##.form-card
 http://ijreview.com##.formRow
 http://huffingtonpost.com##.forma_email
+http://hiapkdownload.com,modapkdown.com##.fot-float-box
 http://theweek.com##.fourFreeBar
 http://fanpop.com##.fp_panel
 http://chowhound.com##.fr_relarrow
@@ -14342,6 +14345,7 @@ http://washingtonpost.com##.network-news
 http://chillicothenews.com##.network_bucket
 http://v3.co.uk##.network_links
 http://filehorse.com##.networking
+http://hiapkdownload.com,modapkdown.com##.new-fixd-box
 http://guyism.com##.new-guy
 http://v3.co.uk##.new_connection
 http://ndtv.com##.new_nextarrow
