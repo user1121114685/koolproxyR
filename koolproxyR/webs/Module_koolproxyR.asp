@@ -11,6 +11,11 @@ No part of this file may be used without permission.
 <script type="text/javascript" src="/js/tomato.js"></script>
 <script type="text/javascript" src="/js/advancedtomato.js"></script>
 <script type="text/javascript" src="/layer/layer.js"></script>
+<style type="text/css">
+	#kpr_debug_management label.control-left-label{
+		width: 0%
+	}
+</style>
 <script type="text/javascript">
 var softcenter = 0;
 var dbus;
@@ -863,60 +868,60 @@ function set_version() {
 				<ul style="margin-left: 30px;">
 					<li><font color="#FF6347"> 问： </font>KoolProxyR的R是日的意思吗？</li>
 					<li><font color="#1E90FF"> 答： </font>是的，日死所有广告。</li>			
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>这些模式有什么区别？</li>
 					<li><font color="#1E90FF"> 答： </font>HTTP过滤模式，只过滤80端口，HTTP/HTTPS过滤80,443端口，全端口模式过滤所有端口，包含80，443。黑名单模式只过滤黑名单内的域名所以不建议使用。</li>			
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>某些网站我不想去广告，或者某些网站屏蔽了，我的设备无法访问。</li>
 					<li><font color="#1E90FF"> 答： </font>请使用&nbsp;&nbsp;@@|&nbsp;&nbsp;或者@@@@|&nbsp;&nbsp;对域名进行放行，http访问的网站@@|http://xxx.yyy.com&nbsp;&nbsp;&nbsp;&nbsp;https访问的网站@@@@|https://drive.google.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【自定义规则】中进行设置。如果你觉得这个规则影响了更多人，请反馈，或者提交规则到kpr，提交的规则将在KPR主规则中，惠及所有KPR用户。</li>			
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>HTTPS过滤一定要安装证书吗？</li>
 					<li><font color="#1E90FF"> 答： </font>必须安装证书，而且必须正确安装证书。</li>			
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我不想每次手动更新规则，可以自动更新吗？</li>
 					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
 					<li>0 3 * * * /koolshare/scripts/KoolProxyR_rule_update.sh update</li>
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我想自动升级KoolProxyR版本可以吗？</li>
 					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
 					<li>0 4 * * * /koolshare/scripts/KoolProxyR_update_now.sh</li>
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我是安卓7.0以上的系统，我安装了证书,开启Https导致部分APP打开提升没有网络了！</li>
 					<li><font color="#1E90FF"> 答： </font>请在【证书管理】中下载0.根证书的zip文件，解压出来放入下面的两个地方。PS 如何放入，如何root之类的话题，请在到专业论坛讨论。</li>
 					<li>/system/etc/security/cacerts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/system/etc/security/cacerts_google</li>
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我的安卓手机，刷机后卡开机界面了。谷歌服务哪点一直过不了。</li>
 					<li><font color="#1E90FF"> 答： </font>请在【访问控制】中给手机放行，或者，暂时关闭KPR！</li>
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>KoolProxyR为什么要重启SS,V2ray，koolgame？</li>
 					<li><font color="#1E90FF"> 答： </font>是的，是需要重启来适应kpr的开关，这样才能让流量走kpr，而不会导致代理无效的问题，不需要手动重启代理。</li>			
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>为什么梅林没有KoolProxyR?开发者歧视梅林吗？</li>
 					<li><font color="#1E90FF"> 答： </font>不是的，kpr是为了更强更多规则而存在的，目前除了软路由几乎无解。梅林设备性能没有达标！</li>			
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>为什么安装了证书仍然，提示https不安全?</li>
 					<li><font color="#1E90FF"> 答： </font>Windows下面请安装的时候选择安装到&nbsp;&nbsp;[受信任的根证书颁发机构]，MAC IOS设备 请百度下如何信任证书，安卓7.0以上将.0根证书放入指定位置。</li>			
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我把kp的证书备份下来了kpr可以导入使用吗？</li>
 					<li><font color="#1E90FF"> 答： </font>可以的，本来就是同源，可以相互导入导出证书来使用减少重复安装证书的过程。</li>			
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我的规则更新，和更新插件十分缓慢？有解决办法吗？</li>
 					<li><font color="#1E90FF"> 答： </font>你可以将，以下域名加入【SS V2RAY WG等代理软件】的【黑白名单】中【域名黑名单】。</li>			
 					<li>raw.githubusercontent.com</li>
 					<li>easylist-downloads.adblockplus.org</li>
 					<li>secure.fanboy.co.nz</li>
 					<li>filters.adtidy.org</li>
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我开启了fanboy全规则版本，为什么我打开网页没有以前流畅了。</li>
 					<li><font color="#1E90FF"> 答： </font>这个版本由于规则太多对不是重度国外网站使用的你来讲，确实不必要勾选，如果常年逛国外网站，又卡，那你只勾选fanboy全规则版本，其他的都取消掉吧！</li>			
 					<li>达成成就：成功榨干软路由</li>
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我发现规则上下有重复的地方有影响吗？</li>
 					<li><font color="#1E90FF"> 答： </font>没有的，这是因为不知道网站是http的还是https的，所以http与https都需要分别设置一次。</li>			
-					<li></li>
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>KoolProxyR太棒了，我要捐赠！</li>
 					<li><font color="#1E90FF"> 答： </font>谢谢大家好意，请捐赠给生活中其他需要帮助的人吧！或许这更重要！</li>			
-					<li></li>
+					<br><hr>
 				</ul>
 			</div>
 		</fieldset>
@@ -931,7 +936,7 @@ function set_version() {
 	</div>		
 	<br><hr>
 	<h4>使用手册</h4>
-	<div class="section" id="sesdiv_notes2">
+	<div class="section" id="sesdiv_notes1">
 		<li>过滤https站点广告需要为相应设备安装证书，并启用带HTTPS过滤的模式！</li>
 		<li>【全端口模式】是包括443和80端口以内的全部端口进行过滤，如果被过滤的设备开启这个，也需要安装证书！</li>
 		<li>需要自定义列表内没有的主机时，把【主机别名】留空，填写其它的即可！</li>
@@ -1012,7 +1017,8 @@ function set_version() {
 		<li> KoolProxyR请根据自己的实际情况选择使用。</li>
 		<li><font color="green"> 【冲突解决】</font>尝试下少勾选部分规则，看看是否好转。。</li>
 		<li> 如果遇到问题，或者更好的规则请记得向KPR反馈。</li>
-	</div>	<li><font color="red"> 规则都是从网上收集，可能更新后会出现问题，不要慌，反馈一下就好了。</font></li>
+		<li><font color="red"> 规则都是从网上收集，可能更新后会出现问题，不要慌，反馈一下就好了。</font></li>
+	</div> 
 	<br><hr>			
 </div>
 </div>
@@ -1025,8 +1031,30 @@ function set_version() {
 		{ title: '', suffix: '<button onclick="kpr_debug_0(\'KoolProxyR_debug.sh\', 0);" style="border-radius: 15px" class="btn btn-success">开启全调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_1(\'KoolProxyR_debug.sh\', 1);" style="border-radius: 15px" class="btn btn-success">开启-INFO调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_2(\'KoolProxyR_debug.sh\', 2);" style="border-radius: 15px" class="btn btn-success">开启-AD调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_3(\'KoolProxyR_debug.sh\', 3);" style="border-radius: 15px" class="btn btn-success">开启-WARNING调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="save();" style="border-radius: 15px" class="btn btn-success">关闭调试模式 </button></lable>' },
 		]);
 	</script>
-</div>
-</div>
+	<br><hr>
+	<h4>附加设置功能说明</h4>
+		<div class="section" id="sesdiv_notes3">
+		<br><hr>
+		<li>这是一个抓包，排错，编写规则的辅助工具，强大之人掌握，必能发挥其威力。</li>
+		<br><hr>
+		<li><font color="green"> 【开启全调试模式】</font></li>
+		<li><font color="red"> 此模式下，任何信息都将显示到日志信息中。</font></li>
+		<br><hr>
+		<li><font color="green"> 【开启-INFO调试模式】</font></li>
+		<li><font color="red"> 此模式下，只将重要信息显示到日志信息中。</font></li>
+		<br><hr>
+		<li><font color="green"> 【开启-AD调试模式】</font></li>
+		<li><font color="red"> 此模式下，通常用来排除误杀。</font></li>
+		<br><hr>
+		<li><font color="green"> 【开启-WARNING调试模式 】</font></li>
+		<li><font color="red"> 此模式看看就好，我利用不来。</font></li>
+		<br><hr>
+		<li><font color="green"> 【关闭调试模式 】</font></li>
+		<li><font color="red"> 十分重要的操作，不然一觉起来硬盘爆了。</font></li>
+		<br><hr>
+
+	</div> 
+	<br><hr>
 </div>
 </div>
 <div class="box boxr8">

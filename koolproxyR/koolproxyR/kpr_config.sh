@@ -53,15 +53,15 @@ start_koolproxy(){
 	if [ "$koolproxyR_mode_enable" == "1" ]; then
 		echo_date 开启【进阶模式】
 		[ "$koolproxyR_mode" == "0" ] && echo_date 选择【不过滤】
-		[ "$koolproxyR_mode" == "1" ] && echo_date 选择【全局模式】
-		[ "$koolproxyR_mode" == "2" ] && echo_date 选择【带HTTPS的全局模式】
+		[ "$koolproxyR_mode" == "1" ] && echo_date 选择【HTTP过滤模式】
+		[ "$koolproxyR_mode" == "2" ] && echo_date 选择【HTTP/HTTPS双过滤模式】
 		[ "$koolproxyR_mode" == "3" ] && echo_date 选择【黑名单模式】
-		[ "$koolproxyR_mode" == "4" ] && echo_date 选择【带HTTPS的黑名单模式】
+		[ "$koolproxyR_mode" == "4" ] && echo_date 选择【HTTP/HTTPS双黑名单模式】
 #		[ "$koolproxyR_mode" == "5" ] && echo_date 选择【全端口模式】
 		[ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_video_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ] && echo_date 选择【视频模式】
 	else
 		[ "$koolproxyR_base_mode" == "0" ] && echo_date 选择【不过滤】	
-		[ "$koolproxyR_base_mode" == "1" ] && echo_date 选择【全局模式】
+		[ "$koolproxyR_base_mode" == "1" ] && echo_date 选择【HTTP过滤模式】
 		[ "$koolproxyR_base_mode" == "2" ] && echo_date 选择【黑名单模式】
 		[ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_video_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ] && echo_date 选择【视频模式】
 	fi
@@ -191,9 +191,9 @@ creat_ipset(){
 gen_special_ip() {
 	ethernet=`ifconfig | grep eth | wc -l`
 	if [ "$ethernet" -ge "2" ]; then
-		dhcp_mode=`ubus call network.interface.wan status | grep \"proto\" | sed -e 's/^[ \t]\"proto\": //g' -e 's/"//g' -e 's/,//g'`
+		dhcp_mode=`ubus call network.interface.WAN status | grep \"proto\" | sed -e 's/^[ \t]\"proto\": //g' -e 's/"//g' -e 's/,//g'`
 	else
-		:
+		echo_date 单网口跳过...
 	fi
 	cat <<-EOF | grep -E "^([0-9]{1,3}\.){3}[0-9]{1,3}"
 		0.0.0.0/8
@@ -215,7 +215,7 @@ gen_special_ip() {
 		224.0.0.0/4
 		240.0.0.0/4
 		255.255.255.255
-		$([ "$dhcp_mode" == "pppoe" ] && ubus call network.interface.wan status | grep \"address\" | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
+		$([ "$dhcp_mode" == "pppoe" ] && ubus call network.interface.WAN status | grep \"address\" | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 EOF
 }
 
@@ -235,16 +235,16 @@ get_mode_name() {
 			echo "不过滤"
 		;;
 		1)
-			echo "全局模式"
+			echo "HTTP过滤模式"
 		;;
 		2)
-			echo "带HTTPS的全局模式"
+			echo "HTTP/HTTPS双过滤模式"
 		;;
 		3)
 			echo "黑名单模式"
 		;;
 		4)
-			echo "带HTTPS的黑名单模式"
+			echo "HTTP/HTTPS双黑名单模式"
 		;;
 		5)
 			echo "全端口模式"
@@ -258,7 +258,7 @@ get_base_mode_name() {
 			echo "不过滤"
 		;;
 		1)
-			echo "全局模式"
+			echo "HTTP过滤模式"
 		;;
 		2)
 			echo "黑名单模式"
@@ -417,7 +417,7 @@ load_nat(){
 	[ "$koolproxyR_mode_enable" == "1" ] && iptables -t nat -A KOOLPROXY -p tcp -j $(get_action_chain $koolproxyR_mode)
 	[ ! "$koolproxyR_mode_enable" == "1" ] && iptables -t nat -A KOOLPROXY -p tcp -j $(get_base_mode $koolproxyR_base_mode)
 	# 重定所有流量到 KOOLPROXY
-	# 全局模式和视频模式
+	# HTTP过滤模式和视频模式
 	PR_NU=`iptables -nvL PREROUTING -t nat |sed 1,2d | sed -n '/prerouting_rule/='`
 	if [ "$PR_NU" == "" ]; then
 		PR_NU=1

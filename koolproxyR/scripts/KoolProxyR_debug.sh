@@ -8,7 +8,7 @@ LOG_FILE=/tmp/upload/kpr_log.txt
 echo "" > $LOG_FILE
 
 kill_kpr() {
-	echo_date 关闭koolproxy主进程...
+	echo_date 关闭koolproxyR主进程...
 	kill -9 `pidof koolproxy` >/dev/null 2>&1
 	killall koolproxy >/dev/null 2>&1
 }

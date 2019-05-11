@@ -1,8 +1,8 @@
-! Checksum: JiJMu9u2v2FVNJmGhGgXPg
+! Checksum: xXy5ju4PV7R2aR6iaOtLng
 ! Title: AdGuard Simplified domain names filter
 ! Description: Filter composed of several other filters (English filter, Social media filter, Spyware filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.
-! Version: 2.0.4.88
-! TimeUpdated: 2019-05-08T19:30:19+03:00
+! Version: 2.0.4.90
+! TimeUpdated: 2019-05-10T19:30:19+03:00
 ! Expires: 2 days (update frequency)
 !
 ||https://tertmateruse.ru^
@@ -3630,6 +3630,10 @@
 ||https://svitnews.com^
 ||https://vi.bigmir.net^
 ||https://widget.mediastealer.com^
+||https://advsmedia.com^
+||https://bms.adjarabet.com^
+||https://greetham.net^
+||https://pushmono.com^
 ||https://salaure.pro^
 ||https://foreventwithenwas.info^
 ||https://ketapang.biz^
@@ -8505,7 +8509,6 @@
 ||https://doubleclicks.me^
 ||https://doublemax.net^
 ||https://doublepimp.com^
-||https://doublepimpssl.com^
 ||https://doublerads.com^
 ||https://doublerecall.com^
 ||https://doubleverify.com^
@@ -9155,6 +9158,7 @@
 ||https://intenthq.com^
 ||https://intentmedia.net^
 ||https://interactivespot.net^
+||https://interadv.net^
 ||https://interclick.com^
 ||https://interestably.com^
 ||https://interesting.cc^
@@ -9583,7 +9587,7 @@
 ||https://mobikano.com^
 ||https://mobile-10.com^
 ||https://mobileadspopup.com^
-||https://mobileoffers-h-download.com^
+||https://mobileoffers-*-download.com^
 ||https://mobiright.com^
 ||https://mobisla.com^
 ||https://mobitracker.info^
@@ -10157,6 +10161,7 @@
 ||https://ptp24.com^
 ||https://pub-fit.com^
 ||https://pub.network^
+||https://pubdirecte.com^
 ||https://pubgears.com^
 ||https://pubguru.com^
 ||https://publicidad.net^
@@ -12156,7 +12161,9 @@
 ||https://ditdotsol.com^
 ||https://ditwrite.com^
 ||https://dogwrite.com^
+||https://doublepimpssl.com^
 ||https://dubvacasept.com^
+||https://ebocornac.com^
 ||https://ecto-ecto-uno.com^
 ||https://erniphiq.com^
 ||https://flipy6sudy.com^
@@ -12712,6 +12719,7 @@
 ||https://bhmzjxrf.com^
 ||https://bhpxcsmvkqgd.com^
 ||https://biijdpauyvf.com^
+||https://bijkemraly.com^
 ||https://bikuetrh.com^
 ||https://biliqpvehf.com^
 ||https://bimwswreljucxa.com^
@@ -13503,6 +13511,7 @@
 ||https://imbpmlyhkk.com^
 ||https://imevdywafhro.com^
 ||https://imidshmpzr.com^
+||https://immscjnenl.com^
 ||https://imnsmvmjrdiwwr.com^
 ||https://inhcrirmboz.com^
 ||https://iogutpkrkkycq.com^
@@ -13903,6 +13912,7 @@
 ||https://mefozykpcwuazw.com^
 ||https://meguanha.com^
 ||https://melfljypjydxta.com^
+||https://mfgyyqqjpp.com^
 ||https://mfigasff.com^
 ||https://mfxjgymma.com^
 ||https://mfxxpyhzofbsg.com^
@@ -14270,6 +14280,7 @@
 ||https://pzfittkdqrrsa.com^
 ||https://pzjdrhrlzdli.com^
 ||https://pzopzjlhqbkgnp.com^
+||https://pzszpntjlz.com^
 ||https://pzzmqjrp.com^
 ||https://qaiqromd.com^
 ||https://qaxtgbdxjpibc.com^
@@ -15131,6 +15142,7 @@
 ||https://xirlmiyihvpi.com^
 ||https://xjdriaiyy.com^
 ||https://xjjfgxdfpr.com^
+||https://xjtiqdylurgima.com^
 ||https://xkcidzutjwukj.com^
 ||https://xkgbbiqqekja.com^
 ||https://xkhxejeaarq.com^
@@ -15301,6 +15313,7 @@
 ||https://yvlrhnzid.com^
 ||https://yvsymvjzk.com^
 ||https://yvyfyuacwz.com^
+||https://yvystpvmpnz.com^
 ||https://ywcxuagtmrawx.com^
 ||https://ywegbjiv.com^
 ||https://ywlaafzvnn.com^
@@ -23362,6 +23375,7 @@
 ||https://zqtk.net^
 ||https://zroitracker.com^
 ||https://functionalclam.com^
+||https://spottednoise.com^
 ||https://squirrelhands.com^
 ||https://unequalbrake.com^
 ||https://unbecominghall.com^
@@ -23943,7 +23957,6 @@
 ||https://stats.visistat.com^
 ||https://stats.vulture.com^
 ||https://stats.wwd.com^
-||https://stats.wwitv.com^
 ||https://stats.ynet.co.il^
 ||https://stats.zmags.com^
 ||https://statscol.pond5.com^
@@ -25438,6 +25451,7 @@
 ||https://snapdeal.biz^
 ||https://snapsmedia.io^
 ||https://social-sb.com^
+||https://socketviking.net^
 ||https://soflopxl.com^
 ||https://sojern.com^
 ||https://soko.ai^
@@ -26162,6 +26176,7 @@
 ||https://giga-abs.de^
 ||https://hstrck.com^
 ||https://ingenioustech.biz^
+||https://kctag.net^
 ||https://mairdumont.com^
 ||https://md-nx.com^
 ||https://mps-gba.de^
@@ -27661,6 +27676,7 @@
 ||https://st.tmgrup.com.tr^
 ||https://informers.sinoptik.ua^
 ||https://analytics.mecloud.vn^
+||https://hostingcloud.racing^
 ||https://tercabilis.info^
 ||https://jwuqescfqa.xyz^
 ||https://hostingcloud.*.wasm^
@@ -27856,6 +27872,7 @@
 ||https://pixel.redditmedia.com^
 ||https://sa.bbc.co.uk^
 ||https://sa.bbc.com^
+||https://stats.wwitv.com^
 ||https://t.9gag.com^
 ||https://t.appsflyer.com^
 ||https://tracking.epicgames.com^
@@ -31558,6 +31575,10 @@
 ||http://svitnews.com^
 ||http://vi.bigmir.net^
 ||http://widget.mediastealer.com^
+||http://advsmedia.com^
+||http://bms.adjarabet.com^
+||http://greetham.net^
+||http://pushmono.com^
 ||http://salaure.pro^
 ||http://foreventwithenwas.info^
 ||http://ketapang.biz^
@@ -36433,7 +36454,6 @@
 ||http://doubleclicks.me^
 ||http://doublemax.net^
 ||http://doublepimp.com^
-||http://doublepimpssl.com^
 ||http://doublerads.com^
 ||http://doublerecall.com^
 ||http://doubleverify.com^
@@ -37083,6 +37103,7 @@
 ||http://intenthq.com^
 ||http://intentmedia.net^
 ||http://interactivespot.net^
+||http://interadv.net^
 ||http://interclick.com^
 ||http://interestably.com^
 ||http://interesting.cc^
@@ -37511,7 +37532,7 @@
 ||http://mobikano.com^
 ||http://mobile-10.com^
 ||http://mobileadspopup.com^
-||http://mobileoffers-h-download.com^
+||http://mobileoffers-*-download.com^
 ||http://mobiright.com^
 ||http://mobisla.com^
 ||http://mobitracker.info^
@@ -38085,6 +38106,7 @@
 ||http://ptp24.com^
 ||http://pub-fit.com^
 ||http://pub.network^
+||http://pubdirecte.com^
 ||http://pubgears.com^
 ||http://pubguru.com^
 ||http://publicidad.net^
@@ -40084,7 +40106,9 @@
 ||http://ditdotsol.com^
 ||http://ditwrite.com^
 ||http://dogwrite.com^
+||http://doublepimpssl.com^
 ||http://dubvacasept.com^
+||http://ebocornac.com^
 ||http://ecto-ecto-uno.com^
 ||http://erniphiq.com^
 ||http://flipy6sudy.com^
@@ -40640,6 +40664,7 @@
 ||http://bhmzjxrf.com^
 ||http://bhpxcsmvkqgd.com^
 ||http://biijdpauyvf.com^
+||http://bijkemraly.com^
 ||http://bikuetrh.com^
 ||http://biliqpvehf.com^
 ||http://bimwswreljucxa.com^
@@ -41431,6 +41456,7 @@
 ||http://imbpmlyhkk.com^
 ||http://imevdywafhro.com^
 ||http://imidshmpzr.com^
+||http://immscjnenl.com^
 ||http://imnsmvmjrdiwwr.com^
 ||http://inhcrirmboz.com^
 ||http://iogutpkrkkycq.com^
@@ -41831,6 +41857,7 @@
 ||http://mefozykpcwuazw.com^
 ||http://meguanha.com^
 ||http://melfljypjydxta.com^
+||http://mfgyyqqjpp.com^
 ||http://mfigasff.com^
 ||http://mfxjgymma.com^
 ||http://mfxxpyhzofbsg.com^
@@ -42198,6 +42225,7 @@
 ||http://pzfittkdqrrsa.com^
 ||http://pzjdrhrlzdli.com^
 ||http://pzopzjlhqbkgnp.com^
+||http://pzszpntjlz.com^
 ||http://pzzmqjrp.com^
 ||http://qaiqromd.com^
 ||http://qaxtgbdxjpibc.com^
@@ -43059,6 +43087,7 @@
 ||http://xirlmiyihvpi.com^
 ||http://xjdriaiyy.com^
 ||http://xjjfgxdfpr.com^
+||http://xjtiqdylurgima.com^
 ||http://xkcidzutjwukj.com^
 ||http://xkgbbiqqekja.com^
 ||http://xkhxejeaarq.com^
@@ -43229,6 +43258,7 @@
 ||http://yvlrhnzid.com^
 ||http://yvsymvjzk.com^
 ||http://yvyfyuacwz.com^
+||http://yvystpvmpnz.com^
 ||http://ywcxuagtmrawx.com^
 ||http://ywegbjiv.com^
 ||http://ywlaafzvnn.com^
@@ -51290,6 +51320,7 @@
 ||http://zqtk.net^
 ||http://zroitracker.com^
 ||http://functionalclam.com^
+||http://spottednoise.com^
 ||http://squirrelhands.com^
 ||http://unequalbrake.com^
 ||http://unbecominghall.com^
@@ -51871,7 +51902,6 @@
 ||http://stats.visistat.com^
 ||http://stats.vulture.com^
 ||http://stats.wwd.com^
-||http://stats.wwitv.com^
 ||http://stats.ynet.co.il^
 ||http://stats.zmags.com^
 ||http://statscol.pond5.com^
@@ -53366,6 +53396,7 @@
 ||http://snapdeal.biz^
 ||http://snapsmedia.io^
 ||http://social-sb.com^
+||http://socketviking.net^
 ||http://soflopxl.com^
 ||http://sojern.com^
 ||http://soko.ai^
@@ -54090,6 +54121,7 @@
 ||http://giga-abs.de^
 ||http://hstrck.com^
 ||http://ingenioustech.biz^
+||http://kctag.net^
 ||http://mairdumont.com^
 ||http://md-nx.com^
 ||http://mps-gba.de^
@@ -55589,6 +55621,7 @@
 ||http://st.tmgrup.com.tr^
 ||http://informers.sinoptik.ua^
 ||http://analytics.mecloud.vn^
+||http://hostingcloud.racing^
 ||http://tercabilis.info^
 ||http://jwuqescfqa.xyz^
 ||http://hostingcloud.*.wasm^
@@ -55784,6 +55817,7 @@
 ||http://pixel.redditmedia.com^
 ||http://sa.bbc.co.uk^
 ||http://sa.bbc.com^
+||http://stats.wwitv.com^
 ||http://t.9gag.com^
 ||http://t.appsflyer.com^
 ||http://tracking.epicgames.com^

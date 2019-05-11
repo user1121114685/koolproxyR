@@ -16,7 +16,7 @@ clean(){
 url_version="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version"
 wget --no-check-certificate --timeout=8 -qO - $url_version > /tmp/koolproxyR_version
 koolproxyR_installing_md5=`cat /tmp/koolproxyR_version  | sed -n '2p'`
-
+rm -rf /tmp/version
 echo_date ==============================================
 echo_date koolproxyR 开始下载最新版KPR。
 echo_date ===============================================
