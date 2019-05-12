@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: /CGMzz6gyUgo55rTVAnnrg
-! Version: 201905111031
+! Checksum: SHwl6EHO/ScYU1TVTrC/QQ
+! Version: 201905120241
 ! Title: Fanboy's Annoyance List
-! Last modified: 11 May 2019 10:31 UTC
+! Last modified: 12 May 2019 02:41 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -7732,7 +7732,7 @@ https://chinadailyasia.com##.stsbox
 https://sextvx.com##.stvxp-social-reddit
 https://ndtv.com##.sty-updtd
 https://gizmag.com##.su_footer
-https://npr.org,symmetrymagazine.org,topbet.eu##.subscribe
+https://celebzz.com,npr.org,symmetrymagazine.org,topbet.eu##.subscribe
 https://indiatimes.com##.subscribe-form
 https://newsandguts.com##.subscribeBar
 https://programmableweb.com##.subscribeicon
@@ -17256,7 +17256,7 @@ http://chinadailyasia.com##.stsbox
 http://sextvx.com##.stvxp-social-reddit
 http://ndtv.com##.sty-updtd
 http://gizmag.com##.su_footer
-http://npr.org,symmetrymagazine.org,topbet.eu##.subscribe
+http://celebzz.com,npr.org,symmetrymagazine.org,topbet.eu##.subscribe
 http://indiatimes.com##.subscribe-form
 http://newsandguts.com##.subscribeBar
 http://programmableweb.com##.subscribeicon

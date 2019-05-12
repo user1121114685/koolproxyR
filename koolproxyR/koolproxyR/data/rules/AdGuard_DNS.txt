@@ -1,8 +1,8 @@
-! Checksum: xXy5ju4PV7R2aR6iaOtLng
+! Checksum: ftVQ5mQMjP3bievgj9O7YQ
 ! Title: AdGuard Simplified domain names filter
 ! Description: Filter composed of several other filters (English filter, Social media filter, Spyware filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.
-! Version: 2.0.4.90
-! TimeUpdated: 2019-05-10T19:30:19+03:00
+! Version: 2.0.4.91
+! TimeUpdated: 2019-05-11T19:30:20+03:00
 ! Expires: 2 days (update frequency)
 !
 ||https://tertmateruse.ru^
@@ -12180,6 +12180,7 @@
 ||https://host-host-ads.com^
 ||https://infrashift.com^
 ||https://jeinvegpool.com^
+||https://kj2hy.com^
 ||https://la-la-moon.com^
 ||https://la-la-sf.com^
 ||https://lepinsar.com^
@@ -24878,7 +24879,6 @@
 ||https://a.appbaqend.com^
 ||https://ue.flipboard.com^
 ||https://mobileapptracking.com^
-||https://startup.mobile.yandex.net^
 ||https://ilyonanalytics.herokuapp.com^
 ||https://register.appsflyer.com^
 ||https://kaffnet.com^
@@ -25200,6 +25200,7 @@
 ||https://clickx.io^
 ||https://cloud-iq.com^
 ||https://cobaltgroup.com^
+||https://colossusssp.com^
 ||https://conductrics.com^
 ||https://content-square.net^
 ||https://contentsquare.net^
@@ -25251,6 +25252,7 @@
 ||https://fqsecure.com^
 ||https://freegeoip.app^
 ||https://freshmarketer.com^
+||https://fsd2.digital^
 ||https://gameanalytics.com^
 ||https://gammachug.com^
 ||https://gear5.me^
@@ -27827,6 +27829,7 @@
 ||https://publish.web.id^
 ||https://pusatiklan.com^
 ||https://raja12shio.^
+||https://ravalynn.pw^
 ||https://realizerecess.com^
 ||https://realwap.net^
 ||https://referral-secrets.com^
@@ -40125,6 +40128,7 @@
 ||http://host-host-ads.com^
 ||http://infrashift.com^
 ||http://jeinvegpool.com^
+||http://kj2hy.com^
 ||http://la-la-moon.com^
 ||http://la-la-sf.com^
 ||http://lepinsar.com^
@@ -52823,7 +52827,6 @@
 ||http://a.appbaqend.com^
 ||http://ue.flipboard.com^
 ||http://mobileapptracking.com^
-||http://startup.mobile.yandex.net^
 ||http://ilyonanalytics.herokuapp.com^
 ||http://register.appsflyer.com^
 ||http://kaffnet.com^
@@ -53145,6 +53148,7 @@
 ||http://clickx.io^
 ||http://cloud-iq.com^
 ||http://cobaltgroup.com^
+||http://colossusssp.com^
 ||http://conductrics.com^
 ||http://content-square.net^
 ||http://contentsquare.net^
@@ -53196,6 +53200,7 @@
 ||http://fqsecure.com^
 ||http://freegeoip.app^
 ||http://freshmarketer.com^
+||http://fsd2.digital^
 ||http://gameanalytics.com^
 ||http://gammachug.com^
 ||http://gear5.me^
@@ -55772,6 +55777,7 @@
 ||http://publish.web.id^
 ||http://pusatiklan.com^
 ||http://raja12shio.^
+||http://ravalynn.pw^
 ||http://realizerecess.com^
 ||http://realwap.net^
 ||http://referral-secrets.com^

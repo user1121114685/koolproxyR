@@ -34,12 +34,12 @@ KG_NUMBER=`iptables -t nat -L PREROUTING | sed -e '1,2d' | sed -n '/KOOLGAME/=' 
 
 case $number in
 1)
-	[ "$KP_NUMBER" -gt "$SS_NUMBER" -o "$SS_DUPLICATE" -ge "2" ] && /koolshare/init.d/S99koolss.sh restart
+	[ "$KP_NUMBER" -gt "$SS_NUMBER" -o "$SS_DUPLICATE" -ge "2" ] && /koolshare/ss/ssstart.sh restart >> /tmp/upload/kpr_log.txt 2>&1
 	;;
 2)
-	[ "$KP_NUMBER" -gt "$V2_NUMBER" -o "$V2_DUPLICATE" -ge "2" ] && /koolshare/init.d/S99v2ray.sh restart
+	[ "$KP_NUMBER" -gt "$V2_NUMBER" -o "$V2_DUPLICATE" -ge "2" ] && /koolshare/scripts/v2ray_config.sh restart
 	;;
 3)
-	[ "$KP_NUMBER" -gt "$KG_NUMBER" -o "$KG_DUPLICATE" -ge "2" ] && /koolshare/init.d/S98koolgame.sh restart
+	[ "$KP_NUMBER" -gt "$KG_NUMBER" -o "$KG_DUPLICATE" -ge "2" ] && /koolshare/scripts/koolgame_config.sh restart
 	;;
 esac

@@ -192,8 +192,6 @@ gen_special_ip() {
 	ethernet=`ifconfig | grep eth | wc -l`
 	if [ "$ethernet" -ge "2" ]; then
 		dhcp_mode=`ubus call network.interface.WAN status | grep \"proto\" | sed -e 's/^[ \t]\"proto\": //g' -e 's/"//g' -e 's/,//g'`
-	else
-		echo_date 单网口跳过...
 	fi
 	cat <<-EOF | grep -E "^([0-9]{1,3}\.){3}[0-9]{1,3}"
 		0.0.0.0/8
