@@ -369,7 +369,7 @@ function update_KPR(){
 
 }
 function issues_KP(){
-	window.open("https://github.com/user1121114685/koolproxyR/issues/new");
+	window.open("https://github.com/user1121114685/koolproxyR/issues/new/choose");
 }
 
 function update_KPR_rule(){

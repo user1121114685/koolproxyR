@@ -296,3 +296,23 @@ UI细节优化（说明类）
 2019年5月12日11:06:27
 修复单网口机子ipset列表问题-------github  ericwang2006
 更新 KoolProxyR_check_chain 控制脚本地址。
+
+---
+2.0.9
+重新打包2.0.8 因为部分规则下载掉了。
+
+---
+2.0.10
+
+新增隐藏功能，自定义生成证书。
+
+在SSH中执行    
+dbus set koolproxy_diy_ca=xxxxyyyzzz    xxxxyyyzzz 换成你想要的任何东西，不能特殊符号不能中文，可以    空格 . -_ （）'     只能英语状态输入
+cd /koolshare/koolproxyR/data && sh gen_ca.sh
+ 使用隐藏功能需要重新安装证书。此功能没有其他意义只能装逼。。。。
+
+修复万古遗留离线安装问题，理论上现在可以直接离线安装了。 TG sadog (k站s大)
+更新：现在提交问题可以选择模板了，在github。
+
+----
+在线更新脚本，暂未采用 start-stop-daemon 观察一段时间后再说。

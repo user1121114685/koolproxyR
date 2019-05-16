@@ -1,8 +1,8 @@
-! Checksum: ftVQ5mQMjP3bievgj9O7YQ
+! Checksum: MuhQHwhsCpD9T0m5fYXUog
 ! Title: AdGuard Simplified domain names filter
 ! Description: Filter composed of several other filters (English filter, Social media filter, Spyware filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.
-! Version: 2.0.4.91
-! TimeUpdated: 2019-05-11T19:30:20+03:00
+! Version: 2.0.4.96
+! TimeUpdated: 2019-05-15T19:30:22+03:00
 ! Expires: 2 days (update frequency)
 !
 ||https://tertmateruse.ru^
@@ -3503,6 +3503,7 @@
 ||https://хельга.рф^
 ||https://эхх.рф^
 ||https://cpm.wargaming.net^
+||https://stat.moonwalk.co^
 ||https://an.blogis.org^
 ||https://987654321.kiev.ua^
 ||https://action.evrikak.ru^
@@ -3630,6 +3631,16 @@
 ||https://svitnews.com^
 ||https://vi.bigmir.net^
 ||https://widget.mediastealer.com^
+||https://syndapop.com^
+||https://pub2srv.com^
+||https://beharmalted.info^
+||https://opetation.pro^
+||https://oassooxo.com^
+||https://naustoch.net^
+||https://founehie.com^
+||https://oardilin.com^
+||https://zugnogne.com^
+||https://phaihoaw.net^
 ||https://advsmedia.com^
 ||https://bms.adjarabet.com^
 ||https://greetham.net^
@@ -7340,6 +7351,7 @@
 ||https://adpnut.com^
 ||https://adpopcon.com^
 ||https://adpoper.com^
+||https://adport.io^
 ||https://adppv.com^
 ||https://adpredictive.com^
 ||https://adpremo.com^
@@ -7570,6 +7582,7 @@
 ||https://adworldmedia.com^
 ||https://adworldmedia.net^
 ||https://adx1.com^
+||https://adxat.com^
 ||https://adxchg.com^
 ||https://adxcore.com^
 ||https://adxion.com^
@@ -7667,6 +7680,7 @@
 ||https://agmtrk.com^
 ||https://agvzvwof.com^
 ||https://aidaigry.com^
+||https://ailtumty.net^
 ||https://aim4media.com^
 ||https://aimatch.com^
 ||https://aio.media^
@@ -7684,6 +7698,7 @@
 ||https://allabc.com^
 ||https://alleliteads.com^
 ||https://allmt.com^
+||https://allmyverygreatlife.com^
 ||https://allopenclose.click^
 ||https://alloydigital.com^
 ||https://allyes.com^
@@ -8447,6 +8462,7 @@
 ||https://deximedia.com^
 ||https://dexplatform.com^
 ||https://dfskgmrepts.com^
+||https://dghgutalvz.com^
 ||https://dgmatix.com^
 ||https://dgmaustralia.com^
 ||https://dgmaxinteractive.com^
@@ -8613,6 +8629,7 @@
 ||https://epnredirect.ru^
 ||https://eptord.com^
 ||https://eptum.com^
+||https://epu.sh^
 ||https://eqads.com^
 ||https://erado.org^
 ||https://erendri.com^
@@ -8687,7 +8704,6 @@
 ||https://fbgdc.com^
 ||https://fbsvu.com^
 ||https://fdf4.com^
-||https://feadrope.net^
 ||https://fearer.info^
 ||https://fearfulflag.com^
 ||https://featence.com^
@@ -8711,6 +8727,7 @@
 ||https://fincastavancessetti.info^
 ||https://find-abc.com^
 ||https://find-cheap-hotels.org^
+||https://find-my-great-life.com^
 ||https://findbetterresults.com^
 ||https://findsthat.com^
 ||https://finverty.info^
@@ -8803,6 +8820,7 @@
 ||https://fwbntw.com^
 ||https://fxdepo.com^
 ||https://fxyc0dwa.com^
+||https://fyredet.xyz^
 ||https://g-cash.biz^
 ||https://g27zkdvsxl.com^
 ||https://g4whisperermedia.com^
@@ -9004,6 +9022,7 @@
 ||https://holidaytravelguide.org^
 ||https://honestlypopularvary.xyz^
 ||https://honouncil.com^
+||https://hoo1luha.com^
 ||https://hoomefodl.com^
 ||https://hoomezip.biz^
 ||https://hooraico.com^
@@ -9525,7 +9544,6 @@
 ||https://megbase.com^
 ||https://meh0f1b.com^
 ||https://meinlist.com^
-||https://mellodur.net^
 ||https://mellowads.com^
 ||https://mengheng.net^
 ||https://mentad.com^
@@ -9555,6 +9573,7 @@
 ||https://migrandof.com^
 ||https://milabra.com^
 ||https://mindlytix.com^
+||https://minessetion.info^
 ||https://minimumpay.info^
 ||https://ministedik.info^
 ||https://minodazi.com^
@@ -9579,6 +9598,7 @@
 ||https://mmotraffic.com^
 ||https://mnbvjhg.com^
 ||https://mnetads.com^
+||https://mntzrlt.net^
 ||https://mobatori.com^
 ||https://mobday.com^
 ||https://mobicont.com^
@@ -10496,6 +10516,7 @@
 ||https://shoppanda.co^
 ||https://shoppingads.com^
 ||https://shopzyapp.com^
+||https://showcasead.com^
 ||https://showyoursite.com^
 ||https://shqads.com^
 ||https://shr.fyi^
@@ -11189,6 +11210,7 @@
 ||https://whiteboardnez.com^
 ||https://whoads.net^
 ||https://whtsrv9.com^
+||https://whukroal.net^
 ||https://why-outsource.net^
 ||https://widget.yavli.com^
 ||https://widgetadvertising.biz^
@@ -11292,6 +11314,7 @@
 ||https://yieldselect.com^
 ||https://yieldtraffic.com^
 ||https://yieldx.com^
+||https://yinmyar.xyz^
 ||https://yiq6p.com^
 ||https://yjxuda0oi.com^
 ||https://yldmgrimg.net^
@@ -11326,6 +11349,7 @@
 ||https://z-gbtlfibnw.co^
 ||https://z5x.net^
 ||https://zangocash.com^
+||https://zap.buzz^
 ||https://zaparena.com^
 ||https://zappy.co.za^
 ||https://zapstorage.xyz^
@@ -11361,6 +11385,14 @@
 ||https://zyiis.net^
 ||https://zylstina.xyz^
 ||https://zypenetwork.com^
+||https://cbbp1.com^
+||https://clk-can.com^
+||https://clk-sec.com^
+||https://feadrope.net^
+||https://flix16.com^
+||https://mellodur.net^
+||https://oiycak.com^
+||https://yvsystem.com^
 ||https://104.154.
 ||https://104.197.
 ||https://104.198.
@@ -12899,6 +12931,7 @@
 ||https://cytpfucbb.com^
 ||https://czmolxvvrbb.com^
 ||https://czqrilwnayq.com^
+||https://czsnzyykqzcreu.com^
 ||https://czzzwuvvc.com^
 ||https://dacknbenn.com^
 ||https://danunnpvy.com^
@@ -13122,6 +13155,7 @@
 ||https://fgnzizhe.com^
 ||https://fgsjjpjhdlfthp.com^
 ||https://fgsmmpazsuqak.com^
+||https://fgtdzvlydqcpus.com^
 ||https://fgzxlngohtg.com^
 ||https://fhluqrhmqs.com^
 ||https://fhsohqtif.com^
@@ -13297,6 +13331,7 @@
 ||https://gsjhehtqvin.com^
 ||https://gtbrnqncz.com^
 ||https://gtkikiwa.com^
+||https://gtnmyddlf.com^
 ||https://gtorsoxdh.com^
 ||https://gudlhvxz.com^
 ||https://gugemfslzh.com^
@@ -13542,6 +13577,7 @@
 ||https://itzgybxfrbodq.com^
 ||https://iuawzhuqjl.com^
 ||https://iuhojiqev.com^
+||https://iuhpbpzwpldqbj.com^
 ||https://iuncajvw.com^
 ||https://iuooczzbi.com^
 ||https://ivowhzku.com^
@@ -13931,6 +13967,8 @@
 ||https://mkxgvmswfmypy.com^
 ||https://mkzbpsiml.com^
 ||https://mldsiekmhy.com^
+||https://mlgtlxyicweqn.com^
+||https://mmpcqstnkcelx.com^
 ||https://mmsdewfvxhw.com^
 ||https://mmxbgakffqemu.com^
 ||https://moginhstnxswt.com^
@@ -13961,6 +13999,7 @@
 ||https://muwjxxvovtb.com^
 ||https://muxtpvixahawy.com^
 ||https://mvotvznetuvfb.com^
+||https://mvqzskrnrsy.com^
 ||https://mvunstblutptj.com^
 ||https://mvxhbajzn.com^
 ||https://mvyctyji.com^
@@ -14571,6 +14610,7 @@
 ||https://sicpkohkcmt.com^
 ||https://sicteppojdwr.com^
 ||https://sihciabzm.com^
+||https://sihjnaojbrs.com^
 ||https://sinyfqrmiqgd.com^
 ||https://siqcrwlrqjc.com^
 ||https://sisrgcvomn.com^
@@ -14770,6 +14810,7 @@
 ||https://ufrbfvelweoy.com^
 ||https://ufugfbtpp.com^
 ||https://ugkppchlelde.com^
+||https://ugoptxnm.com^
 ||https://ugwkyqdbmpwbbi.com^
 ||https://ugzpvflxa.com^
 ||https://uhicnlmab.com^
@@ -15002,6 +15043,7 @@
 ||https://wfzpkmduyvx.com^
 ||https://wfzvjbdicihe.com^
 ||https://wgaycnmfz.com^
+||https://wglbucuhxxxj.com^
 ||https://wgrbdqucfoieha.com^
 ||https://wgssxjoac.com^
 ||https://whgvyswets.com^
@@ -17938,7 +17980,6 @@
 ||https://oipsyfnmrwir.com^
 ||https://oiramtfxzqfc.com^
 ||https://oixafvoxnmceol.com^
-||https://oiycak.com^
 ||https://ojjsoozoerpt.com^
 ||https://ojmkcnuur.com^
 ||https://ojmokfvfi.com^
@@ -19902,9 +19943,6 @@
 ||https://smashnewtab.com^
 ||https://spiralstab.com^
 ||https://yatab.net^
-||https://cbbp1.com^
-||https://flix16.com^
-||https://yvsystem.com^
 ||https://vicegnem.click^
 ||https://adalgo.info^
 ||https://adlerbo.info^
@@ -20146,7 +20184,6 @@
 ||https://urifiel.pw^
 ||https://valkrana.xyz^
 ||https://wysara.pw^
-||https://yinmyar.xyz^
 ||https://yllasatra.xyz^
 ||https://zinlar.pw^
 ||https://zumhice.pw^
@@ -21354,7 +21391,6 @@
 ||https://crosswalkmail.com^
 ||https://crowdscience.com^
 ||https://crowdskout.com^
-||https://crowdtwist.com^
 ||https://crsspxl.com^
 ||https://crwdcntrl.net^
 ||https://csdata1.com^
@@ -23376,6 +23412,8 @@
 ||https://zqtk.net^
 ||https://zroitracker.com^
 ||https://functionalclam.com^
+||https://lumberamount.com^
+||https://brothersbucket.com^
 ||https://spottednoise.com^
 ||https://squirrelhands.com^
 ||https://unequalbrake.com^
@@ -25127,6 +25165,7 @@
 ||https://adunity.com^
 ||https://adways.com^
 ||https://adwstats.com^
+||https://adxadtracker.com^
 ||https://africal.info^
 ||https://agentanalytics.com^
 ||https://agilecrm.com^
@@ -25253,6 +25292,7 @@
 ||https://freegeoip.app^
 ||https://freshmarketer.com^
 ||https://fsd2.digital^
+||https://fstrk.net^
 ||https://gameanalytics.com^
 ||https://gammachug.com^
 ||https://gear5.me^
@@ -25495,6 +25535,7 @@
 ||https://topstat.cn^
 ||https://traceless.me^
 ||https://track-server-100.com^
+||https://trackingpro.pro^
 ||https://trackmytarget.com^
 ||https://trackmyusers.com^
 ||https://trackonomics.net^
@@ -25645,6 +25686,7 @@
 ||https://bewhoyouare.gq^
 ||https://bhzejltg.info^
 ||https://biberukalap.com^
+||https://binarybusiness.de^
 ||https://bitclub.network^
 ||https://bitclubnetwork.com^
 ||https://bitcoin-pay.eu^
@@ -26757,6 +26799,7 @@
 ||https://event.getblue.io^
 ||https://event.loyalty.bigdoor.com^
 ||https://event.previewnetworks.com^
+||https://eventapi.libring.com^
 ||https://eventgateway.soundcloud.com^
 ||https://events.air.tv^
 ||https://events.antenna.is^
@@ -27706,6 +27749,7 @@
 ||https://6a0e2d19ac28.com^
 ||https://899-cash.com^
 ||https://8a333bc2b4d6.com^
+||https://a.brand.ad^
 ||https://abrts.pro^
 ||https://accesstrade.co.id^
 ||https://adbsys.icu^
@@ -27719,6 +27763,7 @@
 ||https://ads-link.net^
 ||https://adsbingo.com^
 ||https://adstars.co.id^
+||https://adtimeselaras.com^
 ||https://advertnative.com^
 ||https://afbcashidr.com^
 ||https://ajangiklangratis.com^
@@ -27744,6 +27789,7 @@
 ||https://dearerfonder.info^
 ||https://dermaga4d.net^
 ||https://dgnvmw.xyz^
+||https://digiads.co.id^
 ||https://dzbx8qv1at614.cloudfront.net^
 ||https://e7393e33565ce805.com^
 ||https://eclkmpbn.com^
@@ -27847,6 +27893,7 @@
 ||https://situsiklanbaris.com^
 ||https://sumberiklan.com^
 ||https://suryaiklan.com^
+||https://syndopop.com^
 ||https://teliad.com^
 ||https://theclickers.net^
 ||https://thesandonesof.info^
@@ -31451,6 +31498,7 @@
 ||http://хельга.рф^
 ||http://эхх.рф^
 ||http://cpm.wargaming.net^
+||http://stat.moonwalk.co^
 ||http://an.blogis.org^
 ||http://987654321.kiev.ua^
 ||http://action.evrikak.ru^
@@ -31578,6 +31626,16 @@
 ||http://svitnews.com^
 ||http://vi.bigmir.net^
 ||http://widget.mediastealer.com^
+||http://syndapop.com^
+||http://pub2srv.com^
+||http://beharmalted.info^
+||http://opetation.pro^
+||http://oassooxo.com^
+||http://naustoch.net^
+||http://founehie.com^
+||http://oardilin.com^
+||http://zugnogne.com^
+||http://phaihoaw.net^
 ||http://advsmedia.com^
 ||http://bms.adjarabet.com^
 ||http://greetham.net^
@@ -35288,6 +35346,7 @@
 ||http://adpnut.com^
 ||http://adpopcon.com^
 ||http://adpoper.com^
+||http://adport.io^
 ||http://adppv.com^
 ||http://adpredictive.com^
 ||http://adpremo.com^
@@ -35518,6 +35577,7 @@
 ||http://adworldmedia.com^
 ||http://adworldmedia.net^
 ||http://adx1.com^
+||http://adxat.com^
 ||http://adxchg.com^
 ||http://adxcore.com^
 ||http://adxion.com^
@@ -35615,6 +35675,7 @@
 ||http://agmtrk.com^
 ||http://agvzvwof.com^
 ||http://aidaigry.com^
+||http://ailtumty.net^
 ||http://aim4media.com^
 ||http://aimatch.com^
 ||http://aio.media^
@@ -35632,6 +35693,7 @@
 ||http://allabc.com^
 ||http://alleliteads.com^
 ||http://allmt.com^
+||http://allmyverygreatlife.com^
 ||http://allopenclose.click^
 ||http://alloydigital.com^
 ||http://allyes.com^
@@ -36395,6 +36457,7 @@
 ||http://deximedia.com^
 ||http://dexplatform.com^
 ||http://dfskgmrepts.com^
+||http://dghgutalvz.com^
 ||http://dgmatix.com^
 ||http://dgmaustralia.com^
 ||http://dgmaxinteractive.com^
@@ -36561,6 +36624,7 @@
 ||http://epnredirect.ru^
 ||http://eptord.com^
 ||http://eptum.com^
+||http://epu.sh^
 ||http://eqads.com^
 ||http://erado.org^
 ||http://erendri.com^
@@ -36635,7 +36699,6 @@
 ||http://fbgdc.com^
 ||http://fbsvu.com^
 ||http://fdf4.com^
-||http://feadrope.net^
 ||http://fearer.info^
 ||http://fearfulflag.com^
 ||http://featence.com^
@@ -36659,6 +36722,7 @@
 ||http://fincastavancessetti.info^
 ||http://find-abc.com^
 ||http://find-cheap-hotels.org^
+||http://find-my-great-life.com^
 ||http://findbetterresults.com^
 ||http://findsthat.com^
 ||http://finverty.info^
@@ -36751,6 +36815,7 @@
 ||http://fwbntw.com^
 ||http://fxdepo.com^
 ||http://fxyc0dwa.com^
+||http://fyredet.xyz^
 ||http://g-cash.biz^
 ||http://g27zkdvsxl.com^
 ||http://g4whisperermedia.com^
@@ -36952,6 +37017,7 @@
 ||http://holidaytravelguide.org^
 ||http://honestlypopularvary.xyz^
 ||http://honouncil.com^
+||http://hoo1luha.com^
 ||http://hoomefodl.com^
 ||http://hoomezip.biz^
 ||http://hooraico.com^
@@ -37473,7 +37539,6 @@
 ||http://megbase.com^
 ||http://meh0f1b.com^
 ||http://meinlist.com^
-||http://mellodur.net^
 ||http://mellowads.com^
 ||http://mengheng.net^
 ||http://mentad.com^
@@ -37503,6 +37568,7 @@
 ||http://migrandof.com^
 ||http://milabra.com^
 ||http://mindlytix.com^
+||http://minessetion.info^
 ||http://minimumpay.info^
 ||http://ministedik.info^
 ||http://minodazi.com^
@@ -37527,6 +37593,7 @@
 ||http://mmotraffic.com^
 ||http://mnbvjhg.com^
 ||http://mnetads.com^
+||http://mntzrlt.net^
 ||http://mobatori.com^
 ||http://mobday.com^
 ||http://mobicont.com^
@@ -38444,6 +38511,7 @@
 ||http://shoppanda.co^
 ||http://shoppingads.com^
 ||http://shopzyapp.com^
+||http://showcasead.com^
 ||http://showyoursite.com^
 ||http://shqads.com^
 ||http://shr.fyi^
@@ -39137,6 +39205,7 @@
 ||http://whiteboardnez.com^
 ||http://whoads.net^
 ||http://whtsrv9.com^
+||http://whukroal.net^
 ||http://why-outsource.net^
 ||http://widget.yavli.com^
 ||http://widgetadvertising.biz^
@@ -39240,6 +39309,7 @@
 ||http://yieldselect.com^
 ||http://yieldtraffic.com^
 ||http://yieldx.com^
+||http://yinmyar.xyz^
 ||http://yiq6p.com^
 ||http://yjxuda0oi.com^
 ||http://yldmgrimg.net^
@@ -39274,6 +39344,7 @@
 ||http://z-gbtlfibnw.co^
 ||http://z5x.net^
 ||http://zangocash.com^
+||http://zap.buzz^
 ||http://zaparena.com^
 ||http://zappy.co.za^
 ||http://zapstorage.xyz^
@@ -39309,6 +39380,14 @@
 ||http://zyiis.net^
 ||http://zylstina.xyz^
 ||http://zypenetwork.com^
+||http://cbbp1.com^
+||http://clk-can.com^
+||http://clk-sec.com^
+||http://feadrope.net^
+||http://flix16.com^
+||http://mellodur.net^
+||http://oiycak.com^
+||http://yvsystem.com^
 ||http://104.154.
 ||http://104.197.
 ||http://104.198.
@@ -40847,6 +40926,7 @@
 ||http://cytpfucbb.com^
 ||http://czmolxvvrbb.com^
 ||http://czqrilwnayq.com^
+||http://czsnzyykqzcreu.com^
 ||http://czzzwuvvc.com^
 ||http://dacknbenn.com^
 ||http://danunnpvy.com^
@@ -41070,6 +41150,7 @@
 ||http://fgnzizhe.com^
 ||http://fgsjjpjhdlfthp.com^
 ||http://fgsmmpazsuqak.com^
+||http://fgtdzvlydqcpus.com^
 ||http://fgzxlngohtg.com^
 ||http://fhluqrhmqs.com^
 ||http://fhsohqtif.com^
@@ -41245,6 +41326,7 @@
 ||http://gsjhehtqvin.com^
 ||http://gtbrnqncz.com^
 ||http://gtkikiwa.com^
+||http://gtnmyddlf.com^
 ||http://gtorsoxdh.com^
 ||http://gudlhvxz.com^
 ||http://gugemfslzh.com^
@@ -41490,6 +41572,7 @@
 ||http://itzgybxfrbodq.com^
 ||http://iuawzhuqjl.com^
 ||http://iuhojiqev.com^
+||http://iuhpbpzwpldqbj.com^
 ||http://iuncajvw.com^
 ||http://iuooczzbi.com^
 ||http://ivowhzku.com^
@@ -41879,6 +41962,8 @@
 ||http://mkxgvmswfmypy.com^
 ||http://mkzbpsiml.com^
 ||http://mldsiekmhy.com^
+||http://mlgtlxyicweqn.com^
+||http://mmpcqstnkcelx.com^
 ||http://mmsdewfvxhw.com^
 ||http://mmxbgakffqemu.com^
 ||http://moginhstnxswt.com^
@@ -41909,6 +41994,7 @@
 ||http://muwjxxvovtb.com^
 ||http://muxtpvixahawy.com^
 ||http://mvotvznetuvfb.com^
+||http://mvqzskrnrsy.com^
 ||http://mvunstblutptj.com^
 ||http://mvxhbajzn.com^
 ||http://mvyctyji.com^
@@ -42519,6 +42605,7 @@
 ||http://sicpkohkcmt.com^
 ||http://sicteppojdwr.com^
 ||http://sihciabzm.com^
+||http://sihjnaojbrs.com^
 ||http://sinyfqrmiqgd.com^
 ||http://siqcrwlrqjc.com^
 ||http://sisrgcvomn.com^
@@ -42718,6 +42805,7 @@
 ||http://ufrbfvelweoy.com^
 ||http://ufugfbtpp.com^
 ||http://ugkppchlelde.com^
+||http://ugoptxnm.com^
 ||http://ugwkyqdbmpwbbi.com^
 ||http://ugzpvflxa.com^
 ||http://uhicnlmab.com^
@@ -42950,6 +43038,7 @@
 ||http://wfzpkmduyvx.com^
 ||http://wfzvjbdicihe.com^
 ||http://wgaycnmfz.com^
+||http://wglbucuhxxxj.com^
 ||http://wgrbdqucfoieha.com^
 ||http://wgssxjoac.com^
 ||http://whgvyswets.com^
@@ -45886,7 +45975,6 @@
 ||http://oipsyfnmrwir.com^
 ||http://oiramtfxzqfc.com^
 ||http://oixafvoxnmceol.com^
-||http://oiycak.com^
 ||http://ojjsoozoerpt.com^
 ||http://ojmkcnuur.com^
 ||http://ojmokfvfi.com^
@@ -47850,9 +47938,6 @@
 ||http://smashnewtab.com^
 ||http://spiralstab.com^
 ||http://yatab.net^
-||http://cbbp1.com^
-||http://flix16.com^
-||http://yvsystem.com^
 ||http://vicegnem.click^
 ||http://adalgo.info^
 ||http://adlerbo.info^
@@ -48094,7 +48179,6 @@
 ||http://urifiel.pw^
 ||http://valkrana.xyz^
 ||http://wysara.pw^
-||http://yinmyar.xyz^
 ||http://yllasatra.xyz^
 ||http://zinlar.pw^
 ||http://zumhice.pw^
@@ -49302,7 +49386,6 @@
 ||http://crosswalkmail.com^
 ||http://crowdscience.com^
 ||http://crowdskout.com^
-||http://crowdtwist.com^
 ||http://crsspxl.com^
 ||http://crwdcntrl.net^
 ||http://csdata1.com^
@@ -51324,6 +51407,8 @@
 ||http://zqtk.net^
 ||http://zroitracker.com^
 ||http://functionalclam.com^
+||http://lumberamount.com^
+||http://brothersbucket.com^
 ||http://spottednoise.com^
 ||http://squirrelhands.com^
 ||http://unequalbrake.com^
@@ -53075,6 +53160,7 @@
 ||http://adunity.com^
 ||http://adways.com^
 ||http://adwstats.com^
+||http://adxadtracker.com^
 ||http://africal.info^
 ||http://agentanalytics.com^
 ||http://agilecrm.com^
@@ -53201,6 +53287,7 @@
 ||http://freegeoip.app^
 ||http://freshmarketer.com^
 ||http://fsd2.digital^
+||http://fstrk.net^
 ||http://gameanalytics.com^
 ||http://gammachug.com^
 ||http://gear5.me^
@@ -53443,6 +53530,7 @@
 ||http://topstat.cn^
 ||http://traceless.me^
 ||http://track-server-100.com^
+||http://trackingpro.pro^
 ||http://trackmytarget.com^
 ||http://trackmyusers.com^
 ||http://trackonomics.net^
@@ -53593,6 +53681,7 @@
 ||http://bewhoyouare.gq^
 ||http://bhzejltg.info^
 ||http://biberukalap.com^
+||http://binarybusiness.de^
 ||http://bitclub.network^
 ||http://bitclubnetwork.com^
 ||http://bitcoin-pay.eu^
@@ -54705,6 +54794,7 @@
 ||http://event.getblue.io^
 ||http://event.loyalty.bigdoor.com^
 ||http://event.previewnetworks.com^
+||http://eventapi.libring.com^
 ||http://eventgateway.soundcloud.com^
 ||http://events.air.tv^
 ||http://events.antenna.is^
@@ -55654,6 +55744,7 @@
 ||http://6a0e2d19ac28.com^
 ||http://899-cash.com^
 ||http://8a333bc2b4d6.com^
+||http://a.brand.ad^
 ||http://abrts.pro^
 ||http://accesstrade.co.id^
 ||http://adbsys.icu^
@@ -55667,6 +55758,7 @@
 ||http://ads-link.net^
 ||http://adsbingo.com^
 ||http://adstars.co.id^
+||http://adtimeselaras.com^
 ||http://advertnative.com^
 ||http://afbcashidr.com^
 ||http://ajangiklangratis.com^
@@ -55692,6 +55784,7 @@
 ||http://dearerfonder.info^
 ||http://dermaga4d.net^
 ||http://dgnvmw.xyz^
+||http://digiads.co.id^
 ||http://dzbx8qv1at614.cloudfront.net^
 ||http://e7393e33565ce805.com^
 ||http://eclkmpbn.com^
@@ -55795,6 +55888,7 @@
 ||http://situsiklanbaris.com^
 ||http://sumberiklan.com^
 ||http://suryaiklan.com^
+||http://syndopop.com^
 ||http://teliad.com^
 ||http://theclickers.net^
 ||http://thesandonesof.info^

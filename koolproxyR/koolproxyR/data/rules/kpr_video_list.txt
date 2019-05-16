@@ -263,6 +263,8 @@ http://v.qq.com##a[href*=".renrendai.com"]
 http://letv.com,v.qq.com##a[href*=".vip.com"]
 http://v.qq.com##a[href*="amway.com.cn"]
 @@@@https://ykimg.alicdn.com
+@@@@https://g.alicdn.com
+@@@@https://img.alicdn.com
 ||https://hudong.alicdn.com/api/data/
 ||http://hudong.alicdn.com/api/data/$domain=player.youku.com
 @@||mmstat.com/$script,image,domain=v.youku.com|tudou.com
