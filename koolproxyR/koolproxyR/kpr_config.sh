@@ -58,15 +58,12 @@ start_koolproxy(){
 		[ "$koolproxyR_mode" == "3" ] && echo_date 选择【黑名单模式】
 		[ "$koolproxyR_mode" == "4" ] && echo_date 选择【HTTP/HTTPS双黑名单模式】
 #		[ "$koolproxyR_mode" == "5" ] && echo_date 选择【全端口模式】
-		[ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_video_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ] && echo_date 选择【视频模式】
 	else
 		[ "$koolproxyR_base_mode" == "0" ] && echo_date 选择【不过滤】	
 		[ "$koolproxyR_base_mode" == "1" ] && echo_date 选择【HTTP过滤模式】
 		[ "$koolproxyR_base_mode" == "2" ] && echo_date 选择【黑名单模式】
-		[ "$koolproxyR_video_rules" == "1" -a "koolproxyR_oline_rules" == "0" -a "$koolproxyR_easylist_rules" == "0" -a "$koolproxyR_video_rules" == "0" -a "$koolproxyR_fanboy_rules" == "0" ] && echo_date 选择【视频模式】
 	fi
 	cd $KP_DIR && koolproxy -d --ttl 188 --ttlport 3001 --ipv6
-	# start-stop-daemon -S -b -q -x koolproxy -d --ttl 188 --ttlport 3001 --ipv6
 }
 
 stop_koolproxy(){
@@ -189,9 +186,10 @@ creat_ipset(){
 }
 
 gen_special_ip() {
+	dhcp_mode_wan=`cat /etc/config/network | grep -oi "wan" | sed -n '1p' | cut -c 1-3`
 	ethernet=`ifconfig | grep eth | wc -l`
 	if [ "$ethernet" -ge "2" ]; then
-		dhcp_mode=`ubus call network.interface.WAN status | grep \"proto\" | sed -e 's/^[ \t]\"proto\": //g' -e 's/"//g' -e 's/,//g'`
+		dhcp_mode=`ubus call network.interface.$dhcp_mode_wan status | grep \"proto\" | sed -e 's/^[ \t]\"proto\": //g' -e 's/"//g' -e 's/,//g'`
 	fi
 	cat <<-EOF | grep -E "^([0-9]{1,3}\.){3}[0-9]{1,3}"
 		0.0.0.0/8
@@ -213,7 +211,7 @@ gen_special_ip() {
 		224.0.0.0/4
 		240.0.0.0/4
 		255.255.255.255
-		$([ "$dhcp_mode" == "pppoe" ] && ubus call network.interface.WAN status | grep \"address\" | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
+		$([ "$dhcp_mode" == "pppoe" ] && ubus call network.interface.$dhcp_mode_wan status | grep \"address\" | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 EOF
 }
 

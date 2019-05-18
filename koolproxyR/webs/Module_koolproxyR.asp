@@ -299,7 +299,7 @@ function get_run_status(){
 			}
 			document.getElementById("_koolproxyR_status").innerHTML = response.result.split("@@")[0];
 			// document.getElementById("_koolproxyR_rule_status").innerHTML = response.result.split("@@")[1];
-			setTimeout("get_run_status();", 2000);
+			setTimeout("get_run_status();", 1000);
 		},
 		error: function(){
 			if(softcenter == 1){
@@ -307,7 +307,7 @@ function get_run_status(){
 			}
 			document.getElementById("_koolproxyR_status").innerHTML = "获取运行状态失败！";
 			// document.getElementById("_koolproxyR_rule_status").innerHTML = "获取规则状态失败！";
-			setTimeout("get_run_status();", 2000);
+			setTimeout("get_run_status();", 1000);
 		}
 	});
 }
@@ -491,6 +491,12 @@ function save(){
 	dbus.koolproxyR_video_rules = E("_koolproxyR_video_rules").checked ? "1" : "0";
 	dbus.koolproxyR_fanboy_rules = E("_koolproxyR_fanboy_rules").checked ? "1" : "0";
 	dbus.koolproxyR_fanboy_all_rules = E("_koolproxyR_fanboy_all_rules").checked ? "1" : "0";
+	// 更新规则
+	dbus.koolproxyR_basic_easylist_update = E("_koolproxyR_basic_easylist_update").checked ? "1" : "0";
+	dbus.koolproxyR_basic_replenish_update = E("_koolproxyR_basic_replenish_update").checked ? "1" : "0";
+	dbus.koolproxyR_basic_video_update = E("_koolproxyR_basic_video_update").checked ? "1" : "0";
+	dbus.koolproxyR_basic_fanboy_update = E("_koolproxyR_basic_fanboy_update").checked ? "1" : "0";
+	// 自定义规则
 	dbus["koolproxyR_custom_rule"] = Base64.encode(document.getElementById("_koolproxyR_custom_rule").value);
 	// collect data from acl pannel
 	var data2 = kpacl.getAllData();
@@ -780,7 +786,7 @@ function set_version() {
 <span id="_koolproxyR_version"></span>
 <a href="#/soft-center.asp" class="btn" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">返回</a>
 <a href="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/Changelog.txt" target="_blank" class="btn btn-primary" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">更新日志</a>
-                
+<!-- <a href="#/Module_koolproxyR_simple.asp" target="_blank" class="btn btn-primary" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">简化版</a> -->
 </div>
 <div class="content"><span class="col"  style="line-height:30px;width:700px">
 	<font color="#808080">KoolProxyR为免费开源软件，追求体验更快、更清洁的网络，屏蔽烦人的广告 ！</font></span>
@@ -802,7 +808,7 @@ function set_version() {
 	<fieldset id="koolproxyR_status_pannel">
 		<label class="col-sm-3 control-left-label" for="_undefined">KoolProxyR运行状态</label>
 		<div class="col-sm-9" style="margin-top:2px">
-			<font id="_koolproxyR_status" name="_koolproxyR_status" color="#1bbf35">正在检查运行状态...</font>
+			<font id="_koolproxyR_status" name="_koolproxyR_status" color="#1bbf35">正在检查运行状态...（推荐使用chrome内核浏览器打开）</font>
 		</div>
 	</fieldset>
 </div>
@@ -838,12 +844,8 @@ function set_version() {
 //						{ name: 'koolproxyR_reboot_inter_hour', type: 'select', options: option_reboot_inter, value: dbus.koolproxyR_reboot_inter_hour || "", suffix: '<lable id="koolproxyR_reboot_inter_hour_suf">重启</lable>', prefix: '<span id="koolproxyR_reboot_inter_hour_pre" class="help-block"><lable>每隔</lable></span>' }
 //					] },
 			{ title: '证书下载', suffix: ' <button id="_download_cert" onclick="download_cert();"style="border-radius: 20px"  class="btn btn-danger">证书下载</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="https_KP();" style="border-radius: 20px" class="btn btn-success">相关教程</button>' },
-			{ title: '项目信息', suffix: ' <button id="_find_github" onclick="find_github();"style="border-radius: 20px"  class="btn">开源地址</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR();"style="border-radius: 20px"  class="btn">更新插件</button>' },
 			{ title: '交流渠道', suffix: ' <button onclick="issues_KP();" style="border-radius: 20px" class="btn btn-danger">建议反馈</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="find_telegram();"style="border-radius: 20px"  class="btn btn-danger">加入TG群</button>'  },
-
-			
-
-                         
+			{ title: '项目信息', suffix: ' <button id="_find_github" onclick="find_github();"style="border-radius: 20px"  class="btn">开源地址</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="update_KPR();"style="border-radius: 20px"  class="btn">更新插件</button>' },
 
 		]);
 	</script>
@@ -906,7 +908,7 @@ function set_version() {
 					<li><font color="#1E90FF"> 答： </font>可以的，本来就是同源，可以相互导入导出证书来使用减少重复安装证书的过程。</li>			
 					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我的规则更新，和更新插件十分缓慢？有解决办法吗？</li>
-					<li><font color="#1E90FF"> 答： </font>你可以将，以下域名加入【SS V2RAY WG等代理软件】的【黑白名单】中【域名黑名单】。</li>			
+					<li><font color="#1E90FF"> 答： </font>你可以将，以下域名加入【LEDE】【SS V2RAY WG等代理软件】的【黑白名单】中【域名黑名单】。</li>			
 					<li>raw.githubusercontent.com</li>
 					<li>easylist-downloads.adblockplus.org</li>
 					<li>secure.fanboy.co.nz</li>
@@ -1000,10 +1002,10 @@ function set_version() {
 			]},	
 
 			{ title: '规则更新', multi: [
-				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update != 0, suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">KPR主规则</lable>&nbsp;&nbsp;' },
-				{ name:'koolproxyR_basic_replenish_update',type:'checkbox',value: dbus.koolproxyR_basic_replenish_update != 0, suffix: '<lable id="_koolproxyR_basic_replenish_update_txt">补充规则</lable>&nbsp;&nbsp;' },
-				{ name:'koolproxyR_basic_video_update',type:'checkbox',value: dbus.koolproxyR_basic_video_update != 0, suffix: '<lable id="_koolproxyR_basic_video_update_txt">KP视频规则</lable>&nbsp;&nbsp;' },
-				{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update != 0, suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
+				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update == '1', suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">KPR主规则</lable>&nbsp;&nbsp;' },
+				{ name:'koolproxyR_basic_replenish_update',type:'checkbox',value: dbus.koolproxyR_basic_replenish_update == '1', suffix: '<lable id="_koolproxyR_basic_replenish_update_txt">补充规则</lable>&nbsp;&nbsp;' },
+				{ name:'koolproxyR_basic_video_update',type:'checkbox',value: dbus.koolproxyR_basic_video_update == '1', suffix: '<lable id="_koolproxyR_basic_video_update_txt">KP视频规则</lable>&nbsp;&nbsp;' },
+				{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update == '1', suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
                 { suffix: '<button id="_update_rules_now"style="border-radius: 15px""background-color:#EAADEA"  onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' },
 
 			]},	

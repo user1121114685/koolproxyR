@@ -1,8 +1,8 @@
-! Checksum: MuhQHwhsCpD9T0m5fYXUog
+! Checksum: IXinqDtqUwVRSRRtzbL2HQ
 ! Title: AdGuard Simplified domain names filter
 ! Description: Filter composed of several other filters (English filter, Social media filter, Spyware filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.
-! Version: 2.0.4.96
-! TimeUpdated: 2019-05-15T19:30:22+03:00
+! Version: 2.0.5.0
+! TimeUpdated: 2019-05-17T20:30:23+03:00
 ! Expires: 2 days (update frequency)
 !
 ||https://tertmateruse.ru^
@@ -3631,6 +3631,9 @@
 ||https://svitnews.com^
 ||https://vi.bigmir.net^
 ||https://widget.mediastealer.com^
+||https://vizaiced.net^
+||https://whehilru.com^
+||https://noakauhe.com^
 ||https://syndapop.com^
 ||https://pub2srv.com^
 ||https://beharmalted.info^
@@ -10264,6 +10267,7 @@
 ||https://qyh7u6wo0c8vz0szdhnvbn.com^
 ||https://r66net.com^
 ||https://r66net.net^
+||https://r932o.com^
 ||https://rabilitan.com^
 ||https://radeant.com^
 ||https://radiatorial.online^
@@ -10349,6 +10353,7 @@
 ||https://revenuehits.com^
 ||https://revenuemantra.com^
 ||https://revenuemax.de^
+||https://revenuevids.com^
 ||https://revfusion.net^
 ||https://revgennetwork.com^
 ||https://revimedia.com^
@@ -10960,6 +10965,7 @@
 ||https://turboadv.com^
 ||https://turbotraff.net^
 ||https://tusno.com^
+||https://tut-64.com^
 ||https://tutvp.com^
 ||https://tvas-a.pw^
 ||https://tvas-c.pw^
@@ -11186,6 +11192,7 @@
 ||https://webads.co.nz^
 ||https://webads.nl^
 ||https://webadvertise123.com^
+||https://webcontentassessor.com^
 ||https://webcontentdelivery.info^
 ||https://webeatyouradblocker.com^
 ||https://webmasterspub.com^
@@ -11343,6 +11350,7 @@
 ||https://yvoria.com^
 ||https://yxrxd.com^
 ||https://yz56lywd.com^
+||https://yz740.com^
 ||https://yzrnur.com^
 ||https://yzus09by.com^
 ||https://z-defense.com^
@@ -20188,6 +20196,14 @@
 ||https://zinlar.pw^
 ||https://zumhice.pw^
 ||https://6zo8wfs96aqp5cpgj20m.com^
+||https://14257518e297edf3d2a1.com^
+||https://301e5931499990.com^
+||https://459517eb349739b.com^
+||https://55ad5a0546d9.com^
+||https://7d66a95c481.com^
+||https://8c32f38df7.com^
+||https://9b51b7efc6d2a.com^
+||https://a8a9455e53fbc75bc995.com^
 ||https://4rm.de^
 ||https://85.114.133.62^
 ||https://a3h.de^
@@ -21049,7 +21065,6 @@
 ||https://autoaffiliatenetwork.com^
 ||https://autoaudience.com^
 ||https://autoid.com^
-||https://avantlink.com^
 ||https://avastats.com^
 ||https://avazudsp.net^
 ||https://avencio.de^
@@ -25241,9 +25256,11 @@
 ||https://cobaltgroup.com^
 ||https://colossusssp.com^
 ||https://conductrics.com^
+||https://contactatonce.com^
 ||https://content-square.net^
 ||https://contentsquare.net^
 ||https://conversionfly.com^
+||https://convertcart.com^
 ||https://coralogix.com^
 ||https://cphalk.com^
 ||https://customerlabs.co^
@@ -25321,6 +25338,7 @@
 ||https://id5-sync.com^
 ||https://impactradius-event.com^
 ||https://infopro-insight.com^
+||https://infoprodata.com^
 ||https://informz.net^
 ||https://innomdc.com^
 ||https://instana.io^
@@ -25365,6 +25383,7 @@
 ||https://logmatic.io^
 ||https://logrocket.com^
 ||https://logrocket.io^
+||https://loopa.net.au^
 ||https://luckyorange.net^
 ||https://lyngro.com^
 ||https://m-t.io^
@@ -25423,7 +25442,6 @@
 ||https://p2r14.com^
 ||https://pdbu.net^
 ||https://peep1alea.com^
-||https://pega.com^
 ||https://perfops.net^
 ||https://perimeterx.net^
 ||https://personalicanvas.com^
@@ -25456,6 +25474,7 @@
 ||https://rettica.com^
 ||https://rezync.com^
 ||https://rfr-69.com^
+||https://rivrai.com^
 ||https://rockincontent.net^
 ||https://rp-rep.net^
 ||https://rstg.io^
@@ -25937,6 +25956,7 @@
 ||https://lightminer.co^
 ||https://lindon-pool.win^
 ||https://livestatsnet.services^
+||https://lmiutil.com^
 ||https://losital.ru^
 ||https://m.anyfiles.ovh^
 ||https://machieved.com^
@@ -26734,6 +26754,7 @@
 ||https://d1rnw04e6mc22h.cloudfront.net^
 ||https://d1ssbq1bwjg5ux.cloudfront.net^
 ||https://d23pi6hvdpcc5i.cloudfront.net^
+||https://d241ujsiy3yht0.cloudfront.net
 ||https://d24cze5sab2jwg.cloudfront.net^
 ||https://d24rtvkqjwgutp.cloudfront.net^
 ||https://d25ezbwokoefx6.cloudfront.net^
@@ -27471,6 +27492,7 @@
 ||https://calotag.com^
 ||https://cdn-analytics.ladmedia.fr^
 ||https://compteur.websiteout.net^
+||https://d3eokk6ya562p5.cloudfront.net^
 ||https://e.funnymel.com^
 ||https://email-reflex.com^
 ||https://lepoint-stat.sdv.fr^
@@ -31626,6 +31648,9 @@
 ||http://svitnews.com^
 ||http://vi.bigmir.net^
 ||http://widget.mediastealer.com^
+||http://vizaiced.net^
+||http://whehilru.com^
+||http://noakauhe.com^
 ||http://syndapop.com^
 ||http://pub2srv.com^
 ||http://beharmalted.info^
@@ -38259,6 +38284,7 @@
 ||http://qyh7u6wo0c8vz0szdhnvbn.com^
 ||http://r66net.com^
 ||http://r66net.net^
+||http://r932o.com^
 ||http://rabilitan.com^
 ||http://radeant.com^
 ||http://radiatorial.online^
@@ -38344,6 +38370,7 @@
 ||http://revenuehits.com^
 ||http://revenuemantra.com^
 ||http://revenuemax.de^
+||http://revenuevids.com^
 ||http://revfusion.net^
 ||http://revgennetwork.com^
 ||http://revimedia.com^
@@ -38955,6 +38982,7 @@
 ||http://turboadv.com^
 ||http://turbotraff.net^
 ||http://tusno.com^
+||http://tut-64.com^
 ||http://tutvp.com^
 ||http://tvas-a.pw^
 ||http://tvas-c.pw^
@@ -39181,6 +39209,7 @@
 ||http://webads.co.nz^
 ||http://webads.nl^
 ||http://webadvertise123.com^
+||http://webcontentassessor.com^
 ||http://webcontentdelivery.info^
 ||http://webeatyouradblocker.com^
 ||http://webmasterspub.com^
@@ -39338,6 +39367,7 @@
 ||http://yvoria.com^
 ||http://yxrxd.com^
 ||http://yz56lywd.com^
+||http://yz740.com^
 ||http://yzrnur.com^
 ||http://yzus09by.com^
 ||http://z-defense.com^
@@ -48183,6 +48213,14 @@
 ||http://zinlar.pw^
 ||http://zumhice.pw^
 ||http://6zo8wfs96aqp5cpgj20m.com^
+||http://14257518e297edf3d2a1.com^
+||http://301e5931499990.com^
+||http://459517eb349739b.com^
+||http://55ad5a0546d9.com^
+||http://7d66a95c481.com^
+||http://8c32f38df7.com^
+||http://9b51b7efc6d2a.com^
+||http://a8a9455e53fbc75bc995.com^
 ||http://4rm.de^
 ||http://85.114.133.62^
 ||http://a3h.de^
@@ -49044,7 +49082,6 @@
 ||http://autoaffiliatenetwork.com^
 ||http://autoaudience.com^
 ||http://autoid.com^
-||http://avantlink.com^
 ||http://avastats.com^
 ||http://avazudsp.net^
 ||http://avencio.de^
@@ -53236,9 +53273,11 @@
 ||http://cobaltgroup.com^
 ||http://colossusssp.com^
 ||http://conductrics.com^
+||http://contactatonce.com^
 ||http://content-square.net^
 ||http://contentsquare.net^
 ||http://conversionfly.com^
+||http://convertcart.com^
 ||http://coralogix.com^
 ||http://cphalk.com^
 ||http://customerlabs.co^
@@ -53316,6 +53355,7 @@
 ||http://id5-sync.com^
 ||http://impactradius-event.com^
 ||http://infopro-insight.com^
+||http://infoprodata.com^
 ||http://informz.net^
 ||http://innomdc.com^
 ||http://instana.io^
@@ -53360,6 +53400,7 @@
 ||http://logmatic.io^
 ||http://logrocket.com^
 ||http://logrocket.io^
+||http://loopa.net.au^
 ||http://luckyorange.net^
 ||http://lyngro.com^
 ||http://m-t.io^
@@ -53418,7 +53459,6 @@
 ||http://p2r14.com^
 ||http://pdbu.net^
 ||http://peep1alea.com^
-||http://pega.com^
 ||http://perfops.net^
 ||http://perimeterx.net^
 ||http://personalicanvas.com^
@@ -53451,6 +53491,7 @@
 ||http://rettica.com^
 ||http://rezync.com^
 ||http://rfr-69.com^
+||http://rivrai.com^
 ||http://rockincontent.net^
 ||http://rp-rep.net^
 ||http://rstg.io^
@@ -53932,6 +53973,7 @@
 ||http://lightminer.co^
 ||http://lindon-pool.win^
 ||http://livestatsnet.services^
+||http://lmiutil.com^
 ||http://losital.ru^
 ||http://m.anyfiles.ovh^
 ||http://machieved.com^
@@ -54729,6 +54771,7 @@
 ||http://d1rnw04e6mc22h.cloudfront.net^
 ||http://d1ssbq1bwjg5ux.cloudfront.net^
 ||http://d23pi6hvdpcc5i.cloudfront.net^
+||http://d241ujsiy3yht0.cloudfront.net
 ||http://d24cze5sab2jwg.cloudfront.net^
 ||http://d24rtvkqjwgutp.cloudfront.net^
 ||http://d25ezbwokoefx6.cloudfront.net^
@@ -55466,6 +55509,7 @@
 ||http://calotag.com^
 ||http://cdn-analytics.ladmedia.fr^
 ||http://compteur.websiteout.net^
+||http://d3eokk6ya562p5.cloudfront.net^
 ||http://e.funnymel.com^
 ||http://email-reflex.com^
 ||http://lepoint-stat.sdv.fr^

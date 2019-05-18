@@ -29,6 +29,13 @@
 `wget -O /koolshare/scripts/ks_tar_install.sh https://raw.githubusercontent.com/user1121114685/koolproxyR/master/ks_tar_install.sh && chmod 777 /koolshare/scripts/ks_tar_install.sh`
 
 ---
+如果你无法访问github。请使用下面的代码在ssh中执行，进行离线安装脚本替换。  
+
+---
+
+`wget -O /koolshare/scripts/ks_tar_install.sh https://gitee.com/shaoxia1991/koolproxyR/raw/master/ks_tar_install.sh && chmod 777 /koolshare/scripts/ks_tar_install.sh`
+
+---
 
 如果遇到其他问题，请提交问题反馈。能力有限不一定都能解决。
 
