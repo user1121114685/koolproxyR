@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: xwJ4wg7RD0BFNg/oSu5Okg
-! Version: 201905210942
+! Checksum: 7ptHXK5fbYGFVHICXBeupw
+! Version: 201905211341
 ! Title: Fanboy's Annoyance List
-! Last modified: 21 May 2019 09:42 UTC
+! Last modified: 21 May 2019 13:41 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -732,6 +732,7 @@
 ||https://smartcookies.it^$third-party
 ||https://sonyentertainmentnetwork.com/id/cm/siews1lib.js
 ||https://sourcepoint.mgr.consensu.org^$third-party
+||https://tarteaucitron.ml^$third-party
 ||https://thirdfloor.it^$third-party
 ||https://trustarc.com^$third-party
 ||https://usercentrics.eu^$third-party
@@ -1902,6 +1903,7 @@
 ||http://smartcookies.it^$third-party
 ||http://sonyentertainmentnetwork.com/id/cm/siews1lib.js
 ||http://sourcepoint.mgr.consensu.org^$third-party
+||http://tarteaucitron.ml^$third-party
 ||http://thirdfloor.it^$third-party
 ||http://trustarc.com^$third-party
 ||http://usercentrics.eu^$third-party
@@ -3614,6 +3616,7 @@ https://kuriositas.com###signupForm
 https://kveller.com###signupRev
 https://guanabee.com###signupSubColPodID
 https://indiatimes.com###similarNews
+https://wenddownloadpage.com,wendgames.com###simple-banner
 https://basinga.net,biosciencetechnology.com,cemag.us,culturemap.com,dailykos.com,dealcanada.ca,eatingwell.com,economist.com,electricpig.co.uk,newrepublic.com,pddnet.com,petri.com,richersounds.com,securityweek.com,stagram.com,technologyreview.com###simplemodal-container
 https://basinga.net,biosciencetechnology.com,cemag.us,culturemap.com,dailykos.com,dealcanada.ca,eatingwell.com,economist.com,electricpig.co.uk,newrepublic.com,pddnet.com,petri.com,rdmag.com,richersounds.com,securityweek.com,stagram.com,technologyreview.com###simplemodal-overlay
 https://billingsgazette.com,fivethirtyeight.com,missoulian.com###single-navigation
@@ -13165,6 +13168,7 @@ http://kuriositas.com###signupForm
 http://kveller.com###signupRev
 http://guanabee.com###signupSubColPodID
 http://indiatimes.com###similarNews
+http://wenddownloadpage.com,wendgames.com###simple-banner
 http://basinga.net,biosciencetechnology.com,cemag.us,culturemap.com,dailykos.com,dealcanada.ca,eatingwell.com,economist.com,electricpig.co.uk,newrepublic.com,pddnet.com,petri.com,richersounds.com,securityweek.com,stagram.com,technologyreview.com###simplemodal-container
 http://basinga.net,biosciencetechnology.com,cemag.us,culturemap.com,dailykos.com,dealcanada.ca,eatingwell.com,economist.com,electricpig.co.uk,newrepublic.com,pddnet.com,petri.com,rdmag.com,richersounds.com,securityweek.com,stagram.com,technologyreview.com###simplemodal-overlay
 http://billingsgazette.com,fivethirtyeight.com,missoulian.com###single-navigation

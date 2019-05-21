@@ -4,14 +4,14 @@ source $KSROOT/scripts/base.sh
 eval `dbus export koolproxyR_`
 alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 
-url_cjx="https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
+url_cjx="https://dev.tencent.com/u/shaoxia1991/p/cjxlist/git/raw/master/cjx-annoyance.txt"
 url_kp="https://kprules.b0.upaiyun.com/kp.dat"
 # url_koolproxy="https://kprules.b0.upaiyun.com/koolproxy.txt"
 # 原网址跳转到https://kprule.com/koolproxy.txt跳转到又拍云，为了节省时间，还是直接去又拍云下载吧！避免某些时候跳转不过去
 url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
-url_yhosts="https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt"
-url_yhosts1="https://raw.githubusercontent.com/vokins/yhosts/master/data/tvbox.txt"
-kpr_our_rule="https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kpr_our_rule.txt"
+url_yhosts="https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/hosts.txt"
+url_yhosts1="https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/data/tvbox.txt"
+kpr_our_rule="https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt"
 # 检测是否开启fanboy全功能版本
 if [ "$koolproxyR_fanboy_all_rules" == "1" ];then
 	url_fanboy="https://secure.fanboy.co.nz/r/fanboy-complete.txt"

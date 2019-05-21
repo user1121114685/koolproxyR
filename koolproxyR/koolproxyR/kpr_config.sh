@@ -9,6 +9,11 @@ KP_DIR=$SOFT_DIR/koolproxyR
 LOCK_FILE=/var/lock/koolproxy.lock
 # 一定要按照source.list的排列顺序/我就不按照顺序。。。啦啦啦啦啦啦
 SOURCE_LIST=$KP_DIR/data/source.list
+# fanboy全规则检查
+if [ "$koolproxyR_fanboy_all_rules" == "1" ];then
+	dbus set koolproxyR_fanboy_rules=1
+	eval `dbus export koolproxyR_`
+fi
 
 write_user_txt(){
 	if [ -n "$koolproxyR_custom_rule" ];then
@@ -501,7 +506,7 @@ unset_lock(){
 }
 
 new_kpr_version(){
-	url_version="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version"
+	url_version="https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/version"
 	wget --no-check-certificate --timeout=8 -qO - $url_version > /tmp/version
 	koolproxyR_installing_version=`cat /tmp/version  | sed -n '1p'`
 	echo_date 获取到最新在线版本为：$koolproxyR_installing_version！

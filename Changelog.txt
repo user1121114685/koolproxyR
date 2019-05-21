@@ -327,5 +327,10 @@ cd /koolshare/koolproxyR/data && sh gen_ca.sh
 替换：补充规则替换到vokins/yhosts，现在更加适合国内，规则更少.
 新增：开机启动检查haveged开机变慢补丁是否安装。          -------------TG jimmy w
 修复：修复ipset列表问题wan口部分大佬使用旁路没有wan口报错的问题  -----------TG Joe asita
+
+---
+2.1.3
+修复：修复只选择fanboy全规则保存成功fanboy并没有生效的问题。  -----------TG Joe asita
+更新：将主要网络服务，迁移致腾讯云开发者平台，代码还是托管于github，腾讯云提供下载，更新。
 ----
 在线更新脚本，暂未采用 start-stop-daemon 观察一段时间后再说。

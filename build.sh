@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.1.2"
+VERSION="2.1.3"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -21,14 +21,16 @@ cd koolproxyR/koolproxyR/data/rules
 # 从 https://filterlists.com/ 找规则
 # https://tgc.cloud/downloads/hosts.txt 36万DNS规则，kpr 生产出来是72万
 wget https://easylist-downloads.adblockplus.org/easylistchina.txt
-wget https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
+# https://dev.tencent.com/u/shaoxia1991/p/cjxlist/git/raw/master/cjx-annoyance.txt
+wget https://dev.tencent.com/u/shaoxia1991/p/cjxlist/git/raw/master/cjx-annoyance.txt
 
 wget https://secure.fanboy.co.nz/fanboy-annoyance.txt
 # ADGUARD-DNS过滤规则
 # wget -O yhosts.txt https://filters.adtidy.org/extension/chromium/filters/15.txt
 # yhosts过滤规则
-wget -O yhosts.txt https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt
-wget -O tvbox.txt https://raw.githubusercontent.com/vokins/yhosts/master/data/tvbox.txt
+# https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/data/tvbox.txt
+wget -O yhosts.txt https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/hosts.txt
+wget -O tvbox.txt https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/data/tvbox.txt
 cat tvbox.txt >> yhosts.txt
 
 # ad.txt：合并EasylistChina、EasylistLite、CJX'sAnnoyance，以及补充的一些规则；
@@ -50,8 +52,9 @@ cat tvbox.txt >> yhosts.txt
 # 暂时先用临时的替代
 # wget https://kprules.b0.upaiyun.com/kp.dat
 # wget https://kprules.b0.upaiyun.com/user.txt
-# wget https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/kp.dat
-wget https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/user.txt
+# wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR/koolproxyR/data/rules/kp.dat
+# https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR/koolproxyR/data/rules/user.txt
+wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR/koolproxyR/data/rules/user.txt
 
 ## ---------------------------------------------------fanboy处理开始------------------------------------------------------
 ## 删除导致KP崩溃的规则
@@ -167,7 +170,8 @@ sed -i '/\.\*\//d' easylistchina_https.txt
 # 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 sed -i '6,$d' easylistchina.txt
 # 合二归一
-wget https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kpr_our_rule.txt
+# https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt
+wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt
 cat kpr_our_rule.txt >> easylistchina.txt
 cat easylistchina_https.txt >> easylistchina.txt
 

@@ -13,14 +13,14 @@ clean(){
 	find /tmp -name "*.tar.gz"|xargs rm -rf >/dev/null 2>&1
 }
 
-url_version="https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version"
+url_version="https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/version"
 wget --no-check-certificate --timeout=8 -qO - $url_version > /tmp/koolproxyR_version
 koolproxyR_installing_md5=`cat /tmp/koolproxyR_version  | sed -n '2p'`
 rm -rf /tmp/version
 echo_date ==============================================
 echo_date koolproxyR 开始下载最新版KPR。
 echo_date ===============================================
-wget -O /tmp/upload/koolproxyR.tar.gz https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR.tar.gz
+wget -O /tmp/upload/koolproxyR.tar.gz https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR.tar.gz
 koolproxyR_download_md5=`md5sum /tmp/upload/koolproxyR.tar.gz|awk '{print $1}'`
 echo_date 远程版本md5：$koolproxyR_installing_md5
 echo_date 您下载版本md5：$koolproxyR_download_md5
