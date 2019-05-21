@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.1.1"
+VERSION="2.1.2"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -25,7 +25,11 @@ wget https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
 
 wget https://secure.fanboy.co.nz/fanboy-annoyance.txt
 # ADGUARD-DNS过滤规则
-wget -O AdGuard_DNS.txt https://filters.adtidy.org/extension/chromium/filters/15.txt
+# wget -O yhosts.txt https://filters.adtidy.org/extension/chromium/filters/15.txt
+# yhosts过滤规则
+wget -O yhosts.txt https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt
+wget -O tvbox.txt https://raw.githubusercontent.com/vokins/yhosts/master/data/tvbox.txt
+cat tvbox.txt >> yhosts.txt
 
 # ad.txt：合并EasylistChina、EasylistLite、CJX'sAnnoyance，以及补充的一些规则；
 # ad2.txt：仅合并EasylistChina、EasylistLite、CJX'sAnnoyance；
@@ -35,7 +39,7 @@ wget -O AdGuard_DNS.txt https://filters.adtidy.org/extension/chromium/filters/15
 # 分割三方规则
 
 # # split -l 1 easylistchina.txt ./../easylistchina_
-# split -l 1 AdGuard_DNS.txt ./../chengfeng_
+# split -l 1 yhosts.txt ./../chengfeng_
 # # split -l 999 fanboy-annoyance.txt ./../fanboy_
 # cd ..
 
@@ -208,83 +212,54 @@ sed -i '/mzstatic.com/d' easylistchina.txt
 
 
 # -------------------------------------- 补充规则处理开始----------------------------------------------------------
-
-sed -i '/^\$/d' AdGuard_DNS.txt
-sed -i '/\*\$/d' AdGuard_DNS.txt
-
-
-# 将规则转化成kp能识别的https
-cat AdGuard_DNS.txt | grep "^||" | sed 's#^||#||https://#g' >> AdGuard_DNS_https.txt
-# 移出https不支持规则domain=
-sed -i 's/\(,domain=\).*//g' AdGuard_DNS_https.txt
-sed -i 's/\(\$domain=\).*//g' AdGuard_DNS_https.txt
-sed -i 's/\(domain=\).*//g' AdGuard_DNS_https.txt
-# sed -i '/\^$/d' AdGuard_DNS_https.txt
-# sed -i '/\^\*\.gif/d' AdGuard_DNS_https.txt
-# sed -i '/\^\*\.jpg/d' AdGuard_DNS_https.txt
-
-
-
-cat AdGuard_DNS.txt | grep "^||" | sed 's#^||#||http://#g' >> AdGuard_DNS_https.txt
-cat AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> AdGuard_DNS_https.txt
-cat AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> AdGuard_DNS_https.txt
-cat AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> AdGuard_DNS_https.txt
-
-
-# 删除可能导致Kpr变慢的Https规则
-sed -i '/\.\*\//d' AdGuard_DNS_https.txt
-
+# 此处对yhosts进行单独处理
+sed -i 's/^@/!/g' yhosts.txt
+sed -i 's/^#/!/g' yhosts.txt
+# 删除不必要信息重新打包 0-11行 表示从第15行开始 $表示结束
+sed -i '1,11d' yhosts.txt
+# 开始Kpr规则化处理
+cat yhosts.txt > yhosts_https.txt 
+sed -i 's/^127.0.0.1\ /||https:\/\//g' yhosts_https.txt
+cat yhosts.txt >> yhosts_https.txt 
+sed -i 's/^127.0.0.1\ /||http:\/\//g' yhosts_https.txt
+# 处理tvbox.txt本身规则。
+sed -i 's/^127.0.0.1\ /||/g' tvbox.txt
+cat tvbox.txt > yhosts.txt
 # 给国内三大电商平台放行
-sed -i '/https:\/\/jd.com/d' AdGuard_DNS_https.txt
-sed -i '/https:\/\/taobao.com/d' AdGuard_DNS_https.txt
-sed -i '/https:\/\/tmall.com/d' AdGuard_DNS_https.txt
+sed -i '/https:\/\/jd.com/d' yhosts_https.txt
+sed -i '/https:\/\/taobao.com/d' yhosts_https.txt
+sed -i '/https:\/\/tmall.com/d' yhosts_https.txt
 
-# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
-sed -i '8,$d' AdGuard_DNS.txt
 # 合二归一
-cat AdGuard_DNS_https.txt >> AdGuard_DNS.txt
+cat yhosts_https.txt >> yhosts.txt
 
-# 把三大视频网站给剔除来，作为单独文件。
-cat AdGuard_DNS.txt | grep -i 'youku.com' > kpr_video_list_1.txt
-cat AdGuard_DNS.txt | grep -i 'iqiyi.com' >> kpr_video_list_1.txt
-cat AdGuard_DNS.txt | grep -i 'v.qq.com' >> kpr_video_list_1.txt
-cat AdGuard_DNS.txt | grep -i 'g.alicdn.com' >> kpr_video_list_1.txt
-cat AdGuard_DNS.txt | grep -i 'tudou.com' >> kpr_video_list_1.txt
-cat AdGuard_DNS.txt | grep -i 'gtimg.cn' >> kpr_video_list_1.txt
-cat AdGuard_DNS.txt | grep -i 'l.qq.com' >> kpr_video_list_1.txt
-# 给三大视频网站放行 由kp.dat负责
-sed -i '/youku.com/d' AdGuard_DNS.txt
-sed -i '/iqiyi.com/d' AdGuard_DNS.txt
-sed -i '/g.alicdn.com/d' AdGuard_DNS.txt
-sed -i '/tudou.com/d' AdGuard_DNS.txt
-sed -i '/gtimg.cn/d' AdGuard_DNS.txt
 # 给知乎放行
-sed -i '/zhihu.com/d' AdGuard_DNS.txt
+sed -i '/zhihu.com/d' yhosts.txt
 
-# 给https://qq.com的html规则放行
-sed -i '/qq.com/d' AdGuard_DNS.txt
+# 给qq.com放行
+sed -i '/qq.com/d' yhosts.txt
 
 # 给github的https放行
-sed -i '/github/d' AdGuard_DNS.txt
+sed -i '/github/d' yhosts.txt
 # 给apple的https放行
-sed -i '/apple.com/d' AdGuard_DNS.txt
-sed -i '/mzstatic.com/d' AdGuard_DNS.txt
+sed -i '/apple.com/d' yhosts.txt
+sed -i '/mzstatic.com/d' yhosts.txt
 # 给api.twitter.com的https放行
-sed -i '/twitter.com/d' AdGuard_DNS.txt
+sed -i '/twitter.com/d' yhosts.txt
 # 给facebook.com的https放行
-sed -i '/facebook.com/d' AdGuard_DNS.txt
-sed -i '/fbcdn.net/d' AdGuard_DNS.txt
+sed -i '/facebook.com/d' yhosts.txt
+sed -i '/fbcdn.net/d' yhosts.txt
 # 给 instagram.com 放行
-sed -i '/instagram.com/d' AdGuard_DNS.txt
+sed -i '/instagram.com/d' yhosts.txt
 # 删除可能导致kpr卡死的神奇规则
-sed -i '/https:\/\/\*/d' AdGuard_DNS.txt
+sed -i '/https:\/\/\*/d' yhosts.txt
 # 给 tvbs.com 放行
-sed -i '/tvbs.com/d' AdGuard_DNS.txt
-sed -i '/googletagmanager.com/d' AdGuard_DNS.txt
+sed -i '/tvbs.com/d' yhosts.txt
+sed -i '/googletagmanager.com/d' yhosts.txt
 # 给 netflix.com 放行
-sed -i '/netflix.com/d' AdGuard_DNS.txt
+sed -i '/netflix.com/d' yhosts.txt
 # 给 microsoft.com 放行
-sed -i '/microsoft.com/d' AdGuard_DNS.txt
+sed -i '/microsoft.com/d' yhosts.txt
 
 
 
@@ -292,12 +267,13 @@ sed -i '/microsoft.com/d' AdGuard_DNS.txt
 # ---------------------------------------------补充规则处理结束----------------------------------------------
 
 ## 删除临时文件
-rm *https.txt
+rm *_https.txt
 rm kpr_our_rule.txt
 rm cjx-annoyance.txt
+rm tvbox.txt
 
 # 测试专用
-# split -l 1 AdGuard_DNS.txt chengfeng_
+# split -l 1 yhosts.txt chengfeng_
 # ls|grep chengfeng_|xargs -n1 -i{} mv {} {}.txt
 
 cd ..

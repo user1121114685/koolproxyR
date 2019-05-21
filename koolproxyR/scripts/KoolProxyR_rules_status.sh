@@ -12,8 +12,8 @@ pid=`pidof koolproxy`
 
 easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
 easylist_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/easylistchina.txt | wc -l`
-replenish_rules_local=`cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt  | sed -n '4p'|awk '{print $3,$4}'`
-mobile_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | wc -l`
+# replenish_rules_local=`cat $KSROOT/koolproxyR/data/rules/yhosts.txt  | sed -n '4p'|awk '{print $3,$4}'`
+replenish_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/yhosts.txt | wc -l`
 fanboy_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | wc -l`
 # 检测是否开启fanboy 全规则版本
 if [ "$koolproxyR_fanboy_all_rules" == "1" ];then
@@ -27,15 +27,15 @@ fi
 if [ "$koolproxyR_enable" == "1" ]; then
 	if [ "$koolproxyR_easylist_rules" == "1" -o "$koolproxyR_video_rules" == "1" -o "$koolproxyR_replenish_rules" == "1" -o "$koolproxyR_fanboy_rules" == "1" ]; then
 		if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_replenish_rules" == "1" -a "$koolproxyR_video_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
-			http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;补充规则：$replenish_rules_local / $mobile_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;视频规则已经加载&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+			http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;补充规则：$replenish_rules_local / $replenish_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;视频规则已经加载&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
 			return 0
 		fi
 		if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_replenish_rules" == "1" -a "$koolproxyR_video_rules" == "1" ]; then
-			http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;补充规则：$replenish_rules_local / $mobile_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;视频规则已经加载&nbsp;&nbsp;&nbsp;&nbsp;"
+			http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;补充规则：$replenish_rules_local / $replenish_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;视频规则已经加载&nbsp;&nbsp;&nbsp;&nbsp;"
 			return 0
 		fi
 		if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_replenish_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
-			http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;补充规则：$replenish_rules_local / $mobile_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+			http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;补充规则：$replenish_rules_local / $replenish_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
 			return 0
 		fi
 		if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_video_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
@@ -43,12 +43,12 @@ if [ "$koolproxyR_enable" == "1" ]; then
 			return 0
 		fi
 		if [ "$koolproxyR_replenish_rules" == "1" -a "$koolproxyR_video_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
-			http_response "补充规则：$replenish_rules_local / $mobile_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;视频规则已经加载&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+			http_response "补充规则：$replenish_rules_local / $replenish_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;视频规则已经加载&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
 			return 0
 		fi
 
 		if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_replenish_rules" == "1" ]; then
-			http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;补充规则：$replenish_rules_local / $mobile_nu_local条"
+			http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;补充规则：$replenish_rules_local / $replenish_nu_local条"
 			return 0
 		fi
 		if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_video_rules" == "1" ]; then
@@ -56,11 +56,11 @@ if [ "$koolproxyR_enable" == "1" ]; then
 			return 0
 		fi
 		if [ "$koolproxyR_replenish_rules" == "1" -a "$koolproxyR_video_rules" == "1" ]; then
-			http_response "补充规则：$replenish_rules_local / $mobile_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;视频规则已经加载"
+			http_response "补充规则：$replenish_rules_local / $replenish_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;视频规则已经加载"
 			return 0
 		fi
 		if [ "$koolproxyR_replenish_rules" == "1" -a "$koolproxyR_fanboy_rules" == "1" ]; then
-			http_response "补充规则：$replenish_rules_local / $mobile_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
+			http_response "补充规则：$replenish_rules_local / $replenish_nu_local条&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
 			return 0
 		fi
 
@@ -72,7 +72,7 @@ if [ "$koolproxyR_enable" == "1" ]; then
 			http_response "视频规则已加载&nbsp;&nbsp;&nbsp;&nbsp;Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"
 			return 0		
 		fi	
-		[ "$koolproxyR_replenish_rules" == "1" ] && http_response "补充规则：$replenish_rules_local / $mobile_nu_local条"
+		[ "$koolproxyR_replenish_rules" == "1" ] && http_response "补充规则：$replenish_rules_local / $replenish_nu_local条"
 		[ "$koolproxyR_easylist_rules" == "1" ] && http_response "KPR主规则：$easylist_rules_local / $easylist_nu_local条"
 		[ "$koolproxyR_video_rules" == "1" ] && http_response "视频规则已加载"
 		[ "$koolproxyR_fanboy_rules" == "1" ] && http_response "Fanboy规则：$fanboy_rules_local / $fanboy_nu_local条"

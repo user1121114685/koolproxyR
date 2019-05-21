@@ -18,6 +18,14 @@ eval `dbus export koolproxyR_`
 start(){
 	[ ! -L "/tmp/upload/user.txt" ] && ln -sf $KSROOT/koolproxyR/data/user.txt /tmp/upload/user.txt
 	[ "$koolproxyR_enable" == "1" ] && sh /koolshare/koolproxyR/kpr_config.sh restart >> /tmp/upload/kpr_log.txt
+
+	entropy_avail=`opkg list-installed |grep -i "haveged"`
+	if [ "$entropy_avail" == "" ];then
+	# 离线安装包下载地址 https://downloads.openwrt.org/releases/packages-18.06/x86_64/packages/
+		opkg install /koolshare/libhavege_1.9.4-1_x86_64.ipk
+		sleep 1
+		opkg install /koolshare/haveged_1.9.4-1_x86_64.ipk
+	fi
 }
 
 stop(){

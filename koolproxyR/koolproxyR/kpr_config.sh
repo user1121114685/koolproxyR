@@ -25,7 +25,7 @@ load_rules(){
 	fi
 	if [ "$koolproxyR_replenish_rules" == "1" ]; then
 		echo_date 加载【补充规则】
-		sed -i "s/0|AdGuard_DNS.txt/1|AdGuard_DNS.txt/g" $SOURCE_LIST
+		sed -i "s/0|yhosts.txt/1|yhosts.txt/g" $SOURCE_LIST
 	fi
 	if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_video_rules" == "0" ]; then
 		echo_date 加载【KPR视频规则】
@@ -187,9 +187,11 @@ creat_ipset(){
 
 gen_special_ip() {
 	dhcp_mode_wan=`cat /etc/config/network | grep -oi "wan" | sed -n '1p' | cut -c 1-3`
-	ethernet=`ifconfig | grep eth | wc -l`
-	if [ "$ethernet" -ge "2" ]; then
-		dhcp_mode=`ubus call network.interface.$dhcp_mode_wan status | grep \"proto\" | sed -e 's/^[ \t]\"proto\": //g' -e 's/"//g' -e 's/,//g'`
+	if [ "$dhcp_mode_wan" != "" ]; then
+		ethernet=`ifconfig | grep eth | wc -l`
+		if [ "$ethernet" -ge "2" ]; then
+			dhcp_mode=`ubus call network.interface.$dhcp_mode_wan status | grep \"proto\" | sed -e 's/^[ \t]\"proto\": //g' -e 's/"//g' -e 's/,//g'`
+		fi
 	fi
 	cat <<-EOF | grep -E "^([0-9]{1,3}\.){3}[0-9]{1,3}"
 		0.0.0.0/8

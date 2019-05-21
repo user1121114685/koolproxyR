@@ -9,7 +9,8 @@ url_kp="https://kprules.b0.upaiyun.com/kp.dat"
 # url_koolproxy="https://kprules.b0.upaiyun.com/koolproxy.txt"
 # 原网址跳转到https://kprule.com/koolproxy.txt跳转到又拍云，为了节省时间，还是直接去又拍云下载吧！避免某些时候跳转不过去
 url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
-url_mobile="https://filters.adtidy.org/extension/chromium/filters/15.txt"
+url_yhosts="https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt"
+url_yhosts1="https://raw.githubusercontent.com/vokins/yhosts/master/data/tvbox.txt"
 kpr_our_rule="https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kpr_our_rule.txt"
 # 检测是否开启fanboy全功能版本
 if [ "$koolproxyR_fanboy_all_rules" == "1" ];then
@@ -56,23 +57,25 @@ update_rule(){
 	fi
 	
 		# update 补充规则
-	if [ "$koolproxyR_basic_video_update" == "1" ] || [ -n "$1" ];then
+	if [ "$koolproxyR_basic_replenish_update" == "1" ] || [ -n "$1" ];then
 		echo_date " ---------------------------------------------------------------------------------------"
-		wget -a /tmp/upload/kpr_log.txt -O /tmp/AdGuard_DNS.txt $url_mobile
-		replenish_rules_local=`cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt  | sed -n '4p'|awk '{print $3,$4}'`
-		replenish_rules_local1=`cat /tmp/AdGuard_DNS.txt | sed -n '4p'|awk '{print $3,$4}'`
-		mobile_nu_local=`grep -E -v "^!" /tmp/AdGuard_DNS.txt | wc -l`
-		echo_date 补充规则本地版本号： $replenish_rules_local
-		echo_date 补充规则在线版本号： $replenish_rules_local1
-		if [ "$mobile_nu_local" -gt 1000 ];then
-			if [ "$replenish_rules_local" != "$replenish_rules_local1" ];then
-				echo_date 检测到新版本 补充规则，开始更新...
+		wget -a /tmp/upload/kpr_log.txt -O /tmp/yhosts.txt $url_yhosts
+		wget -a /tmp/upload/kpr_log.txt -O /tmp/tvbox.txt $url_yhosts1
+		cat /tmp/tvbox.txt >> /tmp/yhosts.txt
+		# replenish_rules_local=`cat $KSROOT/koolproxyR/data/rules/yhosts.txt  | sed -n '4p'|awk '{print $3,$4}'`
+		# replenish_rules_local1=`cat /tmp/yhosts.txt | sed -n '4p'|awk '{print $3,$4}'`
+		mobile_nu_local=`grep -E -v "^!" /tmp/yhosts.txt | wc -l`
+		# echo_date 补充规则本地版本号： $replenish_rules_local
+		# echo_date 补充规则在线版本号： $replenish_rules_local1
+		if [ "$mobile_nu_local" -gt 5000 ];then
+			# if [ "$replenish_rules_local" != "$replenish_rules_local1" ];then
+				echo_date yhosts没有提供版本号强制更新...
 				echo_date 将临时文件覆盖到原始 补充规则 文件
-				mv /tmp/AdGuard_DNS.txt $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
+				mv /tmp/yhosts.txt $KSROOT/koolproxyR/data/rules/yhosts.txt
 				koolproxyR_https_mobile=1
-			else
-				echo_date 检测到 补充规则 本地版本号和在线版本号相同，那还更新个毛啊!
-			fi
+			# else
+			# 	echo_date 检测到 补充规则 本地版本号和在线版本号相同，那还更新个毛啊!
+			# fi
 		else
 			echo_date 补充规则文件下载失败！
 		fi
@@ -119,7 +122,7 @@ update_rule(){
 	fi
 
 	rm -rf /fanboy-annoyance.txt
-	rm -rf /tmp/AdGuard_DNS.txt
+	rm -rf /tmp/yhosts.txt
 	rm -rf /tmp/easylistchina.txt
 
 	echo_date 正在优化kpr规则。。。。。
@@ -158,7 +161,7 @@ update_rule(){
 
 		# 给github放行
 		sed -i '/github/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
- vb     # 给api.twitter.com的https放行
+		# 给api.twitter.com的https放行
 		sed -i '/twitter.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		# 给facebook.com的https放行
 		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
@@ -281,78 +284,58 @@ update_rule(){
 
 
 	if [ "$koolproxyR_https_mobile" == "1" ];then
-		sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
+		# 此处对yhosts进行单独处理
+		sed -i 's/^@/!/g' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i 's/^#/!/g' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 删除不必要信息重新打包 0-11行 表示从第15行开始 $表示结束
+		sed -i '1,11d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 
-
-		# 将规则转化成kp能识别的https
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep "^||" | sed 's#^||#||https://#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		# 移出https不支持规则domain=
-		sed -i 's/\(,domain=\).*//g' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		sed -i 's/\(\$domain=\).*//g' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		sed -i 's/\(domain=\).*//g' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		# sed -i '/\^$/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		# sed -i '/\^\*\.gif/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		# sed -i '/\^\*\.jpg/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-
-
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep "^||" | sed 's#^||#||http://#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#https://#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -v '^http'| sed 's#^#http://#g' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i '^[0-9a-z]'| grep -i '^http' >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-		# 删除可能导致卡顿的HTTPS规则
-		sed -i '/\.\*\//d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt
-
-
-		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
-		sed -i '8,$d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		# 合二归一
-		cat  $KSROOT/koolproxyR/data/rules/AdGuard_DNS_https.txt >> $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-
-		# 把三大视频网站给剔除来，作为单独文件。
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i 'youku.com' > $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i 'iqiyi.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i 'v.qq.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i 'g.alicdn.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i 'tudou.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i 'gtimg.cn' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
-		cat $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt | grep -i 'l.qq.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list_1.txt
-		# 给三大视频网站放行 由kp.dat负责
-		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		sed -i '/g.alicdn.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		# 给知乎放行
-		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		# 给https://qq.com的html规则放行
-		sed -i '/qq.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		# 给github的https放行
-		sed -i '/github/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		# 给apple的https放行
-		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		sed -i '/mzstatic.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		# 给api.twitter.com的https放行
-		sed -i '/twitter.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		# 给facebook.com的https放行
-		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		# 给 instagram.com 放行
-		sed -i '/instagram.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		# 删除可能导致kpr卡死的神奇规则
-		sed -i '/https:\/\/\*/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
+		# 开始Kpr规则化处理
+		cat $KSROOT/koolproxyR/data/rules/yhosts.txt > $KSROOT/koolproxyR/data/rules/yhosts_https.txt
+		sed -i 's/^127.0.0.1\ /||https:\/\//g' $KSROOT/koolproxyR/data/rules/yhosts_https.txt
+		cat $KSROOT/koolproxyR/data/rules/yhosts.txt >> $KSROOT/koolproxyR/data/rules/yhosts_https.txt
+		sed -i 's/^127.0.0.1\ /||http:\/\//g' $KSROOT/koolproxyR/data/rules/yhosts_https.txt
+		# 处理tvbox.txt本身规则。
+		sed -i 's/^127.0.0.1\ /||/g' /tmp/tvbox.txt
+		cat /tmp/tvbox.txt > $KSROOT/koolproxyR/data/rules/yhosts.txt
+		rm -rf /tmp/tvbox.txt
 		# 给国内三大电商平台放行
-		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
+		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/yhosts_https.txt
+		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/yhosts_https.txt
+		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/yhosts_https.txt
+
+		# 合二归一
+		cat  $KSROOT/koolproxyR/data/rules/yhosts_https.txt >> $KSROOT/koolproxyR/data/rules/yhosts.txt
+
+		# 给知乎放行
+		sed -i '/zhihu.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 给https://qq.com的html规则放行
+		sed -i '/qq.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 给github的https放行
+		sed -i '/github/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 给apple的https放行
+		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/mzstatic.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 给api.twitter.com的https放行
+		sed -i '/twitter.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 给facebook.com的https放行
+		sed -i '/facebook.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/fbcdn.net/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 给 instagram.com 放行
+		sed -i '/instagram.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 删除可能导致kpr卡死的神奇规则
+		sed -i '/https:\/\/\*/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 给国内三大电商平台放行
+		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		# 给 netflix.com 放行
-		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
+		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		# 给 tvbs.com 放行
-		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
-		sed -i '/googletagmanager.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
+		sed -i '/tvbs.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/googletagmanager.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		# 给 microsoft.com 放行
-		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/AdGuard_DNS.txt
+		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 
 
 	fi
