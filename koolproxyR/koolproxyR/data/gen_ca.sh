@@ -7,7 +7,7 @@ if [ ! -f openssl.cnf ]; then
 	echo_date "没有找到 openssl.cnf"
 	exit 1
 fi
-if [ "$KPR_DIY_CA" != "" ]; then
+if [[ "$KPR_DIY_CA" != "" ]]; then
 	echo_date "生成自定义证书中..."
 	rm -rf /koolshare/koolproxyR/data/private/*.pem
 	rm -rf /koolshare/koolproxyR/data/certs/ca.crt
@@ -30,7 +30,7 @@ if [ "$KPR_DIY_CA" != "" ]; then
 	dbus remove koolproxy_diy_ca
 	echo_date "自定义证书生成完毕..."
 	koolproxyR_enable=`dbus get koolproxyR_enable`
-	[ "$koolproxyR_enable" == "1" ] && sh /koolshare/koolproxyR/kpr_config.sh restart
+	[[ "$koolproxyR_enable" == "1" ]] && sh /koolshare/koolproxyR/kpr_config.sh restart
 	echo_date "重新给设备安装证书，体验惊喜吧！"
 fi
 

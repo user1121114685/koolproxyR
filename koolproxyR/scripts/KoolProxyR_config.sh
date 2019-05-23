@@ -9,7 +9,7 @@ echo "" > /tmp/upload/kpr_log.txt
 sleep 1
 case $2 in
 restart)
-	if [ "$koolproxyR_enable" == "1" ];then
+	if [[ "$koolproxyR_enable" == "1" ]]; then
 		sh /koolshare/koolproxyR/kpr_config.sh restart >> /tmp/upload/kpr_log.txt 2>&1
 	else
 		sh /koolshare/koolproxyR/kpr_config.sh stop >> /tmp/upload/kpr_log.txt 2>&1

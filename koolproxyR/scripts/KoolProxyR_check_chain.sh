@@ -11,7 +11,7 @@ export KSROOT=/koolshare
 source $KSROOT/scripts/base.sh
 source $KSROOT/bin/helper.sh
 
-KP_ENABLE=`dbus get koolproxyR_enable`
+KPR_ENABLE=`dbus get koolproxyR_enable`
 SS_ENABLE=`dbus get ss_basic_enable`
 V2_ENABLE=`dbus get v2ray_basic_enable`
 KG_ENABLE=`dbus get koolgame_basic_enable`
@@ -30,7 +30,14 @@ KG_DUPLICATE=`iptables -t nat -L PREROUTING | sed -e '1,2d' | grep KOOLGAME | wc
 KG_NUMBER=`iptables -t nat -L PREROUTING | sed -e '1,2d' | sed -n '/KOOLGAME/=' | sed -n '1p'`
 [ "$KG_ENABLE" == "1" ] && export number="3"
 
-[ ! "$KP_ENABLE" == "1" ] && return 0 || continue
+# kpr运行状态判断
+status=`ps | grep koolproxy | grep -v grep | wc -l`
+if [[ "$status" == "0" ]]; then
+	KPR_NOT_RUNNING=1
+	export number="4"
+fi
+
+[ ! "$KPR_ENABLE" == "1" ] && return 0 || continue
 
 case $number in
 1)
@@ -41,5 +48,8 @@ case $number in
 	;;
 3)
 	[ "$KP_NUMBER" -gt "$KG_NUMBER" -o "$KG_DUPLICATE" -ge "2" ] && /koolshare/scripts/koolgame_config.sh restart
+	;;
+4)
+	[ "$KPR_ENABLE" == "1" -a "$KPR_NOT_RUNNING" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh restart
 	;;
 esac

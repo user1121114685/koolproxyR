@@ -17,7 +17,7 @@ easylist_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/easylistchina.t
 replenish_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/yhosts.txt | wc -l`
 fanboy_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | wc -l`
 # 检测是否开启fanboy 全规则版本
-if [ "$koolproxyR_fanboy_all_rules" == "1" ];then
+if [ "$koolproxyR_fanboy_all_rules" == "1" ]; then
 	fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '4p'|awk '{print $3,$4}'`
 else
 	fanboy_rules_local=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt  | sed -n '3p'|awk '{print $3,$4}'`

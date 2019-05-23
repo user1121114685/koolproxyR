@@ -25,7 +25,7 @@ backup() {
 		file_found=0
 	fi
 
-	if [ "$file_found" == "0" ];then
+	if [[ "$file_found" == "0" ]]; then
 		echo_date "退出备份！"
 		echo XU6J03M6
 		exit 1
@@ -46,7 +46,7 @@ backup_0() {
 		file_found=0
 	fi
 
-	if [ "$file_found" == "0" ];then
+	if [[ "$file_found" == "0" ]]; then
 		echo_date "退出备份！"
 		echo XU6J03M6
 		exit 1
@@ -76,7 +76,7 @@ restart_koolproxy(){
 }
 
 restore() {
-	if [ -f /tmp/upload/koolproxyCA.tar.gz ];then
+	if [ -f /tmp/upload/koolproxyCA.tar.gz ]; then
 		echo_date "开始恢复证书！"
 		mkdir -p $CA_DIR
 		cp /tmp/upload/koolproxyCA.tar.gz $CA_DIR

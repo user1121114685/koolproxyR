@@ -24,7 +24,7 @@ install_tar(){
 	echo_date ====================== step 1 ===========================
 	echo_date 开启软件离线安装！
 	sleep 1
-	if [ -f $TARGET_DIR/$soft_name ];then
+	if [ -f $TARGET_DIR/$soft_name ]; then
 		echo_date $TARGET_DIR目录下检测到上传的离线安装包$soft_name
 		mv /tmp/upload/$soft_name /tmp
 		sleep 1
@@ -35,14 +35,14 @@ install_tar(){
 		sleep 1
 		cd /tmp
 		
-		if [ -f /tmp/$name/install.sh ];then
+		if [ -f /tmp/$name/install.sh ]; then
 			INSTALL_SCRIPT=/tmp/$name/install.sh
 		else
 			INSTALL_SCRIPT_NU=`find /tmp -name "install.sh"|wc -l` 2>/dev/null
 			[ "$INSTALL_SCRIPT_NU" == "1" ] && INSTALL_SCRIPT=`find /tmp -name "install.sh"` || INSTALL_SCRIPT=""
 		fi
 
-		if [ -n "$INSTALL_SCRIPT" -a -f "$INSTALL_SCRIPT" ];then
+		if [ -n "$INSTALL_SCRIPT" -a -f "$INSTALL_SCRIPT" ]; then
 			SCRIPT_AB_DIR=`dirname $INSTALL_SCRIPT`
 			MODULE_NAME=${SCRIPT_AB_DIR##*/}
 			echo_date 准备安装$MODULE_NAME插件！
@@ -53,7 +53,7 @@ install_tar(){
 			sleep 1
 			# start-stop-daemon -S -q -x $INSTALL_SCRIPT 2>&1
 			sh /tmp/$name/install.sh 2>&1
-			# if [ "$?" != "0" ];then
+			# if [[ "$?" != "0" ]]; then
 			# 	echo_date 因为$MODULE_NAME插件安装失败！退出离线安装！
 			# 	clean
 			# 	dbus remove "softcenter_module_$MODULE_NAME$INSTALL_SUFFIX"
@@ -64,12 +64,12 @@ install_tar(){
 			dbus set "softcenter_module_$MODULE_NAME$NAME_SUFFIX=$MODULE_NAME"
 			dbus set "softcenter_module_$MODULE_NAME$INSTALL_SUFFIX=1"
 			#dbus set "softcenter_module_$name$VER_SUFFIX=$soft_install_version"
-			if [ -n "$soft_install_version" ];then
+			if [ -n "$soft_install_version" ]; then
 				dbus set "softcenter_module_$MODULE_NAME$VER_SUFFIX=$soft_install_version"
 				echo_date "从插件文件名中获取到了版本号：$soft_install_version"
 			else
 				#已经在插件安装中设置了
-				if [ -z "`dbus get softcenter_module_$MODULE_NAME$VER_SUFFIX`" ];then
+				if [ -z "`dbus get softcenter_module_$MODULE_NAME$VER_SUFFIX`" ]; then
 					dbus set "softcenter_module_$MODULE_NAME$VER_SUFFIX=0.1"
 					echo_date "插件安装脚本里没有找到版本号，设置默认版本号为0.1"
 				else
@@ -82,7 +82,7 @@ install_tar(){
 			do
 				install_pid=`ps | grep -w install.sh | grep -v grep | awk '{print $1}'`
 				i=$(($i-1))
-				if [ "$i" -lt 1 ];then
+				if [[ "$i" -lt 1 ]]; then
 					echo_date "Could not load nat rules!"
 					echo_date 安装似乎出了点问题，请手动重启路由器后重新尝试...
 					echo_date 删除相关文件并退出...

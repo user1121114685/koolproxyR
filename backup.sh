@@ -6,7 +6,7 @@
 tar_name="$1.tar.gz"
 
 mkdir -p history
-if [ ! -f ./history/version ];then
+if [ ! -f ./history/version ]; then
 	touch ./history/version
 fi
 
@@ -16,8 +16,8 @@ md5_old=`cat history/version | sort -nk1 | awk '{print $1}' |sed -n 1p`
 md5_new=` md5sum $tar_name | awk '{print $1}'`
 # 保证md5连续性
 wget -O ./history/version https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/history/version
-if [ -f ./$tar_name ];then
-	if [ "$version_old" != "$version_new" ];then
+if [ -f ./$tar_name ]; then
+	if [ "$version_old" != "$version_new" ]; then
 		mkdir ./history/$version_new/
 		cp ./$tar_name ./history/$version_new/
 		echo $version_new $md5_new >> ./history/version

@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: JlgqTKz7tkn5HidAYxMReQ
-! Version: 201905230552
+! Checksum: ZcXR4HjS3M5u3J3yVbS/zg
+! Version: 201905231652
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 !  ******************************* koolproxy 语法*******************************
@@ -128,7 +128,7 @@ https://www.douyu.com##.closeBg-998534
 ||https://s0.2mdn.net/ads/
 ||https://stats.tubemogul.com/stats/t
 ||https://youtubei.googleapis.com/ad_break
-||https://youtubei.googleapis.com/youtubei/
+||https://youtubei.googleapis.com/youtubei/v1/log_event
 ||https://youtube.com/api/stats/ads
 ! https://github.com/AdguardTeam/AdguardFilters/blob/master/MobileFilter/sections/specific_app.txt#L459
 ! Start: YT app
@@ -269,6 +269,8 @@ https://www.douyu.com##.closeBg-998534
 @@@@https://gss0.bdstatic.com
 @@@@https://gss1.bdstatic.com
 @@@@https://id.sonyentertainmentnetwork.com
+! 腾讯云开发者平台
+@@@@https://dev.tencent.com
 ! ----------------------------------------------请在此行线以上填写新增规则------------------------------------------------------
 ! ------------------------------------------------------------------------------------------------------------------------------
 !x  --------------------------------------------- 以下规则搬运自 koolproxy -------------------------------------------------------
@@ -5864,7 +5866,6 @@ https://www.douyu.com##.closeBg-998534
 ||https://zhev.com.cn/file/weixin/
 ||https://zhibo8.cc/js/adv-slide-toggle.js
 ||https://zhiboba.org/gg_js/
-||https://zhibok8.com/bbs/attachment/Mon_1803/17_11_9d88c2ec165102a.gif
 ||https://zhibok8.com/images/*.gif
 ||https://zhibok8.com/js/di
 ||https://zhibok8.com/js/scroll.js
@@ -5949,6 +5950,7 @@ https://www.douyu.com##.closeBg-998534
 ||https://zzzyk.com/js/
 ||https://xitangwenhua.com/muban/mh/js/asd.js
 ||https://zi-han.net/theme/hplus/js/plugins/layer/
+||https://zb.cool/static/img/banner/
 ||https://0512s.com^$third-party
 ||https://100669.com^$third-party
 ||https://15tianqi.com^$third-party
@@ -13064,7 +13066,6 @@ https://www.douyu.com##.closeBg-998534
 ||http://zhev.com.cn/file/weixin/
 ||http://zhibo8.cc/js/adv-slide-toggle.js
 ||http://zhiboba.org/gg_js/
-||http://zhibok8.com/bbs/attachment/Mon_1803/17_11_9d88c2ec165102a.gif
 ||http://zhibok8.com/images/*.gif
 ||http://zhibok8.com/js/di
 ||http://zhibok8.com/js/scroll.js
@@ -13154,6 +13155,7 @@ https://www.douyu.com##.closeBg-998534
 ||http://zzzyk.com/js/
 ||http://xitangwenhua.com/muban/mh/js/asd.js
 ||http://zi-han.net/theme/hplus/js/plugins/layer/
+||http://zb.cool/static/img/banner/
 ||http://alicdn.com^$domain=99a18.com|99re.com|99re16.com
 ||http://sinaimg.cn^$domain=99a18.com|99re.com|99re16.com
 ||http://immedlinkum.info^
@@ -15847,6 +15849,7 @@ https://www.douyu.com##.closeBg-998534
 ||http://wrating.com^$third-party
 https://ubmcmm.baidustatic.com
 https://szxx.com.cn###A0
+https://beianbeian.com##DIV[style="height: 62px;margin-bottom: 20px;"] + .layui-table
 https://zgfznews.com##.banner
 https://szxx.com.cn###A1
 https://szxx.com.cn###A2
@@ -20747,6 +20750,7 @@ https://ifeng.com#?#.i_con:-abp-has(span:-abp-contains(告))
 https://ifeng.com#?#.slLis > li:-abp-has(span:-abp-contains(告))
 https://52biquge.com##a[href^="http://html.350.com/"]
 https://duanwenxue.com##.qgzdwx
+https://rjno1.com###r1nocheckbbb
 https://rjno1.com#?#:-abp-properties(z-index: 1998;)
 https://rvlev.com,t66y.com#?#.tpc_content:-abp-has(>b:nth-child(n+40)>span>a[onmouseover="this.style.background='#DEF5CD';"]:-abp-contains(91TV)) > :nth-child(-n+45)
 https://rvlev.com,t66y.com#?#.tpc_content:-abp-has(>b:nth-child(n+50)>span>a[onmouseover="this.style.background='#DEF5CD';"]:-abp-contains(91TV)) > :nth-child(-n+55)
@@ -21441,6 +21445,7 @@ https://weibo.com###Pl_Core_P7MultiPicPlay__7
 https://weibo.com##.apps_PCD_reco_detail_right
 http://ubmcmm.baidustatic.com
 http://szxx.com.cn###A0
+http://beianbeian.com##DIV[style="height: 62px;margin-bottom: 20px;"] + .layui-table
 http://zgfznews.com##.banner
 http://szxx.com.cn###A1
 http://szxx.com.cn###A2
@@ -26353,6 +26358,7 @@ http://ifeng.com#?#.i_con:-abp-has(span:-abp-contains(告))
 http://ifeng.com#?#.slLis > li:-abp-has(span:-abp-contains(告))
 http://52biquge.com##a[href^="http://html.350.com/"]
 http://duanwenxue.com##.qgzdwx
+http://rjno1.com###r1nocheckbbb
 http://rjno1.com#?#:-abp-properties(z-index: 1998;)
 http://rvlev.com,t66y.com#?#.tpc_content:-abp-has(>b:nth-child(n+40)>span>a[onmouseover="this.style.background='#DEF5CD';"]:-abp-contains(91TV)) > :nth-child(-n+45)
 http://rvlev.com,t66y.com#?#.tpc_content:-abp-has(>b:nth-child(n+50)>span>a[onmouseover="this.style.background='#DEF5CD';"]:-abp-contains(91TV)) > :nth-child(-n+55)
