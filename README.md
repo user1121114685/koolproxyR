@@ -1,8 +1,19 @@
-# LEDE koolproxyR 项目
-你可以自由提交、修改、让这个项目越来越好！
+# KoolShare LEDE koolproxyR 项目
+**Thanks To**
+- Koolshare 的各位大佬，包括不限于：xiaobao、sadog、houzi-、 Fw867 、.......
+- 晴天 、Leo Jo 对页面布局所做的贡献.
+- Sukka / 苏卡卡 对交互界面的指点.
+- 油炸包子 对页面调试的指点.
+- 233boy 对脚本代码的指点.
+- cjx 对easylistchina与cjx-annoyance规则的贡献.
+- fanboy 对fanboy规则的整理和完善.
+- vokins 对yhosts的整理和完善.
+- 感谢在更新日志里面提到的所有人.
+- Github 对代码进行托管.
+- Gitlab 对代码进行中转
+- 腾讯开发者平台 提供更新及文件下载.
 ---
-项目缺少大佬，各种能为此项目贡献一点点的大佬。  
-大佬，可怜可怜项目吧，给项目加点瓦？我会在插件首页写上你的名字的！  
+**KPR是一个开源活性高的项目，它不一定满足你的需求，但你可以让它变得更好**
 
 **欢迎大佬随时提交更新和问题**
 
@@ -19,7 +30,7 @@
 ### 稳定方法
 到F大没修复软件中心之前，或者我上架软件中心（其实根本没这个可能），你可以通过如下步骤进行使用本软件！
 
-[点我下载](https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR.tar.gz)，通过软件中心的离线安装进行安装！**PS 请勿修改名字保持koolproxyR.tar.gz才能安装**，并且你可能需要执行下面的ssh.
+[点我下载](https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR.tar.gz)，通过软件中心的离线安装进行安装！**PS 请勿修改名字保持koolproxyR.tar.gz才能安装**，并且你可能需要执行下面的ssh代码.
 
 ---
 如果你遇到** `离线安装` ** 无法安装，你还需要在SSH中执行如下步骤。（**请全部复制**）    
@@ -27,13 +38,6 @@
 ---
 
 `wget -O /koolshare/scripts/ks_tar_install.sh https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/ks_tar_install.sh && chmod 777 /koolshare/scripts/ks_tar_install.sh`
-
----
-如果你无法访问github。请使用下面的代码在ssh中执行，进行离线安装脚本替换。  
-
----
-
-`wget -O /koolshare/scripts/ks_tar_install.sh https://gitee.com/shaoxia1991/koolproxyR/raw/master/ks_tar_install.sh && chmod 777 /koolshare/scripts/ks_tar_install.sh`
 
 ---
 
@@ -45,3 +49,9 @@
 ![目前版本截图](https://github.com/user1121114685/koolproxyR/blob/master/20190328233937.jpg?raw=true "后续更新可能还会有更新！")
 ![目前版本截图](https://github.com/user1121114685/koolproxyR/blob/master/20190328233849.jpg?raw=true "后续更新可能还会有更新！")
 ![目前版本截图](https://github.com/user1121114685/koolproxyR/blob/master/20190407215443.jpg?raw=true "后续更新可能还会有更新！")
+
+## 开源及授权
+如果同时满足如下要求，无需取得授权。
+1.不得用于非开源项目.
+2.不得用于商业用途.
+3.给予本项目优先反馈，和知情权。

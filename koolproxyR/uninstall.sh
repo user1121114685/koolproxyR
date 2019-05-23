@@ -10,6 +10,15 @@ rm -rf $KSROOT/webs/module_KoolproxyR.asp >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR >/dev/null 2>&1
 rm -rf $KSROOT/init.d/S93koolproxyR.sh >/dev/null 2>&1
 rm -rf /etc/rc.d/S93koolproxyR.sh >/dev/null 2>&1
-# 取消dbus注册
-dbus remove koolproxyR_enable
-dbus remove koolproxy_enable
+rm -rf $KSROOT/libhavege*.ipk
+rm -rf $KSROOT/haveged*.ipk
+
+# 取消dbus注册 TG sadog
+cd /tmp 
+dbus list koolproxyR|cut -d "=" -f1|sed 's/^/dbus remove /g' > clean.sh
+dbus list softcenter_module_|grep koolproxyR|cut -d "=" -f1|sed 's/^/dbus remove /g' >> clean.sh
+chmod 777 clean.sh 
+sh ./clean.sh > /dev/null 2>&1 
+rm clean.sh
+
+exit 0

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.1.3"
+VERSION="2.1.4"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"

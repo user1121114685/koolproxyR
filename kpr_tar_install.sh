@@ -22,13 +22,13 @@ install_tar(){
 	NAME_SUFFIX=_name
 	cd /tmp
 	echo_date ====================== step 1 ===========================
-	echo_date 开启软件离线安装！
+	echo_date 即将开始在线更新！
 	sleep 1
 	if [ -f $TARGET_DIR/$soft_name ];then
-		echo_date $TARGET_DIR目录下检测到上传的离线安装包$soft_name
+		echo_date $TARGET_DIR目录下检测到在线更新包$soft_name
 		mv /tmp/upload/$soft_name /tmp
 		sleep 1
-		echo_date 尝试解压离线安装包离线安装包
+		echo_date 尝试解压在线更新包
 		sleep 1
 		tar -zxvf $soft_name >/dev/null 2>&1
 		echo_date 解压完成！
@@ -51,15 +51,15 @@ install_tar(){
 			echo_date 运行安装脚本...
 			echo_date ====================== step 2 ===========================
 			sleep 1
-			# start-stop-daemon -S -q -x $INSTALL_SCRIPT 2>&1
-			sh /tmp/$name/install.sh 2>&1
-			# if [ "$?" != "0" ];then
-			# 	echo_date 因为$MODULE_NAME插件安装失败！退出离线安装！
-			# 	clean
-			# 	dbus remove "softcenter_module_$MODULE_NAME$INSTALL_SUFFIX"
-			# 	echo jobdown
-			# 	exit
-			# fi
+			start-stop-daemon -S -q -x $INSTALL_SCRIPT 2>&1
+			# sh /tmp/$name/install.sh 2>&1
+			if [ "$?" != "0" ];then
+				echo_date 因为$MODULE_NAME安装失败！退出在线更新！
+				clean
+			 	dbus remove "softcenter_module_$MODULE_NAME$INSTALL_SUFFIX"
+				echo jobdown
+				exit
+			fi
 			echo_date ====================== step 3 ===========================
 			dbus set "softcenter_module_$MODULE_NAME$NAME_SUFFIX=$MODULE_NAME"
 			dbus set "softcenter_module_$MODULE_NAME$INSTALL_SUFFIX=1"
@@ -99,7 +99,7 @@ install_tar(){
 			echo_date 一点点清理工作...
 			sleep 1
 			clean
-			echo_date 完成！离线安装插件成功，现在你可以退出本页面~
+			echo_date 完成！在线更新插件成功，现在你可以退出本页面~
 			sleep 1
 		else
 			echo_date 没有找到安装脚本！
@@ -107,7 +107,7 @@ install_tar(){
 			clean
 		fi
 	else
-		echo_date 没有找到离线安装包！
+		echo_date 没有找到在线更新包！
 		echo_date 删除相关文件并退出...
 		clean
 	fi

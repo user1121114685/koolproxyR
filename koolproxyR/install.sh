@@ -65,15 +65,19 @@ KP_ENBALE=`dbus get koolproxy_enable`
 koolproxyR_enable=`dbus get koolproxyR_enable`
 
 if [ "$KP_ENBALE" == "1" ]; then
-	if [ -f "$KSROOT/koolproxy/kp_config.sh" ];then
+	if [ -f "$KSROOT/koolproxy/kp_config.sh" ]; then
 		sh $KSROOT/koolproxy/kp_config.sh stop >> /tmp/upload/kpr_log.txt
 	fi
 fi
 # 删除KP的二进制和核心配置文件。保留其他所有配置，避免小白两个都安装导致一些莫名其妙的问题。
 rm -rf $KSROOT/koolproxy/kp_config.sh >/dev/null 2>&1
 rm -rf $KSROOT/koolproxy/koolproxy >/dev/null 2>&1
-[ "$koolproxyR_enable" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh stop >> /tmp/upload/kpr_log.txt
-
+# 暂时关闭kpr进程。进行更新
+if [ "$koolproxyR_enable" == "1" ]; then
+	echo 关闭koolproxyR主进程...
+	kill -9 `pidof koolproxy` >/dev/null 2>&1
+	killall koolproxy >/dev/null 2>&1
+fi
 # remove old files
 rm -rf $KSROOT/bin/koolproxy >/dev/null 2>&1
 rm -rf $KSROOT/scripts/KoolProxyR_* >/dev/null 2>&1
@@ -135,8 +139,8 @@ dbus set softcenter_module_koolproxyR_description="KPR更多规则更舒服！"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=2.1.3
-dbus set koolproxyR_version=2.1.3
+dbus set softcenter_module_koolproxyR_version=2.1.4
+dbus set koolproxyR_version=2.1.4
 
 [ "$koolproxyR_enable" == "1" ] && sh $KSROOT/koolproxyR/kpr_config.sh restart
 # 首次安装/更新之后进行一次规则升级。避免规则过久。

@@ -522,7 +522,7 @@ ss_v2ray_game_restrt(){
 	koolclash_ENABLE=`dbus get koolclash_enable`
 	if [ "$SS_ENABLE" == "1" ]; then
 		echo_date ================== 以下为SS日志 =================
-		/koolshare/ss/ssstart.sh restart >> /tmp/upload/kpr_log.txt 2>&1
+		/koolshare/ss/ssstart.sh restart >> /tmp/upload/kpr_log.txt
 		echo_date ================== 以上为SS日志 =================
 		echo_date 检测到SS开启，重启了你的SS插件以适应KPR的开启与关闭！
 	fi

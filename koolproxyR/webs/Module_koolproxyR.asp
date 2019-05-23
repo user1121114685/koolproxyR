@@ -51,7 +51,8 @@ if(typeof btoa == "Function") {
 
 // 开始检查KPR软件是否更新
 $.ajax({
-	url: "https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/version",
+	// url: "https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/version",
+	url: "https://raw.githubusercontent.com/user1121114685/koolproxyR/master/version",
 	method: 'GET',
 	async: true,
 	cache: false,
@@ -880,10 +881,6 @@ function set_version() {
 					<li><font color="#FF6347"> 问： </font>HTTPS过滤一定要安装证书吗？</li>
 					<li><font color="#1E90FF"> 答： </font>必须安装证书，而且必须正确安装证书。</li>			
 					<br><hr>
-					<li><font color="#FF6347"> 问： </font>我不想每次手动更新规则，可以自动更新吗？</li>
-					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
-					<li>0 3 * * * /koolshare/scripts/KoolProxyR_rule_update.sh update</li>
-					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我想自动升级KoolProxyR版本可以吗？</li>
 					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
 					<li>0 4 * * * /koolshare/scripts/KoolProxyR_update_now.sh</li>
@@ -912,7 +909,6 @@ function set_version() {
 					<li>raw.githubusercontent.com</li>
 					<li>easylist-downloads.adblockplus.org</li>
 					<li>secure.fanboy.co.nz</li>
-					<li>filters.adtidy.org</li>
 					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我开启了fanboy全规则版本，为什么我打开网页没有以前流畅了。</li>
 					<li><font color="#1E90FF"> 答： </font>这个版本由于规则太多对不是重度国外网站使用的你来讲，确实不必要勾选，如果常年逛国外网站，又卡，那你只勾选fanboy全规则版本，其他的都取消掉吧！</li>			

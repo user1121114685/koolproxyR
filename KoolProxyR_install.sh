@@ -72,7 +72,17 @@ if [ -f $TARGET_DIR/$soft_name ];then
         if [ "$?" != "0" ];then
         	echo_date 因为$MODULE_NAME插件安装失败！退出在线安装！
         	clean
-        	dbus remove "softcenter_module_$MODULE_NAME$INSTALL_SUFFIX"
+            # 取消dbus注册 TG sadog
+            if [ -f "$KSROOT/koolproxyR/kpr_config.sh" ]; then
+                echo_date $MODULE_NAME更新失败！请再试一次。
+            else
+                cd /tmp 
+                dbus list softcenter_module_|grep koolproxyR|cut -d "=" -f1|sed 's/^/dbus remove /g' >> clean.sh
+                chmod 777 clean.sh 
+                sh ./clean.sh > /dev/null 2>&1 
+                rm clean.sh
+                # 反注册结束
+            fi
         	echo_date jobdown
         	exit
         fi
