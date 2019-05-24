@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.1.5"
+VERSION="2.1.6"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -12,6 +12,7 @@ CHANGELOG="维护阶段的kpr"
 find . -type f -exec dos2unix {} \;
 #get latest rules
 rm -rf ./koolproxyR/koolproxyR/data/rules/*.txt
+rm -rf ./koolproxyR/koolproxyR/data/rules/*.md5
 rm -rf ./koolproxyR/koolproxyR/data/source.list
 # rm -rf ./koolproxyR/koolproxyR/koolproxy
 cd koolproxyR/koolproxyR/data/rules
@@ -317,3 +318,12 @@ cd $DIR
 do_build_result
 
 sh backup.sh $MODULE
+cd koolproxyR/koolproxyR/data/rules
+# ls | grep .txt | sed 's/^/md5sum /g' | >> rules_md5.sh
+md5sum easylistchina.txt|awk '{print $1}' > easylistchina.txt.md5
+md5sum kp.dat|awk '{print $1}' > kp.dat.md5
+md5sum user.txt|awk '{print $1}' > user.txt.md5
+md5sum fanboy-annoyance.txt|awk '{print $1}' > fanboy-annoyance.txt.md5
+md5sum kpr_video_list.txt|awk '{print $1}' > kpr_video_list.txt.md5
+md5sum yhosts.txt|awk '{print $1}' > yhosts.txt.md5
+

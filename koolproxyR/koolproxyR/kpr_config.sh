@@ -139,7 +139,7 @@ del_dns_takeover(){
 		chromecast_nu=`iptables -t nat -L PREROUTING -v -n --line-numbers|grep "dpt:53"|awk '{print $1}'`
 		[ -n "$chromecast_nu" ] && iptables -t nat -D PREROUTING $chromecast_nu >/dev/null 2>&1
 	else
-		[ "$ss_chromecast" == "0" ] && [-n "$chromecast_nu" ] && iptables -t nat -D PREROUTING $chromecast_nu >/dev/null 2>&1
+		[ "$ss_chromecast" == "0" ] && [ -n "$chromecast_nu" ] && iptables -t nat -D PREROUTING $chromecast_nu >/dev/null 2>&1
 	fi
 }
 

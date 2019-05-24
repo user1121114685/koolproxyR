@@ -764,7 +764,6 @@ function update_rules_now(arg){
 	tabSelect("app8");
 }
 
-                                                       
 function set_version() {
 
 	$('#_koolproxyR_version').html('<img src="/res/icon_koolproxyR-v.png">');

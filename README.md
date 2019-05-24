@@ -24,7 +24,7 @@
 ## 怎么使用这个插件！ （请先卸载koolproxy，互不兼容。）
 ### 最佳方法 
 在**SSH**中执行如下代码实现在线安装。（**请全部复制**）  
-`wget -O /tmp/KoolProxyR_install.sh https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/KoolProxyR_install.sh && chmod 777 /tmp/KoolProxyR_install.sh && sh /tmp/KoolProxyR_install.sh`
+`wget -4 -O /tmp/KoolProxyR_install.sh https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/KoolProxyR_install.sh && chmod 777 /tmp/KoolProxyR_install.sh && sh /tmp/KoolProxyR_install.sh`
 
 
 ### 稳定方法
@@ -37,7 +37,7 @@
 
 ---
 
-`wget -O /koolshare/scripts/ks_tar_install.sh https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/ks_tar_install.sh && chmod 777 /koolshare/scripts/ks_tar_install.sh`
+`wget -4 -O /koolshare/scripts/ks_tar_install.sh https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/ks_tar_install.sh && chmod 777 /koolshare/scripts/ks_tar_install.sh`
 
 ---
 

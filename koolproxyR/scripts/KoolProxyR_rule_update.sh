@@ -24,11 +24,11 @@ update_rule(){
 	echo_date 开始更新koolproxyR规则，请等待...
 		
 	# update 中国简易列表 2.0
-	if [[ "$koolproxyR_basic_easylist_update" == "1" ]] || [-n "$1" ]; then
+	if [[ "$koolproxyR_basic_easylist_update" == "1" ]] || [ -n "$1" ]; then
 		echo_date " ---------------------------------------------------------------------------------------"
 		# wget --no-check-certificate --timeout=8 -qO - $url_easylist > /tmp/easylistchina.txt
 		for i in {1..5}; do
-			wget -a /tmp/upload/kpr_log.txt -O /tmp/easylistchina.txt $url_easylist
+			wget -4 -a /tmp/upload/kpr_log.txt -O /tmp/easylistchina.txt $url_easylist
 			easylistchina_rule_nu_local=`grep -E -v "^!" /tmp/easylistchina.txt | wc -l`
 			if [[ "$easylistchina_rule_nu_local" -gt 5000 ]]; then
 				break
@@ -37,7 +37,7 @@ update_rule(){
 			fi
 		done
 		for i in {1..5}; do
-			wget -a /tmp/upload/kpr_log.txt -O /tmp/cjx-annoyance.txt $url_cjx
+			wget -4 -a /tmp/upload/kpr_log.txt -O /tmp/cjx-annoyance.txt $url_cjx
 			cjx_rule_nu_local=`grep -E -v "^!" /tmp/cjx-annoyance.txt | wc -l`
 			if [[ "$cjx_rule_nu_local" -gt 500 ]]; then
 				break
@@ -46,7 +46,7 @@ update_rule(){
 			fi
 		done
 		for i in {1..5}; do
-			wget -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt $kpr_our_rule
+			wget -4 -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt $kpr_our_rule
 			kpr_our_rule_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt | wc -l`
 			if [[ "$kpr_our_rule_nu_local" -gt 500 ]]; then
 				break
@@ -78,11 +78,11 @@ update_rule(){
 	fi
 	
 		# update 补充规则
-	if [[ "$koolproxyR_basic_replenish_update" == "1" ]] || [-n "$1" ]; then
+	if [[ "$koolproxyR_basic_replenish_update" == "1" ]] || [ -n "$1" ]; then
 		echo_date " ---------------------------------------------------------------------------------------"
 		for i in {1..5}; do
-			wget -a /tmp/upload/kpr_log.txt -O /tmp/yhosts.txt $url_yhosts
-			wget -a /tmp/upload/kpr_log.txt -O /tmp/tvbox.txt $url_yhosts1
+			wget -4 -a /tmp/upload/kpr_log.txt -O /tmp/yhosts.txt $url_yhosts
+			wget -4 -a /tmp/upload/kpr_log.txt -O /tmp/tvbox.txt $url_yhosts1
 			cat /tmp/tvbox.txt >> /tmp/yhosts.txt
 			# replenish_rules_local=`cat $KSROOT/koolproxyR/data/rules/yhosts.txt  | sed -n '4p'|awk '{print $3,$4}'`
 			# replenish_rules_local1=`cat /tmp/yhosts.txt | sed -n '4p'|awk '{print $3,$4}'`
@@ -110,16 +110,16 @@ update_rule(){
 	# if [[ "$koolproxyR_basic_video_update" == "1" ]] || [[-n "$1" ]]; then
 	# 	echo_date " ---------------------------------------------------------------------------------------"
 	# 	echo_date 加密视频规则kp.dat 看不到版本号。所以强制更新。！
-	# 	wget -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kp.dat $url_kp
+	# 	wget -4 -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kp.dat $url_kp
 	# 	echo_date  视频规则已经更新。
 
 	# fi
 
 	# update fanboy规则
-	if [[ "$koolproxyR_basic_fanboy_update" == "1" ]] || [-n "$1" ]; then
+	if [[ "$koolproxyR_basic_fanboy_update" == "1" ]] || [ -n "$1" ]; then
 		echo_date " ---------------------------------------------------------------------------------------"
 		for i in {1..5}; do
-			wget -a /tmp/upload/kpr_log.txt -O /tmp/fanboy-annoyance.txt $url_fanboy
+			wget -4 -a /tmp/upload/kpr_log.txt -O /tmp/fanboy-annoyance.txt $url_fanboy
 			# wget --no-check-certificate --timeout=8 -qO - $url_fanboy > /tmp/fanboy-annoyance.txt
 			# 检测是否开启fanboy 全规则版本
 			if [[ "$koolproxyR_fanboy_all_rules" == "1" ]]; then

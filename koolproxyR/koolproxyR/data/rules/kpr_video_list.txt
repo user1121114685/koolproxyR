@@ -132,7 +132,7 @@ https://iqiyi.com###videoBuyContainer
 https://iqiyi.com###widget-jingdongAd
 https://iqiyi.com###zbsp
 https://iqiyi.com##.adBanner980
-https://0du123.com,3gsc.com.cn,591hx.com,aguitar.cn,btzx2017.com,cailianpress.com,e0514.com,eastmoney.com,expreview.com,fuli123.top,ganji.com,guitarchina.com,gz0668.com,iciba.com,iqiyi.com,jia360.com,joy.cn,kdnet.net,kumi.cn,newnet.cc,rain2.top,tiboo.cn,toocle.com,wallstreetcn.com,xizi.com,zyue.com##.banner
+https://0du123.com,3gsc.com.cn,591hx.com,aguitar.cn,btzx2017.com,cailianpress.com,e0514.com,eastmoney.com,expreview.com,fuli123.top,ganji.com,guitarchina.com,gz0668.com,iciba.com,iqiyi.com,jia360.com,joy.cn,kdnet.net,kumi.cn,newnet.cc,rain2.top,tiboo.cn,toocle.com,wallstreetcn.com,xizi.com,zgfznews.com,zyue.com##.banner
 https://iqiyi.com##.banner3
 https://guitarchina.com,iqiyi.com##.banner4
 https://iqiyi.com##.banner980
@@ -192,7 +192,7 @@ http://iqiyi.com###videoBuyContainer
 http://iqiyi.com###widget-jingdongAd
 http://iqiyi.com###zbsp
 http://iqiyi.com##.adBanner980
-http://0du123.com,3gsc.com.cn,591hx.com,aguitar.cn,btzx2017.com,cailianpress.com,e0514.com,eastmoney.com,expreview.com,fuli123.top,ganji.com,guitarchina.com,gz0668.com,iciba.com,iqiyi.com,jia360.com,joy.cn,kdnet.net,kumi.cn,newnet.cc,rain2.top,tiboo.cn,toocle.com,wallstreetcn.com,xizi.com,zyue.com##.banner
+http://0du123.com,3gsc.com.cn,591hx.com,aguitar.cn,btzx2017.com,cailianpress.com,e0514.com,eastmoney.com,expreview.com,fuli123.top,ganji.com,guitarchina.com,gz0668.com,iciba.com,iqiyi.com,jia360.com,joy.cn,kdnet.net,kumi.cn,newnet.cc,rain2.top,tiboo.cn,toocle.com,wallstreetcn.com,xizi.com,zgfznews.com,zyue.com##.banner
 http://iqiyi.com##.banner3
 http://guitarchina.com,iqiyi.com##.banner4
 http://iqiyi.com##.banner980
