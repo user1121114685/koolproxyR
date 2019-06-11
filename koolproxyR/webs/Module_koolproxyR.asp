@@ -895,6 +895,9 @@ function set_version() {
 					<li><font color="#FF6347"> 问： </font>我发现规则上下有重复的地方有影响吗？</li>
 					<li><font color="#1E90FF"> 答： </font>没有的，这是因为不知道网站是http的还是https的，所以http与https都需要分别设置一次。</li>			
 					<br><hr>
+					<li><font color="#FF6347"> 问： </font>有隐藏功能吗？</li>
+					<li><font color="#1E90FF"> 答： </font>目前有自定义执行shell，和自定义证书名字2个功能。请参考更新日志内的说明。</li>			
+					<br><hr>
 					<li><font color="#FF6347"> 问： </font>KoolProxyR太棒了，我要捐赠！</li>
 					<li><font color="#1E90FF"> 答： </font>谢谢大家好意，请捐赠给生活中其他需要帮助的人吧！或许这更重要！</li>			
 					<br><hr>

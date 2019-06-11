@@ -13,7 +13,7 @@ pid=`pidof koolproxy`
 easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
 easylist_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/easylistchina.txt | wc -l`
 # 补充规则版本号暂时没有
-# replenish_rules_local=`cat $KSROOT/koolproxyR/data/rules/yhosts.txt  | sed -n '4p'|awk '{print $3,$4}'`
+replenish_rules_local=`cat $KSROOT/koolproxyR/data/rules/yhosts.txt  | sed -n '2p' | cut -d "=" -f2`
 replenish_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/yhosts.txt | wc -l`
 fanboy_nu_local=`grep -E -v "^!" $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | wc -l`
 # 检测是否开启fanboy 全规则版本

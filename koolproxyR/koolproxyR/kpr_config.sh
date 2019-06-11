@@ -405,7 +405,7 @@ load_nat(){
 	iptables -t nat -N KP_BLOCK_HTTPS
 	iptables -t nat -A KP_BLOCK_HTTPS -p tcp -m multiport --dport 80,443 -m set --match-set black_koolproxy dst -j KOOLPROXY_ACT	
 	iptables -t nat -N KP_ALL_PORT
-	#iptables -t nat -A KP_ALL_PORT -p tcp -j KOOLPROXY_ACT
+	iptables -t nat -A KP_ALL_PORT -p tcp -j KOOLPROXY_ACT
 	# 局域网控制
 	lan_acess_control
 	# 剩余流量转发到缺省规则定义的链中
@@ -497,6 +497,13 @@ unset_lock(){
 	rm -rf "$LOCK_FILE"
 }
 
+my_rule_diy(){
+	if [ -f /koolshare/scripts/KoolProxyR_my_rule_diy.sh ]; then
+		chmod 777 /koolshare/scripts/KoolProxyR_my_rule_diy.sh
+		sh /koolshare/scripts/KoolProxyR_my_rule_diy.sh mydiy
+	fi
+}
+
 new_kpr_version(){
 	url_version="https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/version"
 	wget --no-check-certificate --timeout=8 -qO - $url_version > /tmp/version
@@ -548,6 +555,7 @@ start)
 	set_lock
 	echo_date ================== koolproxyR启用 =================
 	rm -rf /tmp/upload/user.txt && ln -sf $KSROOT/koolproxyR/data/rules/user.txt /tmp/upload/user.txt
+	my_rule_diy
 	detect_cert
 	start_koolproxy
 	add_ipset_conf && restart_dnsmasq
@@ -577,6 +585,7 @@ restart)
 	stop_koolproxy
 	# now start
 	echo_date ================== koolproxyR启用 =================
+	my_rule_diy
 	detect_cert
 	start_koolproxy
 	add_ipset_conf && restart_dnsmasq

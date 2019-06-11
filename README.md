@@ -50,6 +50,75 @@
 ![目前版本截图](https://github.com/user1121114685/koolproxyR/blob/master/20190328233849.jpg?raw=true "后续更新可能还会有更新！")
 ![目前版本截图](https://github.com/user1121114685/koolproxyR/blob/master/20190407215443.jpg?raw=true "后续更新可能还会有更新！")
 
+## 文件树简要说明
+<details>
+<summary>查看文件树更了解kpr</summary>
+<pre><code>.
+├── 20190328233849.jpg      项目首页用图片
+├── 20190328233937.jpg      项目首页用图片
+├── 20190407215443.jpg      项目首页用图片
+├── backup.sh       软件中心调用的备份sh用于生成 history
+├── build.sh        编译kpr版本---需要配合软件中心。当然也可以剔除那部分配合.
+├── Changelog.txt       更新日志
+├── config.json.js      暂时无用
+├── history     历史版本
+├── koolproxyR      主程序文件夹
+│   ├── haveged_1.9.4-1_x86_64.ipk  用于解决kpr与v2ray ss 冲突导致开机变慢的问题
+│   ├── init.d
+│   │   └── S93koolproxyR.sh        自启脚本
+│   ├── install.sh      离线安装执行脚本
+│   ├── koolproxyR      /koolshare 下的文件夹 也是软件名字
+│   │   ├── data
+│   │   │   ├── gen_ca.sh       生成证书的脚本
+│   │   │   ├── koolproxyR_ipset.conf       黑名单控制文件
+│   │   │   ├── openssl.cnf     生成证书用的openssl配置文件
+│   │   │   ├── rules       规则
+│   │   │   │   ├── easylistchina.txt       主规则
+│   │   │   │   ├── easylistchina.txt.md5
+│   │   │   │   ├── fanboy-annoyance.txt        fanboy普通规则
+│   │   │   │   ├── fanboy-annoyance.txt.md5
+│   │   │   │   ├── kp.dat         视频加密规则
+│   │   │   │   ├── kp.dat.md5
+│   │   │   │   ├── kpr_video_list.txt      备用视频规则（主规则加载，视频规则没有加载的情况下使用）
+│   │   │   │   ├── kpr_video_list.txt.md5
+│   │   │   │   ├── user.txt           自定义规则文件
+│   │   │   │   ├── user.txt.md5
+│   │   │   │   ├── yhosts.txt      补充规则文件
+│   │   │   │   └── yhosts.txt.md5
+│   │   │   └── source.list     规则控制文件，此文件控制koolproxy加载那些规则。
+│   │   ├── koolproxy       kp二进制文件
+│   │   └── kpr_config.sh   kpr保存的时候执行的配置文件。【核心】
+│   ├── libhavege_1.9.4-1_x86_64.ipk        用于解决kpr与v2ray ss 冲突导致开机变慢的问题
+│   ├── scripts     脚本目录 安装后位于/koolshare/scripts
+│   │   ├── KoolProxyR_cert.sh      证书相关脚本备份.恢复.生成 .0 根证书
+│   │   ├── KoolProxyR_check_chain.sh    检查SS WG V2RAY 和是否被kiil的脚本
+│   │   ├── KoolProxyR_config.sh        控制重启Kpr的文件----
+│   │   ├── KoolProxyR_debug.sh         附加设置-调试模式的脚本
+│   │   ├── KoolProxyR_getarp.sh        获取arp 脚本
+│   │   ├── KoolProxyR_rules_status.sh      规则的状态脚本
+│   │   ├── KoolProxyR_rule_update.sh       规则的更新脚本
+│   │   ├── KoolProxyR_status.sh        kpr状态监测脚本
+│   │   └── KoolProxyR_update_now.sh    kpr在线更新脚本
+│   ├── uninstall.sh        卸载脚本
+│   └── webs
+│       ├── Module_koolproxyR.asp       Kpr界面文件
+│       └── res
+│           ├── icon-koolproxyR-bg.png      软件中心背景图标
+│           ├── icon-koolproxyR.png         软件中心主图标
+│           └── icon_koolproxyR-v.png       kpr界面文件左上角调用的图标
+├── KoolProxyR_install.sh       在线安装/更新KPR的脚本
+├── KoolProxyR_my_rule_diy.sh     自定义SHELL文件,放入/koolshare/scripts下即可
+├── koolproxyR.tar.gz       最新版本的kpr离线安装包
+├── kpr_tar_install.sh      kpr在线更新调用的离线安装脚本
+├── KPR内图标.psd       图标开源
+├── KPR图标背景图片.psd     图片开源
+├── ks_tar_install.sh        软件中心离线安装脚本（修复了离线安装验证不通过的问题）
+├── README.md       你现在所看到的页面
+└── version        版本号，负责控制kpr的更新和md5核对。
+</code></pre>
+</details>
+
+
 ## 开源及授权
 如果同时满足如下要求，无需取得授权。  
 1.不得用于非开源项目.  

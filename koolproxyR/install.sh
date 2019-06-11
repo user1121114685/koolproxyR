@@ -83,14 +83,20 @@ fi
 echo_date 移除koolproxyR旧文件...
 
 rm -rf $KSROOT/bin/koolproxy >/dev/null 2>&1
+# 自定义shell 移动，避免安装丢失
+if [ -f /koolshare/scripts/KoolProxyR_my_rule_diy.sh ]; then
+	mv /koolshare/scripts/KoolProxyR_my_rule_diy.sh /tmp/KoolProxyR_my_rule_diy.sh.tmp
+fi
 rm -rf $KSROOT/scripts/KoolProxyR_* >/dev/null 2>&1
 rm -rf $KSROOT/webs/Module_koolproxyR.asp >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/koolproxy >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/*.sh >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/data/gen_ca.sh >/dev/null 2>&1
+rm -rf $KSROOT/koolproxyR/data/source.list >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/data/koolproxyR_ipset.conf >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR/data/openssl.cnf >/dev/null 2>&1
-rm -rf $KSROOT/koolproxyR/data/version >/dev/null 2>&1
+rm -rf $KSROOT/koolproxyR/data/rules >/dev/null 2>&1
+# 移动 自定义规则
 if [ -f "$KSROOT/koolproxyR/data/rules/user.txt" ]; then
 	mv $KSROOT/koolproxyR/data/rules/user.txt /tmp/user.txt.tmp
 fi
@@ -105,13 +111,19 @@ mkdir -p $KSROOT/koolproxyR/data
 cp -rf /tmp/koolproxyR/scripts/* $KSROOT/scripts/
 cp -rf /tmp/koolproxyR/webs/* $KSROOT/webs/
 cp -rf /tmp/koolproxyR/init.d/* $KSROOT/init.d/
-if [ ! -f "$KSROOT/koolproxyR/data/rules/user.txt" ]; then
+# 自定义规则 判断
+if [ -f "/tmp/user.txt.tmp" ]; then
 	cp -rf /tmp/koolproxyR/* $KSROOT/
-else
-	mv $KSROOT/koolproxyR/data/rules/user.txt /tmp/user.txt.tmp
-	cp -rf /tmp/koolproxyR/* $KSROOT/
+	rm -rf $KSROOT/koolproxyR/data/rules/user.txt
 	mv /tmp/user.txt.tmp $KSROOT/koolproxyR/data/rules/user.txt
+else
+	cp -rf /tmp/koolproxyR/* $KSROOT/	
 fi
+# 自定义shell 移动，避免安装丢失
+if [ -f /tmp/KoolProxyR_my_rule_diy.sh.tmp ]; then
+	mv /tmp/KoolProxyR_my_rule_diy.sh.tmp /koolshare/scripts/KoolProxyR_my_rule_diy.sh
+fi
+
 cp -f /tmp/koolproxyR/uninstall.sh $KSROOT/scripts/uninstall_koolproxyR.sh
 rm -rf $KSROOT/install.sh
 rm -rf $KSROOT/uninstall.sh
@@ -147,8 +159,8 @@ dbus set softcenter_module_koolproxyR_description="KPR更多规则更舒服！"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=2.1.6
-dbus set koolproxyR_version=2.1.6
+dbus set softcenter_module_koolproxyR_version=2.1.7
+dbus set koolproxyR_version=2.1.7
 
 echo_date 安装koolproxyR完成，开始重启koolproxyR...
 

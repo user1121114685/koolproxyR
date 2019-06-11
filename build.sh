@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.1.6"
+VERSION="2.1.7"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -30,7 +30,7 @@ wget https://secure.fanboy.co.nz/fanboy-annoyance.txt
 # wget -O yhosts.txt https://filters.adtidy.org/extension/chromium/filters/15.txt
 # yhosts过滤规则
 # https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/data/tvbox.txt
-wget -O yhosts.txt https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/hosts.txt
+wget -O yhosts.txt https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/hosts
 wget -O tvbox.txt https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/data/tvbox.txt
 cat tvbox.txt >> yhosts.txt
 
@@ -217,11 +217,8 @@ sed -i '/mzstatic.com/d' easylistchina.txt
 
 
 # -------------------------------------- 补充规则处理开始----------------------------------------------------------
-# 此处对yhosts进行单独处理
-sed -i 's/^@/!/g' yhosts.txt
-sed -i 's/^#/!/g' yhosts.txt
 # 删除不必要信息重新打包 0-11行 表示从第15行开始 $表示结束
-sed -i '1,11d' yhosts.txt
+# sed -i '1,11d' yhosts.txt
 # 开始Kpr规则化处理
 cat yhosts.txt > yhosts_https.txt 
 sed -i 's/^127.0.0.1\ /||https:\/\//g' yhosts_https.txt
@@ -229,14 +226,18 @@ cat yhosts.txt >> yhosts_https.txt
 sed -i 's/^127.0.0.1\ /||http:\/\//g' yhosts_https.txt
 # 处理tvbox.txt本身规则。
 sed -i 's/^127.0.0.1\ /||/g' tvbox.txt
-cat tvbox.txt > yhosts.txt
 # 给国内三大电商平台放行
 sed -i '/https:\/\/jd.com/d' yhosts_https.txt
 sed -i '/https:\/\/taobao.com/d' yhosts_https.txt
 sed -i '/https:\/\/tmall.com/d' yhosts_https.txt
 
 # 合二归一
-cat yhosts_https.txt >> yhosts.txt
+cat yhosts_https.txt > yhosts.txt
+cat tvbox.txt >> yhosts.txt
+# 此处对yhosts进行单独处理
+sed -i 's/^@/!/g' yhosts.txt
+sed -i 's/^#/!/g' yhosts.txt
+
 
 # 给知乎放行
 sed -i '/zhihu.com/d' yhosts.txt
