@@ -27,7 +27,7 @@ for i in {1..5}; do
     echo_date 远程版本md5：$koolproxyR_installing_md5
     echo_date 您下载版本md5：$koolproxyR_download_md5
     if [[ "$koolproxyR_installing_md5" == "$koolproxyR_download_md5" ]]; then
-        echo_date 一个悲伤的故事，MD5校验不通过，勇士请重新来过吧！
+        echo_date MD5校验通过，开始安装！请等待....
         break
     fi
     if [[ $i == 5 ]]; then
