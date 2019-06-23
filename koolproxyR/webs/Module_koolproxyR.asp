@@ -811,7 +811,7 @@ function set_version() {
 <li><a href="javascript:void(0);" onclick="tabSelect('app4');" id="app4-server1-zdy-tab"><i class="icon-hammer"></i> 自定义规则</a></li>
 <li><a href="javascript:void(0);" onclick="tabSelect('app5');" id="app5-server1-zsgl-tab"><i class="icon-lock"></i> 证书管理</a></li>
 <li><a href="javascript:void(0);" onclick="tabSelect('app6');" id="app6-server1-gzgl-tab"><i class="icon-cmd"></i> 规则状态</a></li>
-<li><a href="javascript:void(0);" onclick="tabSelect('app7');" id="app7-server1-rzz-tap"><i class="icon-wake"></i> 附加設置</a></li>
+<li><a href="javascript:void(0);" onclick="tabSelect('app7');" id="app7-server1-rzz-tap"><i class="icon-wake"></i> 附加设置</a></li>
 <li><a href="javascript:void(0);" onclick="tabSelect('app8');" id="app8-server1-rz-tab"><i class="icon-info"></i> 日志信息</a></li>
 </ul>
 <div class="box boxr1" style="margin-top: 0px;">
@@ -820,7 +820,7 @@ function set_version() {
 	<script type="text/javascript">
 		$('#identification').forms([
 			{ title: '开启进阶模式', name:'koolproxyR_mode_enable',type:'select',options:[['0','关闭'],['1','开启']],value: dbus.koolproxyR_mode_enable || "0",suffix: '<font color="#FF0000">【进阶模式】&nbsp;&nbsp;提供更多设置选项</font>' },
-			{ title: '默认过滤模式', name:'koolproxyR_base_mode',type:'select',options:[['0','不过滤'],['1','HTTP过滤模式'],['2','黑名单模式']],value: dbus.koolproxyR_base_mode || "1",suffix: '<font color="#FF0000">【开启进阶模式】&nbsp;&nbsp;获得更多选项！</font>' },
+			{ title: '全局默认过滤模式', name:'koolproxyR_base_mode',type:'select',options:[['0','不过滤'],['1','HTTP过滤模式'],['2','黑名单模式']],value: dbus.koolproxyR_base_mode || "1",suffix: '<font color="#FF0000">【开启进阶模式】&nbsp;&nbsp;获得更多选项！</font>' },
 			{ title: '进阶默认过滤模式', name:'koolproxyR_mode',type:'select',options:[['0','不过滤'],['1','HTTP过滤模式'],['2','HTTP/HTTPS双过滤模式'],['3','黑名单模式'],['4','HTTP/HTTPS双黑名单模式']],value: dbus.koolproxyR_mode || "1",suffix: '<font color="#FF0000">一般开启HTTP过滤模式即可，去视频广告请在&nbsp;&nbsp;访问控制中给设备指定【HTTP/HTTPS双过滤模式】</font>' },
 			{ title: '证书下载', suffix: ' <button id="_download_cert" onclick="download_cert();"style="border-radius: 20px"  class="btn btn-danger">证书下载</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="https_KP();" style="border-radius: 20px" class="btn btn-success">相关教程</button>' },
 			{ title: '交流渠道', suffix: ' <button onclick="issues_KP();" style="border-radius: 20px" class="btn btn-danger">建议反馈</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="find_telegram();"style="border-radius: 20px"  class="btn btn-danger">加入TG群</button>'  },
@@ -848,7 +848,15 @@ function set_version() {
 			<div class="col-sm-10">
 				<ul style="margin-left: 30px;">
 					<li><font color="#FF6347"> 问： </font>KoolProxyR的R是日的意思吗？</li>
-					<li><font color="#1E90FF"> 答： </font>是的，日死所有广告。</li>			
+					<li><font color="#1E90FF"> 答： </font>是的，日死所有广告。</li>	
+					<br><hr>	
+					<li><font color="#FF6347"> &nbsp;&nbsp;&nbsp;&nbsp;一个新手的标准流程</font></li>
+					<li><font color="#1E90FF"> 1， </font>在【基本设置】中默认HTTP过滤模式，此模式表示除【访问控制】以外的机子走的过滤模式。</li>			
+					<li><font color="#1E90FF"> 2， </font>在【规则状态】中勾选合适的规则。</li>			
+					<li><font color="#1E90FF"> 3， </font>给【HTTP/HTTPS双过滤模式】的机子正确安装证书。（详情请完整阅读本页）</li>			
+					<li><font color="#1E90FF"> 4， </font>在【访问控制】中指定【HTTP/HTTPS双过滤模式】过滤的设备。</li>			
+					<li><font color="#1E90FF"> 5， </font>善于使用【附加设置】--【开启-AD调试模式 】排除误杀情况，如果比较严重，欢迎提交规则，或者TG群反馈。</li>	
+					<li><font color="#1E90FF"> 6， </font>如果您是大佬，可以自行DIY你需要的所有元素，并欢迎提交在github提交Pull requests。</li>					
 					<br><hr>
 					<li><font color="#FF6347"> 问： </font>这些模式有什么区别？</li>
 					<li><font color="#1E90FF"> 答： </font>HTTP过滤模式，只过滤80端口，HTTP/HTTPS过滤80,443端口，全端口模式过滤所有端口，包含80，443。黑名单模式只过滤黑名单内的域名所以不建议使用。</li>			
@@ -863,7 +871,7 @@ function set_version() {
 					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
 					<li>0 4 * * * /koolshare/scripts/KoolProxyR_update_now.sh</li>
 					<br><hr>
-					<li><font color="#FF6347"> 问： </font>我是安卓7.0以上的系统，我安装了证书,开启Https导致部分APP打开提升没有网络了！</li>
+					<li><font color="#FF6347"> 问： </font>我是安卓7.0以上的系统，我安装了证书,开启Https导致部分APP打开提示没有网络了！</li>
 					<li><font color="#1E90FF"> 答： </font>请在【证书管理】中下载0.根证书的zip文件，解压出来放入下面的两个地方。PS 如何放入，如何root之类的话题，请在到专业论坛讨论。</li>
 					<li>/system/etc/security/cacerts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/system/etc/security/cacerts_google</li>
 					<br><hr>
@@ -877,7 +885,11 @@ function set_version() {
 					<li><font color="#1E90FF"> 答： </font>不是的，kpr是为了更强更多规则而存在的，目前除了软路由几乎无解。梅林设备性能没有达标！</li>			
 					<br><hr>
 					<li><font color="#FF6347"> 问： </font>为什么安装了证书仍然，提示https不安全?</li>
-					<li><font color="#1E90FF"> 答： </font>Windows下面请安装的时候选择安装到&nbsp;&nbsp;[受信任的根证书颁发机构]，MAC IOS设备 请百度下如何信任证书，安卓7.0以上将.0根证书放入指定位置。</li>			
+					<li>Windows下面请安装的时候选择安装到&nbsp;&nbsp;[受信任的根证书颁发机构]</li>			
+					<li>IOS设备，在设置---通用----关于手机里面信任证书</li>
+					<li>MAC, 在 【钥匙串访问】中信任</li>
+					<li>安卓7.0以上将.0根证书复制到【/system/etc/security/cacerts】&nbsp;&nbsp;【/system/etc/security/cacerts_google】中</li>
+					<li>火狐浏览器用户，请分别在火狐内访问110.110.110.110，和使用其他浏览器访问110.110.110.110,并将证书安装到[受信任的根证书颁发机构]</li>
 					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我把kp的证书备份下来了kpr可以导入使用吗？</li>
 					<li><font color="#1E90FF"> 答： </font>可以的，本来就是同源，可以相互导入导出证书来使用减少重复安装证书的过程。</li>			

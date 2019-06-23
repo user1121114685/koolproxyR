@@ -205,9 +205,9 @@ update_rule(){
 		# 删除可能导致卡顿的HTTPS规则
 		sed -i '/\.\*\//d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 		# 给国内三大电商平台放行
-		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
-		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
-		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		sed -i '/jd.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		sed -i '/taobao.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
+		sed -i '/tmall.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance_https.txt
 
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 		sed -i '15,$d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
@@ -299,9 +299,9 @@ update_rule(){
 		# 删除可能导致kpr卡死的神奇规则
 		sed -i '/https:\/\/\*/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给国内三大电商平台放行
-		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/jd.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/taobao.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		sed -i '/tmall.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给 netflix.com 放行
 		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给 tvbs.com 放行
@@ -327,11 +327,6 @@ update_rule(){
 		# 处理tvbox.txt本身规则。
 		sed -i 's/^127.0.0.1\ /||/g' /tmp/tvbox.txt
 		rm -rf /tmp/tvbox.txt
-		# 给国内三大电商平台放行
-		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/yhosts_https.txt
-		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/yhosts_https.txt
-		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/yhosts_https.txt
-
 		# 合二归一
 		cat  $KSROOT/koolproxyR/data/rules/yhosts_https.txt > $KSROOT/koolproxyR/data/rules/yhosts.txt
 		cat /tmp/tvbox.txt >> $KSROOT/koolproxyR/data/rules/yhosts.txt
@@ -361,9 +356,9 @@ update_rule(){
 		# 删除可能导致kpr卡死的神奇规则
 		sed -i '/https:\/\/\*/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		# 给国内三大电商平台放行
-		sed -i '/https:\/\/jd.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
-		sed -i '/https:\/\/taobao.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
-		sed -i '/https:\/\/tmall.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/jd.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/taobao.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/tmall.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		# 给 netflix.com 放行
 		sed -i '/netflix.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		# 给 tvbs.com 放行

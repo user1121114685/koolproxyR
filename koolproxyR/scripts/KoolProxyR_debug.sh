@@ -38,6 +38,7 @@ kpr_debug_1() {
 	kill_kpr
 	echo_date "kpr   debug-info模式启动"
 	koolproxy -l 1 --ttl 188 --ttlport 3001 --ipv6
+	echo_date "如果您需要查看https流量，请在【访问控制】中指定【HTTP/HTTPS双过滤模式】"
 	kpr_status
 }
 
