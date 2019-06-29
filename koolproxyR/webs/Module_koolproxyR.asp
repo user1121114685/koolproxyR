@@ -742,11 +742,9 @@ function restore_cert(){
 }
 
 function update_rules_now(arg){
-	if (arg == 5){
-		shellscript = 'KoolProxyR_rule_update.sh';
-	}
+	var	shellscript = 'KoolProxyR_rule_update.sh';
 	var id1 = parseInt(Math.random() * 100000000);
-	var postData1 = {"id": id1, "method": shellscript, "params":[], "fields": ""};
+	var postData1 = {"id": id1, "method": shellscript, "params":[arg], "fields": ""};
 	$.ajax({
 		type: "POST",
 		url: "/_api/",
@@ -1019,7 +1017,7 @@ function set_version() {
 <div id="kpr_debug_management" class="section"></div>
 	<script type="text/javascript">
 		$('#kpr_debug_management').forms([
-		{ title: '', suffix: '<button onclick="kpr_debug_0(\'KoolProxyR_debug.sh\', 0);" style="border-radius: 15px" class="btn btn-success">开启全调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_1(\'KoolProxyR_debug.sh\', 1);" style="border-radius: 15px" class="btn btn-success">开启-INFO调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_2(\'KoolProxyR_debug.sh\', 2);" style="border-radius: 15px" class="btn btn-success">开启-AD调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_3(\'KoolProxyR_debug.sh\', 3);" style="border-radius: 15px" class="btn btn-success">开启-WARNING调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_4(\'KoolProxyR_debug.sh\', 4);" style="border-radius: 15px" class="btn btn-success">关闭调试模式</button></lable>' },
+		{ title: '', suffix: '<button onclick="kpr_debug_0(\'KoolProxyR_debug.sh\', 0);" style="border-radius: 15px" class="btn btn-success">规则调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_1(\'KoolProxyR_debug.sh\', 1);" style="border-radius: 15px" class="btn btn-success">开启-INFO调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_2(\'KoolProxyR_debug.sh\', 2);" style="border-radius: 15px" class="btn btn-success">开启-AD调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_3(\'KoolProxyR_debug.sh\', 3);" style="border-radius: 15px" class="btn btn-success">开启-WARNING调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_4(\'KoolProxyR_debug.sh\', 4);" style="border-radius: 15px" class="btn btn-success">关闭调试模式</button></lable>' },
 		]);
 	</script>
 	<br><hr>
@@ -1028,8 +1026,8 @@ function set_version() {
 		<br><hr>
 		<li>这是一个抓包，排错，编写规则的辅助工具，强大之人掌握，必能发挥其威力。</li>
 		<br><hr>
-		<li><font color="green"> 【开启全调试模式】</font></li>
-		<li><font color="red"> 此模式下，任何信息都将显示到日志信息中。</font></li>
+		<li><font color="green"> 【规则调试模式】</font></li>
+		<li><font color="red"> 此模式可以直接使用【WinSCP】等文件管理软件，进行编辑，保存实时生效（仅限/koolshare/koolproxyR/data/rules/user.txt）</font></li>
 		<br><hr>
 		<li><font color="green"> 【开启-INFO调试模式】</font></li>
 		<li><font color="red"> 此模式下，只将重要信息显示到日志信息中。</font></li>

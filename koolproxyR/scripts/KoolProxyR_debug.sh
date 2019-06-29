@@ -14,6 +14,7 @@ kill_kpr() {
 	kill -9 `pidof koolproxy` >/dev/null 2>&1
 	killall koolproxy >/dev/null 2>&1
 	kpr_status
+	dbus set koolproxyR_debug_0=0
 }
 
 kpr_status() {
@@ -28,10 +29,22 @@ kpr_status() {
 }
 
 kpr_debug_0() {
-	kill_kpr
-	echo_date "kpr   debug-全模式启动"
-	koolproxy -l 0 --ttl 188 --ttlport 3001 --ipv6
-	kpr_status
+	dbus set koolproxyR_debug_0=1
+	koolproxyR_debug_0=`dbus get koolproxyR_debug_0`
+	while [ $koolproxyR_debug_0 = 1 ];do
+		user_txt_md5_new=`md5sum /koolshare/koolproxyR/data/rules/user.txt | cut -d \  -f1`
+		if [[ "$user_txt_md5_new" != "$user_txt_md5_old" ]]; then
+			echo_date 关闭koolproxyR主进程...
+			kill -9 `pidof koolproxy` >/dev/null 2>&1
+			killall koolproxy >/dev/null 2>&1
+			kpr_status
+			cd $KP_DIR && koolproxy -d --ttl 188 --ttlport 3001 --ipv6
+			echo_date "检测到user.txt规则已改变，已重启kpr"
+			user_txt_md5_old=`md5sum /koolshare/koolproxyR/data/rules/user.txt | cut -d \  -f1`
+			kpr_status
+		fi
+		koolproxyR_debug_0=`dbus get koolproxyR_debug_0`
+	done	
 }
 
 kpr_debug_1() {
@@ -63,6 +76,7 @@ kpr_debug_4() {
 	kpr_status
 }
 
+# $2 表示传入的第2个参数 例如 debug.sh abc 123  中的123 $1 就是 abc
 case $2 in
 0)
 	kpr_debug_0 >> $LOG_FILE

@@ -159,8 +159,8 @@ dbus set softcenter_module_koolproxyR_description="KPR更多规则更舒服！"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=2.1.8
-dbus set koolproxyR_version=2.1.8
+dbus set softcenter_module_koolproxyR_version=2.1.9
+dbus set koolproxyR_version=2.1.9
 
 echo_date 安装koolproxyR完成，开始重启koolproxyR...
 

@@ -23,7 +23,7 @@
 ||http://hudong.pl.youku.com/n/interact/player/get/plugins?
 ||http://k.youku.com/player/getFlvPath/sid/*&vl=
 ||http://sealine.youku.com/yk/html?
-||http://vali*.cibntv.net^*.mp4?$rewrite=abp-resource:blank-mp3,domain=youku.com
+||http://vali*.cibntv.net^*.mp4?$media,rewrite=abp-resource:blank-mp3,domain=youku.com
 ||http://youku.com/cms/tool/pub/get_putdata.
 ||http://youku.com/dress/
 ||http://youku.com/QVideo/~ajax/getDefaultItem?
@@ -72,6 +72,7 @@ http://youku.com##.pop-prompt-box
 http://m.youku.com##.recommend
 @@@@https://data.video.iqiyi.com
 @@@@https://cupid.iqiyi.com
+|https://static.iqiyi.com/js/player_v2
 @@@@||https://cupid.iqiyi.com^
 ||https://iqiyi.com/track$popup
 ||https://info.vip.iqiyi.com/promotion/

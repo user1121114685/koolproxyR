@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.1.8"
+VERSION="2.1.9"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -303,22 +303,35 @@ echo "0|kp.dat|0|0" >> source.list
 # @@*$stylesheet
 
 cd ..
+# 现在在\koolproxyR\koolproxyR\koolproxyR
 # wget https://raw.githubusercontent.com/koolshare/ledesoft/master/koolproxy/koolproxy/koolproxy/koolproxy
 cd ../..
-# Check and include base
-DIR="$( cd "$( dirname "$BASH_SOURCE[0]" )" && pwd )"
+# 现在在 Y:\koolproxyR 也就是主目录
+# # Check and include base
+# DIR="$( cd "$( dirname "$BASH_SOURCE[0]" )" && pwd )"
 
-# now include build_base.sh
-. $DIR/../softcenter/build_base.sh
+# # now include build_base.sh
+# . $DIR/../softcenter/build_base.sh
 
-# change to module directory
-cd $DIR
+# # change to module directory
+# cd $DIR
 
-# do something here
+# # do something here
 
+# 
+
+
+do_build_result() {
+    rm -f koolproxyR.tar.gz
+    tar -zcvf koolproxyR.tar.gz koolproxyR
+    md5value=`md5sum koolproxyR.tar.gz | cut -d \  -f1`
+    echo "$VERSION" > version
+    echo "$md5value" >> version
+}
 do_build_result
 
-sh backup.sh $MODULE
+
+sh backup.sh koolproxyR
 cd koolproxyR/koolproxyR/data/rules
 # ls | grep .txt | sed 's/^/md5sum /g' | >> rules_md5.sh
 md5sum easylistchina.txt|awk '{print $1}' > easylistchina.txt.md5

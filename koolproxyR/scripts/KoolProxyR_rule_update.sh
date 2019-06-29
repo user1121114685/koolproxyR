@@ -24,7 +24,7 @@ update_rule(){
 	echo_date 开始更新koolproxyR规则，请等待...
 		
 	# update 中国简易列表 2.0
-	if [[ "$koolproxyR_basic_easylist_update" == "1" ]] || [ -n "$1" ]; then
+	if [[ "$koolproxyR_basic_easylist_update" == "1" ]]; then
 		echo_date " ---------------------------------------------------------------------------------------"
 		# wget --no-check-certificate --timeout=8 -qO - $url_easylist > /tmp/easylistchina.txt
 		for i in {1..5}; do
@@ -66,7 +66,7 @@ update_rule(){
 
 		echo_date KPR主规则 本地版本号： $easylist_rules_local
 		echo_date KPR主规则 在线版本号： $easylist_rules_local1
-		if [[ "koolproxyR_basic_easylist_failed" != "1" ]]; then
+		if [[ "$koolproxyR_basic_easylist_failed" != "1" ]]; then
 			if [[ "$easylistchina_rule_local" -gt 10000 ]]; then
 				if [[ "$easylist_rules_local" != "$easylist_rules_local1" ]]; then
 					echo_date 检测到新版本 KPR主规则 ，开始更新...
@@ -83,7 +83,7 @@ update_rule(){
 	fi
 	
 		# update 补充规则
-	if [[ "$koolproxyR_basic_replenish_update" == "1" ]] || [ -n "$1" ]; then
+	if [[ "$koolproxyR_basic_replenish_update" == "1" ]]; then
 		echo_date " ---------------------------------------------------------------------------------------"
 		for i in {1..5}; do
 			wget -4 -a /tmp/upload/kpr_log.txt -O /tmp/yhosts.txt $url_yhosts
@@ -120,7 +120,7 @@ update_rule(){
 	# fi
 
 	# update fanboy规则
-	if [[ "$koolproxyR_basic_fanboy_update" == "1" ]] || [ -n "$1" ]; then
+	if [[ "$koolproxyR_basic_fanboy_update" == "1" ]]; then
 		echo_date " ---------------------------------------------------------------------------------------"
 		for i in {1..5}; do
 			wget -4 -a /tmp/upload/kpr_log.txt -O /tmp/fanboy-annoyance.txt $url_fanboy
@@ -382,12 +382,23 @@ update_rule(){
 	echo_date =======================================================================================================
 }
 
-if [ -n "$1" ]; then
+
+case $2 in
+5)
 	update_rule "$1" > /tmp/upload/kpr_log.txt
 	echo XU6J03M6 >> /tmp/upload/kpr_log.txt
 	http_response "$1"
-
-else
-	update_rule > /tmp/upload/kpr_log.txt
-	echo XU6J03M6 >> /tmp/upload/kpr_log.txt
-fi
+	;;
+*)
+	# 此次由于定时任务无法产生随机Id,所以直接判断$1.
+	if [[ "$1" == "update" ]]; then
+		# 此处生产随机的三位数 用来缓解瞬间产生大量请求导致服务器拒绝的情况。
+		sleep_time=`tr -cd 0-9 </dev/urandom | head -c 3`
+		sleep $sleep_time
+		update_rule "$1" > /tmp/upload/kpr_log.txt
+		echo "本次自动更新等待 $sleep_time 秒" >> /tmp/upload/kpr_log.txt
+		echo XU6J03M6 >> /tmp/upload/kpr_log.txt
+		http_response "$1"
+	fi
+	;;
+esac

@@ -24,11 +24,6 @@ mydiy(){
 }
 
 if [ -n "$1" ]; then
-	mydiy "$1" > /tmp/upload/kpr_log.txt
-	echo XU6J03M6 >> /tmp/upload/kpr_log.txt
+	mydiy "$1" >> /tmp/upload/kpr_log.txt
 	http_response "$1"
-
-else
-	mydiy > /tmp/upload/kpr_log.txt
-	echo XU6J03M6 >> /tmp/upload/kpr_log.txt
 fi
