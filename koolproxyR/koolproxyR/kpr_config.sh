@@ -9,6 +9,8 @@ KP_DIR=$SOFT_DIR/koolproxyR
 LOCK_FILE=/var/lock/koolproxy.lock
 # 一定要按照source.list的排列顺序/我就不按照顺序。。。啦啦啦啦啦啦
 SOURCE_LIST=$KP_DIR/data/source.list
+# 关闭规则调试模式
+dbus set koolproxyR_debug_0=0
 # fanboy全规则检查
 if [[ "$koolproxyR_fanboy_all_rules" == "1" ]]; then
 	dbus set koolproxyR_fanboy_rules=1

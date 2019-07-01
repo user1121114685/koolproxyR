@@ -393,7 +393,7 @@ case $2 in
 	# 此次由于定时任务无法产生随机Id,所以直接判断$1.
 	if [[ "$1" == "update" ]]; then
 		# 此处生产随机的三位数 用来缓解瞬间产生大量请求导致服务器拒绝的情况。
-		sleep_time=`tr -cd 0-9 </dev/urandom | head -c 3`
+		sleep_time=`tr -cd 0-9 </dev/urandom | head -c 4`
 		sleep $sleep_time
 		update_rule "$1" > /tmp/upload/kpr_log.txt
 		echo "本次自动更新等待 $sleep_time 秒" >> /tmp/upload/kpr_log.txt

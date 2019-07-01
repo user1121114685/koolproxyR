@@ -1017,7 +1017,7 @@ function set_version() {
 <div id="kpr_debug_management" class="section"></div>
 	<script type="text/javascript">
 		$('#kpr_debug_management').forms([
-		{ title: '', suffix: '<button onclick="kpr_debug_0(\'KoolProxyR_debug.sh\', 0);" style="border-radius: 15px" class="btn btn-success">规则调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_1(\'KoolProxyR_debug.sh\', 1);" style="border-radius: 15px" class="btn btn-success">开启-INFO调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_2(\'KoolProxyR_debug.sh\', 2);" style="border-radius: 15px" class="btn btn-success">开启-AD调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_3(\'KoolProxyR_debug.sh\', 3);" style="border-radius: 15px" class="btn btn-success">开启-WARNING调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_4(\'KoolProxyR_debug.sh\', 4);" style="border-radius: 15px" class="btn btn-success">关闭调试模式</button></lable>' },
+		{ title: '', suffix: '<button onclick="kpr_debug_0(\'KoolProxyR_debug.sh\', 0);" style="border-radius: 15px" class="btn btn-success">规则调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_1(\'KoolProxyR_debug.sh\', 1);" style="border-radius: 15px" class="btn btn-success">开启-INFO调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_2(\'KoolProxyR_debug.sh\', 2);" style="border-radius: 15px" class="btn btn-success">开启-AD调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_3(\'KoolProxyR_debug.sh\', 3);" style="border-radius: 15px" class="btn btn-success">开启-全调试模式 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="kpr_debug_4(\'KoolProxyR_debug.sh\', 4);" style="border-radius: 15px" class="btn btn-success">关闭调试模式</button></lable>' },
 		]);
 	</script>
 	<br><hr>
@@ -1028,6 +1028,7 @@ function set_version() {
 		<br><hr>
 		<li><font color="green"> 【规则调试模式】</font></li>
 		<li><font color="red"> 此模式可以直接使用【WinSCP】等文件管理软件，进行编辑，保存实时生效（仅限/koolshare/koolproxyR/data/rules/user.txt）</font></li>
+		<li><font color="red"> 此模式还可以与其他模式混用，极大的提高效率，先启动（info，ad，全调试）再启动本模式即可。</font></li>
 		<br><hr>
 		<li><font color="green"> 【开启-INFO调试模式】</font></li>
 		<li><font color="red"> 此模式下，只将重要信息显示到日志信息中。</font></li>
@@ -1035,8 +1036,8 @@ function set_version() {
 		<li><font color="green"> 【开启-AD调试模式】</font></li>
 		<li><font color="red"> 此模式下，通常用来排除误杀。</font></li>
 		<br><hr>
-		<li><font color="green"> 【开启-WARNING调试模式 】</font></li>
-		<li><font color="red"> 此模式看看就好，我利用不来。</font></li>
+		<li><font color="green"> 【开启-全调试模式 】</font></li>
+		<li><font color="red"> 更加详细的调试信息，让所有的东西都一览无余。</font></li>
 		<br><hr>
 		<li><font color="green"> 【关闭调试模式 】</font></li>
 		<li><font color="red"> 十分重要的操作，不然一觉起来硬盘爆了。</font></li>

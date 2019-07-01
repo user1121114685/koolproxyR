@@ -14,7 +14,6 @@ kill_kpr() {
 	kill -9 `pidof koolproxy` >/dev/null 2>&1
 	killall koolproxy >/dev/null 2>&1
 	kpr_status
-	dbus set koolproxyR_debug_0=0
 }
 
 kpr_status() {
@@ -30,6 +29,12 @@ kpr_status() {
 
 kpr_debug_0() {
 	dbus set koolproxyR_debug_0=1
+	koolproxyR_debug_status=`ps | grep koolproxy | grep 3001 | cut -d S -f2 | sed -n '1p'`
+	if [[ "$koolproxyR_debug_status" == "" ]]; then
+		echo_date "检测到kpr未运行，退出调试"
+		exit 3
+	fi
+	echo "$koolproxyR_debug_status >> /tmp/upload/kpr_log.txt" > /tmp/upload/kpr_status.sh
 	koolproxyR_debug_0=`dbus get koolproxyR_debug_0`
 	while [ $koolproxyR_debug_0 = 1 ];do
 		user_txt_md5_new=`md5sum /koolshare/koolproxyR/data/rules/user.txt | cut -d \  -f1`
@@ -38,8 +43,10 @@ kpr_debug_0() {
 			kill -9 `pidof koolproxy` >/dev/null 2>&1
 			killall koolproxy >/dev/null 2>&1
 			kpr_status
-			cd $KP_DIR && koolproxy -d --ttl 188 --ttlport 3001 --ipv6
+			cd $KP_DIR
+			nohup sh /tmp/upload/kpr_status.sh >/dev/null 2>&1
 			echo_date "检测到user.txt规则已改变，已重启kpr"
+			cat /koolshare/koolproxyR/data/rules/user.txt > /tmp/upload/user.txt
 			user_txt_md5_old=`md5sum /koolshare/koolproxyR/data/rules/user.txt | cut -d \  -f1`
 			kpr_status
 		fi
@@ -48,6 +55,7 @@ kpr_debug_0() {
 }
 
 kpr_debug_1() {
+	dbus set koolproxyR_debug_0=0
 	kill_kpr
 	echo_date "kpr   debug-info模式启动"
 	koolproxy -l 1 --ttl 188 --ttlport 3001 --ipv6
@@ -56,6 +64,7 @@ kpr_debug_1() {
 }
 
 kpr_debug_2() {
+	dbus set koolproxyR_debug_0=0
 	kill_kpr
 	echo_date "kpr   debug-ad模式启动"
 	koolproxy -l 2 --ttl 188 --ttlport 3001 --ipv6
@@ -63,13 +72,15 @@ kpr_debug_2() {
 }
 
 kpr_debug_3() {
+	dbus set koolproxyR_debug_0=0
 	kill_kpr
-	echo_date "kpr   debug-WARNING模式启动"
-	koolproxy -l 3 --ttl 188 --ttlport 3001 --ipv6
+	echo_date "kpr   debug-全调试模式启动"
+	koolproxy -l 0 --ttl 188 --ttlport 3001 --ipv6
 	kpr_status
 }
 
 kpr_debug_4() {
+	dbus set koolproxyR_debug_0=0
 	kill_kpr
 	echo_date "关闭dbug调试"
 	cd $KP_DIR && koolproxy -d --ttl 188 --ttlport 3001 --ipv6
@@ -101,3 +112,4 @@ case $2 in
 	;;
 esac
 
+koolproxy -l 1 --ttl 188 --ttlport 3001 --ipv6 
