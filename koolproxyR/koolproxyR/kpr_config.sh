@@ -19,7 +19,7 @@ fi
 
 write_user_txt(){
 	if [ -n "$koolproxyR_custom_rule" ]; then
-		echo $koolproxyR_custom_rule| base64_decode |sed 's/\\n/\n/g' > $KP_DIR/data/rules/user.txt
+		echo $koolproxyR_custom_rule | base64_decode | sed 's/\\n/\n/g' > $KP_DIR/data/rules/user.txt
 	fi
 }
 
@@ -40,7 +40,7 @@ load_rules(){
 	fi
 
 	if [[ "$koolproxyR_video_rules" == "1" ]]; then
-		echo_date 加载【KP视频规则】
+		echo_date 加载【KPR视频规则】
 		sed -i "s/0|kp.dat/1|kp.dat/g" $SOURCE_LIST
 	fi
 	if [[ "$koolproxyR_fanboy_rules" == "1" ]]; then

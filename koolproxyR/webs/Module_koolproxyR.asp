@@ -75,15 +75,16 @@ $.ajax({
 					scrollbar: false,
 					id: 'update_koolproxyR',
 					// 鬼知道这个id 什么意思！！
-					btn: ['火速更新', '更新个毛'],
+					btn: ['更新', '关闭'],
 					btnAlign: 'c',
 					moveType: 1,
 					content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">\
 								<b>KoolProxyR更新提醒！</b><br><br><br>\
 								如你所见，KoolProxyR又双叒叕更新了！<br>\
 								KoolProxyR更新至' + data_version[0] + '~<br><br>\
-								● 更新日志详情<a style="color:#33CCCC" target="_blank" href="https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/Changelog.txt">请戳我了解~</a><br>\
-								● 赶快更新吧，少年！<br><br>\
+								● 更新日志详情<a style="color:#33CCCC" target="_blank" href="https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/Changelog.txt">请戳我了解~</a><br><br>\
+								● 长期召集懂abp去广告规则的热心人士<br>\
+								● 长期召集懂反编译或者擅长抓包的热心人士<br><br>\
 								我们的征途是星辰大海 ^_^</div>',
 					success: function(layero) {
 						var btn = layero.find('.layui-layer-btn');
@@ -867,7 +868,7 @@ function set_version() {
 					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我想自动升级KoolProxyR版本可以吗？</li>
 					<li><font color="#1E90FF"> 答： </font>在【系统】--【计划任务】的末尾回车添加上下面这行的代码保存即可。</li>
-					<li>0 4 * * * /koolshare/scripts/KoolProxyR_update_now.sh</li>
+					<li>0 4 * * * /koolshare/scripts/KoolProxyR_update_now.sh update_kpr</li>
 					<br><hr>
 					<li><font color="#FF6347"> 问： </font>我是安卓7.0以上的系统，我安装了证书,开启Https导致部分APP打开提示没有网络了！</li>
 					<li><font color="#1E90FF"> 答： </font>请在【证书管理】中下载0.根证书的zip文件，解压出来放入下面的两个地方。PS 如何放入，如何root之类的话题，请在到专业论坛讨论。</li>
@@ -979,7 +980,7 @@ function set_version() {
 			{ name: 'koolproxyR_replenish_rules',type:'checkbox',value: dbus.koolproxyR_replenish_rules == '1', suffix: '<lable id="_kp_replenish_rules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由vokins/yhosts整理的hosts包含移动设备和TV规则(建议开启)。</lable>&nbsp;&nbsp;' }
 			]},
 			{ title: '视频规则（加密）', multi: [
-				{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则可以屏蔽国内网站的视频广告，需HTTPS模式。（失效请关闭此项）</lable>&nbsp;&nbsp;' },
+				{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则可以屏蔽国内网站的视频广告，需HTTPS模式。（现由kpr自主更新）</lable>&nbsp;&nbsp;' },
 			]},	
 			{ title: 'Fanboy规则（国外）', multi: [
 				{ name: 'koolproxyR_fanboy_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由Fanboy发起，针对国外主流令人厌烦的广告过滤。</lable>&nbsp;&nbsp;' }
@@ -991,7 +992,7 @@ function set_version() {
 			{ title: '规则更新', multi: [
 				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update == '1', suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">KPR主规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_replenish_update',type:'checkbox',value: dbus.koolproxyR_basic_replenish_update == '1', suffix: '<lable id="_koolproxyR_basic_replenish_update_txt">补充规则</lable>&nbsp;&nbsp;' },
-				{ name:'koolproxyR_basic_video_update',type:'checkbox',value: dbus.koolproxyR_basic_video_update == '1', suffix: '<lable id="_koolproxyR_basic_video_update_txt">KP视频规则</lable>&nbsp;&nbsp;' },
+				{ name:'koolproxyR_basic_video_update',type:'checkbox',value: dbus.koolproxyR_basic_video_update == '1', suffix: '<lable id="_koolproxyR_basic_video_update_txt">KPR视频规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update == '1', suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
                 { suffix: '<button id="_update_rules_now"style="border-radius: 15px""background-color:#EAADEA"  onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' },
 

@@ -5,7 +5,8 @@ eval `dbus export koolproxyR_`
 alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 
 url_cjx="https://dev.tencent.com/u/shaoxia1991/p/cjxlist/git/raw/master/cjx-annoyance.txt"
-url_kp="https://kprules.b0.upaiyun.com/kp.dat"
+url_kp="https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kp.dat"
+url_kp_md5="https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kp.dat.md5"
 # url_koolproxy="https://kprules.b0.upaiyun.com/koolproxy.txt"
 # 原网址跳转到https://kprule.com/koolproxy.txt跳转到又拍云，为了节省时间，还是直接去又拍云下载吧！避免某些时候跳转不过去
 url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
@@ -21,8 +22,9 @@ else
 fi
 update_rule(){
 	echo_date =======================================================================================================
-	echo_date 开始更新koolproxyR规则，请等待...
-		
+	echo_date 开始更新koolproxyR的规则，请等待...
+	# 赋予文件夹权限 
+	chmod -R 777 /koolshare/koolproxyR/data/rules
 	# update 中国简易列表 2.0
 	if [[ "$koolproxyR_basic_easylist_update" == "1" ]]; then
 		echo_date " ---------------------------------------------------------------------------------------"
@@ -33,7 +35,7 @@ update_rule(){
 			if [[ "$easylistchina_rule_nu_local" -gt 5000 ]]; then
 				break
 			else
-				echo_date easylistchina下载失败
+				echo_date easylistchina规则文件下载失败
 				koolproxyR_basic_easylist_failed=1
 			fi
 		done
@@ -43,7 +45,7 @@ update_rule(){
 			if [[ "$cjx_rule_nu_local" -gt 500 ]]; then
 				break
 			else
-				echo_date cjx-annoyance下载失败
+				echo_date cjx-annoyance规则文件下载失败
 				koolproxyR_basic_easylist_failed=1
 			fi
 		done
@@ -53,7 +55,7 @@ update_rule(){
 			if [[ "$kpr_our_rule_nu_local" -gt 500 ]]; then
 				break
 			else
-				echo_date kpr_our_rule下载失败
+				echo_date kpr_our_rule规则文件下载失败
 				koolproxyR_basic_easylist_failed=1
 			fi
 		done
@@ -64,13 +66,13 @@ update_rule(){
 		easylist_rules_local=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
 		easylist_rules_local1=`cat /tmp/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
 
-		echo_date KPR主规则 本地版本号： $easylist_rules_local
-		echo_date KPR主规则 在线版本号： $easylist_rules_local1
+		echo_date KPR主规则的本地版本号： $easylist_rules_local
+		echo_date KPR主规则的在线版本号： $easylist_rules_local1
 		if [[ "$koolproxyR_basic_easylist_failed" != "1" ]]; then
 			if [[ "$easylistchina_rule_local" -gt 10000 ]]; then
 				if [[ "$easylist_rules_local" != "$easylist_rules_local1" ]]; then
-					echo_date 检测到新版本 KPR主规则 ，开始更新...
-					echo_date 将临时文件覆盖到原始 KPR主规则文件
+					echo_date 检测到 KPR主规则 已更新，现在开始更新...
+					echo_date 将临时的KPR主规则文件移动到指定位置
 					mv /tmp/easylistchina.txt $KSROOT/koolproxyR/data/rules/easylistchina.txt
 					koolproxyR_https_ChinaList=1
 				else
@@ -80,6 +82,8 @@ update_rule(){
 		else
 			echo_date KPR主规则文件下载失败！
 		fi
+	else
+		echo_date 未打开 KPR主规则 的更新开关！
 	fi
 	
 		# update 补充规则
@@ -107,17 +111,40 @@ update_rule(){
 				echo_date 补充规则文件下载失败！
 			fi
 		done
-
+	else
+		echo_date 未打开 补充规则 的更新开关！
 	fi
 
 	# update 视频规则
-	# if [[ "$koolproxyR_basic_video_update" == "1" ]] || [[-n "$1" ]]; then
-	# 	echo_date " ---------------------------------------------------------------------------------------"
-	# 	echo_date 加密视频规则kp.dat 看不到版本号。所以强制更新。！
-	# 	wget -4 -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxyR/data/rules/kp.dat $url_kp
-	# 	echo_date  视频规则已经更新。
+	if [[ "$koolproxyR_basic_video_update" == "1" ]] || [[ -n "$1" ]]; then
+		echo_date " ---------------------------------------------------------------------------------------"
+		for i in {1..5}; do
+			kpr_video_md5=`cat $KSROOT/koolproxyR/data/rules/kp.dat.md5 | sed -n '1p'`
+			wget -4 -a /tmp/upload/kpr_log.txt -O /tmp/kp.dat.md5 $url_kp_md5
+			kpr_video_new_md5=`cat /tmp/kp.dat.md5 | sed -n '1p'`
+			echo_date 远程视频规则md5：$kpr_video_new_md5
+			echo_date 您本地视频规则md5：$kpr_video_md5
 
-	# fi
+			if [[ "$kpr_video_md5" != "$kpr_video_new_md5" ]]; then
+				echo_date 检测到新版视频规则.开始更新..........
+				wget -4 -a /tmp/upload/kpr_log.txt -O /tmp/kp.dat $url_kp
+				kpr_video_download_md5=`md5sum /tmp/kp.dat | awk '{print $1}'`
+				echo_date 您下载的视频规则md5：$kpr_video_download_md5
+				if [[ "$kpr_video_download_md5" == "$kpr_video_new_md5" ]]; then
+					echo_date 将临时文件覆盖到原始 视频规则 文件
+					mv /tmp/kp.dat $KSROOT/koolproxyR/data/rules/kp.dat
+					mv /tmp/kp.dat.md5 $KSROOT/koolproxyR/data/rules/kp.dat.md5
+					break
+				else
+					echo_date 视频规则md5校验不通过...
+				fi
+			else
+				echo_date 检测到 视频规则 本地版本号和在线版本号相同，那还更新个毛啊!
+			fi
+		done
+	else
+		echo_date 未打开 视频规则 的更新开关！
+	fi
 
 	# update fanboy规则
 	if [[ "$koolproxyR_basic_fanboy_update" == "1" ]]; then
@@ -151,14 +178,16 @@ update_rule(){
 				echo_date fanboy规则 文件下载失败！
 			fi
 		done
+	else
+		echo_date 未打开 fanboy规则 的更新开关！
 	fi
 
-	rm -rf /fanboy-annoyance.txt
+	rm -rf /tmp/fanboy-annoyance.txt
 	rm -rf /tmp/yhosts.txt
 	rm -rf /tmp/easylistchina.txt
 
-	echo_date 正在优化kpr规则。。。。。
 	if [[ "$koolproxyR_https_fanboy" == "1" ]]; then
+		echo_date 正在优化 fanboy规则。。。。。
 		# 删除导致KP崩溃的规则
 		# 听说高手?都打的很多、这样才能体现技术
 		sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
@@ -225,13 +254,14 @@ update_rule(){
 		# 给apple的https放行
 		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/mzstatic.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
-
-
+	else
+		echo_date 跳过优化 fanboy规则。。。。。
 	fi
 
 
 
 	if [[ "$koolproxyR_https_ChinaList" == "1" ]]; then
+		echo_date 正在优化 KPR主规则。。。。。
 		sed -i '/^\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/\*\$/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给btbtt.替换过滤规则。
@@ -280,14 +310,6 @@ update_rule(){
 		# 合二归一
 		cat $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt >> $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		cat $KSROOT/koolproxyR/data/rules/easylistchina_https.txt >> $KSROOT/koolproxyR/data/rules/easylistchina.txt
-		# 把三大视频网站给剔除来，作为单独文件。
-		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'youku.com' > $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
-		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'iqiyi.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
-		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'v.qq.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
-		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'g.alicdn.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
-		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'tudou.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
-		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'gtimg.cn' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
-		cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -i 'l.qq.com' >> $KSROOT/koolproxyR/data/rules/kpr_video_list.txt
 		# 给三大视频网站放行 由kp.dat负责
 		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
@@ -310,14 +332,15 @@ update_rule(){
 		# 给 microsoft.com 放行
 		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 
-
-
+	else
+		echo_date 跳过优化 KPR主规则。。。。。
 	fi
 
 
 	if [[ "$koolproxyR_https_mobile" == "1" ]]; then
 		# 删除不必要信息重新打包 0-11行 表示从第15行开始 $表示结束
 		# sed -i '1,11d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		echo_date 正在优化 补充规则yhosts。。。。。
 
 		# 开始Kpr规则化处理
 		cat $KSROOT/koolproxyR/data/rules/yhosts.txt > $KSROOT/koolproxyR/data/rules/yhosts_https.txt
@@ -335,6 +358,12 @@ update_rule(){
 		# 此处对yhosts进行单独处理
 		sed -i 's/^@/!/g' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		sed -i 's/^#/!/g' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 给三大视频网站放行 由kp.dat负责
+		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/g.alicdn.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/tudou.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/gtimg.cn/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 
 
 		# 给知乎放行
@@ -367,7 +396,8 @@ update_rule(){
 		# 给 microsoft.com 放行
 		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 
-
+	else
+		echo_date 跳过优化 补充规则yhosts。。。。。
 	fi
 	# 删除临时文件
 	rm $KSROOT/koolproxyR/data/rules/*_https.txt
@@ -375,7 +405,7 @@ update_rule(){
 
 
 
-	echo_date 所有规则更新完毕！
+	echo_date 所有规则更新并优化完毕！
 
 	echo_date 自动重启koolproxyR，以应用新的规则文件！请稍后！
 	sh $KSROOT/koolproxyR/kpr_config.sh restart
@@ -396,7 +426,7 @@ case $2 in
 		sleep_time=`tr -cd 0-9 </dev/urandom | head -c 4`
 		sleep $sleep_time
 		update_rule "$1" > /tmp/upload/kpr_log.txt
-		echo "本次自动更新等待 $sleep_time 秒" >> /tmp/upload/kpr_log.txt
+		echo_date "本次自动更新等待了 $sleep_time 秒" >> /tmp/upload/kpr_log.txt
 		echo XU6J03M6 >> /tmp/upload/kpr_log.txt
 		http_response "$1"
 	fi

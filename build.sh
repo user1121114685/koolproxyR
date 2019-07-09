@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.2.0"
+VERSION="2.2.1"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -13,6 +13,7 @@ find . -type f -exec dos2unix {} \;
 #get latest rules
 rm -rf ./koolproxyR/koolproxyR/data/rules/*.txt
 rm -rf ./koolproxyR/koolproxyR/data/rules/*.md5
+rm -rf ./koolproxyR/koolproxyR/data/rules/*.dat
 rm -rf ./koolproxyR/koolproxyR/data/source.list
 # rm -rf ./koolproxyR/koolproxyR/koolproxy
 cd koolproxyR/koolproxyR/data/rules
@@ -53,8 +54,9 @@ cat tvbox.txt >> yhosts.txt
 # 暂时先用临时的替代
 # wget https://kprules.b0.upaiyun.com/kp.dat
 # wget https://kprules.b0.upaiyun.com/user.txt
-# wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR/koolproxyR/data/rules/kp.dat
-# https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR/koolproxyR/data/rules/user.txt
+# 同步Kpr视频规则及md5
+wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kp.dat
+wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kp.dat.md5
 wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR/koolproxyR/data/rules/user.txt
 
 ## ---------------------------------------------------fanboy处理开始------------------------------------------------------
@@ -176,14 +178,6 @@ wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master
 cat kpr_our_rule.txt >> easylistchina.txt
 cat easylistchina_https.txt >> easylistchina.txt
 
-# 把三大视频网站给剔除来，作为单独文件。
-cat easylistchina.txt | grep -i 'youku.com' > kpr_video_list.txt
-cat easylistchina.txt | grep -i 'iqiyi.com' >> kpr_video_list.txt
-cat easylistchina.txt | grep -i 'v.qq.com' >> kpr_video_list.txt
-cat easylistchina.txt | grep -i 'g.alicdn.com' >> kpr_video_list.txt
-cat easylistchina.txt | grep -i 'tudou.com' >> kpr_video_list.txt
-cat easylistchina.txt | grep -i 'gtimg.cn' >> kpr_video_list.txt
-cat easylistchina.txt | grep -i 'l.qq.com' >> kpr_video_list.txt
 # 给三大视频网站放行 由kp.dat负责
 sed -i '/youku.com/d' easylistchina.txt
 sed -i '/iqiyi.com/d' easylistchina.txt
@@ -237,6 +231,13 @@ cat tvbox.txt >> yhosts.txt
 # 此处对yhosts进行单独处理
 sed -i 's/^@/!/g' yhosts.txt
 sed -i 's/^#/!/g' yhosts.txt
+
+# 给三大视频网站放行 由kp.dat负责
+sed -i '/youku.com/d' yhosts.txt
+sed -i '/iqiyi.com/d' yhosts.txt
+sed -i '/g.alicdn.com/d' yhosts.txt
+sed -i '/tudou.com/d' yhosts.txt
+sed -i '/gtimg.cn/d' yhosts.txt
 
 
 # 给知乎放行
@@ -338,6 +339,5 @@ md5sum easylistchina.txt|awk '{print $1}' > easylistchina.txt.md5
 md5sum kp.dat|awk '{print $1}' > kp.dat.md5
 md5sum user.txt|awk '{print $1}' > user.txt.md5
 md5sum fanboy-annoyance.txt|awk '{print $1}' > fanboy-annoyance.txt.md5
-md5sum kpr_video_list.txt|awk '{print $1}' > kpr_video_list.txt.md5
 md5sum yhosts.txt|awk '{print $1}' > yhosts.txt.md5
 

@@ -46,7 +46,7 @@ kpr_debug_0() {
 			cd $KP_DIR
 			nohup sh /tmp/upload/kpr_status.sh >/dev/null 2>&1
 			echo_date "检测到user.txt规则已改变，已重启kpr"
-			cat /koolshare/koolproxyR/data/rules/user.txt > /tmp/upload/user.txt
+			dbus set koolproxyR_custom_rule=`cat /koolshare/koolproxyR//data/rules/user.txt | base64_encode`
 			user_txt_md5_old=`md5sum /koolshare/koolproxyR/data/rules/user.txt | cut -d \  -f1`
 			kpr_status
 		fi
@@ -111,5 +111,3 @@ case $2 in
 	echo XU6J03M6 >> /tmp/upload/kpr_log.txt
 	;;
 esac
-
-koolproxy -l 1 --ttl 188 --ttlport 3001 --ipv6 
