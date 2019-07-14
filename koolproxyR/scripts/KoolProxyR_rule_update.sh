@@ -119,7 +119,7 @@ update_rule(){
 	if [[ "$koolproxyR_basic_video_update" == "1" ]] || [[ -n "$1" ]]; then
 		echo_date " ---------------------------------------------------------------------------------------"
 		for i in {1..5}; do
-			kpr_video_md5=`cat $KSROOT/koolproxyR/data/rules/kp.dat.md5 | sed -n '1p'`
+			kpr_video_md5=`md5sum $KSROOT/koolproxyR/data/rules/kp.dat | awk '{print $1}'`
 			wget -4 -a /tmp/upload/kpr_log.txt -O /tmp/kp.dat.md5 $url_kp_md5
 			kpr_video_new_md5=`cat /tmp/kp.dat.md5 | sed -n '1p'`
 			echo_date 远程视频规则md5：$kpr_video_new_md5
@@ -254,6 +254,19 @@ update_rule(){
 		# 给apple的https放行
 		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
 		sed -i '/mzstatic.com/d' $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+		# 终极 https 卡顿优化 grep -n 显示行号  awk -F 分割数据  sed -i "${del_rule}d" 需要""" 和{}引用变量
+		# 当 koolproxyR_del_rule 是1的时候就一直循环，除非 del_rule 变量为空了。
+		koolproxyR_del_rule=1
+		while [ $koolproxyR_del_rule = 1 ];do
+			del_rule=`cat $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt | grep -n 'https://' | grep '\*' | grep -v '/\*'| grep -v '\^\*' | grep -v '\*\=' | grep -v '\$s\@' | grep -v '\$r\@'| awk -F":" '{print $1}' | sed -n '1p'`
+			if [[ "$del_rule" != "" ]]; then
+				sed -i "${del_rule}d" $KSROOT/koolproxyR/data/rules/fanboy-annoyance.txt
+			else
+				koolproxyR_del_rule=0
+			fi
+		done	
+
+
 	else
 		echo_date 跳过优化 fanboy规则。。。。。
 	fi
@@ -275,8 +288,6 @@ update_rule(){
 		# 给apple的https放行
 		sed -i '/apple.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		sed -i '/mzstatic.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
-
-
 
 
 
@@ -331,6 +342,17 @@ update_rule(){
 		sed -i '/googletagmanager.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给 microsoft.com 放行
 		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
+		# 终极 https 卡顿优化 grep -n 显示行号  awk -F 分割数据  sed -i "${del_rule}d" 需要""" 和{}引用变量
+		# 当 koolproxyR_del_rule 是1的时候就一直循环，除非 del_rule 变量为空了。
+		koolproxyR_del_rule=1
+		while [ $koolproxyR_del_rule = 1 ];do
+			del_rule=`cat $KSROOT/koolproxyR/data/rules/easylistchina.txt | grep -n 'https://' | grep '\*' | grep -v '/\*'| grep -v '\^\*' | grep -v '\*\=' | grep -v '\$s\@' | grep -v '\$r\@'| awk -F":" '{print $1}' | sed -n '1p'`
+			if [[ "$del_rule" != "" ]]; then
+				sed -i "${del_rule}d" $KSROOT/koolproxyR/data/rules/easylistchina.txt
+			else
+				koolproxyR_del_rule=0
+			fi
+		done	
 
 	else
 		echo_date 跳过优化 KPR主规则。。。。。
@@ -395,6 +417,18 @@ update_rule(){
 		sed -i '/googletagmanager.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		# 给 microsoft.com 放行
 		sed -i '/microsoft.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		# 终极 https 卡顿优化 grep -n 显示行号  awk -F 分割数据  sed -i "${del_rule}d" 需要""" 和{}引用变量
+		# 当 koolproxyR_del_rule 是1的时候就一直循环，除非 del_rule 变量为空了。
+		koolproxyR_del_rule=1
+		while [ $koolproxyR_del_rule = 1 ];do
+			del_rule=`cat $KSROOT/koolproxyR/data/rules/yhosts.txt | grep -n 'https://' | grep '\*' | grep -v '/\*'| grep -v '\^\*' | grep -v '\*\=' | grep -v '\$s\@' | grep -v '\$r\@'| awk -F":" '{print $1}' | sed -n '1p'`
+			if [[ "$del_rule" != "" ]]; then
+				sed -i "${del_rule}d" $KSROOT/koolproxyR/data/rules/yhosts.txt
+			else
+				koolproxyR_del_rule=0
+			fi
+		done	
+
 
 	else
 		echo_date 跳过优化 补充规则yhosts。。。。。

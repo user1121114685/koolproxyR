@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.2.1"
+VERSION="2.2.2"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -126,6 +126,19 @@ sed -i '/googletagmanager.com/d' fanboy-annoyance.txt
 # 给 microsoft.com 放行
 sed -i '/microsoft.com/d' fanboy-annoyance.txt
 
+# 终极 https 卡顿优化 grep -n 显示行号  awk -F 分割数据  sed -i "${del_rule}d" 需要""" 和{}引用变量
+# 当 koolproxyR_del_rule 是1的时候就一直循环，除非 del_rule 变量为空了。
+koolproxyR_del_rule=1
+while [ $koolproxyR_del_rule = 1 ];do
+    del_rule=`cat fanboy-annoyance.txt | grep -n 'https://' | grep '\*' | grep -v '/\*'| grep -v '\^\*' | grep -v '\*\=' | grep -v '\$s\@' | grep -v '\$r\@'| awk -F":" '{print $1}' | sed -n '1p'`
+    if [[ "$del_rule" != "" ]]; then
+        sed -i "${del_rule}d" fanboy-annoyance.txt
+    else
+        koolproxyR_del_rule=0
+    fi
+done	
+
+
 ## -------------------------------------------------------fanboy处理结束------------------------------------------------------
 
 
@@ -203,6 +216,18 @@ sed -i '/microsoft.com/d' easylistchina.txt
 sed -i '/apple.com/d' easylistchina.txt
 sed -i '/mzstatic.com/d' easylistchina.txt
 
+# 终极 https 卡顿优化 grep -n 显示行号  awk -F 分割数据  sed -i "${del_rule}d" 需要""" 和{}引用变量
+# 当 koolproxyR_del_rule 是1的时候就一直循环，除非 del_rule 变量为空了。
+koolproxyR_del_rule=1
+while [ $koolproxyR_del_rule = 1 ];do
+    del_rule=`cat easylistchina.txt | grep -n 'https://' | grep '\*' | grep -v '/\*'| grep -v '\^\*' | grep -v '\*\=' | grep -v '\$s\@' | grep -v '\$r\@'| awk -F":" '{print $1}' | sed -n '1p'`
+    if [[ "$del_rule" != "" ]]; then
+        sed -i "${del_rule}d" easylistchina.txt
+    else
+        koolproxyR_del_rule=0
+    fi
+done	
+
 
 
 
@@ -268,6 +293,17 @@ sed -i '/netflix.com/d' yhosts.txt
 # 给 microsoft.com 放行
 sed -i '/microsoft.com/d' yhosts.txt
 
+# 终极 https 卡顿优化 grep -n 显示行号  awk -F 分割数据  sed -i "${del_rule}d" 需要""" 和{}引用变量
+# 当 koolproxyR_del_rule 是1的时候就一直循环，除非 del_rule 变量为空了。
+koolproxyR_del_rule=1
+while [ $koolproxyR_del_rule = 1 ];do
+    del_rule=`cat yhosts.txt | grep -n 'https://' | grep '\*' | grep -v '/\*'| grep -v '\^\*' | grep -v '\*\=' | grep -v '\$s\@' | grep -v '\$r\@'| awk -F":" '{print $1}' | sed -n '1p'`
+    if [[ "$del_rule" != "" ]]; then
+        sed -i "${del_rule}d" yhosts.txt
+    else
+        koolproxyR_del_rule=0
+    fi
+done	
 
 
 
