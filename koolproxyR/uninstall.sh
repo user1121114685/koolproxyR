@@ -10,8 +10,8 @@ rm -rf $KSROOT/webs/module_KoolproxyR.asp >/dev/null 2>&1
 rm -rf $KSROOT/koolproxyR >/dev/null 2>&1
 rm -rf $KSROOT/init.d/S93koolproxyR.sh >/dev/null 2>&1
 rm -rf /etc/rc.d/S93koolproxyR.sh >/dev/null 2>&1
-rm -rf $KSROOT/libhavege*.ipk
-rm -rf $KSROOT/haveged*.ipk
+rm -rf $KSROOT/variable/libhavege*.ipk
+rm -rf $KSROOT/variable/haveged*.ipk
 
 # 取消dbus注册 TG sadog
 cd /tmp 
@@ -20,5 +20,14 @@ dbus list softcenter_module_|grep koolproxyR|cut -d "=" -f1|sed 's/^/dbus remove
 chmod 777 clean.sh 
 sh ./clean.sh > /dev/null 2>&1 
 rm clean.sh
+
+# 清楚 定时任务
+[ ! -f  "/etc/crontabs/root" ] && touch /etc/crontabs/root
+jobexist=`cat /etc/crontabs/root|grep KoolProxyR`
+
+if [ ! -z "$jobexist" ]; then
+    sed -i '/KoolProxyR/d' /etc/crontabs/root >/dev/null 2>&1
+fi
+
 
 exit 0

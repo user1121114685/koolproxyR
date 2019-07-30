@@ -170,7 +170,7 @@ write_reboot_job(){
 
 remove_reboot_job(){
 	[ ! -f  "/etc/crontabs/root" ] && touch /etc/crontabs/root
-	jobexist=`cat /etc/crontabs/root|grep KoolProxyR_check_chain.sh`
+	jobexist=`cat /etc/crontabs/root|grep KoolProxyR`
 	KP_ENBALE=`dbus get koolproxyR_enable`
 
 	# kill crontab job

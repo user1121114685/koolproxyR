@@ -63,7 +63,7 @@
 ├── config.json.js      暂时无用
 ├── history     历史版本
 ├── koolproxyR      主程序文件夹
-│   ├── haveged_1.9.4-1_x86_64.ipk  用于解决kpr与v2ray ss 冲突导致开机变慢的问题
+│   ├── variable/haveged.ipk  用于解决kpr与v2ray ss 冲突导致开机变慢的问题
 │   ├── init.d
 │   │   └── S93koolproxyR.sh        自启脚本
 │   ├── install.sh      离线安装执行脚本
@@ -88,7 +88,7 @@
 │   │   │   └── source.list     规则控制文件，此文件控制koolproxy加载那些规则。
 │   │   ├── koolproxy       kp二进制文件
 │   │   └── kpr_config.sh   kpr保存的时候执行的配置文件。【核心】
-│   ├── libhavege_1.9.4-1_x86_64.ipk        用于解决kpr与v2ray ss 冲突导致开机变慢的问题
+│   ├── variable/libhavege.ipk        用于解决kpr与v2ray ss 冲突导致开机变慢的问题
 │   ├── scripts     脚本目录 安装后位于/koolshare/scripts
 │   │   ├── KoolProxyR_cert.sh      证书相关脚本备份.恢复.生成 .0 根证书
 │   │   ├── KoolProxyR_check_chain.sh    检查SS WG V2RAY 和是否被kiil的脚本

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.2.2"
+VERSION="2.2.3"
 TITLE=koolproxyR
 DESCRIPTION="KPR更多规则更舒服！"
 HOME_URL="Module_koolproxyR.asp"
@@ -188,7 +188,6 @@ sed -i '6,$d' easylistchina.txt
 # 合二归一
 # https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt
 wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt
-cat kpr_our_rule.txt >> easylistchina.txt
 cat easylistchina_https.txt >> easylistchina.txt
 
 # 给三大视频网站放行 由kp.dat负责
@@ -227,6 +226,7 @@ while [ $koolproxyR_del_rule = 1 ];do
         koolproxyR_del_rule=0
     fi
 done	
+cat kpr_our_rule.txt >> easylistchina.txt
 
 
 

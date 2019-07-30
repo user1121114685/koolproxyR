@@ -319,7 +319,6 @@ update_rule(){
 		# 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 		sed -i '6,$d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 合二归一
-		cat $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt >> $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		cat $KSROOT/koolproxyR/data/rules/easylistchina_https.txt >> $KSROOT/koolproxyR/data/rules/easylistchina.txt
 		# 给三大视频网站放行 由kp.dat负责
 		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/easylistchina.txt
@@ -353,6 +352,7 @@ update_rule(){
 				koolproxyR_del_rule=0
 			fi
 		done	
+		cat $KSROOT/koolproxyR/data/rules/kpr_our_rule.txt >> $KSROOT/koolproxyR/data/rules/easylistchina.txt
 
 	else
 		echo_date 跳过优化 KPR主规则。。。。。

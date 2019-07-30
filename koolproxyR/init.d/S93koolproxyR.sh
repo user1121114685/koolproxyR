@@ -22,9 +22,9 @@ start(){
 	entropy_avail=`opkg list-installed |grep -i "haveged"`
 	if [[ "$entropy_avail" == "" ]]; then
 	# 离线安装包下载地址 https://downloads.openwrt.org/releases/packages-18.06/x86_64/packages/
-		opkg install /koolshare/libhavege_1.9.4-1_x86_64.ipk
+		opkg install /koolshare/variable/libhavege.ipk
 		sleep 1
-		opkg install /koolshare/haveged_1.9.4-1_x86_64.ipk
+		opkg install /koolshare/variable/haveged.ipk
 	fi
 }
 

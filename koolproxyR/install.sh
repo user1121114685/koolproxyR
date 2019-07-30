@@ -45,9 +45,9 @@ entropy_avail=`opkg list-installed |grep -i "haveged"`
 if [[ "$entropy_avail" == "" ]]; then
  # 离线安装包下载地址 https://downloads.openwrt.org/releases/packages-18.06/x86_64/packages/
  	echo_date 开始安装haveged,解决ss,v2ray冲突导致开机变慢的问题。
-	opkg install /tmp/koolproxyR/libhavege_1.9.4-1_x86_64.ipk
+	opkg install /tmp/koolproxyR/variable/libhavege.ipk
 	sleep 1
-	opkg install /tmp/koolproxyR/haveged_1.9.4-1_x86_64.ipk
+	opkg install /tmp/koolproxyR/variable/haveged.ipk
 	entropy_avail1=`opkg list-installed |grep -i "haveged"`
 	if [[ "$entropy_avail1" == "" ]]; then
 		echo_date 离线安装haveged失败,正在尝试在线安装！
@@ -155,12 +155,15 @@ find /etc/rc.d/ -name *koolproxyR.sh* | xargs rm -rf
 [ -z "$koolproxyR_arp" ] && dbus set koolproxyR_arp=" "
 
 # add icon into softerware center
-dbus set softcenter_module_koolproxyR_description="KPR更多规则更舒服！"
+# 酷软 插件首行
+dbus set softcenter_module_koolproxyR_title="KoolProxyR"
+# 酷软 插件次行
+dbus set softcenter_module_koolproxyR_description="至   善   至   美"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=2.2.2
-dbus set koolproxyR_version=2.2.2
+dbus set softcenter_module_koolproxyR_version=2.2.3
+dbus set koolproxyR_version=2.2.3
 
 echo_date 安装koolproxyR完成，开始重启koolproxyR...
 
