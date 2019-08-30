@@ -371,15 +371,19 @@ update_rule(){
 		sed -i 's/^127.0.0.1\ /||http:\/\//g' $KSROOT/koolproxyR/data/rules/yhosts_https.txt
 		# 处理tvbox.txt本身规则。
 		sed -i 's/^127.0.0.1\ /||/g' /tmp/tvbox.txt
-		rm -rf /tmp/tvbox.txt
 		# 合二归一
 		cat  $KSROOT/koolproxyR/data/rules/yhosts_https.txt > $KSROOT/koolproxyR/data/rules/yhosts.txt
 		cat /tmp/tvbox.txt >> $KSROOT/koolproxyR/data/rules/yhosts.txt
+		rm -rf /tmp/tvbox.txt
 
 
 		# 此处对yhosts进行单独处理
 		sed -i 's/^@/!/g' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		sed -i 's/^#/!/g' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/localhost/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/broadcasthost/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/broadcasthost/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
+		sed -i '/cn.bing.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		# 给三大视频网站放行 由kp.dat负责
 		sed -i '/youku.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt
 		sed -i '/iqiyi.com/d' $KSROOT/koolproxyR/data/rules/yhosts.txt

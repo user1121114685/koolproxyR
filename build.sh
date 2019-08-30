@@ -1,9 +1,9 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.2.3"
+VERSION="2.2.4"
 TITLE=koolproxyR
-DESCRIPTION="KPR更多规则更舒服！"
+DESCRIPTION="至   善   至   美"
 HOME_URL="Module_koolproxyR.asp"
 CHANGELOG="维护阶段的kpr"
 # 查看内核日志
@@ -256,6 +256,11 @@ cat tvbox.txt >> yhosts.txt
 # 此处对yhosts进行单独处理
 sed -i 's/^@/!/g' yhosts.txt
 sed -i 's/^#/!/g' yhosts.txt
+sed -i '/localhost/d' yhosts.txt
+sed -i '/broadcasthost/d' yhosts.txt
+sed -i '/broadcasthost/d' yhosts.txt
+sed -i '/cn.bing.com/d' yhosts.txt
+
 
 # 给三大视频网站放行 由kp.dat负责
 sed -i '/youku.com/d' yhosts.txt
