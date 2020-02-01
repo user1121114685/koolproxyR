@@ -775,7 +775,7 @@ function set_version() {
 <div class="heading">
 <span id="_koolproxyR_version"></span>
 <a href="#/soft-center.asp" class="btn" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">返回</a>
-<a href="https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/Changelog.txt" target="_blank" class="btn btn-primary" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">更新日志</a>
+<a href="https://shaoxia1991.coding.net/p/koolproxyr/d/koolproxyr/git/raw/master/Changelog.txt" target="_blank" class="btn btn-primary" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">更新日志</a>
 <!-- <a href="#/Module_koolproxyR_simple.asp" target="_blank" class="btn btn-primary" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">简化版</a> -->
 </div>
 <div class="content"><span class="col"  style="line-height:30px;width:700px">

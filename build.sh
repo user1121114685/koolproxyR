@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.2.5"
+VERSION="2.2.6"
 TITLE=koolproxyR
 DESCRIPTION="至   善   至   美"
 HOME_URL="Module_koolproxyR.asp"
