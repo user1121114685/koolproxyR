@@ -14,7 +14,7 @@ version_old=`cat history/version | sed -n '$p' | cut -d \  -f1`
 version_new=`cat version |sed -n 1p`
 md5_new=` md5sum $tar_name | cut -d \  -f1`
 # 保证md5连续性
-wget -O ./history/version https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/history/version
+wget -O ./history/version https://shaoxia1991.coding.net/p/koolproxyr/d/koolproxyr/git/raw/master/history/version
 if [ -f ./$tar_name ]; then
 	if [ "$version_old" != "$version_new" ]; then
 		mkdir ./history/$version_new/

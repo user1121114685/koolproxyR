@@ -24,20 +24,20 @@
 ## 怎么使用这个插件！ （请先卸载koolproxy，互不兼容。）
 ### 最佳方法 
 在**SSH**中执行如下代码实现在线安装。（**请全部复制**）  
-`wget -4 -O /tmp/KoolProxyR_install.sh https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/KoolProxyR_install.sh && chmod 777 /tmp/KoolProxyR_install.sh && sh /tmp/KoolProxyR_install.sh`
+`wget -4 -O /tmp/KoolProxyR_install.sh https://shaoxia1991.coding.net/p/koolproxyr/d/koolproxyr/git/raw/master/KoolProxyR_install.sh && chmod 777 /tmp/KoolProxyR_install.sh && sh /tmp/KoolProxyR_install.sh`
 
 
 ### 稳定方法
 到F大没修复软件中心之前，或者我上架软件中心（其实根本没这个可能），你可以通过如下步骤进行使用本软件！
 
-[点我下载](https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR.tar.gz)，通过软件中心的离线安装进行安装！**PS 请勿修改名字保持koolproxyR.tar.gz才能安装**，并且你可能需要执行下面的ssh代码.
+[点我下载](https://shaoxia1991.coding.net/p/koolproxyr/d/koolproxyr/git/raw/master/koolproxyR.tar.gz)，通过软件中心的离线安装进行安装！**PS 请勿修改名字保持koolproxyR.tar.gz才能安装**，并且你可能需要执行下面的ssh代码.
 
 ---
 如果你遇到** `离线安装` ** 无法安装，你还需要在SSH中执行如下步骤。（**请全部复制**）    
 
 ---
 
-`wget -4 -O /koolshare/scripts/ks_tar_install.sh https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/ks_tar_install.sh && chmod 777 /koolshare/scripts/ks_tar_install.sh`
+`wget -4 -O /koolshare/scripts/ks_tar_install.sh https://shaoxia1991.coding.net/p/koolproxyr/d/koolproxyr/git/raw/master/ks_tar_install.sh && chmod 777 /koolshare/scripts/ks_tar_install.sh`
 
 ---
 

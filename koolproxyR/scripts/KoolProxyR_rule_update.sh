@@ -4,15 +4,15 @@ source $KSROOT/scripts/base.sh
 eval `dbus export koolproxyR_`
 alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 
-url_cjx="https://dev.tencent.com/u/shaoxia1991/p/cjxlist/git/raw/master/cjx-annoyance.txt"
-url_kp="https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kp.dat"
-url_kp_md5="https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kp.dat.md5"
+url_cjx="https://shaoxia1991.coding.net/p/cjxlist/d/cjxlist/git/raw/master/cjx-annoyance.txt"
+url_kp="https://houzi-.coding.net/p/my_dream/d/my_dream/git/raw/master/kp.dat"
+url_kp_md5="https://houzi-.coding.net/p/my_dream/d/my_dream/git/raw/master/kp.dat.md5"
 # url_koolproxy="https://kprules.b0.upaiyun.com/koolproxy.txt"
 # 原网址跳转到https://kprule.com/koolproxy.txt跳转到又拍云，为了节省时间，还是直接去又拍云下载吧！避免某些时候跳转不过去
 url_easylist="https://easylist-downloads.adblockplus.org/easylistchina.txt"
-url_yhosts="https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/hosts"
-url_yhosts1="https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/data/tvbox.txt"
-kpr_our_rule="https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt"
+url_yhosts="https://shaoxia1991.coding.net/p/yhosts/d/yhosts/git/raw/master/hosts"
+url_yhosts1="https://shaoxia1991.coding.net/p/yhosts/d/yhosts/git/raw/master/data/tvbox.txt"
+kpr_our_rule="https://shaoxia1991.coding.net/p/koolproxyR_rule_list/d/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt"
 # 检测是否开启fanboy全功能版本
 if [[ "$koolproxyR_fanboy_all_rules" == "1" ]]; then
 	url_fanboy="https://secure.fanboy.co.nz/r/fanboy-complete.txt"
@@ -134,6 +134,13 @@ update_rule(){
 					echo_date 将临时文件覆盖到原始 视频规则 文件
 					mv /tmp/kp.dat $KSROOT/koolproxyR/data/rules/kp.dat
 					mv /tmp/kp.dat.md5 $KSROOT/koolproxyR/data/rules/kp.dat.md5
+
+					video_rules_local=`cat $KSROOT/koolproxyR/data/rules/kp.dat.md5 | sed -n '2p'`
+					if [[ "$video_rules_local" == "" ]]; then
+						# 当本地md5 没有时间戳的时候就更新更新时间戳
+						video_rules_online=`curl https://houzi-.coding.net/api/user/houzi-/project/my_dream/depot/my_dream/git/blob/master%2Fkp.dat | jq '.data.file.lastCommitDate'`
+						date -d @`echo ${video_rules_online:0:10}` +%Y年%m月%d日\ %X >> $KSROOT/koolproxyR/data/rules/kp.dat.md5
+					fi
 					break
 				else
 					echo_date 视频规则md5校验不通过...

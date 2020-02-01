@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.2.4"
+VERSION="2.2.5"
 TITLE=koolproxyR
 DESCRIPTION="至   善   至   美"
 HOME_URL="Module_koolproxyR.asp"
@@ -23,16 +23,16 @@ cd koolproxyR/koolproxyR/data/rules
 # 从 https://filterlists.com/ 找规则
 # https://tgc.cloud/downloads/hosts.txt 36万DNS规则，kpr 生产出来是72万
 wget https://easylist-downloads.adblockplus.org/easylistchina.txt
-# https://dev.tencent.com/u/shaoxia1991/p/cjxlist/git/raw/master/cjx-annoyance.txt
-wget https://dev.tencent.com/u/shaoxia1991/p/cjxlist/git/raw/master/cjx-annoyance.txt
+
+wget https://shaoxia1991.coding.net/p/cjxlist/d/cjxlist/git/raw/master/cjx-annoyance.txt
 
 wget https://secure.fanboy.co.nz/fanboy-annoyance.txt
 # ADGUARD-DNS过滤规则
 # wget -O yhosts.txt https://filters.adtidy.org/extension/chromium/filters/15.txt
 # yhosts过滤规则
-# https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/data/tvbox.txt
-wget -O yhosts.txt https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/hosts
-wget -O tvbox.txt https://dev.tencent.com/u/shaoxia1991/p/yhosts/git/raw/master/data/tvbox.txt
+
+wget -O yhosts.txt https://shaoxia1991.coding.net/p/yhosts/d/yhosts/git/raw/master/hosts
+wget -O tvbox.txt https://shaoxia1991.coding.net/p/yhosts/d/yhosts/git/raw/master/data/tvbox.txt
 cat tvbox.txt >> yhosts.txt
 
 # ad.txt：合并EasylistChina、EasylistLite、CJX'sAnnoyance，以及补充的一些规则；
@@ -55,9 +55,20 @@ cat tvbox.txt >> yhosts.txt
 # wget https://kprules.b0.upaiyun.com/kp.dat
 # wget https://kprules.b0.upaiyun.com/user.txt
 # 同步Kpr视频规则及md5
-wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kp.dat
-wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kp.dat.md5
-wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/koolproxyR/koolproxyR/data/rules/user.txt
+# 电脑的wget 不支持houzi- 的- 域名 所以倒腾了下
+wget https://shaoxia1991.coding.net/p/kp_dat/d/kp_dat/git/raw/master/kp.dat
+wget https://shaoxia1991.coding.net/p/kp_dat/d/kp_dat/git/raw/master/kp.dat.md5
+# read -s -n1 -p "请手动拷贝kp.dat 和kp.dat.md5,按任意键继续...."  
+
+video_rules_local=`cat kp.dat.md5 | sed -n '2p'`
+if [[ "$video_rules_local" == "" ]]; then
+    # 当本地md5 没有时间戳的时候就更新更新时间戳
+    video_rules_online=`curl https://shaoxia1991.coding.net/api/user/shaoxia1991/project/kp_dat/depot/kp_dat/git/blob/master%2Fkp.dat | jq '.data.file.lastCommitDate'`
+    date -d @`echo ${video_rules_online:0:10}` +%Y年%m月%d日\ %X >> kp.dat.md5
+fi
+
+
+wget https://shaoxia1991.coding.net/p/koolproxyr/d/koolproxyr/git/raw/master/koolproxyR/koolproxyR/data/rules/user.txt
 
 ## ---------------------------------------------------fanboy处理开始------------------------------------------------------
 ## 删除导致KP崩溃的规则
@@ -186,8 +197,9 @@ sed -i '/\.\*\//d' easylistchina_https.txt
 # 删除不必要信息重新打包 15 表示从第15行开始 $表示结束
 sed -i '6,$d' easylistchina.txt
 # 合二归一
-# https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt
-wget https://dev.tencent.com/u/shaoxia1991/p/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt
+
+wget https://shaoxia1991.coding.net/p/koolproxyR_rule_list/d/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt
+# https://shaoxia1991.coding.net/p/koolproxyR_rule_list/d/koolproxyR_rule_list/git/raw/master/kpr_our_rule.txt
 cat easylistchina_https.txt >> easylistchina.txt
 
 # 给三大视频网站放行 由kp.dat负责
@@ -377,7 +389,7 @@ sh backup.sh koolproxyR
 cd koolproxyR/koolproxyR/data/rules
 # ls | grep .txt | sed 's/^/md5sum /g' | >> rules_md5.sh
 md5sum easylistchina.txt|awk '{print $1}' > easylistchina.txt.md5
-md5sum kp.dat|awk '{print $1}' > kp.dat.md5
+# md5sum kp.dat|awk '{print $1}' > kp.dat.md5
 md5sum user.txt|awk '{print $1}' > user.txt.md5
 md5sum fanboy-annoyance.txt|awk '{print $1}' > fanboy-annoyance.txt.md5
 md5sum yhosts.txt|awk '{print $1}' > yhosts.txt.md5

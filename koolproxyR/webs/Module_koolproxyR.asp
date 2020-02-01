@@ -82,7 +82,7 @@ $.ajax({
 								<b>KoolProxyR更新提醒！</b><br><br><br>\
 								如你所见，KoolProxyR又双叒叕更新了！<br>\
 								KoolProxyR更新至' + data_version[0] + '~<br><br>\
-								● 更新日志详情<a style="color:#33CCCC" target="_blank" href="https://dev.tencent.com/u/shaoxia1991/p/koolproxyr/git/raw/master/Changelog.txt">请戳我了解~</a><br><br>\
+								● 更新日志详情<a style="color:#33CCCC" target="_blank" href="https://shaoxia1991.coding.net/p/koolproxyr/d/koolproxyr/git/raw/master/Changelog.txt">请戳我了解~</a><br><br>\
 								● 长期召集懂abp去广告规则的热心人士<br>\
 								● 长期召集懂反编译或者擅长抓包的热心人士<br><br>\
 								我们的征途是星辰大海 ^_^</div>',
@@ -981,7 +981,7 @@ function set_version() {
 			{ name: 'koolproxyR_replenish_rules',type:'checkbox',value: dbus.koolproxyR_replenish_rules == '1', suffix: '<lable id="_kp_replenish_rules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由vokins/yhosts整理的hosts包含移动设备和TV规则(建议开启)。</lable>&nbsp;&nbsp;' }
 			]},
 			{ title: '视频规则（加密）', multi: [
-				{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则可以屏蔽国内网站的视频广告，需HTTPS模式。（现由kpr自主更新）</lable>&nbsp;&nbsp;' },
+				{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则可以屏蔽国内网站的视频广告，需HTTPS模式。</lable>&nbsp;&nbsp;' },
 			]},	
 			{ title: 'Fanboy规则（国外）', multi: [
 				{ name: 'koolproxyR_fanboy_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由Fanboy发起，针对国外主流令人厌烦的广告过滤。</lable>&nbsp;&nbsp;' }
