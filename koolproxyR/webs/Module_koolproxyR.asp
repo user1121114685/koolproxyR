@@ -442,20 +442,7 @@ function toggleVisibility(whichone) {
 }
 
 function save(){
-	var KP = document.getElementById('_koolproxyR_enable').checked==false;			
-	var R1 = document.getElementById('_koolproxyR_replenish_rules').checked==false;
-	var R2 = document.getElementById('_koolproxyR_easylist_rules').checked==false;
-	var R3 = document.getElementById('_koolproxyR_video_rules').checked==false;
-	var R4 = document.getElementById('_koolproxyR_fanboy_rules').checked==false;
 
-	if (KP){
-		
-	// }else if(R1 && R2 && R3 && R4 && R5){
-	}else if(R1 && R2 && R3 && R4){
-
-		alert("请到【规则管理】勾选规则！");
-		return false;
-	}
 	verifyFields();
 	// collect basic data
 	dbus.koolproxyR_enable = E('_koolproxyR_enable').checked ? '1':'0';
@@ -463,10 +450,10 @@ function save(){
 	dbus.koolproxyR_base_mode = E('_koolproxyR_base_mode').value;			
 	dbus.koolproxyR_mode = E('_koolproxyR_mode').value;
 	dbus.koolproxyR_replenish_rules = E("_koolproxyR_replenish_rules").checked ? "1" : "0";
-	dbus.koolproxyR_easylist_rules = E("_koolproxyR_easylist_rules").checked ? "1" : "0";
+	dbus.koolproxyR_easylist_rules = E("_koolproxyR_easylist_rules").value;
 	dbus.koolproxyR_video_rules = E("_koolproxyR_video_rules").checked ? "1" : "0";
-	dbus.koolproxyR_fanboy_rules = E("_koolproxyR_fanboy_rules").checked ? "1" : "0";
-	dbus.koolproxyR_fanboy_all_rules = E("_koolproxyR_fanboy_all_rules").checked ? "1" : "0";
+	dbus.koolproxyR_fanboy_rules = E("_koolproxyR_fanboy_rules").value;
+
 	// 更新规则
 	dbus.koolproxyR_basic_easylist_update = E("_koolproxyR_basic_easylist_update").checked ? "1" : "0";
 	dbus.koolproxyR_basic_replenish_update = E("_koolproxyR_basic_replenish_update").checked ? "1" : "0";
@@ -974,26 +961,30 @@ function set_version() {
 		$('#kp_rules_pannel').forms([
 			// { title: '绿坝规则状态', text: '<font id="_koolproxyR_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },
 			{ title: '规则状态', text: '<font id="_koolproxyR_third_rule_status" name=_koolproxyR_status color="#1bbf35">正在获取规则状态...</font>' },	
-			{ title: 'KPR  主规则', multi: [
-				{ name: 'koolproxyR_easylist_rules',type:'checkbox',value: dbus.koolproxyR_easylist_rules == '1', suffix: '<lable id="_kp_easylist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由EasylistChina和CJX sAnnoyance 与KPR自定义规则组成，是KPR的首选规则.。</lable>&nbsp;&nbsp;' },
-			]},	
+			// { title: 'KPR  主规则', multi: [
+			// 	{ name: 'koolproxyR_easylist_rules',type:'checkbox',value: dbus.koolproxyR_easylist_rules == '1', suffix: '<lable id="_kp_easylist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由EasylistChina和CJX sAnnoyance 与KPR自定义规则组成，是KPR的首选规则.。</lable>&nbsp;&nbsp;' },
+			// ]},	
+			{ title: '主规则', name:'koolproxyR_easylist_rules',type:'select',options:[['1','KoolProxyR主规则'],['2','KoolProxy主规则'],['3','KoolProxy主规则+每日规则'],['4','关闭主规则']],value: dbus.koolproxyR_easylist_rules ||"1",suffix: '<font color="#FF0000">请选择一种你想要的规则</font>' },
+
+
+			// { title: 'Fanboy规则（国外）', multi: [
+			// 	{ name: 'koolproxyR_fanboy_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由Fanboy发起，针对国外主流令人厌烦的广告过滤。</lable>&nbsp;&nbsp;' }
+			// ]},	
+			// { title: 'Fanboy全规则版本', multi: [
+			// 	{ name: 'koolproxyR_fanboy_all_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_all_rules == '1', suffix: '<lable id="_kp_fanboy_all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【开启/关闭选项】--【保存】--【更新规则】就能将fanboy规则更新为最全的版本，低功耗CPU【万万不能开启】！</lable>&nbsp;&nbsp;' }
+			// ]},	
+			{ title: 'Fanboy主规则', name:'koolproxyR_fanboy_rules',type:'select',options:[['1','Fanboy规则（国外）'],['2','Fanboy全规则版本'],['3','关闭Fanboy规则']],value: dbus.koolproxyR_fanboy_rules ||"1",suffix: '<font color="#FF0000">请选择一种你想要的规则</font>' },
 			{ title: '补充规则', multi: [
 			{ name: 'koolproxyR_replenish_rules',type:'checkbox',value: dbus.koolproxyR_replenish_rules == '1', suffix: '<lable id="_kp_replenish_rules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由vokins/yhosts整理的hosts包含移动设备和TV规则(建议开启)。</lable>&nbsp;&nbsp;' }
 			]},
 			{ title: '视频规则（加密）', multi: [
 				{ name: 'koolproxyR_video_rules',type:'checkbox',value: dbus.koolproxyR_video_rules == '1', suffix: '<lable id="_kp_abx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则可以屏蔽国内网站的视频广告，需HTTPS模式。</lable>&nbsp;&nbsp;' },
 			]},	
-			{ title: 'Fanboy规则（国外）', multi: [
-				{ name: 'koolproxyR_fanboy_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_rules == '1', suffix: '<lable id="_kp_fanboy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此规则由Fanboy发起，针对国外主流令人厌烦的广告过滤。</lable>&nbsp;&nbsp;' }
-			]},	
-			{ title: 'Fanboy全规则版本', multi: [
-				{ name: 'koolproxyR_fanboy_all_rules',type:'checkbox',value: dbus.koolproxyR_fanboy_all_rules == '1', suffix: '<lable id="_kp_fanboy_all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【开启/关闭选项】--【保存】--【更新规则】就能将fanboy规则更新为最全的版本，低功耗CPU【万万不能开启】！</lable>&nbsp;&nbsp;' }
-			]},	
 
 			{ title: '规则更新', multi: [
-				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update == '1', suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">KPR主规则</lable>&nbsp;&nbsp;' },
+				{ name:'koolproxyR_basic_easylist_update',type:'checkbox',value: dbus.koolproxyR_basic_easylist_update == '1', suffix: '<lable id="_koolproxyR_basic_easylist_update_txt">主规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_replenish_update',type:'checkbox',value: dbus.koolproxyR_basic_replenish_update == '1', suffix: '<lable id="_koolproxyR_basic_replenish_update_txt">补充规则</lable>&nbsp;&nbsp;' },
-				{ name:'koolproxyR_basic_video_update',type:'checkbox',value: dbus.koolproxyR_basic_video_update == '1', suffix: '<lable id="_koolproxyR_basic_video_update_txt">KPR视频规则</lable>&nbsp;&nbsp;' },
+				{ name:'koolproxyR_basic_video_update',type:'checkbox',value: dbus.koolproxyR_basic_video_update == '1', suffix: '<lable id="_koolproxyR_basic_video_update_txt">KP视频规则</lable>&nbsp;&nbsp;' },
 				{ name:'koolproxyR_basic_fanboy_update',type:'checkbox',value: dbus.koolproxyR_basic_fanboy_update == '1', suffix: '<lable id="_koolproxyR_basic_fanboy_update_txt">Fanboy规则</lable>&nbsp;&nbsp;' },
                 { suffix: '<button id="_update_rules_now"style="border-radius: 15px""background-color:#EAADEA"  onclick="update_rules_now(5);" class="btn btn-success">手动更新 <i class="icon-cloud"></i></button>' },
 

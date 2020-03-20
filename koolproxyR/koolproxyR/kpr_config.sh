@@ -11,11 +11,7 @@ LOCK_FILE=/var/lock/koolproxy.lock
 SOURCE_LIST=$KP_DIR/data/source.list
 # 关闭规则调试模式
 dbus set koolproxyR_debug_0=0
-# fanboy全规则检查
-if [[ "$koolproxyR_fanboy_all_rules" == "1" ]]; then
-	dbus set koolproxyR_fanboy_rules=1
-	eval `dbus export koolproxyR_`
-fi
+
 
 write_user_txt(){
 	if [ -n "$koolproxyR_custom_rule" ]; then
@@ -30,20 +26,27 @@ load_rules(){
 		echo_date 加载【KPR主规则】
 		sed -i "s/0|easylistchina/1|easylistchina/g" $SOURCE_LIST
 	fi
+	if [[ "$koolproxyR_easylist_rules" == "2" ]]; then
+		echo_date 加载【koolproxy主规则】
+		sed -i "s/0|koolproxy/1|koolproxy/g" $SOURCE_LIST
+
+	fi
+	if [[ "$koolproxyR_easylist_rules" == "3" ]]; then
+		echo_date 加载【koolproxy主规则+每日规则】
+		sed -i "s/0|koolproxy/1|koolproxy/g" $SOURCE_LIST
+		sed -i "s/0|daily/1|daily/g" $SOURCE_LIST
+
+	fi
 	if [[ "$koolproxyR_replenish_rules" == "1" ]]; then
 		echo_date 加载【补充规则】
 		sed -i "s/0|yhosts.txt/1|yhosts.txt/g" $SOURCE_LIST
 	fi
-	if [ "$koolproxyR_easylist_rules" == "1" -a "$koolproxyR_video_rules" == "0" ]; then
-		echo_date 加载【KPR视频规则】
-		sed -i "s/0|kpr_video_list/1|kpr_video_list/g" $SOURCE_LIST
-	fi
 
 	if [[ "$koolproxyR_video_rules" == "1" ]]; then
-		echo_date 加载【KPR视频规则】
+		echo_date 加载【KP视频规则】
 		sed -i "s/0|kp.dat/1|kp.dat/g" $SOURCE_LIST
 	fi
-	if [[ "$koolproxyR_fanboy_rules" == "1" ]]; then
+	if [[ "$koolproxyR_fanboy_rules" != "3" ]]; then
 		echo_date 加载【Fanboy规则】
 		sed -i "s/0|fanboy/1|fanboy/g" $SOURCE_LIST	
 	fi	
@@ -88,7 +91,7 @@ creat_start_up(){
 }
 
 write_nat_start(){
-	echo_date 添加nat-start触发事件...
+	echo_date  添加nat-start触发事件...
 	uci -q batch <<-EOT
 	  delete firewall.ks_koolproxy
 	  set firewall.ks_koolproxy=include

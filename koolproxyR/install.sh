@@ -162,8 +162,8 @@ dbus set softcenter_module_koolproxyR_description="至   善   至   美"
 dbus set softcenter_module_koolproxyR_install=1
 dbus set softcenter_module_koolproxyR_home_url="Module_koolproxyR.asp"
 dbus set softcenter_module_koolproxyR_name=koolproxyR
-dbus set softcenter_module_koolproxyR_version=2.2.7
-dbus set koolproxyR_version=2.2.7
+dbus set softcenter_module_koolproxyR_version=2.8.8
+dbus set koolproxyR_version=2.8.8
 
 echo_date 安装koolproxyR完成，开始重启koolproxyR...
 

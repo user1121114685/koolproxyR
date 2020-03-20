@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=koolproxyR
-VERSION="2.2.7"
+VERSION="2.8.8"
 TITLE=koolproxyR
 DESCRIPTION="至   善   至   美"
 HOME_URL="Module_koolproxyR.asp"
@@ -336,7 +336,10 @@ rm tvbox.txt
 # split -l 1 yhosts.txt chengfeng_
 # ls|grep chengfeng_|xargs -n1 -i{} mv {} {}.txt
 
+
 cd ..
+
+cp -rf ../../../koolproxy/* ./rules
 find -name *.txt |sed 's#.*/##' > source.list
 
 # find -name chengfeng* |sed 's#.*/##' >> source.list
